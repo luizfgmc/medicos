@@ -4,6 +4,7 @@ class Medico extends CI_Controller {
 
     function __construct() {
         parent::__construct();
+        $this->load->helper('url');
     }
 
     public function index() {
@@ -21,7 +22,7 @@ class Medico extends CI_Controller {
         $this->load->model("UsuarioModel");
 
         //Insere um usuário na tabela e pegue o id inserido
-        $idUsuarioInserido = $this->usuario_model->insereUsuario($arrayInserirUsuario);
+        $idUsuarioInserido = $this->UsuarioModel->insereUsuario($arrayInserirUsuario);
 
         $arrayInserirMedico = array(
             "nome" => $dataPost['nomeMedico'],
@@ -29,25 +30,36 @@ class Medico extends CI_Controller {
             "especialidade_id" => $dataPost['especialidadeMedico'],
             "crm" => $dataPost['numeroCRM'],
             "crm_uf" => $dataPost['crmUF'],
-            "telefone" => $dataPost['telefone'],
-            "usuario_id" => $idUsuarioInserido
+            "telefone" => $dataPost['telefoneMedico'],
+            "usuario_id" => $idUsuarioInserido,
+            "created_at" => date("Y-m-d H:i:s"),
+            "updated_at" => date("Y-m-d H:i:s"),
+            
         );
 
         $this->load->model("MedicoModel");
         // Insere um medico na tabela
-        $this->medico_model->insereMedico($arrayInserirMedico);
-
-        redirect();
+        $this->MedicoModel->insereMedico($arrayInserirMedico);  
+        redirect('medico/formMedico');
     }
 
     public function formMedico() {
-        $this->load->view('insere_medicos');
+        $this->load->model("especialidadesModel");
+        //Pega informaçoes das especialidades
+        $especialidades = $this->especialidadesModel->getInfoEspecialidade();
+        $this->load->model("estadosModel");
+        //Pega informaçoes dos estados
+        $estados = $this->estadosModel->getInfoEstados();
+        
+        $dadosView = array('especialidades' => $especialidades,'estados' => $estados);
+        $this->load->view('insere_medicos', $dadosView);
     }
 
     public function listarMedico() {
         $this->load->model("MedicoModel");
         $listaDeMedicos = $this->MedicoModel->listarNomeTodosMedicos();
         $dadosView = array('listaDeMedicos' => $listaDeMedicos);
+
         $this->load->view('insere_medicos', $dadosView);
     }
 

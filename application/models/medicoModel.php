@@ -1,31 +1,31 @@
 <?php
-	
-	class MedicoModel
-	{
-		public function insereMedico($dadosMedico)
-		{
-			$this->db->insert('medicos', $dadosMedico); 
-		}
-		
-		public function listarMedicos()
-		{
-			$this->db->select('id_medico')
-			->from('medicos');
-			$query = $this->db->get();
-			return $this;
-		}
-		
-		public function listarNomeTodosMedicos()
-		{
-			$this->listarMedicos()
-			->db->select('nome');
-			$query = $this->db->get();
-			return $this;
-		}
-		
-		public function excluirMedico($idMedico)
-		{
-			$this->db->delete('medicos', array('id_medico' => idMedico)); 
-		}		
-	}
-	
+
+class MedicoModel extends CI_Model {
+
+    function __construct() {
+        // Call the Model constructor
+        parent::__construct();
+        $this->load->database();
+    }
+
+    public function insereMedico($dadosMedico) {
+        $this->db->insert('medicos', $dadosMedico);
+    }
+
+    public function getMedicos($apelido='med') {
+        $this->db->select("{$apelido}.id")
+                ->from("{$apelido} medicos");
+        return $this;
+    }
+
+    public function listarNomeTodosMedicos($apelido='med') {
+        $this->getMedicos()
+        ->db->select("{$apelido}.nome");
+        return $this;
+    }
+
+    public function excluirMedico($idMedico) {
+        $this->db->delete('medicos', array('id' => idMedico));
+    }
+
+}
