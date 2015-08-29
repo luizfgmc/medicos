@@ -12,7 +12,10 @@ class UsuarioModel extends CI_Model {
         $idInserido = $this->db->insert_id();
         return $idInserido;
     }
-
+    
+    public function excluirUsuario($idUsuario) {        
+        $this->db->delete('usuarios', array('id' => $idUsuario));
+    }
 }
 
 ?>

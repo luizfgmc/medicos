@@ -14,18 +14,20 @@ class MedicoModel extends CI_Model {
 
     public function getMedicos($apelido='med') {
         $this->db->select("{$apelido}.id")
-                ->from("{$apelido} medicos");
+                ->from("medicos {$apelido}");
         return $this;
     }
 
     public function listarNomeTodosMedicos($apelido='med') {
         $this->getMedicos()
-        ->db->select("{$apelido}.nome");
-        return $this;
+        ->db->select("{$apelido}.nome,{$apelido}.usuario_id");
+        $query = $this->db->get();
+        return $query->result();        
     }
 
     public function excluirMedico($idMedico) {
-        $this->db->delete('medicos', array('id' => idMedico));
+        
+        $this->db->delete('medicos', array('id' => $idMedico));
     }
 
 }

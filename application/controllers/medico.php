@@ -1,4 +1,6 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
 class Medico extends CI_Controller {
 
@@ -16,7 +18,9 @@ class Medico extends CI_Controller {
         $arrayInserirUsuario = array(
             "email" => $dataPost['emailMedico'],
             "password_hash" => $dataPost['senhaMedico'],
-            "tipo" => 'x'
+            "tipo" => 'x',
+            "created_at" => date("Y-m-d H:i:s"),
+            "updated_at" => date("Y-m-d H:i:s")            
         );
 
         $this->load->model("UsuarioModel");
@@ -55,17 +59,19 @@ class Medico extends CI_Controller {
         $this->load->view('insere_medicos', $dadosView);
     }
 
-    public function listarMedico() {
+    public function listarMedicos() {
         $this->load->model("MedicoModel");
         $listaDeMedicos = $this->MedicoModel->listarNomeTodosMedicos();
         $dadosView = array('listaDeMedicos' => $listaDeMedicos);
-
-        $this->load->view('insere_medicos', $dadosView);
+        $this->load->view('lista_medicos', $dadosView);
     }
 
-    public function excluirMedico($idMedico) {
+    public function excluirMedico($idMedico,$idUsuario) {
         $this->load->model("MedicoModel");
+        $this->load->model("UsuarioModel");
         $this->MedicoModel->excluirMedico($idMedico);
+        $this->UsuarioModel->excluirUsuario($idUsuario);
+        redirect('medico/listarMedicos');
     }
 
 }
