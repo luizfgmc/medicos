@@ -11,11 +11,24 @@ class MedicoModel extends CI_Model {
     public function insereMedico($dadosMedico) {
         $this->db->insert('medicos', $dadosMedico);
     }
+    
+    public function editarMedico($dadosMedico,$idMedico) {
+        $this->db->where('id', $idMedico);
+        $this->db->update('medicos', $dadosMedico);
+    }
 
     public function getMedicos($apelido='med') {
         $this->db->select("{$apelido}.id")
                 ->from("medicos {$apelido}");
         return $this;
+    }
+    
+    public function getTodasInfoMedicos($idMedico,$apelido='med'){
+        $this->getMedicos()
+        ->db->select("{$apelido}.*")
+        ->where("{$apelido}.id",$idMedico);
+        $query = $this->db->get();
+        return $query->row();          
     }
 
     public function listarNomeTodosMedicos($apelido='med') {

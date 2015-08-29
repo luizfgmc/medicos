@@ -29,7 +29,7 @@
                             <?php 
                                 foreach($estados as $estado):
                             ?>
-                            <option value="<?=$estado->id ?>"><?=$estado->uf ?></option>
+                            <option value="<?=$estado->uf ?>"><?=$estado->uf ?></option>
                             <?php
                             endforeach;
                             ?>

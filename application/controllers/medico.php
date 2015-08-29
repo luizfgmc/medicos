@@ -65,6 +65,36 @@ class Medico extends CI_Controller {
         $dadosView = array('listaDeMedicos' => $listaDeMedicos);
         $this->load->view('lista_medicos', $dadosView);
     }
+    
+    public function visualizaEditaMedicoMedicos($idMedico) {
+        $this->load->model("especialidadesModel");
+        //Pega informaçoes das especialidades
+        $especialidades = $this->especialidadesModel->getInfoEspecialidade();
+        $this->load->model("estadosModel");
+        //Pega informaçoes dos estados
+        $estados = $this->estadosModel->getInfoEstados();
+        $this->load->model("MedicoModel");
+        $infoMedico = $this->MedicoModel->getTodasInfoMedicos($idMedico);
+        $dadosView = array('especialidades' => $especialidades,'estados' => $estados,'infoMedico' => $infoMedico);
+        $this->load->view('editar_medicos', $dadosView);        
+    }
+    
+    public function salvaEditaMedica() {
+        $dataPost = $_POST;
+        $arrayEditarMedico = array(
+            "nome" => $dataPost['nomeMedico'],
+            "cpf" => $dataPost['cpfMedico'],
+            "especialidade_id" => $dataPost['especialidadeMedico'],
+            "crm" => $dataPost['numeroCRM'],
+            "crm_uf" => $dataPost['crmUF'],
+            "telefone" => $dataPost['telefoneMedico'],
+            "updated_at" => date("Y-m-d H:i:s"),
+        );
+        $this->load->model("MedicoModel");
+        $this->MedicoModel->editarMedico($arrayEditarMedico,$dataPost['idMedico']);  
+        redirect('medico/listarMedicos');
+        
+    }
 
     public function excluirMedico($idMedico,$idUsuario) {
         $this->load->model("MedicoModel");
