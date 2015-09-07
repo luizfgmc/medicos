@@ -56,11 +56,18 @@ a
 	display:-ms-flexbox;
 	display:flex;
 	height:100%;
-	-webkit-box-pack:center;
-	-webkit-justify-content:center;
-	    -ms-flex-pack:center;
-	        justify-content:center;
+
+	        justify-content:flex-start;
 	width:6%;
+}
+
+.configTop
+{
+	 align-items:center;
+	 display:flex;
+	 height:100%;
+	 justify-content:flex-end;
+	 width:6%;
 }
 
 .logoMedicoAmigoTop, .medicoLoged
@@ -109,4 +116,58 @@ a
 .mainFooter ul
 {
 	margin:0;
+}
+
+.containerItemsFooter
+{
+	align-items:center;
+	display:flex;
+	justify-content: space-between;
+}
+
+.iconBottom
+{
+	align-items:center;
+	display:flex;
+	height:100%;
+	justify-content:flex-start;
+	width:6%;
+}
+
+.menuBottom
+{
+	align-items:center;
+	display:flex;
+	color:#25859b;
+	justify-content:center;
+	width:18%;
+}
+
+
+.menuBottom ul
+{
+	margin:0;
+	padding:0;
+}
+
+.menuBottom a
+{
+	color:#25859b;
+}
+
+.infoBottom
+{
+	align-items:center;
+	display:flex;
+	color:#25859b;
+	justify-content:center;
+	flex-wrap:wrap;
+	width:23%;
+}
+
+.infoBottom p
+{
+	margin: 2px 0;
+	padding:0;
+	width:100%;
 }
