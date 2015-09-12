@@ -2,4 +2,43 @@
 {
 	font-size:26px;
 	margin-bottom: 45px;
+	width:100%;
+}
+
+.cadastro_medico
+{
+	-webkit-box-align:start;
+	-webkit-align-items:flex-start;
+	    -ms-flex-align:start;
+	        align-items:flex-start;
+	background: url('../../images/medicos_background.jpg') right no-repeat;
+	display:-webkit-box;
+	display:-webkit-flex;
+	display:-ms-flexbox;
+	display:flex;
+	-webkit-flex-wrap:wrap;
+	    -ms-flex-wrap:wrap;
+	        flex-wrap:wrap;
+	height:100%;
+	width:100%;
+}
+.container_form_medico
+{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack:justify;
+	-webkit-justify-content:space-between;
+	    -ms-flex-pack:justify;
+	        justify-content:space-between;
+	-webkit-flex-wrap: wrap;
+	    -ms-flex-wrap: wrap;
+	        flex-wrap: wrap;
+	width:786px;
+}
+
+.form_cadastro_medico
+{
+	width:50%;
 }

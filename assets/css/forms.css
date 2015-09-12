@@ -11,6 +11,7 @@
 	-webkit-justify-content:space-between;
 	    -ms-flex-pack:justify;
 	        justify-content:space-between;
+	height:56px;
 	margin-top:8px;
 	width:365px;
 
@@ -44,4 +45,31 @@
 .container_tiny_item
 {
 	width:20%;
+}
+
+.container_submit
+{
+	width:50%;
+}
+
+.input_submit, .input_cancel
+{
+	border:none;
+	border-radius:6px;
+	color:#FFFFFF;
+	cursor:pointer;
+	
+	height:33px;
+	margin-top:50px;
+	width:100px;
+}
+
+.input_submit
+{
+	background:#2292ac;
+}
+
+.input_cancel
+{
+	background:#636363;
 }
