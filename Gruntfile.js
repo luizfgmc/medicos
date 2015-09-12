@@ -2,7 +2,7 @@ module.exports = function (grunt) {
     grunt.initConfig({
         autoprefixer: {
            dist: {
-                    src: 'assets/css/main.css'
+                    src: 'assets/css/**/*.css'
                 }
         },
         watch: {
