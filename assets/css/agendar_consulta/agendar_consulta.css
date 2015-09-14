@@ -1,0 +1,37 @@
+.container_agendar_consulta
+{
+	width:600px;
+}
+
+.container_agendar_consulta h2
+{
+	font-size:26px;
+	margin-bottom: 45px;
+	width:100%;
+}
+
+.conteudo_agendar_consulta
+{
+	display:-webkit-box;
+	display:-webkit-flex;
+	display:-ms-flexbox;
+	display:flex;
+	-webkit-box-pack:start;
+	-webkit-justify-content:flex-start;
+	    -ms-flex-pack:start;
+	        justify-content:flex-start;
+}
+
+.photo_consulta
+{
+	background:red;
+	margin-right:10px;
+	min-height:217px;
+	width:195px;
+}
+
+.info_consulta p
+{
+	margin-top:0;
+	margin-bottom:5px;
+}
