@@ -1,7 +1,7 @@
 <html>
     <head></head>
     <body>
-        <section class="formCadastroMedicos">
+        <section class="formCadastroClinicas">
             <form method="post" action="<?php echo base_url() ?>clinica/insereClinica/">
                 <div class="itemFormCadastroClinicas">
                     <label>Nome</label>

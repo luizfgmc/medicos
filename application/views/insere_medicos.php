@@ -3,6 +3,7 @@
     <body>
 
         <a href="<?php echo base_url()?>clinica/listaClinicas"> Clinicas </a>
+         <a href="<?php echo base_url()?>instituicao/instituicoes"> Instituicoes </a>
 
         <section class="formCadastroMedicos">
             <form method="post" action="<?php echo base_url() ?>medico/insereMedico/">
