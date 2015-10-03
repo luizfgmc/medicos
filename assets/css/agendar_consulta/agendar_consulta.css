@@ -30,8 +30,38 @@
 	width:195px;
 }
 
+.info_consulta
+{
+	position:relative;
+}
+
 .info_consulta p
 {
+
 	margin-top:0;
-	margin-bottom:5px;
+	margin-bottom:15px;
+}
+
+.diaSugerido
+{
+	bottom:10px;
+	position:absolute;
+}
+
+.formDias
+{
+	height:120px;
+}
+
+.formDias .container_item_form
+{
+    justify-content: flex-start;
+}
+
+.formDias .container_item_form .container_tiny_item
+{
+
+    display: flex;
+    flex-wrap: wrap;
+    width: 33%;
 }
