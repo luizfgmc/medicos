@@ -13,7 +13,12 @@ class Clinica extends CI_Controller{
 	
 
 	 public function index() {
-        $this->load->view('insere_clinicas');
+        
+        $this->load->model('estadosModel');
+		$estado['estados'] = $this->estadosModel->getInfoEstados();
+		   		
+
+        $this->load->view('insere_clinicas', $estado);
     }
 
 	//lista todos as clinicas do medico
@@ -57,18 +62,21 @@ class Clinica extends CI_Controller{
 	}
 
 	//buscar clinica pelo id para edicao
-	public function buscarClinicaPorId($idClinica){
+	public function editarClinica($idClinica){
 		
 		$this->load->model('clinicaModel' , 'cm');
 		$data['query'] = $this->cm->buscarClinicaPorId($idClinica);
-
+		$this->load->model('estadosModel');
+		$estado= $this->estadosModel->getInfoEstados();
+		$data['estados'] = $estado;
+		
 		$this->load->view('editar_clinica' , $data);
 	
 	}
 
 
 	//funcao para editar clinicas
-	public function editarClinica($idClinica){
+	public function editarClinicaSalvar($idClinica){
 
 		$data = $_POST;
 		$this->load->model('clinicaModel' , 'cm');
