@@ -1,0 +1,36 @@
+.cadastroClinica h2 {
+    font-size: 26px;
+    margin-bottom: 45px;
+    height:5%;
+    width: 100%;
+}
+
+.contentFormClinica
+{
+	width:49%;
+}
+
+.containerFormClinica
+{
+	display:flex;
+    flex-wrap:wrap;
+    width:730px;
+}
+
+.cadastroClinica
+{
+	    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    background: url('../../images/cadastroClinica.jpg') right no-repeat;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    height: 100%;
+    width: 100%;
+}
