@@ -23,7 +23,7 @@
 				echo($k->cep."<br/>");
 				?>
 				
-				<a href="<?php echo base_url() . "clinica/buscarClinicaPorId/".$k->id ?>"> editar </a>
+				<a href="<?php echo base_url() . "clinica/editarClinica/".$k->id ?>"> editar </a>
 				<a href="<?php echo base_url() . "clinica/excluirClinica/".$k->id ?>"> excluir </a>
 				
 				<?php

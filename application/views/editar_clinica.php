@@ -5,7 +5,7 @@
 
 
         <section class="formCadastroMedicos">
-            <form method="post" action="<?php echo base_url() ?>clinica/editarClinica/<?=$query[0]->id?>">
+            <form method="post" action="<?php echo base_url() ?>clinica/editarClinicaSalvar/<?=$query[0]->id?>">
                 <div class="itemFormCadastroClinicas">
                     <label>Nome</label>
                     <div class="campoCadastroClinica">

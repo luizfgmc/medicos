@@ -41,7 +41,7 @@
                     <label>Estado</label>
                     <div class="campoCadastroInstituicao">
                         <select name="ufInstituicao">
-                            <option value="<?=$query[0]->uf ?>"></option>
+                            <option><?=$query[0]->uf ?></option>
                            
                             <?php 
                                 foreach($estados as $estado):
