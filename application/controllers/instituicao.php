@@ -14,8 +14,9 @@
 
 		public function index(){
 
-
-			$this->load->view('cadastrar_instituicao');
+			 $this->load->model('estadosModel');
+		     $estado['estados'] = $this->estadosModel->getInfoEstados();
+			 $this->load->view('cadastrar_instituicao', $estado);
 
 		}
 
@@ -68,6 +69,10 @@
 
 			$this->load->model('instituicaoModel', 'im');
 			$data['query'] = $this->im->editarInstituicao($id);
+			$this->load->model('estadosModel');
+			$estado= $this->estadosModel->getInfoEstados();
+			$data['estados'] = $estado;
+
 			$this->load->view('editar_instituicao', $data);
 
 		}
