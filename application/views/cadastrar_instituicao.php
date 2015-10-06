@@ -1,6 +1,7 @@
 <html>
     <head></head>
     <body>
+        <?php echo validation_errors(); ?>
         <section class="formCadastroInstituicoes">
             <form method="post" action="<?php echo base_url() ?>instituicao/insereInsituicao/">
                 <div class="itemFormCadastroClinicas">

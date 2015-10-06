@@ -38,29 +38,38 @@
 
 			$data = $_POST;
 
-			$arrayInstiuicao = array(
+			$this->load->library('Form_validation');
+        	$this->form_validation->set_rules('cnpjInstituicao', 'CNPJ', 'trim|required|valida_cnpj');
+        
+	        if ($this->form_validation->run() == FALSE){
+	            $this->index();
+	        }
+	        else{
 
-				"nome"=>$data['nomeInstituicao'],
-				"cnpj"=>$data['cnpjInstituicao'],
-     		    "responsavel"=>$data['responsavelInstituicao'],
-    			"endereco"=>$data['enderecoInstituicao'],
-    			"end_numero"=>$data['end_numeroInstituicao'],
-    			"complemento"=>$data['complementoInstituicao'],
-    			"bairro"=>$data['bairroInstituicao'],
-     			"cidade"=>$data['cidadeInstituicao'],
-    			"uf"=>$data['ufInstituicao'],
-     			"cep"=>$data['cepInstituicao'],
-      			"telefone"=>$data['telefoneInstituicao'],
-                "status"=>$data['statusInstituicao'],
-                "usuario_id"=>59,
-                "created_at" => date("Y-m-d H:i:s"),
-           		 "updated_at" => date("Y-m-d H:i:s"),
-				
-           		
-			);
+				$arrayInstiuicao = array(
 
-			 $this->im->insereInstituicao($arrayInstiuicao);
-			 redirect("Instituicao/instituicoes");
+					"nome"=>$data['nomeInstituicao'],
+					"cnpj"=>$data['cnpjInstituicao'],
+	     		    "responsavel"=>$data['responsavelInstituicao'],
+	    			"endereco"=>$data['enderecoInstituicao'],
+	    			"end_numero"=>$data['end_numeroInstituicao'],
+	    			"complemento"=>$data['complementoInstituicao'],
+	    			"bairro"=>$data['bairroInstituicao'],
+	     			"cidade"=>$data['cidadeInstituicao'],
+	    			"uf"=>$data['ufInstituicao'],
+	     			"cep"=>$data['cepInstituicao'],
+	      			"telefone"=>$data['telefoneInstituicao'],
+	                "status"=>$data['statusInstituicao'],
+	                "usuario_id"=>59,
+	                "created_at" => date("Y-m-d H:i:s"),
+	           		 "updated_at" => date("Y-m-d H:i:s"),
+					
+	           		
+				);
+
+				 $this->im->insereInstituicao($arrayInstiuicao);
+				 redirect("Instituicao/instituicoes");
+			}
 
 		}
 

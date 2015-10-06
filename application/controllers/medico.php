@@ -15,36 +15,46 @@ class Medico extends CI_Controller {
 
     public function insereMedico() {
         $dataPost = $_POST;
-        $arrayInserirUsuario = array(
-            "email" => $dataPost['emailMedico'],
-            "password_hash" => $dataPost['senhaMedico'],
-            "tipo" => 'x',
-            "created_at" => date("Y-m-d H:i:s"),
-            "updated_at" => date("Y-m-d H:i:s")            
-        );
 
-        $this->load->model("UsuarioModel");
+        $this->load->library('Form_validation');
+        $this->form_validation->set_rules('cpfMedico', 'CPF', 'trim|required|valida_cpf');
+        $this->form_validation->set_rules('nomeMedico', 'Nome', 'trim|required');
+        
+        if ($this->form_validation->run() == FALSE){
+            $this->formMedico();
+        }
+        else{
+            $arrayInserirUsuario = array(
+                "email" => $dataPost['emailMedico'],
+                "password_hash" => $dataPost['senhaMedico'],
+                "tipo" => 'x',
+                "created_at" => date("Y-m-d H:i:s"),
+                "updated_at" => date("Y-m-d H:i:s")            
+            );
 
-        //Insere um usuário na tabela e pegue o id inserido
-        $idUsuarioInserido = $this->UsuarioModel->insereUsuario($arrayInserirUsuario);
+            $this->load->model("UsuarioModel");
 
-        $arrayInserirMedico = array(
-            "nome" => $dataPost['nomeMedico'],
-            "cpf" => $dataPost['cpfMedico'],
-            "especialidade_id" => $dataPost['especialidadeMedico'],
-            "crm" => $dataPost['numeroCRM'],
-            "crm_uf" => $dataPost['crmUF'],
-            "telefone" => $dataPost['telefoneMedico'],
-            "usuario_id" => $idUsuarioInserido,
-            "created_at" => date("Y-m-d H:i:s"),
-            "updated_at" => date("Y-m-d H:i:s"),
-            
-        );
+            //Insere um usuário na tabela e pegue o id inserido
+            $idUsuarioInserido = $this->UsuarioModel->insereUsuario($arrayInserirUsuario);
 
-        $this->load->model("MedicoModel");
-        // Insere um medico na tabela
-        $this->MedicoModel->insereMedico($arrayInserirMedico);  
-        redirect('medico/formMedico');
+            $arrayInserirMedico = array(
+                "nome" => $dataPost['nomeMedico'],
+                "cpf" => $dataPost['cpfMedico'],
+                "especialidade_id" => $dataPost['especialidadeMedico'],
+                "crm" => $dataPost['numeroCRM'],
+                "crm_uf" => $dataPost['crmUF'],
+                "telefone" => $dataPost['telefoneMedico'],
+                "usuario_id" => $idUsuarioInserido,
+                "created_at" => date("Y-m-d H:i:s"),
+                "updated_at" => date("Y-m-d H:i:s"),
+                
+            );
+
+            $this->load->model("MedicoModel");
+            // Insere um medico na tabela
+            $this->MedicoModel->insereMedico($arrayInserirMedico);  
+            redirect('medico/formMedico');
+        }
     }
 
     public function formMedico() {

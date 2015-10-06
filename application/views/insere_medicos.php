@@ -3,8 +3,8 @@
     <body>
 
         <a href="<?php echo base_url()?>clinica/listaClinicas"> Clinicas </a>
-         <a href="<?php echo base_url()?>instituicao/instituicoes"> Instituicoes </a>
-
+        <a href="<?php echo base_url()?>instituicao/instituicoes"> Instituicoes </a>
+        <?php echo validation_errors(); ?>
         <section class="formCadastroMedicos">
             <form method="post" action="<?php echo base_url() ?>medico/insereMedico/">
                 <div class="itemFormCadastroMedicos">
