@@ -22,7 +22,6 @@ class Clinica extends CI_Controller{
     }
 
 	//lista todos as clinicas do medico
-
 	public function listaClinicas(){
 		
 		$this->load->model('clinicaModel' , 'cm' );	
@@ -30,6 +29,8 @@ class Clinica extends CI_Controller{
 		$this->load->view('clinicas' , $data);
 		
 	}
+
+	
 
 
 	//insere uma nova clinica do medico

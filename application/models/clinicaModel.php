@@ -26,6 +26,17 @@
 			return $query->result();
 		}
 
+		//pega somente nome e id das clinicas para usar na agenda
+		public function getNomeIdClinica(){
+
+			$this->db->select('id, nome');
+			$this->db->from('clinicas');
+			$query = $this->db->get();
+			return $query->result();
+
+		}
+
+
 		//funcao que lista todas as clinicas do medico
 		public function listaClinicas(){
 
