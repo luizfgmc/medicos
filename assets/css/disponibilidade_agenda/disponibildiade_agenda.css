@@ -1,0 +1,133 @@
+.container_disponibilidade h2 {
+    font-size: 26px;
+    margin-bottom: 45px;
+    height:5%;
+    width: 100%;
+}
+
+.headerClinica
+{
+    display:flex;
+    border-bottom:1px solid #5dafc2;
+    font-size:14px;
+}
+
+.container_disponibilidade
+{
+    max-width:730px;
+}
+
+.numberClinica
+{
+   
+    align-items: center; 
+    display: flex;
+    text-align: center;
+    width: 10%;
+}
+
+.numberClinica .number
+{
+    font-size:30px;
+}
+
+.infoClinica
+{
+    align-items: center; 
+    display: flex;
+    width:65%;
+}
+
+.iconPlus
+{
+    align-items:center;
+    background:#2292ac;
+    border-radius:50%;
+    color:#FFFFFF;
+    display:flex;
+    justify-content:center;
+    font-size:20px;
+    width:50px;
+    height:50px;
+}
+
+.iconsClinica
+{
+    display:flex;
+    justify-content:space-between;
+    width:25%;
+}
+
+.titleHorarioOfeceridos
+{
+    font-size:20px;
+    font-weight: normal;
+    width:100%;
+}
+
+.horariosOferecidos
+{
+    align-items:flex-start;
+    display:flex;
+    flex-wrap:wrap;
+}
+
+.containerItemsDias
+{
+    width:30%;
+}
+
+.containerQuantidadeHorario
+{
+    width:70%;
+}
+
+.containerItemsDias .itemFormHorario
+{
+    min-height:40px;
+}
+
+.containerQuantidadeHorario .container_tiny_item
+{
+    width: 20%;
+}
+
+.containerQuantidadeHorario .container_item_form
+{
+    margin-top:0;
+}
+
+.itemFormHorario
+{
+    font-size:16px;
+}
+
+.containerQuantidadeHorario .container_item_form input, .containerQuantidadeHorario .container_item_form select
+{
+    height: 22px;
+    margin-top:5px;
+}
+
+.horariosOferecidos .form_horarios
+{
+        width: 100%;
+}
+
+
+.disponibilidadeAgenda
+{
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    background: url('../../images/cadastroClinica.jpg') right no-repeat;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    height: 100%;
+    width: 100%;
+}
