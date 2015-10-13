@@ -15,7 +15,10 @@ ini_set('display_errors', 1);
 		        
 		        $this->load->model('estadosModel');
 		        $estado['estados'] = $this->estadosModel->getInfoEstados();
-		   		$this->load->view('insere_paciente', $estado);
+                        
+                        $this->load->view('layout/header');
+		   	$this->load->view('insere_paciente', $estado);
+                        $this->load->view('layout/footer');
 
 		    }
 

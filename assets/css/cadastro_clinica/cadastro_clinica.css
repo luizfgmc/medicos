@@ -12,8 +12,13 @@
 
 .containerFormClinica
 {
+	display:-webkit-box;
+	display:-webkit-flex;
+	display:-ms-flexbox;
 	display:flex;
-    flex-wrap:wrap;
+    -webkit-flex-wrap:wrap;
+        -ms-flex-wrap:wrap;
+            flex-wrap:wrap;
     width:730px;
 }
 

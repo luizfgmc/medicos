@@ -1,0 +1,54 @@
+.cadastro_paciente h2
+{
+	font-size:26px;
+	margin-bottom: 45px;
+	width:100%;
+}
+
+.cadastro_paciente
+{
+	-webkit-box-align:start;
+	-webkit-align-items:flex-start;
+	    -ms-flex-align:start;
+	        align-items:flex-start;
+	background: url('../../images/medicos_background.jpg') right no-repeat;
+	display:-webkit-box;
+	display:-webkit-flex;
+	display:-ms-flexbox;
+	display:flex;
+	-webkit-flex-wrap:wrap;
+	    -ms-flex-wrap:wrap;
+	        flex-wrap:wrap;
+	height:100%;
+	width:100%;
+}
+.container_form_paciente
+{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack:justify;
+	-webkit-justify-content:space-between;
+	    -ms-flex-pack:justify;
+	        justify-content:space-between;
+	-webkit-flex-wrap: wrap;
+	    -ms-flex-wrap: wrap;
+	        flex-wrap: wrap;
+	width:786px;
+}
+
+.form_cadastro_paciente
+{
+	width:50%;
+}
+
+.campoCadastroPaciente
+{
+    width:100%;
+}
+
+.form_cadastro_paciente .container_submit
+{
+    width:100%;
+}
