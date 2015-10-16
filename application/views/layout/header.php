@@ -12,11 +12,21 @@
                                         <a href="">
                                                 <img src="<?php echo base_url()?>assets/images/menu_topo.png" />
                                         </a>	
+                            <div class="menuTop">
+                                <ul>
+                                    <li><a href="">Página Principal</a><li>
+                                    <li><a href="">Solicitações</a><li>
+                                    <li><a href="">Controle Pacientes</a><li>
+                                    <li><a href="">Indique o amigo médico</a><li>
+                                </ul>    
+                            </div>
                         </div>
                         <div class="alertTop">
                                         <a href="">
                                                 <img src="<?php echo base_url() ?>assets/images/alerta_topo.png" />
                                         </a>
+                                     <div class="reminderTop">  
+                                    </div>
                         </div>
                         <div class="logoMedicoAmigoTop">
                                         <a href="">
@@ -35,6 +45,8 @@
                                         <a href="">
                                                 <img src="<?php echo base_url() ?>assets/images/conf_topo.png" />
                                         </a>
+                             <div class="menuConfigTop">  
+                            </div>
                         </div>
                 </div>
         </section>
