@@ -23,7 +23,7 @@ class Medico extends CI_Controller {
         $this->form_validation->set_rules('nomeMedico', 'Nome', 'trim|required');
         
         if ($this->form_validation->run() == FALSE){
-            $this->formMedico();
+            $this->index();
         }
         else{
             $arrayInserirUsuario = array(
@@ -55,7 +55,7 @@ class Medico extends CI_Controller {
             $this->load->model("MedicoModel");
             // Insere um medico na tabela
             $this->MedicoModel->insereMedico($arrayInserirMedico);  
-            redirect('medico/formMedico');
+            redirect('medico/index');
         }
     }
 

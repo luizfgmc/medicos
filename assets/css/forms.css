@@ -24,6 +24,11 @@
 	width:100%;
 }
 
+.container_item_form select
+{
+    width:100%;
+}
+
 .container_item_form input
 {
 	height:36px;
@@ -73,3 +78,9 @@
 {
 	background:#636363;
 }
+
+form .error-required
+{
+    border:1px solid red;
+}
+

@@ -5,14 +5,14 @@
 <?php echo validation_errors(); ?>
 <section class="mainContent">
     <div class="containerCenter fullSiteSize">
-        <form method="post" action="<?php echo base_url() ?>medico/insereMedico/">
+        <form method="post" action="<?php echo base_url() ?>medico/insereMedico/" id="formMedico">
             <section class="cadastro_medico">
                 <div class="container_form_medico">
                     <h2>Cadastro Médico</h2>
                     <div class="form_cadastro_medico">
                         <div class="container_item_form">
                             <label>Nome: </label>
-                            <input type="text" class="default_text_input" name="nomeMedico" />
+                            <input type="text" class="default_text_input required" name="nomeMedico" />
                         </div>
                         <div class="container_item_form">
                             <label>Especialidade: </label>
@@ -42,7 +42,7 @@
                         </div>								
                         <div class="container_item_form">
                             <label>Email: </label>
-                            <input type="text" class="default_text_input"  name="emailMedico" />
+                            <input type="text" class="default_text_input required"  name="emailMedico"  />
                         </div>		
                         <div class="container_item_form">
                             <label>Senha: </label>
@@ -110,3 +110,9 @@
 </div>  
 </section>
 
+        
+<script>
+    $(document).on('submit', '#formMedico', function(e) {
+        verifica_campos('#formMedico', e);
+    });
+</script>

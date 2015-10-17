@@ -3,7 +3,8 @@
 		<meta charset="utf-8" />
 		<link href='https://fonts.googleapis.com/css?family=Actor' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="<?php echo base_url() ?>assets/css/main.css" />
-		<script type="text/javascript" src="<?php echo base_url() ?>assets/js/prefixfree.js" ></script>
+                <script src="<?php echo base_url() ?>assets/js/jquery1.9.js"></script>
+                <script src="<?php echo base_url() ?>assets/js/validate.js"></script>
 	</head>
 <header class="mainHeader">
         <div class="containerCenter fullSiteSize">
