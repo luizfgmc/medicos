@@ -4,9 +4,10 @@
 <a href="<?php echo base_url() ?>instituicao/instituicoes"> Instituicoes </a>
 <?php echo validation_errors(); ?>
 <section class="mainContent">
-    <div class="containerCenter fullSiteSize">
+    <section class="cadastro_medico">
+        <div class="containerCenter fullSiteSize">
         <form method="post" action="<?php echo base_url() ?>medico/insereMedico/" id="formMedico">
-            <section class="cadastro_medico">
+            <div class="halfSize">
                 <div class="container_form_medico">
                     <h2>Cadastro Médico</h2>
                     <div class="form_cadastro_medico">
@@ -100,10 +101,11 @@
                         <input type="submit" class="input_submit" />
                         <button type="button" class="input_cancel">Cancelar</button>
                     </div>	
+
                 </div>
-            </section> 
-        </form> 
-    </div>
+            </form>
+        </div>
+    </section>
 </section>
 
 
