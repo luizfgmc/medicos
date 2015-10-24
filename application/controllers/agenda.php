@@ -32,10 +32,11 @@ ini_set('display_errors', 1);
 
 		   	public function insereAgenda(){
 
+		   		$medico_id = $this->session->userdata('medico');
 
 		   		 $arrayAgenda = array(
 		   		 	
-		   		 	"medico_id"=>50,
+		   		 	"medico_id"=>$medico_id['id'],
 		   		 	"data_emissao"=>date('Y-m-d'),
 		   		 	"quantidade"=>$this->input->post('quantidadeAgenda'),
 		   		 	"saldo"=>$this->input->post('quantidadeAgenda'),
@@ -44,6 +45,8 @@ ini_set('display_errors', 1);
            			"clinica_id"=>$this->input->post('clinicas'),
 
 		   		 );
+		   		
+		   		var_dump($arrayAgenda);
 		   		
 
 		   		$this->load->model('AgendaModel', 'am');

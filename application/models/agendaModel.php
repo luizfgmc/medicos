@@ -18,7 +18,9 @@
 			$this->db->join('medicos as m', 'c.medico_id = m.id');
 			$this->db->join('especialidades as e','m.especialidade_id = e.id');
 			$query = $this->db->get();
+			
 			return $query->result();
+
 
 
 		}

@@ -10,6 +10,9 @@
 
 		parent::__construct();
 		$this->load->helper('url');
+		
+		 $this->logininstituicao->valida_sessao_instituicao();
+         
 	}
 
 		public function index(){

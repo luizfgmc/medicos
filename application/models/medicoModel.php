@@ -8,6 +8,16 @@ class MedicoModel extends CI_Model {
         $this->load->database();
     }
 
+    
+    public function autenticar($email){
+        
+       $query = $this->db->get_where('Usuarios', array('email'=>$email));
+       return $query->result();
+
+
+    }
+
+
     public function insereMedico($dadosMedico) {
         $this->db->insert('medicos', $dadosMedico);
     }

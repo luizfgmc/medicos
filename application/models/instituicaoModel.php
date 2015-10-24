@@ -7,8 +7,18 @@
 
 			parent::__construct();
 			$this->load->database();
+			$this->load->library('login_library');
 
 		}
+
+		 public function autenticar($email){
+
+	       $query = $this->db->get_where('Usuarios',array('email'=>$email));
+	       return $query->result();
+
+
+    }
+
 
 
 		public function listaInstituicoes(){

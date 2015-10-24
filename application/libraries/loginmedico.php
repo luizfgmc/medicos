@@ -2,7 +2,8 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
-class Login_Library {
+class loginMedico {
+   
     private $CI;
     public function __construct() {
         $this->CI = &get_instance();
@@ -10,9 +11,10 @@ class Login_Library {
     }
 
     // metodo que verifica se o usuário está logado
-    public function verifica_login() {
-        if (empty($this->CI->session->userdata('nome'))) {
-            redirect('login');
+    public function valida_sessao_medico() {
+        
+        if (empty($this->CI->session->userdata('medico'))) {
+            redirect('acesso');
             exit();
         }
     }
