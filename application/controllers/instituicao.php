@@ -7,9 +7,18 @@ class Instituicao extends CI_Controller {
 
     function __construct() {
 
+<<<<<<< HEAD
+		parent::__construct();
+		$this->load->helper('url');
+		
+		 $this->logininstituicao->valida_sessao_instituicao();
+         
+	}
+=======
         parent::__construct();
         $this->load->helper('url');
     }
+>>>>>>> 490ce1a6a32ef6ab5c7dacf6a3e69d3064f01c56
 
     public function index() {
 

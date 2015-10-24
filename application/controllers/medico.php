@@ -7,7 +7,12 @@ class Medico extends CI_Controller {
     function __construct() {
         parent::__construct();
         $this->load->helper('url');
+        
+         $this->loginmedico->valida_sessao_medico();
+
     }
+
+        
 
     public function index() {
         $this->load->view('layout/header');

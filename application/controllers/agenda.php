@@ -34,7 +34,24 @@ class Agenda extends CI_Controller {
 
     public function insereAgenda() {
 
+		   		$medico_id = $this->session->userdata('medico');
 
+<<<<<<< HEAD
+		   		 $arrayAgenda = array(
+		   		 	
+		   		 	"medico_id"=>$medico_id['id'],
+		   		 	"data_emissao"=>date('Y-m-d'),
+		   		 	"quantidade"=>$this->input->post('quantidadeAgenda'),
+		   		 	"saldo"=>$this->input->post('quantidadeAgenda'),
+		   		 	"created_at" => date("Y-m-d H:i:s"),
+           			"updated_at" => date("Y-m-d H:i:s"),
+           			"clinica_id"=>$this->input->post('clinicas'),
+
+		   		 );
+		   		
+		   		var_dump($arrayAgenda);
+		   		
+=======
         $arrayAgenda = array(
             "medico_id" => 50,
             "data_emissao" => date('Y-m-d'),
@@ -45,6 +62,7 @@ class Agenda extends CI_Controller {
             "clinica_id" => $this->input->post('clinicas'),
         );
 
+>>>>>>> 490ce1a6a32ef6ab5c7dacf6a3e69d3064f01c56
 
         $this->load->model('AgendaModel', 'am');
         $this->am->insereAgenda($arrayAgenda);
