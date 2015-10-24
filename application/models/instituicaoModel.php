@@ -20,6 +20,16 @@
     }
 
 
+    	public function buscarIdInstituicao($id){
+
+        $this->db->select('id');
+        $this->db->from('instituicoes');
+        $this->db->where('usuario_id',$id);
+        $query = $this->db->get();
+        return $query->result();
+
+    }
+
 
 		public function listaInstituicoes(){
 

@@ -29,12 +29,15 @@
 
 		            if($data[0]->tipo == 'M' && $data[0]->password_hash == $senha){
 
+		            		$idMedico = $this->mm->buscarIdMedico($data[0]->id);
+
 
 		              		$arrayMedico = array(
 
 		                    'tipo'=>$data[0]->tipo,
 		                    'email'=>$data[0]->email,
-		                    'id'=>$data[0]->id,
+		                    'id_usuario'=>$data[0]->id,
+		                    'id_medico'=>$idMedico[0]->id,
 		                ); 
 
 		                $this->session->set_userdata('medico', $arrayMedico);
@@ -72,12 +75,14 @@
 
 		            if($data[0]->tipo == 'I' && $data[0]->password_hash == $senha){
 
+		            		$idInstituicao = $this->im->buscarIdInstituicao($data[0]->id);
 
 		               	$arrayInstituicao = array(
 
 		                    'tipo'=>$data[0]->tipo,
 		                    'email'=>$data[0]->email,
-		                    'id'=>$data[0]->id,
+		                    'id_usuario'=>$data[0]->id,
+		                    'id_instituicao'=>$idInstituicao[0]->id,
 		                ); 
 
 		                $this->session->set_userdata('instituicao', $arrayInstituicao);

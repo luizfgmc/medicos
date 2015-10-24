@@ -17,6 +17,16 @@ class MedicoModel extends CI_Model {
 
     }
 
+     public function buscarIdMedico($id){
+
+        $this->db->select('id');
+        $this->db->from('medicos');
+        $this->db->where('usuario_id',$id);
+        $query = $this->db->get();
+        return $query->result();
+
+    }
+
 
     public function insereMedico($dadosMedico) {
         $this->db->insert('medicos', $dadosMedico);

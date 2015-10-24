@@ -12,7 +12,45 @@ class Medico extends CI_Controller {
 
     }
 
+    public function solicitacoes(){
+
+        $id = $this->session->userdata('medico');    
+        $this->load->model('solicitacaoModel','sm');
+        $data['query'] = $this->sm->verSolicitcoes($id['id_medico']);
+
+        $this->load->view('solicitacoes',$data);
+
+    }
+
+    public function aprovarSolicitacao($idSolicitacao){
+
+        echo $idSolicitacao;
+
+         $this->load->model('solicitacaoModel','sm');
+         $data['query'] = $this->sm->aprovarSolicitcao($idSolicitacao);
+
+         $this->load->view('aprovar_solicitacao', $data);
+
+    }
+
+    
+    public function aprovarSolicitacaoSalvar(){
+
+        $idSolicitacao = $this->input->post('id');
+        $arrayDados = array(
+             
+            "data_agendamento"=>$this->input->post('data_agendamento'),
+            "hora_agendamento"=>$this->input->post('hora_agendamento'),
+           
+        );
+
+
+        $this->load->model('solicitacaoModel','sm');
+       $this->sm->aprovarSolicitcaoSalvar($arrayDados, $idSolicitacao);
         
+        echo "sucesso";        
+
+    }
 
     public function index() {
         $this->load->view('layout/header');
@@ -63,6 +101,9 @@ class Medico extends CI_Controller {
             redirect('medico/index');
         }
     }
+
+    
+
 
     public function formMedico() {
         $this->load->model("especialidadesModel");

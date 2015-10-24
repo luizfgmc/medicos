@@ -11,7 +11,7 @@ class loginInstituicao {
     }
 
     // metodo que verifica se o usuário está logado
-    public function valida_sessao_medico() {
+    public function valida_sessao_instituicao() {
         
         if (empty($this->CI->session->userdata('instituicao'))) {
             redirect('acesso');
