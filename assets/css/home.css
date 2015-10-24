@@ -1,0 +1,289 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Oct 24, 2015, 2:55:14 PM
+    Author     : pedrorodriguesdesouza
+*/
+
+html,body
+{
+    margin:0;
+    padding:0;	
+    font-family: 'Actor', sans-serif;
+    font-size:12px;
+}
+
+a
+{
+    text-decoration:none;
+}
+
+.logoMedicoAmigoTop
+{
+    -webkit-box-align:center;
+    -webkit-align-items:center;
+    -ms-flex-align:center;
+    align-items:center;
+    color:#FFFFFF;
+    display:-webkit-box;
+    display:-webkit-flex;
+    display:-ms-flexbox;
+    display:flex;
+    height:100%;
+    -webkit-box-pack:center;
+    -webkit-justify-content:center;
+    -ms-flex-pack:center;
+    justify-content:center;	
+    font-size:20px;
+}
+
+
+.tarjaTopo
+{
+    background:#25859b;
+    height:105px;
+    width:100%;
+}
+
+.containerCenter
+{
+    margin:0 auto;
+}
+
+.fullSiteSize
+{
+    width:1140px;
+}
+
+.bemVindo
+{
+    background:#FFFFFF;
+    text-align:center;
+    height:140px;
+    width:100%;
+
+}
+
+.bemVindo h2
+{
+    color:#25859b;
+    font-size:48px;
+}
+
+.medicoInstituicao
+{
+    background:#29a1bc;
+    height:390px;
+    width:100%;
+}
+
+.conteudoMedicoInstituicao
+{
+    display:flex;
+}
+
+.escolhaMedicoInsituicao
+{
+    color:#FFFFFF;
+    font-size:14px;
+    position:relative;
+    width:586px;
+}
+
+.escolhaMedicoInsituicao h3
+{
+    font-size:20px;
+    padding:15px;
+}
+
+.containerMedico
+{
+    align-items:center;
+    display:flex;
+    background:#25859b;
+    font-size:17px;
+    left:0;
+    height:75px;
+    justify-content: space-around;
+    position:absolute;
+    width:400px;
+}
+
+.containerMedico a
+{
+    color:#FFFFFF;
+}
+
+.containerInstituicao
+{
+
+    align-items:center;
+    bottom:70px;
+    display:flex;
+    background:#25859b;
+    font-size:17px;
+    height:75px;
+    justify-content: space-around;
+    position:absolute;
+    right:0;
+    width:400px;
+
+}
+
+.containerInstituicao a
+{
+    color:#FFFFFF;
+}
+
+.trianguloEsquerda {
+
+    border-bottom: 10px solid transparent;
+    border-right: 20px solid #FFFFFF;
+    border-top: 10px solid transparent;
+    height: 0;
+    width: 0;
+}
+
+.trianguloDireita{
+
+    border-bottom: 10px solid transparent;
+    border-left: 20px solid #FFFFFF;
+    border-top: 10px solid transparent;
+    height: 0;
+    width: 0;
+}
+
+.estatistcasHome
+{
+    background:#f0f0f0;
+    color:#25859b;
+    display:flex;
+    flex-wrap:wrap;
+    height:210px;
+    width:100%;
+}
+
+.estatistcasHome h3
+{
+    font-size: 20px;
+    text-align:center;
+    width:100%;
+}
+
+.estatisticas
+{
+    display:flex;
+    width:100%;
+}
+
+.itemEstatisticas
+{
+    font-size: 17px;
+    text-align:center;
+    width:33%;
+}
+
+.mainFooter
+{
+	background:#d2d2d2;
+	height:115px;
+	width:100%;
+}
+
+.mainFooter ul
+{
+	margin:0;
+}
+
+.containerItemsFooter
+{
+	-webkit-box-align:center;
+	-webkit-align-items:center;
+	    -ms-flex-align:center;
+	        align-items:center;
+	display:-webkit-box;
+	display:-webkit-flex;
+	display:-ms-flexbox;
+	display:flex;
+	justify-content: center;
+}
+
+.iconBottom
+{
+	-webkit-box-align:center;
+	-webkit-align-items:center;
+	    -ms-flex-align:center;
+	        align-items:center;
+	display:-webkit-box;
+	display:-webkit-flex;
+	display:-ms-flexbox;
+	display:flex;
+	height:100%;
+	-webkit-box-pack:start;
+	-webkit-justify-content:flex-start;
+	    -ms-flex-pack:start;
+	        justify-content:flex-start;
+	width:6%;
+}
+
+
+.menuBottom
+{
+	-webkit-box-align:center;
+	-webkit-align-items:center;
+	    -ms-flex-align:center;
+	        align-items:center;
+	display:-webkit-box;
+	display:-webkit-flex;
+	display:-ms-flexbox;
+	display:flex;
+	color:#25859b;
+	-webkit-box-pack:center;
+	-webkit-justify-content:center;
+	    -ms-flex-pack:center;
+	        justify-content:center;
+	width:18%;
+}
+
+
+.menuBottom ul
+{
+	margin:0;
+	padding:0;
+}
+
+.menuBottom a
+{
+	color:#25859b;
+}
+
+.infoBottom
+{
+	-webkit-box-align:center;
+	-webkit-align-items:center;
+	    -ms-flex-align:center;
+	        align-items:center;
+	display:-webkit-box;
+	display:-webkit-flex;
+	display:-ms-flexbox;
+	display:flex;
+	color:#25859b;
+	-webkit-box-pack:center;
+	-webkit-justify-content:center;
+	    -ms-flex-pack:center;
+	        justify-content:center;
+	-webkit-flex-wrap:wrap;
+	    -ms-flex-wrap:wrap;
+	        flex-wrap:wrap;
+	width:23%;
+}
+
+.infoBottom p
+{
+	margin: 2px 0;
+	padding:0;
+	width:100%;
+}
