@@ -15,10 +15,10 @@
                                         </a>	
                             <div class="menuTop">
                                 <ul>
-                                    <li><a href="">Página Principal</a><li>
+                                    <li><a href="<?php echo base_url() ?>medico">Página Principal</a><li>
                                     <li><a href="">Solicitações</a><li>
-                                    <li><a href="">Controle Pacientes</a><li>
-                                    <li><a href="">Indique o amigo médico</a><li>
+                                    <li><a href="<?php echo base_url() ?>agenda">Agenda</a><li>
+                                    <li><a href="<?php echo base_url() ?>clinica">Clínicas</a><li>
                                 </ul>    
                             </div>
                         </div>

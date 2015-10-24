@@ -84,3 +84,12 @@ form .error-required
     border:1px solid red;
 }
 
+input
+{
+    text-indent: 10px;
+}
+
+.halfSize
+{
+    width:50%;
+}

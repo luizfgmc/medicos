@@ -80,7 +80,10 @@ class Medico extends CI_Controller {
         $this->load->model("MedicoModel");
         $listaDeMedicos = $this->MedicoModel->listarNomeTodosMedicos();
         $dadosView = array('listaDeMedicos' => $listaDeMedicos);
+        
+        
         $this->load->view('lista_medicos', $dadosView);
+        
     }
     
     public function visualizaEditaMedicoMedicos($idMedico) {
@@ -93,7 +96,9 @@ class Medico extends CI_Controller {
         $this->load->model("MedicoModel");
         $infoMedico = $this->MedicoModel->getTodasInfoMedicos($idMedico);
         $dadosView = array('especialidades' => $especialidades,'estados' => $estados,'infoMedico' => $infoMedico);
-        $this->load->view('editar_medicos', $dadosView);        
+        $this->load->view('layout/header');
+        $this->load->view('editar_medicos', $dadosView);       
+        $this->load->view('layout/footer');
     }
     
     public function salvaEditaMedica() {
