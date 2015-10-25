@@ -13,12 +13,12 @@
                     <div class="form_cadastro_medico">
                         <div class="container_item_form">
                             <label>Nome: </label>
-                            <input type="text" class="default_text_input required" name="nomeMedico" />
+                            <input type="text" class="default_text_input required" name="nomeMedico" tabIndex ="1" />
                         </div>
                         <div class="container_item_form">
                             <label>Especialidade: </label>
-                            <select name="especialidadeMedico">
-                                <option >Selecione</option>
+                            <select name="especialidadeMedico" tabIndex ="3">
+                                <option>Selecione</option>
                                 <?php
                                 foreach ($especialidades as $especialidade):
                                     ?>
@@ -31,39 +31,39 @@
                         <div class="container_item_form">
                             <div class="container_small_item">
                                 <label>Telefone Primário: </label>
-                                <input type="text" class="default_small_text_input" name="telefoneMedico"  />
+                                <input type="tel" class="default_text_input required" name="telefoneMedico" tabIndex ="6" />
                             </div>
 
                             <div class="container_tiny_item">
                                 <label>Tipo: </label>
-                                <select>
+                                <select tabIndex ="7">
                                     <option>Selecione</option>
                                 </select>
                             </div>
                         </div>								
                         <div class="container_item_form">
                             <label>Email: </label>
-                            <input type="text" class="default_text_input required"  name="emailMedico"  />
+                            <input type="text" class="default_text_input required"  name="emailMedico"  tabIndex ="10" />
                         </div>		
                         <div class="container_item_form">
                             <label>Senha: </label>
-                            <input type="text" class="default_text_input" name="senhaMedico" />
+                            <input type="password" class="default_text_input required" name="senhaMedico" tabIndex ="12" />
                         </div>																			
                     </div>
                     <div class="form_cadastro_medico">
                         <div class="container_item_form">
                             <label>CPF: </label>
-                            <input type="text" class="default_text_input" name="cpfMedico" />
+                            <input type="text" class="default_text_input required" name="cpfMedico"  tabIndex ="2" />
                         </div>
                         <div class="container_item_form">
                             <div class="container_small_item">
                                 <label>Registro CRM: </label>
-                                <input type="text" class="default_small_text_input" name="numeroCRM" />
+                                <input type="text" class="default_text_input required" name="numeroCRM" tabIndex ="4" />
                             </div>
 
                             <div class="container_tiny_item">
                                 <label>Estado CRM: </label>
-                                <select name="crmUF">
+                                <select name="crmUF" tabIndex ="5">
                                     <option >Selecione</option>
                                     <?php
                                     foreach ($estados as $estado):
@@ -78,28 +78,28 @@
                         <div class="container_item_form">
                             <div class="container_small_item">
                                 <label>Telefone Secundário: </label>
-                                <input type="text" class="default_small_text_input" />
+                                <input type="text" class="default_small_text_input" tabIndex ="8" />
                             </div>
 
                             <div class="container_tiny_item">
                                 <label>Tipo: </label>
-                                <select>
+                                <select tabIndex ="9">
                                     <option>Selecione</option>
                                 </select>
                             </div>
                         </div>																	
                         <div class="container_item_form">
                             <label>Confirmar Email: </label>
-                            <input type="text" class="default_text_input"  name="emailConfirmeMedico" />
+                            <input type="text" class="default_text_input required"  name="emailConfirmeMedico" tabIndex ="11" />
                         </div>		
                         <div class="container_item_form">
                             <label>Confirmar Senha: </label>
-                            <input type="text" class="default_text_input" name="senhaConfirmeMedico" />
+                            <input type="password" class="default_text_input required" name="senhaConfirmeMedico" tabIndex ="13" />
                         </div>																			
                     </div>
                     <div class="container_submit">
-                        <input type="submit" class="input_submit" />
-                        <button type="button" class="input_cancel">Cancelar</button>
+                        <input type="submit" class="input_submit" tabIndex ="14" />
+                        <button type="button" class="input_cancel" tabIndex ="15">Cancelar </button>
                     </div>	
 
                 </div>
