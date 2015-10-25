@@ -30,8 +30,6 @@ class Agenda extends CI_Controller {
         $data['query'] = $this->am->listaAgendas();
 
         $this->load->view('agenda', $data);
-    
-
     }
 
     public function insereAgenda() {
