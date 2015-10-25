@@ -53,6 +53,7 @@ class Medico extends CI_Controller {
     }
 
     public function index() {
+               
         $this->load->view('layout/header');
         $this->load->view('insere_medicos');
         $this->load->view('layout/footer');
@@ -64,6 +65,10 @@ class Medico extends CI_Controller {
         $this->load->library('Form_validation');
         $this->form_validation->set_rules('cpfMedico', 'CPF', 'trim|required|valida_cpf');
         $this->form_validation->set_rules('nomeMedico', 'Nome', 'trim|required');
+        $this->form_validation->set_rules('especialidade_id', 'Especialidade', 'trim|required');
+        $this->form_validation->set_rules('crm_uf', 'CRMUF', 'trim|required');
+        $this->form_validation->set_rules('crm', 'CRM', 'trim|required');
+
         
         if ($this->form_validation->run() == FALSE){
             $this->index();
@@ -109,6 +114,7 @@ class Medico extends CI_Controller {
         $this->load->model("especialidadesModel");
         //Pega informaçoes das especialidades
         $especialidades = $this->especialidadesModel->getInfoEspecialidade();
+        
         $this->load->model("estadosModel");
         //Pega informaçoes dos estados
         $estados = $this->estadosModel->getInfoEstados();

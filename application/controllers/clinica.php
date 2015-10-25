@@ -33,31 +33,45 @@ class Clinica extends CI_Controller {
     public function insereClinica() {
 
         $data = $_POST;
+
         $this->load->model('clinicaModel', 'cm');
+        $this->load->library('Form_validation');
+        $this->form_validation->set_rules('nomeClinica', 'Nome', 'trim|required');
+        $this->form_validation->set_rules('telefoneClinica', 'Telefone', 'trim|required');
+        $this->form_validation->set_rules('enderecoClinica', 'Endereco', 'trim|required');
+        $this->form_validation->set_rules('numeroClinica', 'Numero', 'trim|required');
+        $this->form_validation->set_rules('bairroClinica', 'Bairro', 'trim|required');
+        $this->form_validation->set_rules('cidadeClinica', 'Cidade', 'trim|required');
+        $this->form_validation->set_rules('ufClinica', 'Uf', 'trim|required');
+        $this->form_validation->set_rules('cepClinica', 'Cep', 'trim|required');
+               
+        if ($this->form_validation->run() == FALSE){
+            $this->index();
+        }
+        else{
+            $arrayInsereClinica = array(
+                "medico_id" => 48,
+                "nome" => $data['nomeClinica'],
+                "telefone" => $data['telefoneClinica'],
+                "endereco" => $data['enderecoClinica'],
+                "end_numero" => $data['numeroClinica'],
+                "end_complemento" => $data['complementoClinica'],
+                "bairro" => $data['bairroClinica'],
+                "cidade" => $data['cidadeClinica'],
+                "uf" => $data['ufClinica'],
+                "cep" => $data['cepClinica'],
+                "created_at" => date("Y-m-d H:i:s"),
+                "updated_at" => date("Y-m-d H:i:s"),
+            );
 
-        $arrayInsereClinica = array(
-            "medico_id" => 48,
-            "nome" => $data['nomeClinica'],
-            "telefone" => $data['telefoneClinica'],
-            "endereco" => $data['enderecoClinica'],
-            "end_numero" => $data['numeroClinica'],
-            "end_complemento" => $data['complementoClinica'],
-            "bairro" => $data['bairroClinica'],
-            "cidade" => $data['cidadeClinica'],
-            "uf" => $data['ufClinica'],
-            "cep" => $data['cepClinica'],
-            "created_at" => date("Y-m-d H:i:s"),
-            "updated_at" => date("Y-m-d H:i:s"),
-        );
 
+            $this->cm->insereClinica($arrayInsereClinica);
 
-        $this->cm->insereClinica($arrayInsereClinica);
-
-        $this->load->view("insere_clinicas.php");
-        redirect('clinica/listaClinicas');
-        $this->load->view('layout/footer');
+            $this->load->view("insere_clinicas.php");
+            redirect('clinica/listaClinicas');
+            $this->load->view('layout/footer');
+        }   
     }
-
     //buscar clinica pelo id para edicao
     public function editarClinica($idClinica) {
 

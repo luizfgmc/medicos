@@ -13,7 +13,7 @@
                     <div class="form_cadastro_medico">
                         <div class="container_item_form">
                             <label>Nome: </label>
-                            <input type="text" class="default_text_input required" name="nomeMedico" tabIndex ="1" />
+                            <input type="text" class="default_text_input required" name="nomeMedico" size=45 maxlength=45 tabIndex ="1" />
                         </div>
                         <div class="container_item_form">
                             <label>Especialidade: </label>
@@ -31,34 +31,36 @@
                         <div class="container_item_form">
                             <div class="container_small_item">
                                 <label>Telefone Primário: </label>
-                                <input type="tel" class="default_text_input required" name="telefoneMedico" tabIndex ="6" />
+                                <input type="tel" class="default_text_input required" name="telefoneMedico" size=12 maxlength=12 tabIndex ="6" />
                             </div>
 
                             <div class="container_tiny_item">
                                 <label>Tipo: </label>
                                 <select tabIndex ="7">
                                     <option>Selecione</option>
+                                    <option>Fixo</option>
+                                    <option>Celular</option>
                                 </select>
                             </div>
                         </div>								
                         <div class="container_item_form">
                             <label>Email: </label>
-                            <input type="text" class="default_text_input required"  name="emailMedico"  tabIndex ="10" />
+                            <input type="text" class="default_text_input required"  name="emailMedico" size=60 maxlength=60 tabIndex ="10" />
                         </div>		
                         <div class="container_item_form">
                             <label>Senha: </label>
-                            <input type="password" class="default_text_input required" name="senhaMedico" tabIndex ="12" />
+                            <input type="password" class="default_text_input required" name="senhaMedico" size=12 maxlength=12 tabIndex ="12" />
                         </div>																			
                     </div>
                     <div class="form_cadastro_medico">
                         <div class="container_item_form">
                             <label>CPF: </label>
-                            <input type="text" class="default_text_input required" name="cpfMedico"  tabIndex ="2" />
+                            <input type="text" class="default_text_input required" name="cpfMedico" size=11 maxlength=11 tabIndex ="2" />
                         </div>
                         <div class="container_item_form">
                             <div class="container_small_item">
                                 <label>Registro CRM: </label>
-                                <input type="text" class="default_text_input required" name="numeroCRM" tabIndex ="4" />
+                                <input type="text" class="default_text_input required" name="numeroCRM" size=10 maxlength=10 tabIndex ="4" />
                             </div>
 
                             <div class="container_tiny_item">
@@ -78,23 +80,25 @@
                         <div class="container_item_form">
                             <div class="container_small_item">
                                 <label>Telefone Secundário: </label>
-                                <input type="text" class="default_small_text_input" tabIndex ="8" />
+                                <input type="text" class="default_small_text_input" size=12 maxlength=12 tabIndex ="8" />
                             </div>
 
                             <div class="container_tiny_item">
                                 <label>Tipo: </label>
                                 <select tabIndex ="9">
                                     <option>Selecione</option>
+                                    <option>Fixo</option>
+                                    <option>Celular</option>
                                 </select>
                             </div>
                         </div>																	
                         <div class="container_item_form">
                             <label>Confirmar Email: </label>
-                            <input type="text" class="default_text_input required"  name="emailConfirmeMedico" tabIndex ="11" />
+                            <input type="text" class="default_text_input required"  name="emailConfirmeMedico" size=60 maxlength=60 tabIndex ="11" />
                         </div>		
                         <div class="container_item_form">
                             <label>Confirmar Senha: </label>
-                            <input type="password" class="default_text_input required" name="senhaConfirmeMedico" tabIndex ="13" />
+                            <input type="password" class="default_text_input required" name="senhaConfirmeMedico" size=12 maxlength=12 tabIndex ="13" />
                         </div>																			
                     </div>
                     <div class="container_submit">
