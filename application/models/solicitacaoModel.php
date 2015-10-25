@@ -35,8 +35,9 @@
 
 		}
 
-		public function solicitarConsulta(){
+		public function solicitarConsultaSalvar($arrayDados){
 
+			$this->db->insert('solicitacoes',$arrayDados);
 
 
 		}

@@ -7,7 +7,6 @@
 
 			parent::__construct();
 			$this->load->database();
-			$this->load->library('login_library');
 
 		}
 

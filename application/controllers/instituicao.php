@@ -15,13 +15,48 @@ class Instituicao extends CI_Controller {
 	}
 
 
-    public function solicitarConsulta(){
+    public function solicitarConsulta($idAgenda){
 
-        $this->load->model('solicitacaoModel','sm');
-        $this->solciitarConsulta();
+
+        $this->load->model('pacienteModel','pm');
+        $pacientes['paciente'] = $this->pm->listaPacientes();
+        
+        $idInstituicao = $this->session->userdata('instituicao');
+
+        $data['query'] = array('idAgenda'=>$idAgenda,
+                      'idInstituicao'=>$idInstituicao['id_instituicao'],
+                      'pacientes'=>$pacientes
+        );    
+
+    
+        $this->load->view('solicitacao', $data);
 
     }
 
+    public function solicitarConsultaSalvar(){
+
+         $idInstituicao = $this->session->userdata('instituicao');
+
+        $arraySolicitcao = array(
+             'instituicao_id'=>$idInstituicao['id_instituicao'],
+             'paciente_id'=>$this->input->post('paciente'),
+             'solicitante'=>$this->input->post('solicitante'),
+             'data_emissao'=>$this->input->post('data'),
+             'status'=>'PE',
+             'descricao'=> $this->input->post('descricao'),
+             'created_at'=>date("Y-m-d H:i:s"),
+             'updated_at'=>date("Y-m-d H:i:s"),
+             'agenda_id'=> $this->input->post('id_agenda'),
+             
+        );
+
+
+          $this->load->model('solicitacaoModel','sm');
+          $this->sm->solicitarConsultaSalvar($arraySolicitcao);
+
+          echo "sucesso";
+
+    }
     
     public function index() {
 

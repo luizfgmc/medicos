@@ -77,6 +77,7 @@
 
 		            		$idInstituicao = $this->im->buscarIdInstituicao($data[0]->id);
 
+		     
 		               	$arrayInstituicao = array(
 
 		                    'tipo'=>$data[0]->tipo,
