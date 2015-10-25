@@ -9,6 +9,9 @@ class Clinica extends CI_Controller {
 
         parent::__construct();
         $this->load->helper('url');
+        
+        $this->loginmedico->valida_sessao_medico();
+
     }
 
     public function index() {
@@ -32,6 +35,7 @@ class Clinica extends CI_Controller {
     //insere uma nova clinica do medico
     public function insereClinica() {
 
+        $id = $this->session->userdata('medico');  
         $data = $_POST;
 
         $this->load->model('clinicaModel', 'cm');
@@ -50,7 +54,7 @@ class Clinica extends CI_Controller {
         }
         else{
             $arrayInsereClinica = array(
-                "medico_id" => 48,
+                "medico_id" =>$id,
                 "nome" => $data['nomeClinica'],
                 "telefone" => $data['telefoneClinica'],
                 "endereco" => $data['enderecoClinica'],
@@ -64,13 +68,11 @@ class Clinica extends CI_Controller {
                 "updated_at" => date("Y-m-d H:i:s"),
             );
 
-
             $this->cm->insereClinica($arrayInsereClinica);
 
             $this->load->view("insere_clinicas.php");
             redirect('clinica/listaClinicas');
             $this->load->view('layout/footer');
-        }   
     }
     //buscar clinica pelo id para edicao
     public function editarClinica($idClinica) {
@@ -88,11 +90,12 @@ class Clinica extends CI_Controller {
     //funcao para editar clinicas
     public function editarClinicaSalvar($idClinica) {
 
+        $id = $this->session->userdata('medico');  
         $data = $_POST;
         $this->load->model('clinicaModel', 'cm');
 
         $arrayEditarClinica = array(
-            "medico_id" => 48,
+            "medico_id" =>$id,
             "nome" => $data['nomeClinica'],
             "telefone" => $data['telefoneClinica'],
             "endereco" => $data['enderecoClinica'],

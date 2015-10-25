@@ -27,8 +27,8 @@
 				echo($k->end_numero."<br/>");
 				echo("solicitar".$k->medico_id."<br/>");
 			
-		?>
-				
+		?>			
+				<a href="<?php echo base_url() . "instituicao/solicitarConsulta/".$k->id ?>"> Solicitar Consulta </a>
 				<a href="<?php echo base_url() . "agenda/editarAgenda/".$k->id ?>"> editar </a>
 				<a href="<?php echo base_url() . "agenda/deletarAgenda/".$k->id ?>"> excluir </a>
 				

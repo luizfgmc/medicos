@@ -41,6 +41,8 @@ class Medico extends CI_Controller {
              
             "data_agendamento"=>$this->input->post('data_agendamento'),
             "hora_agendamento"=>$this->input->post('hora_agendamento'),
+            "status"=>"AP",
+            "updated_at"=>date('Y-m-d H:i:s'),
            
         );
 
