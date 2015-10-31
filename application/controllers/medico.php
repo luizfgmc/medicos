@@ -8,7 +8,7 @@ class Medico extends CI_Controller {
         parent::__construct();
         $this->load->helper('url');
         
-         $this->loginmedico->valida_sessao_medico();
+     $this->loginmedico->valida_sessao_medico();
 
     }   
 
@@ -64,8 +64,18 @@ class Medico extends CI_Controller {
 
     public function index() {
                
+                $this->load->model("especialidadesModel");
+        //Pega informaçoes das especialidades
+        $especialidades = $this->especialidadesModel->getInfoEspecialidade();
+        
+        $this->load->model("estadosModel");
+        //Pega informaçoes dos estados
+        $estados = $this->estadosModel->getInfoEstados();
+        
+        $dadosView = array('especialidades' => $especialidades,'estados' => $estados);
+        
         $this->load->view('layout/header');
-        $this->load->view('insere_medicos');
+        $this->load->view('insere_medicos', $dadosView);
         $this->load->view('layout/footer');
     }
 
@@ -88,7 +98,11 @@ class Medico extends CI_Controller {
             $arrayInserirUsuario = array(
                 "email" => $dataPost['emailMedico'],
                 "password_hash" => sha1($dataPost['senhaMedico']),
+<<<<<<< HEAD
                 "tipo" => 'M',
+=======
+                "tipo" => 'x',
+>>>>>>> 6efbaf6df96bc017bc2af2b7b66123328d2e2352
                 "created_at" => date("Y-m-d H:i:s"),
                 "updated_at" => date("Y-m-d H:i:s")            
             );

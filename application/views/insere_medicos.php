@@ -31,7 +31,7 @@
                         <div class="container_item_form">
                             <div class="container_small_item">
                                 <label>Telefone Primário: </label>
-                                <input type="tel" class="default_text_input required" name="telefoneMedico" size=12 maxlength=12 tabIndex ="6" />
+                                <input type="tel" class="default_text_input required" name="telefoneMedico" size=12 maxlength=12 tabIndex ="6"  OnKeyPress="formatar('##-####-####', this)" />
                             </div>
 
                             <div class="container_tiny_item">
@@ -55,7 +55,7 @@
                     <div class="form_cadastro_medico">
                         <div class="container_item_form">
                             <label>CPF: </label>
-                            <input type="text" class="default_text_input required" name="cpfMedico" size=11 maxlength=11 tabIndex ="2" />
+                            <input type="text" class="default_text_input required" name="cpfMedico" size=11 maxlength=14 tabIndex ="2" OnKeyPress="formatar('###.###.###.##', this)" /> 
                         </div>
                         <div class="container_item_form">
                             <div class="container_small_item">
@@ -80,7 +80,7 @@
                         <div class="container_item_form">
                             <div class="container_small_item">
                                 <label>Telefone Secundário: </label>
-                                <input type="text" class="default_small_text_input" size=12 maxlength=12 tabIndex ="8" />
+                                <input type="text" class="default_small_text_input" size=12 maxlength=12 tabIndex ="8" OnKeyPress="formatar('##-####-####', this)" />
                             </div>
 
                             <div class="container_tiny_item">

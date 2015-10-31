@@ -14,9 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= '';
-$config['base_url_absolute']	= "http://localhost/medicos";  // used only to redirect to HTTP
-$config['base_url_absolute_ssl']	= "https://localhost/medicos";  // used only to redirect to HTTPS
+$config['base_url']	= 'http://localhost/medicos';
 
 /*
 |--------------------------------------------------------------------------
@@ -93,7 +91,7 @@ $config['charset'] = 'UTF-8';
 | setting this variable to TRUE (boolean).  See the user guide for details.
 |
 */
-$config['enable_hooks'] = TRUE;
+$config['enable_hooks'] = FALSE;
 
 
 /*
