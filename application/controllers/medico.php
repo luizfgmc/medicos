@@ -8,7 +8,7 @@ class Medico extends CI_Controller {
         parent::__construct();
         $this->load->helper('url');
         
-         $this->loginmedico->valida_sessao_medico();
+     $this->loginmedico->valida_sessao_medico();
 
     }
 
@@ -56,8 +56,18 @@ class Medico extends CI_Controller {
 
     public function index() {
                
+                $this->load->model("especialidadesModel");
+        //Pega informaçoes das especialidades
+        $especialidades = $this->especialidadesModel->getInfoEspecialidade();
+        
+        $this->load->model("estadosModel");
+        //Pega informaçoes dos estados
+        $estados = $this->estadosModel->getInfoEstados();
+        
+        $dadosView = array('especialidades' => $especialidades,'estados' => $estados);
+        
         $this->load->view('layout/header');
-        $this->load->view('insere_medicos');
+        $this->load->view('insere_medicos', $dadosView);
         $this->load->view('layout/footer');
     }
 
