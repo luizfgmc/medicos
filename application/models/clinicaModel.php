@@ -14,8 +14,6 @@
 		public function insereClinica($data){
 
 			$this->db->insert('clinicas',$data);
-
-
 		}
 
 		

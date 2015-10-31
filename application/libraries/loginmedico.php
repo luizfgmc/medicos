@@ -14,7 +14,7 @@ class loginMedico {
     public function valida_sessao_medico() {
         
         if (empty($this->CI->session->userdata('medico'))) {
-            redirect('acesso');
+            redirect('home');
             exit();
         }
     }

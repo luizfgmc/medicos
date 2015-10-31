@@ -84,7 +84,7 @@ form .error-required
     border:1px solid red;
 }
 
-input
+input[type="text"]
 {
     text-indent: 10px;
 }

@@ -35,44 +35,48 @@ class Clinica extends CI_Controller {
     //insere uma nova clinica do medico
     public function insereClinica() {
 
-        $id = $this->session->userdata('medico');  
-        $data = $_POST;
+            $id = $this->session->userdata('medico');  
+        
+            $data = $_POST;
 
-        $this->load->model('clinicaModel', 'cm');
-        $this->load->library('Form_validation');
-        $this->form_validation->set_rules('nomeClinica', 'Nome', 'trim|required');
-        $this->form_validation->set_rules('telefoneClinica', 'Telefone', 'trim|required');
-        $this->form_validation->set_rules('enderecoClinica', 'Endereco', 'trim|required');
-        $this->form_validation->set_rules('numeroClinica', 'Numero', 'trim|required');
-        $this->form_validation->set_rules('bairroClinica', 'Bairro', 'trim|required');
-        $this->form_validation->set_rules('cidadeClinica', 'Cidade', 'trim|required');
-        $this->form_validation->set_rules('ufClinica', 'Uf', 'trim|required');
-        $this->form_validation->set_rules('cepClinica', 'Cep', 'trim|required');
-               
-        if ($this->form_validation->run() == FALSE){
-            $this->index();
+            $this->load->model('clinicaModel', 'cm');
+            $this->load->library('Form_validation');
+            $this->form_validation->set_rules('nomeClinica', 'Nome', 'trim|required');
+            $this->form_validation->set_rules('telefoneClinica', 'Telefone', 'trim|required');
+            $this->form_validation->set_rules('enderecoClinica', 'Endereco', 'trim|required');
+            $this->form_validation->set_rules('numeroClinica', 'Numero', 'trim|required');
+            $this->form_validation->set_rules('bairroClinica', 'Bairro', 'trim|required');
+            $this->form_validation->set_rules('cidadeClinica', 'Cidade', 'trim|required');
+            $this->form_validation->set_rules('ufClinica', 'Uf', 'trim|required');
+            $this->form_validation->set_rules('cepClinica', 'Cep', 'trim|required');
+                   
+            if ($this->form_validation->run() == FALSE){
+                $this->index();
+            }
+            else{
+                $arrayInsereClinica = array(
+                   
+                    "medico_id" =>$id['id_medico'],
+                    "nome" => $data['nomeClinica'],
+                    "telefone" => $data['telefoneClinica'],
+                    "endereco" => $data['enderecoClinica'],
+                    "end_numero" => $data['numeroClinica'],
+                    "end_complemento" => $data['complementoClinica'],
+                    "bairro" => $data['bairroClinica'],
+                    "cidade" => $data['cidadeClinica'],
+                    "uf" => $data['ufClinica'],
+                    "cep" => $data['cepClinica'],
+                    "created_at" => date("Y-m-d H:i:s"),
+                    "updated_at" => date("Y-m-d H:i:s"),
+                );
+
+
+                $this->cm->insereClinica($arrayInsereClinica);
+
+                $this->load->view("insere_clinicas.php");
+                redirect('clinica/listaClinicas');
+                $this->load->view('layout/footer');
         }
-        else{
-            $arrayInsereClinica = array(
-                "medico_id" =>$id,
-                "nome" => $data['nomeClinica'],
-                "telefone" => $data['telefoneClinica'],
-                "endereco" => $data['enderecoClinica'],
-                "end_numero" => $data['numeroClinica'],
-                "end_complemento" => $data['complementoClinica'],
-                "bairro" => $data['bairroClinica'],
-                "cidade" => $data['cidadeClinica'],
-                "uf" => $data['ufClinica'],
-                "cep" => $data['cepClinica'],
-                "created_at" => date("Y-m-d H:i:s"),
-                "updated_at" => date("Y-m-d H:i:s"),
-            );
-
-            $this->cm->insereClinica($arrayInsereClinica);
-
-            $this->load->view("insere_clinicas.php");
-            redirect('clinica/listaClinicas');
-            $this->load->view('layout/footer');
     }
     //buscar clinica pelo id para edicao
     public function editarClinica($idClinica) {
@@ -95,7 +99,7 @@ class Clinica extends CI_Controller {
         $this->load->model('clinicaModel', 'cm');
 
         $arrayEditarClinica = array(
-            "medico_id" =>$id,
+            "medico_id" =>$id['id_medico'],
             "nome" => $data['nomeClinica'],
             "telefone" => $data['telefoneClinica'],
             "endereco" => $data['enderecoClinica'],

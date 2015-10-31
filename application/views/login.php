@@ -1,6 +1,6 @@
 <html>
 	
-	<form id="login_instituicao" method="post" action="acesso/logarInstituicao">	
+	<form id="login_instituicao" method="post" action="<?php echo base_url();?>acesso/logarInstituicao">	
 
 		<label> Login </label>
 		<input type="text" name="email" id="login"/>

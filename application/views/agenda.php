@@ -14,6 +14,7 @@
 			foreach ($query as $k) {
 				
 				echo($k->nome."<br/>");
+				echo($k->nome_medico."<br/>");
 				echo($k->descricao."<br/>");
 				echo($k->saldo."<br/>");
 				echo($k->quantidade."<br/>");
@@ -29,8 +30,8 @@
 			
 		?>			
 				<a href="<?php echo base_url() . "instituicao/solicitarConsulta/".$k->id ?>"> Solicitar Consulta </a>
-				<a href="<?php echo base_url() . "agenda/editarAgenda/".$k->id ?>"> editar </a>
-				<a href="<?php echo base_url() . "agenda/deletarAgenda/".$k->id ?>"> excluir </a>
+				<!--<a href="<?php echo base_url() . "agenda/editarAgenda/".$k->id ?>"> editar </a>-->
+				<!--<a href="<?php echo base_url() . "agenda/deletarAgenda/".$k->id ?>"> excluir </a>-->
 				
 				<?php
 				echo("<br/>");

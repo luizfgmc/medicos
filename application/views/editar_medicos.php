@@ -16,12 +16,6 @@
 
                             </div>
                             <div class="container_item_form">
-                                <label>CPF</label>
-
-                                <input type="text" name="cpfMedico" value="<?= $infoMedico->cpf; ?>"  class="default_text_input" />
-
-                            </div>
-                            <div class="container_item_form">
                                 <label>Número CRM</label>
 
                                 <input type="text" name="numeroCRM" value="<?= $infoMedico->crm; ?>"  class="default_text_input" />
@@ -49,7 +43,7 @@
                             <div class="container_item_form">
                                 <label>Telefone</label>
 
-                                <input type="text" name="telefoneMedico" value="<?= $infoMedico->telefone; ?>"  class="default_text_input"  />
+                                <input type="text" name="telefoneMedico" value="<?= $infoMedico->telefone; ?>"  class="default_text_input"  OnKeyPress="formatar('##-####-####', this)" />
 
                             </div>					
                             <div class="container_item_form">

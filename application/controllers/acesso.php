@@ -13,6 +13,7 @@
 		public function index(){
 
 			$this->load->view('login_medico');
+		
 
 		}
 
@@ -42,7 +43,7 @@
 
 		                $this->session->set_userdata('medico', $arrayMedico);
 
-		                redirect(base_url('medico'));
+		                redirect(base_url('medico/visualizaEditaMedicoMedicos'));
 
 		            }else{
 
@@ -63,6 +64,8 @@
 
 
 		 public function logarInstituicao(){
+
+		 		$this->load->view('login');
 
 		        $email = $this->input->post('email');
 		        $senha = sha1($this->input->post('senha'));

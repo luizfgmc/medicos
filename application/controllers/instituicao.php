@@ -83,7 +83,16 @@ class Instituicao extends CI_Controller {
         $data = $_POST;
 
         $this->load->library('Form_validation');
+        $this->form_validation->set_rules('nomeInstituicao', 'Nome', 'trim|required');
         $this->form_validation->set_rules('cnpjInstituicao', 'CNPJ', 'trim|required|valida_cnpj');
+        $this->form_validation->set_rules('responsavelInstituicao', 'Responsavel', 'trim|required');
+        $this->form_validation->set_rules('enderecoInstituicao', 'Endereco', 'trim|required');
+        $this->form_validation->set_rules('end_numeroInstituicao', 'Numero', 'trim|required');
+        $this->form_validation->set_rules('bairroInstituicao', 'Bairro', 'trim|required');
+        $this->form_validation->set_rules('cidadeInstituicao', 'Cidade', 'trim|required');
+        $this->form_validation->set_rules('ufInstituicao', 'Estado', 'trim|required');
+        $this->form_validation->set_rules('cepInstituicao', 'CEP', 'trim|required');
+        $this->form_validation->set_rules('telefoneInstituicao', 'Telefone', 'trim|required');
 
         if ($this->form_validation->run() == FALSE) {
             $this->index();
