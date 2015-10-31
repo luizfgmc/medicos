@@ -32,7 +32,7 @@
                             </div>
                             <div class="itemForm">
                                 <label> Senha </label>
-                                <input type="text" name="senha" id="senha"/>
+                                <input type="password" name="senha" id="senha"/>
                             </div>
                             <div class="itemForm itemCadastrar">
                                 <a href="<?php echo base_url(); ?>medico/index">
@@ -55,7 +55,7 @@
                             </div>
                             <div class="itemForm">
                                 <label> Senha </label>
-                                <input type="text" name="senha" id="senha"/>
+                                <input type="password" name="senha" id="senha"/>
                             </div>
                             <div class="itemForm itemCadastrar">
                                 <a href="<?php echo base_url(); ?>medico/index">
