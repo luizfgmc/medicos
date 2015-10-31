@@ -19,7 +19,7 @@
                         <a href="#" id="mostraLoginMedico"> Médico </a>
                     </div>
                     <div class="containerInstituicao">
-                        <a href="">  Instituicao</a>
+                        <a href="#" id="mostraLoginInstituicao">  Instituicao</a>
                         <a href=""><div class="trianguloDireita"></div></a>
                     </div>
                 </div>
@@ -38,7 +38,30 @@
                                 <a href="<?php echo base_url(); ?>medico/index">
                                     Cadastrar
                                 </a>    
-                                    
+
+                            </div>
+                            <div class="itemForm">
+                                <input type="submit" value="Logar" class="input_submit" id="enviar"/>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="loginInstituicao">
+                    <form id="login_medico"  method="post" action="<?php echo base_url(); ?>acesso/logarMedico">
+                        <div class="containerFormLogin">
+                            <div class="itemForm">
+                                <label> Login </label>
+                                <input type="text" name="email" id="email"/>
+                            </div>
+                            <div class="itemForm">
+                                <label> Senha </label>
+                                <input type="text" name="senha" id="senha"/>
+                            </div>
+                            <div class="itemForm itemCadastrar">
+                                <a href="<?php echo base_url(); ?>medico/index">
+                                    Cadastrar
+                                </a>    
+
                             </div>
                             <div class="itemForm">
                                 <input type="submit" value="Logar" class="input_submit" id="enviar"/>

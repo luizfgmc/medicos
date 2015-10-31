@@ -112,6 +112,14 @@ a
     width:457px;
 }
 
+.loginInstituicao
+{
+    font-size:14px;
+    height:389px;
+    overflow:hidden;
+    width:457px;
+}
+
 .containerFormLogin
 {
     display:flex;
