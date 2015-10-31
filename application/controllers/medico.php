@@ -86,10 +86,10 @@ class Medico extends CI_Controller {
         $this->load->library('Form_validation');
         $this->form_validation->set_rules('cpfMedico', 'CPF', 'trim|required|valida_cpf');
         $this->form_validation->set_rules('nomeMedico', 'Nome', 'trim|required');
-        $this->form_validation->set_rules('especialidade_id', 'Especialidade', 'trim|required');
-        $this->form_validation->set_rules('crm_uf', 'CRMUF', 'trim|required');
-        $this->form_validation->set_rules('crm', 'CRM', 'trim|required');
-
+        $this->form_validation->set_rules('especialidadeMedico', 'Especialidade', 'trim|required');
+        $this->form_validation->set_rules('numeroCRM', 'CRM', 'trim|required');
+        $this->form_validation->set_rules('crmUF', 'CRMUF', 'trim|required');
+        
         
         if ($this->form_validation->run() == FALSE){
             $this->index();
