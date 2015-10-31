@@ -43,7 +43,7 @@
 
 		                $this->session->set_userdata('medico', $arrayMedico);
 
-		                redirect(base_url('medico'));
+		                redirect(base_url('medico/visualizaEditaMedicoMedicos'));
 
 		            }else{
 

@@ -1,7 +1,5 @@
 <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/forms.css" />
 <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/medico/medico.css" />
-<a href="<?php echo base_url() ?>clinica/listaClinicas"> Clinicas </a>
-<a href="<?php echo base_url() ?>instituicao/instituicoes"> Instituicoes </a>
 <?php echo validation_errors(); ?>
 <section class="mainContent">
     <section class="cadastro_medico">

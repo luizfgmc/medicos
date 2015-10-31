@@ -74,9 +74,9 @@ class Medico extends CI_Controller {
         
         $dadosView = array('especialidades' => $especialidades,'estados' => $estados);
         
-        $this->load->view('layout/header');
+        $this->load->view('layout/header_home');
         $this->load->view('insere_medicos', $dadosView);
-        $this->load->view('layout/footer');
+        $this->load->view('layout/footer_home');
     }
 
     public function insereMedico() {
@@ -180,7 +180,6 @@ class Medico extends CI_Controller {
         $dataPost = $_POST;
         $arrayEditarMedico = array(
             "nome" => $dataPost['nomeMedico'],
-            "cpf" => $dataPost['cpfMedico'],
             "especialidade_id" => $dataPost['especialidadeMedico'],
             "crm" => $dataPost['numeroCRM'],
             "crm_uf" => $dataPost['crmUF'],
