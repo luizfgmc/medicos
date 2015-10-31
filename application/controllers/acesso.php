@@ -13,6 +13,7 @@
 		public function index(){
 
 			$this->load->view('login_medico');
+		
 
 		}
 
@@ -63,6 +64,8 @@
 
 
 		 public function logarInstituicao(){
+
+		 		$this->load->view('login');
 
 		        $email = $this->input->post('email');
 		        $senha = sha1($this->input->post('senha'));

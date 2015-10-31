@@ -36,6 +36,7 @@ class Clinica extends CI_Controller {
     public function insereClinica() {
 
             $id = $this->session->userdata('medico');  
+        
             $data = $_POST;
 
             $this->load->model('clinicaModel', 'cm');
@@ -54,7 +55,8 @@ class Clinica extends CI_Controller {
             }
             else{
                 $arrayInsereClinica = array(
-                    "medico_id" =>$id,
+                   
+                    "medico_id" =>$id['id_medico'],
                     "nome" => $data['nomeClinica'],
                     "telefone" => $data['telefoneClinica'],
                     "endereco" => $data['enderecoClinica'],
@@ -67,6 +69,7 @@ class Clinica extends CI_Controller {
                     "created_at" => date("Y-m-d H:i:s"),
                     "updated_at" => date("Y-m-d H:i:s"),
                 );
+
 
                 $this->cm->insereClinica($arrayInsereClinica);
 
@@ -96,7 +99,7 @@ class Clinica extends CI_Controller {
         $this->load->model('clinicaModel', 'cm');
 
         $arrayEditarClinica = array(
-            "medico_id" =>$id,
+            "medico_id" =>$id['id_medico'],
             "nome" => $data['nomeClinica'],
             "telefone" => $data['telefoneClinica'],
             "endereco" => $data['enderecoClinica'],

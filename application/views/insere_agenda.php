@@ -9,21 +9,7 @@
             </div>
         </div>
 
-        <div class="itemFormCadastroAgendas">
-            <label>Clinica</label>
-            <div class="campoCadastroAgenda">
-                <select name="clinicas">
-                    <option >Selecione</option>
-<?php
-foreach ($clinica as $c):
-    ?>
-                                    <option value="<?= $c->id ?>"><?= $c->nome ?></option>
-    <?php
-endforeach;
-?>
-                </select>
-            </div>
-        </div>	
+       
 
         <div class="itemFormCadastroAgendas">
             <div class="campoCadastroAgenda">
@@ -47,18 +33,10 @@ endforeach;
                 <h2>Disponibilidade / Agendas </h2>
                 <section class="headerClinica">
                     <div class="numberClinica">
-                        <p>
-                            Clínica <br />
-                            <strong class="number">
-                                01
-                            </strong>	
-                        </p>
+                      
                     </div>
                     <div class="infoClinica">
-                        <p>
-                            <strong>Clínica / Consultorio:</strong> Particular <br />
-                            Endereço: Rua Juíz de fora , 683 - Barro Preto
-                        </p>
+
                     </div>
                     <div class="iconsClinica">
                         <div class="iconPlus">
@@ -76,71 +54,77 @@ endforeach;
                 <section class="horariosOferecidos">
                     <p class="titleHorarioOfeceridos">Horários oferecidos:</p>
 
-                    <div class="containerItemsDias">
-                        <div class="itemFormHorario">
-                            <input type="radio" name="dia_agenda" />
-                            <label>Segunda-Feira</label>
-                        </div>	
-                        <div class="itemFormHorario">
-                            <input type="radio" name="dia_agenda" />
-                            <label>Terça-Feira</label>
-                        </div>
-                        <div class="itemFormHorario">
-                            <input type="radio" name="dia_agenda" />
-                            <label>Quarta-Feira</label>
-                        </div>		
-                        <div class="itemFormHorario">
-                            <input type="radio" name="dia_agenda" />
-                            <label>Quinta-Feira</label>
-                        </div>		
-                        <div class="itemFormHorario">
-                            <input type="radio" name="dia_agenda" />
-                            <label>Sexta-Feira</label>
-                        </div>
-                        <div class="itemFormHorario">
-                            <input type="radio" name="dia_agenda" />
-                            <label>Sábado</label>
-                        </div>	
-                        <div class="itemFormHorario">
-                            <input type="radio" name="dia_agenda" />
-                            <label>Domingo</label>
-                        </div>
-                    </div>		
+                <form action="<?php echo base_url();?>agenda/insereAgenda" method="post">
+                           
+                        <label>Clinica</label>
+                        <div class="campoCadastroAgenda">
+                            <select name="clinicas">
+                                <option >Selecione</option>
+                                    <?php
+                                    foreach ($clinica as $c):
+                                        ?>
+                                            <option value="<?= $c->id ?>"><?= $c->nome ?></option>
+                                        <?php
+                                    endforeach;
+                                    ?>
+                            </select>
+                        </div> 
 
-                    <div class="containerQuantidadeHorario">
-                        <div class="container_item_form">
-
-                            <div class="container_tiny_item">
-                                <label>Quantidade: </label>
-                                <input type="text" />
+                        <div class="containerItemsDias">
+                            <div class="itemFormHorario">
+                                <input type="radio" name="dia_agenda" value="Segunda-Feira" />
+                                <label>Segunda-Feira</label>
                             </div>	
-                            <div class="container_tiny_item">
-                                <label>Saldo: </label>
-                                <input type="text" />
-                            </div>	
-                            <div class="container_tiny_item">
-                                <label>Hora Início: </label>
-                                <select>
-                                    <option>Selecione</option>
-                                </select>
-                            </div>	
-                            <div class="container_tiny_item">
-                                <label>Hora Fim: </label>
-                                <select>
-                                    <option>Selecione</option>
-                                </select>
-                            </div>																			
-                        </div>
-                    </div>	
-                    <div class="form_horarios">
-                        <div class="itemFormHorario">
-                            <div class="container_submit">
-                                <input type="submit" class="input_submit" />
-                                <button type="button" class="input_cancel">Cancelar</button>
+                            <div class="itemFormHorario">
+                                <input type="radio" name="dia_agenda" value="Terça-Feira" />
+                                <label>Terça-Feira</label>
                             </div>
+                            <div class="itemFormHorario">
+                                <input type="radio" name="dia_agenda" value="Quarta-Feira" />
+                                <label>Quarta-Feira</label>
+                            </div>		
+                            <div class="itemFormHorario">
+                                <input type="radio" name="dia_agenda" value="Quinta-Feira" />
+                                <label>Quinta-Feira</label>
+                            </div>		
+                            <div class="itemFormHorario">
+                                <input type="radio" name="dia_agenda" value="Sexta-Feira" />
+                                <label>Sexta-Feira</label>
+                            </div>
+                            <div class="itemFormHorario">
+                                <input type="radio" name="dia_agenda" value="Sábado" />
+                                <label>Sábado</label>
+                            </div>	
+                            <div class="itemFormHorario">
+                                <input type="radio" name="dia_agenda" value="Domingo" />
+                                <label>Domingo</label>
+                            </div>
+                        </div>		
 
+                        <div class="containerQuantidadeHorario">
+                            <div class="container_item_form">
+
+                                <div class="container_tiny_item">
+                                    <label>Quantidade: </label>
+                                    <input type="text" name="quantidadeAgenda" />
+                                </div>	
+                                <div class="container_tiny_item">
+                                    <label>Saldo: </label>
+                                    <input type="text" name="saldoAgenda" />
+                                </div>	
+                                																			
+                            </div>
                         </div>	
-                    </div>
+                        <div class="form_horarios">
+                            <div class="itemFormHorario">
+                                <div class="container_submit">
+                                    <input type="submit" class="input_submit" />
+                                    <button type="button" class="input_cancel">Cancelar</button>
+                                </div>
+
+                            </div>	
+                      </div>
+                 </form>       
 
             </div>	
         </div>

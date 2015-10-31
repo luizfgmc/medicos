@@ -24,8 +24,17 @@ class Agenda extends CI_Controller {
         $this->load->view('layout/footer');
     }
 
+
+    //----lista as agendas do medico-----
+    public function listarAgendaMedico(){
+
+    }
+
+
+    //----lista todas as agendas ------
     public function listaAgendas() {
 
+         $this->logininstituicao->valida_sessao_instituicao();
         $this->load->model('AgendaModel', 'am');
         $data['query'] = $this->am->listaAgendas();
 
@@ -34,35 +43,22 @@ class Agenda extends CI_Controller {
 
     public function insereAgenda() {
 
-		   		$medico_id = $this->session->userdata('medico');
-
+		   		 $this->loginmedico->valida_sessao_medico();
+                $id = $this->session->userdata('medico');
 
 		   		 $arrayAgenda = array(
 		   		 	
-		   		 	"medico_id"=>$medico_id['id'],
+		   		 	"medico_id"=>$id['id_medico'],
 		   		 	"data_emissao"=>date('Y-m-d'),
 		   		 	"quantidade"=>$this->input->post('quantidadeAgenda'),
-		   		 	"saldo"=>$this->input->post('quantidadeAgenda'),
+		   		 	"saldo"=>$this->input->post('saldoAgenda'),
 		   		 	"created_at" => date("Y-m-d H:i:s"),
            			"updated_at" => date("Y-m-d H:i:s"),
            			"clinica_id"=>$this->input->post('clinicas'),
+                    "dia_semana"=>$this->input->post('dia_agenda')
 
 		   		 );
 		   		
-		   		var_dump($arrayAgenda);
-		   		
-
-        $arrayAgenda = array(
-            "medico_id" => 50,
-            "data_emissao" => date('Y-m-d'),
-            "quantidade" => $this->input->post('quantidadeAgenda'),
-            "saldo" => $this->input->post('quantidadeAgenda'),
-            "created_at" => date("Y-m-d H:i:s"),
-            "updated_at" => date("Y-m-d H:i:s"),
-            "clinica_id" => $this->input->post('clinicas'),
-        );
-
-
 
         $this->load->model('AgendaModel', 'am');
         $this->am->insereAgenda($arrayAgenda);
@@ -71,6 +67,7 @@ class Agenda extends CI_Controller {
 
     public function editarAgenda($idAgenda) {
 
+         $this->loginmedico->valida_sessao_medico();
         $this->load->model('AgendaModel', 'am');
         $this->load->model('ClinicaModel', 'cm');
 
@@ -82,6 +79,8 @@ class Agenda extends CI_Controller {
     }
 
     public function editarSalvarAgenda($idAgenda) {
+
+         $this->loginmedico->valida_sessao_medico();
 
         $arrayAgenda = array(
             "medico_id" => 50,
@@ -101,6 +100,7 @@ class Agenda extends CI_Controller {
 
     public function deletarAgenda($idAgenda) {
 
+        $this->loginmedico->valida_sessao_medico();
         $this->load->model('AgendaModel', 'pm');
         $this->pm->deletarAgenda($idAgenda);
         redirect('Agenda/listaAgendas');

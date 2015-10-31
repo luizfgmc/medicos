@@ -10,7 +10,8 @@ class Medico extends CI_Controller {
         
          $this->loginmedico->valida_sessao_medico();
 
-    }
+    }   
+
 
     public function solicitacoes(){
 
@@ -18,13 +19,12 @@ class Medico extends CI_Controller {
         $this->load->model('solicitacaoModel','sm');
         $data['query'] = $this->sm->verSolicitcoes($id['id_medico']);
 
+
         $this->load->view('solicitacoes',$data);
 
     }
 
     public function aprovarSolicitacao($idSolicitacao){
-
-        echo $idSolicitacao;
 
          $this->load->model('solicitacaoModel','sm');
          $data['query'] = $this->sm->aprovarSolicitcao($idSolicitacao);
@@ -33,7 +33,15 @@ class Medico extends CI_Controller {
 
     }
 
-    
+
+    public function reprovarSolicitacao($idSolicitacao){
+
+         $this->load->model('solicitacaoModel','sm');
+         $data = $this->sm->reprovarSolicitacao($idSolicitacao);
+         echo $data;
+
+    }
+
     public function aprovarSolicitacaoSalvar(){
 
         $idSolicitacao = $this->input->post('id');
@@ -64,6 +72,7 @@ class Medico extends CI_Controller {
     public function insereMedico() {
         $dataPost = $_POST;
 
+    
         $this->load->library('Form_validation');
         $this->form_validation->set_rules('cpfMedico', 'CPF', 'trim|required|valida_cpf');
         $this->form_validation->set_rules('nomeMedico', 'Nome', 'trim|required');
@@ -78,8 +87,8 @@ class Medico extends CI_Controller {
         else{
             $arrayInserirUsuario = array(
                 "email" => $dataPost['emailMedico'],
-                "password_hash" => $dataPost['senhaMedico'],
-                "tipo" => 'x',
+                "password_hash" => sha1($dataPost['senhaMedico']),
+                "tipo" => 'M',
                 "created_at" => date("Y-m-d H:i:s"),
                 "updated_at" => date("Y-m-d H:i:s")            
             );
@@ -135,7 +144,11 @@ class Medico extends CI_Controller {
         
     }
     
-    public function visualizaEditaMedicoMedicos($idMedico) {
+    public function visualizaEditaMedicoMedicos() {
+        
+         $id = $this->session->userdata('medico'); 
+           
+
         $this->load->model("especialidadesModel");
         //Pega informaçoes das especialidades
         $especialidades = $this->especialidadesModel->getInfoEspecialidade();
@@ -143,7 +156,7 @@ class Medico extends CI_Controller {
         //Pega informaçoes dos estados
         $estados = $this->estadosModel->getInfoEstados();
         $this->load->model("MedicoModel");
-        $infoMedico = $this->MedicoModel->getTodasInfoMedicos($idMedico);
+        $infoMedico = $this->MedicoModel->getTodasInfoMedicos($id['id_medico']);
         $dadosView = array('especialidades' => $especialidades,'estados' => $estados,'infoMedico' => $infoMedico);
         $this->load->view('layout/header');
         $this->load->view('editar_medicos', $dadosView);       
@@ -151,6 +164,9 @@ class Medico extends CI_Controller {
     }
     
     public function salvaEditaMedica() {
+                
+         $id = $this->session->userdata('medico'); 
+
         $dataPost = $_POST;
         $arrayEditarMedico = array(
             "nome" => $dataPost['nomeMedico'],
@@ -162,16 +178,18 @@ class Medico extends CI_Controller {
             "updated_at" => date("Y-m-d H:i:s"),
         );
         $this->load->model("MedicoModel");
-        $this->MedicoModel->editarMedico($arrayEditarMedico,$dataPost['idMedico']);  
+        $this->MedicoModel->editarMedico($arrayEditarMedico,$id['id_medico']);  
         redirect('medico/listarMedicos');
         
     }
 
     public function excluirMedico($idMedico,$idUsuario) {
+         $id = $this->session->userdata('medico');    
+         
         $this->load->model("MedicoModel");
         $this->load->model("UsuarioModel");
-        $this->MedicoModel->excluirMedico($idMedico);
-        $this->UsuarioModel->excluirUsuario($idUsuario);
+        $this->MedicoModel->excluirMedico($id['id_medico']);
+        $this->UsuarioModel->excluirUsuario($id['id_usuario']);
         redirect('medico/listarMedicos');
     }
 

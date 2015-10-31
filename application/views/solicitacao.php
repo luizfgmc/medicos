@@ -31,7 +31,7 @@
 
 		<input type="hidden" name ="id_agenda" value="<?=$query['idAgenda']?>"/>
 
-		<input type="submit" value="aprovar"/>
+		<input type="submit" value="Solicitar"/>
 	</form>
 
 </html>
