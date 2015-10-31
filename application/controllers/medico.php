@@ -18,9 +18,9 @@ class Medico extends CI_Controller {
         $id = $this->session->userdata('medico');    
         $this->load->model('solicitacaoModel','sm');
         $data['query'] = $this->sm->verSolicitcoes($id['id_medico']);
-
-
+        $this->load->view('layout/header');
         $this->load->view('solicitacoes',$data);
+        $this->load->view('layout/footer');
 
     }
 
@@ -98,11 +98,7 @@ class Medico extends CI_Controller {
             $arrayInserirUsuario = array(
                 "email" => $dataPost['emailMedico'],
                 "password_hash" => sha1($dataPost['senhaMedico']),
-<<<<<<< HEAD
                 "tipo" => 'M',
-=======
-                "tipo" => 'x',
->>>>>>> 6efbaf6df96bc017bc2af2b7b66123328d2e2352
                 "created_at" => date("Y-m-d H:i:s"),
                 "updated_at" => date("Y-m-d H:i:s")            
             );

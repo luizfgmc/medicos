@@ -1,45 +1,54 @@
-<html>
-	<head>
+<link rel="stylesheet" href="<?php echo base_url() ?>assets/css/forms.css" />
+<link rel="stylesheet" href="<?php echo base_url() ?>assets/css/solicitacoes/solicitacoes.css" />
+<section class="mainContent">
+    <section class="containerSolicitacoes">
+        <div class="containerCenter fullSiteSize">
+            <div class="halfSize">
+                <div class="containerListaSolicitacoes">
+                    <h2>Solicitações pedentes </h2>
+                    <div class="infoMedicoLogado">
+                        <p>Dr. Fábio CAPELO - PEDIATRIA</p>
+                        <p> Clinica / Consultorio Particular</p>
+                        <p>Endereço: Rua Juíz  de fora, 683 - Barro Preto</p>
+                    </div>
+                    <div class="cabecalhoListaSolicitacoes">
+                        <span class="nomePaciente">Paciente</span>
+                        <span class="horarioSugerido">Horário Sugerido</span>
+                        <span class="saldo">Saldo</span>
+                    </div>
+                    <div class="containerItensSolicitacao">
+                        <?php
+                        foreach ($query as $k) {
+                            ?>		
+                            <div class="itemSolicitacao">
+                                <?php
+                                //echo($k->solicitante . "<br/>");
+                                echo '<span class="nomePaciente">' . ($k->nome_paciente) . '</span>';
+                                echo'<span class="horarioSugerido">' . ($k->data_emissao);
+                                echo($k->data_agendamento) . '</span>';
+                                //echo($k->hora_agendamento)';
+                                //echo($k->status . "<br/>");
+                                //echo($k->data_emissao . "<br/>");
+                                //echo($k->descricao . "<br/>");
+                                //echo($k->status . "<br/>");
+                                //echo($k->id);
+                                ?>
+                                <span class="saldo">
+                                    6 
+                                     <a href="<?php echo base_url() . "medico/aprovarSolicitacao/" . $k->id ?>"> aprovar </a>
+                                     
+                                     <a href="<?php echo base_url() . "medico/reprovarSolicitacao/" . $k->id ?>"> reprovar </a>
+                                     
+                                </span>
+                            </div>
+                            <?php
+                        }
+                        ?>
 
-	</head>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
 
-
-	<body>
-
-
-		<?php
-			
-		
-
-			foreach ($query as $k) {
-				
-			?>		
-				
-				<?php
-				echo($k->solicitante."<br/>");
-				echo($k->nome_paciente."<br/>");
-				echo($k->data_emissao."<br/>");
-				echo($k->data_agendamento."<br/>");
-				echo($k->hora_agendamento."<br/>");
-				echo($k->status."<br/>");
-				echo($k->data_emissao."<br/>");
-				echo($k->descricao."<br/>");
-				echo($k->status."<br/>");
-				echo($k->id);
-				?>
-			 
-  
-			<a href="<?php echo base_url() . "medico/aprovarSolicitacao/".$k->id ?>"> aprovar </a>
-			<a href="<?php echo base_url() . "medico/reprovarSolicitacao/".$k->id ?>"> reprovar </a>
-
-				
-			<?php
-
-			}
-
-		?>
-				
-?>
-
-	</body>
-</html>	

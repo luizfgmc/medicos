@@ -1,0 +1,135 @@
+.containerSolicitacoes
+{
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    background: url('../../images/medicos_background.jpg') right no-repeat;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    height: 100%;
+    width: 100%;
+}
+
+.containerSolicitacoes h2 {
+    font-size: 26px;
+    margin-bottom: 45px;
+    width: 100%;
+}
+
+.containerListaSolicitacoes
+{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    width: 786px
+}
+
+.itemSolicitacao
+{
+    width:100%;
+}
+
+.infoMedicoLogado
+{
+    width:100%;
+}
+
+.cabecalhoListaSolicitacoes
+{
+    align-items:center;
+    background:#25859b;
+    box-sizing: border-box;
+    color:#FFFFFF;
+    display:flex;
+    font-size:14px;
+    height:30px;
+    padding:5px;
+    width:100%;
+}
+
+.cabecalhoListaSolicitacoes .nomePaciente, .cabecalhoListaSolicitacoes .saldo
+{
+    width:40%;
+}
+
+.cabecalhoListaSolicitacoes .horarioSugerido
+{
+    width:20%;
+}
+
+.containerItensSolicitacao
+{
+    width:100%;
+}
+
+
+.itemSolicitacao
+{
+    display:flex;
+    flex-wrap:wrap;
+    height:103px;
+    width:100%;
+}
+
+.itemSolicitacao span
+{
+    align-items:center;
+    border-right:1px solid #6eb8c9; 
+    box-sizing:border-box;
+    display:flex;
+    height:100%;
+    justify-content:center;
+}
+
+.itemSolicitacao:nth-child(even)
+{
+    background:#dcf8ff;
+}
+
+.itemSolicitacao span:last-child
+{
+    border:none;
+}
+
+.itemSolicitacao .nomePaciente, .itemSolicitacao .saldo
+{
+    width:40%;
+}
+
+.itemSolicitacao .saldo
+{
+    display:flex;
+    justify-content:space-around;
+}
+
+.itemSolicitacao .horarioSugerido
+{
+    width:20%;
+}
+
+.itemSolicitacao a
+{
+    align-items:center;
+    background:#2292ac;
+    border-radius:6px;
+    display:flex;
+    color:#FFFFFF;
+    height:33px;
+    justify-content:center;
+    padding:0 5px;
+    widht:90px
+}
