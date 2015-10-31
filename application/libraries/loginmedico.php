@@ -13,10 +13,10 @@ class loginMedico {
     // metodo que verifica se o usuário está logado
     public function valida_sessao_medico() {
         
-        if (empty($this->CI->session->userdata('medico'))) {
-            redirect('acesso');
-            exit();
-        }
-    }
+        //if (empty($this->CI->session->userdata('medico'))) {
+           // redirect('acesso');
+           // exit();
+        //}
+   }
 
 }

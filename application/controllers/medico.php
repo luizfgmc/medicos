@@ -88,7 +88,7 @@ class Medico extends CI_Controller {
         else{
             $arrayInserirUsuario = array(
                 "email" => $dataPost['emailMedico'],
-                "password_hash" => $dataPost['senhaMedico'],
+                "password_hash" => sha1($dataPost['senhaMedico']),
                 "tipo" => 'x',
                 "created_at" => date("Y-m-d H:i:s"),
                 "updated_at" => date("Y-m-d H:i:s")            
