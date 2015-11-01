@@ -16,6 +16,12 @@ html,body
     font-size:12px;
 }
 
+body
+{
+    min-height:100%;
+    position:relative;
+}
+
 a
 {
     text-decoration:none;
@@ -409,3 +415,20 @@ a
     width:100%;
 }
 
+
+.mainContent
+{
+    background: #ffffff;
+    padding-bottom:115px;
+    width: 100%;
+ 
+    
+
+}
+
+
+.mainFooter
+{
+    bottom:0;
+    position:absolute;
+}

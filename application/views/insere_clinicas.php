@@ -17,11 +17,11 @@
                             </div>
                              <div class="container_item_form">
                                 <label>Cep:</label>
-                                <input type="text" class="default_text_input required" name="cepClinica" id="cepClinica" size=08 maxlength=08 />
+                                <input type="text" class="default_text_input required" name="cepClinica" id="cep" size=08 maxlength=08 />
                             </div>
                             <div class="container_item_form">
                                 <label>Endereço</label>
-                                <input type="text" class="default_text_input required" name="enderecoClinica" id="endereco" size=60 maxlength=60/>
+                                <input type="text" class="default_text_input required" name="enderecoClinica" id="logradouro" size=60 maxlength=60/>
                             </div>
                             <div class="container_item_form">
                                 <label>Numero</label>

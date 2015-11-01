@@ -18,10 +18,13 @@
                     </div>
                     <a href="<?php echo base_url() ?>agenda/"> Inserir Agenda </a>
                     <div class="containerItensSolicitacao">
-                        <div class="itemSolicitacao">
+                        
                             <?php
                             foreach ($query as $k) {
-
+                                ?>
+                        
+<div class="itemSolicitacao">
+    <?php
                                 echo'<span class="nomePaciente">' . ($k->nome).'</span>';
                                 //echo($k->nome_medico . "<br/>");
                                 //echo($k->descricao . "<br/>");
@@ -43,10 +46,10 @@
                                 <!--<a href="<?php echo base_url() . "agenda/deletarAgenda/" . $k->id ?>"> excluir </a>-->
 
                                 <?php
-                                echo("<br/>");
+                                echo(" </div>");
                             }
                             ?>
-                        </div>
+                       
                     </div>
                 </div>
             </div>
