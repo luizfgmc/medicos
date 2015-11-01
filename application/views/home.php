@@ -47,7 +47,7 @@
                     </form>
                 </div>
                 <div class="loginInstituicao">
-                    <form id="login_medico"  method="post" action="<?php echo base_url(); ?>acesso/logarMedico">
+                    <form id="login_medico"  method="post" action="<?php echo base_url(); ?>acesso/logarInstituicao">
                         <div class="containerFormLogin">
                             <div class="itemForm">
                                 <label> Login </label>
