@@ -12,7 +12,7 @@
 
 		public function index(){
 
-			$this->load->view('login_medico');
+			$this->load->view('login');
 		
 
 		}

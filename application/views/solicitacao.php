@@ -19,7 +19,7 @@
 					foreach ($k as $y) {
 					?>
 					
-					<option value="<?=$y->id?>"><?=$y->nome?> </option>
+					<option value="<?=$y->id?>"><?=$y->nome_paciente?> </option>
 				<?php
 					}
 				}	

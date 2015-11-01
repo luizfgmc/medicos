@@ -12,7 +12,7 @@
                             <div class="container_item_form">
                                 <label>Nome</label>
 
-                                <input type="text" name="nomeMedico" value="<?= $infoMedico->nome; ?>"  class="default_text_input" />
+                                <input type="text" name="nomeMedico" value="<?= $infoMedico->nome_medico; ?>"  class="default_text_input" />
 
                             </div>
                             <div class="container_item_form">

@@ -26,7 +26,13 @@ class Agenda extends CI_Controller {
 
 
     //----lista as agendas do medico-----
-    public function listarAgendaMedico(){
+    public function listarAgendasMedico(){
+
+        $this->loginmedico->valida_sessao_medico();
+        $this->load->model('AgendaModel', 'am');
+        $data['query'] = $this->am->listaAgendasMedico();
+
+        $this->load->view('minhas_agendas', $data);
 
     }
 
