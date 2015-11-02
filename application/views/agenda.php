@@ -1,10 +1,3 @@
-<html>
-	<head>
-
-	</head>
-
-
-	<body>
 
 
 		<a href="<?php echo base_url()?>agenda/"> Inserir Agenda </a><br/></br/>
@@ -38,6 +31,3 @@
 			}	
 
 		?>
-
-	</body>
-</html>

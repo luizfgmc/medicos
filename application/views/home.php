@@ -13,6 +13,13 @@
             </div>
             <div class="escolhaMedicoInsituicao">
                 <h3> Você é medico ou instituição ?</h3>
+                <?php
+                if (!empty($this->session->userdata('erroLogin'))) {
+                    echo '<p class="dadosInvalidos">Dados Inválidos</p>';
+                    $this->session->unset_userdata('erroLogin');
+                }
+                ?>
+
                 <div class="containerEscolha">
                     <div class="containerMedico">
                         <a href="#"><div class="trianguloEsquerda"></div></a>
