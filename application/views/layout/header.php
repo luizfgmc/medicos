@@ -19,7 +19,7 @@
                             <li><a href="<?php echo base_url() ?>medico">Página Principal</a><li>
                             <li><a href="<?php echo base_url() ?>medico/solicitacoes/">Solicitações</a><li>
                             <li><a href="<?php echo base_url() ?>agenda"> Cadastrar Agenda</a><li>
-                                 <li><a href="<?php echo base_url() ?>agenda/listarAgendasMedico"> Minhas Agendas</a><li>
+                            <li><a href="<?php echo base_url() ?>agenda/listarAgendasMedico"> Minhas Agendas</a><li>
                             <li><a href="<?php echo base_url() ?>clinica">Clínicas</a><li>
                         </ul>    
                     </div>
@@ -29,6 +29,35 @@
                         <img src="<?php echo base_url() ?>assets/images/alerta_topo.png" />
                     </a>
                     <div class="reminderTop">  
+                        <div class="numeroNotificacoes">
+                            5 solicitações em espera
+                        </div>
+                        <div class="notificacaoTopo">
+                            <p>
+                                APAE - Belo Horizonte
+                                Césario José Oliveira
+                                28/09 | Quinta-Feira
+                            </p>
+                            <span class="analisarNotificacaoTopo">
+                                <a href="">
+                                    Analisar
+                                </a>
+                            </span>
+
+                        </div>
+                        <div class="notificacaoTopo">
+                            <p>
+                                APAE - Belo Horizonte
+                                Césario José Oliveira
+                                28/09 | Quinta-Feira
+                            </p>
+                            <span class="analisarNotificacaoTopo">
+                                <a href="">
+                                    Analisar
+                                </a>
+                            </span>
+
+                        </div>
                     </div>
                 </div>
                 <div class="logoMedicoAmigoTop">
@@ -42,13 +71,13 @@
 
                     <span> <a href="<?php echo base_url() ?>medico/visualizaEditaMedicoMedicos/" >Dr. Fabio Capelo </a> </span>
                 </div>
-               <!-- <div class="configTop">
-                    <a href="">
-                        <img src="<?php echo base_url() ?>assets/images/conf_topo.png" />
-                    </a>
-                    <div class="menuConfigTop">  
-                    </div>
-                </div> -->
+                <!-- <div class="configTop">
+                     <a href="">
+                         <img src="<?php echo base_url() ?>assets/images/conf_topo.png" />
+                     </a>
+                     <div class="menuConfigTop">  
+                     </div>
+                 </div> -->
         </div>
     </section>
 </header>

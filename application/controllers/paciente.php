@@ -9,7 +9,7 @@ class Paciente extends CI_Controller {
 
         parent::__construct();
         $this->load->helper('url');
-        //$this->logininstituicao->valida_sessao_instituicao();
+        $this->logininstituicao->valida_sessao_instituicao();
     }
 
     public function index() {
@@ -26,8 +26,9 @@ class Paciente extends CI_Controller {
 
         $this->load->model('pacienteModel', 'pm');
         $data['query'] = $this->pm->listaPacientes();
-
+        $this->load->view('layout/header');
         $this->load->view('pacientes', $data);
+        $this->load->view('layout/footer');
     }
 
     public function inserePaciente() {
