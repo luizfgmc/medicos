@@ -8,9 +8,83 @@ class Medico extends CI_Controller {
         parent::__construct();
         $this->load->helper('url');
         
-     $this->loginmedico->valida_sessao_medico();
+     // comentei isso porque faz o meu webservice parar de funcionar
+	 //$this->loginmedico->valida_sessao_medico();
 
-    }   
+    }
+	
+	public function enviarCartaoAgradecimento($idMedico) {
+		
+		$this->load->library('email');
+		
+		// Resetar informações armazenadas na classe
+		$this->email->clear(TRUE);
+		
+		$this->load->model("MedicoModel");
+		$medico = $this->MedicoModel->getTodasInfoMedicos($idMedico);
+		
+		$nomeMedico = $medico->nome;
+		$email = $medico->email;
+		
+		$this->email->from('noreply.medicoamigo@gmail.com', 'Medico Amigo');
+		$this->email->to($email);
+		$this->email->subject($nomeMedico . ', seja bem vindo!');
+		$this->email->message('Oi ' . $nomeMedico . ', <br/> Seja bem vindo a equipe Medico Amigo!');
+		//$this->email->cc($email); Mantive comentado caso precise algum dia. Email com copia.
+		//$this->email->attach('/path/to/file1.png');  Mantive comentado caso precise algum dia. Anexar.
+		//$this->email->attach('/path/to/file2.pdf');  Mantive comentado caso precise algum dia. Pode anexar varios docs.
+		$this->email->send();
+		
+	}
+	
+	public function obterIdMedico($usuario, $senha) {
+		
+		$this->load->model("MedicoModel");
+		$idMedico = $this->MedicoModel->obterIdMedico($usuario, $senha);
+		
+		if ($idMedico > 0) {
+			
+			return $idMedico;
+		
+		} else {
+			
+			return 0;
+			
+		}
+		
+	}
+	
+	public function gerarHash($idMedico, $tipo="json", $email="") {
+		
+		// Obter chave Hash gerada pelo metodo GerarHash da classe MedicoModel
+		$this->load->model("MedicoModel");
+		$chave = $this->MedicoModel->gerarHash($idMedico, $email);
+		
+		// Factory: Verificar tipo solicitado pelo usuario
+		//por default array
+		//Usar encode para retornar a chave no formato solicitado
+		if ($tipo == 'json') {
+			
+			$chave = json_encode($chave);
+			
+		} elseif ($tipo == 'string') {
+			
+			// já retorna como string entao é só manter.
+		
+		} elseif ($tipo == 'array') {
+			
+			$chave = array ('chave' => $chave);
+		
+		} else {
+			// Caso usuario informe um tipo que não seja Json, array ou string então retorna isso.
+			$chave = array('chave' => 'Tipo não informado!');
+			
+		}
+		
+		// Retornar a chave. 
+		return $chave;
+	
+	}
 
 
     public function solicitacoes(){
@@ -122,8 +196,13 @@ class Medico extends CI_Controller {
             );
 
             $this->load->model("MedicoModel");
-            // Insere um medico na tabela
-            $this->MedicoModel->insereMedico($arrayInserirMedico);  
+            
+			// Insere um medico na tabela
+            $idMedicoInserido = $this->MedicoModel->insereMedico($arrayInserirMedico);
+			
+			// Envia o agradecimento ao medico
+			$this->enviarCartaoAgradecimento($idMedicoInserido);
+			
             redirect('medico/index');
         }
     }

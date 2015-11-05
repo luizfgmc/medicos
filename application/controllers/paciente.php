@@ -44,6 +44,7 @@ class Paciente extends CI_Controller {
             "cidade" => $this->input->post('cidadePaciente'),
             "cep" => $this->input->post('cepPaciente'),
             "telefone" => $this->input->post('telefonePaciente'),
+			"atividade" => 'A',
             "created_at" => date("Y-m-d H:i:s"),
             "updated_at" => date("Y-m-d H:i:s"),
         );

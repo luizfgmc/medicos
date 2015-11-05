@@ -7,6 +7,45 @@
 			parent::__construct();
 
 		}
+		
+		public function naoCompareceu($idSolicitacao) {
+			
+			// Alterar status da solicitacao para NC (Nao Compareceu)
+			$dados = array('status' => 'NC');
+			$this->db->where('id', $idSolicitacao);
+			$this->db->update('solicitacoes', $dados);
+			
+			// Obter ID do paciente que nao compareceu
+			$this->db->select('paciente_id');
+			$this->db->from('solicitacoes');
+			$this->db->where('id', $idSolicitacao);
+			
+			// Armazenar informacoes
+			$idPaciente = $this->db->get()->result_array()[0]['paciente_id'];
+			$dados = array('atividade' => 'I');
+			
+			// Alterar status do paciente para I (Inativo)
+			$this->db->where('id', $idPaciente);
+			$this->db->update('pacientes', $dados);
+			
+		}
+		
+		public function remarcar($idSolicitacao, $novoData, $novoHorario) {
+			
+			$dados = array('data_agendamento' => $novoData, 'hora_agendamento' => $novoHorario);
+			$this->db->where('id', $idSolicitacao);
+			$this->db->update('solicitacoes', $dados);
+			
+		}
+		
+		public function compareceu($idSolicitacao) {
+			
+			// Alterar status da solicitacao para CO (Compareceu)
+			$dados = array('status' => 'CO');
+			$this->db->where('id', $idSolicitacao);
+			$this->db->update('solicitacoes', $dados);
+			
+		}
 
 		public function verSolicitcoes($medicoId){
 
@@ -57,6 +96,73 @@
 
 
 		}
+		
+		private function getTodosHorarios() {
+		
+		// Retornar todos os horários da agenda
+		$this->db->select('solicitacoes.status, solicitacoes.descricao');
+		$this->db->select('solicitacoes.data_agendamento, solicitacoes.hora_agendamento');
+		$this->db->select('pacientes.nome, pacientes.telefone');
+		$this->db->from('solicitacoes');
+		$this->db->join('agendas', 'agendas.id = solicitacoes.agenda_id');
+		$this->db->join('medicos', 'medicos.id = agendas.medico_id');
+		$this->db->join('pacientes', 'pacientes.id = solicitacoes.paciente_id');
+		$this->db->order_by('solicitacoes.data_agendamento', 'asc');
+		$this->db->order_by('solicitacoes.hora_agendamento', 'asc');
+		
+		return $this;
+	}
+	
+	public function getSolicitacao($idSolicitacao) {
+		
+		$this->getTodosHorarios()
+			->db->where('solicitacoes.id', $idSolicitacao);
+		
+		$query = $this->db->get();
+		
+		return $query;
+		
+	}
+
+    public function getTodosHorariosMedico($chave) {
+		
+		$this->getTodosHorarios()
+			->db->where('medicos.chave_consulta', $chave);
+		
+		$query = $this->db->get();
+		
+		return $query;
+    
+	}
+
+	public function getHorariosMedicoDia($chave, $data) {
+		
+		$this->getTodosHorarios()
+			->db->where( array(
+				'medicos.chave_consulta' => $chave,
+				'solicitacoes.data_agendamento' => $data)
+				);
+		
+		return $this->db->get();
+		
+		
+		return 'a';
+		
+	}
+	
+	public function getHorariosMedicoPeriodo($chave, $dataIn, $dataFi) {
+		
+		$this->getTodosHorarios()
+			->db
+				->where('medicos.chave_consulta', $chave)
+				->where('solicitacoes.data_agendamento >=', $dataIn)
+				->where('solicitacoes.data_agendamento <=', $dataFi);
+				
+		return $this->db->get();
+		
+	
+
+	}
 
 	}
 
