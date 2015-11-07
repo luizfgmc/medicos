@@ -9,7 +9,7 @@ class Acesso extends CI_Controller {
 
     public function index() {
 
-        $this->load->view('login');
+         $this->load->view('login_medico');
     }
 
     public function logarMedico() {
@@ -37,7 +37,7 @@ class Acesso extends CI_Controller {
 
                 $this->session->set_userdata('medico', $arrayMedico);
 
-                redirect(base_url('medico/visualizaEditaMedicoMedicos'));
+                redirect(base_url('medico/solicitacoes'));
             } else {
 
                 $this->session->set_userdata('erroLogin', '1');
@@ -87,6 +87,45 @@ class Acesso extends CI_Controller {
             redirect(base_url('home'));
         }
     }
+
+
+     public function logarAdm() {
+
+
+        $email = $this->input->post('email');
+        $senha = sha1($this->input->post('senha'));
+
+        $this->load->model('admModel', 'am');
+        $data = $this->am->autenticar($email);
+
+        if ($data != null) {
+
+
+
+            if ($data[0]->tipo == 'A' && $data[0]->password_hash == $senha) {
+
+
+                $arrayAdm = array(
+                    'tipo' => $data[0]->tipo,
+                    'email' => $data[0]->email,
+                    'id_usuario' => $data[0]->id,
+                );
+
+                $this->session->set_userdata('adm', $arrayAdm);
+
+
+                redirect(base_url('adm'));
+           
+            } else {
+                $this->session->set_userdata('erroLogin', '1');
+                redirect(base_url('home'));
+            }
+        } else {
+            $this->session->set_userdata('erroLogin', '1');
+            redirect(base_url('home'));
+        }
+    }
+
 
     public function logoff() {
 

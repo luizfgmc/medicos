@@ -9,7 +9,7 @@
 	<body>
 
 		
-		<a href="<?php echo base_url()?>instituicao/">inserir instituicao </a><br/>
+		<a href="<?php echo base_url()?>adm/cadastrarinstituicao">inserir instituicao </a><br/>
 		<?php 
 
 				echo("instituicoess:");
@@ -31,8 +31,8 @@
 					echo("status:"." ".$k->status."</br>");
 					echo("<br/>");
 					?>
-					<a href="<?php echo base_url() . "instituicao/editarInstituicao/" .$k->id ?>">editar</a><br/>
-					<a href="<?php echo base_url() . "instituicao/deletaInstituicao/" .$k->id ?>">excluir</a><br/>
+					<a href="<?php echo base_url() . "adm/editarInstituicao/" .$k->id ?>">editar</a><br/>
+					<a href="<?php echo base_url() . "adm/deletaInstituicao/" .$k->id ?>">excluir</a><br/>
 				
 				<?php
 				}

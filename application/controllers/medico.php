@@ -9,7 +9,7 @@ class Medico extends CI_Controller {
         $this->load->helper('url');
         
      // comentei isso porque faz o meu webservice parar de funcionar
-	 //$this->loginmedico->valida_sessao_medico();
+	 $this->loginmedico->valida_sessao_medico();
 
     }
 	
@@ -23,7 +23,7 @@ class Medico extends CI_Controller {
 		$this->load->model("MedicoModel");
 		$medico = $this->MedicoModel->getTodasInfoMedicos($idMedico);
 		
-		$nomeMedico = $medico->nome;
+		$nomeMedico = $medico->nome_medico;
 		$email = $medico->email;
 		
 		$this->email->from('noreply.medicoamigo@gmail.com', 'Medico Amigo');
@@ -153,85 +153,7 @@ class Medico extends CI_Controller {
         $this->load->view('layout/footer_home');
     }
 
-    public function insereMedico() {
-        $dataPost = $_POST;
-
-    
-        $this->load->library('Form_validation');
-        $this->form_validation->set_rules('cpfMedico', 'CPF', 'trim|required|valida_cpf');
-        $this->form_validation->set_rules('nomeMedico', 'Nome', 'trim|required');
-        $this->form_validation->set_rules('especialidadeMedico', 'Especialidade', 'trim|required');
-        $this->form_validation->set_rules('numeroCRM', 'CRM', 'trim|required');
-        $this->form_validation->set_rules('crmUF', 'CRMUF', 'trim|required');
-        
-        
-        if ($this->form_validation->run() == FALSE){
-            $this->index();
-        }
-        else{
-            $arrayInserirUsuario = array(
-                "email" => $dataPost['emailMedico'],
-                "password_hash" => sha1($dataPost['senhaMedico']),
-                "tipo" => 'M',
-                "created_at" => date("Y-m-d H:i:s"),
-                "updated_at" => date("Y-m-d H:i:s")            
-            );
-
-            $this->load->model("UsuarioModel");
-
-            //Insere um usuário na tabela e pegue o id inserido
-            $idUsuarioInserido = $this->UsuarioModel->insereUsuario($arrayInserirUsuario);
-
-            $arrayInserirMedico = array(
-                "nome" => $dataPost['nomeMedico'],
-                "cpf" => $dataPost['cpfMedico'],
-                "especialidade_id" => $dataPost['especialidadeMedico'],
-                "crm" => $dataPost['numeroCRM'],
-                "crm_uf" => $dataPost['crmUF'],
-                "telefone" => $dataPost['telefoneMedico'],
-                "usuario_id" => $idUsuarioInserido,
-                "created_at" => date("Y-m-d H:i:s"),
-                "updated_at" => date("Y-m-d H:i:s"),
-                
-            );
-
-            $this->load->model("MedicoModel");
-            
-			// Insere um medico na tabela
-            $idMedicoInserido = $this->MedicoModel->insereMedico($arrayInserirMedico);
-			
-			// Envia o agradecimento ao medico
-			$this->enviarCartaoAgradecimento($idMedicoInserido);
-			
-            redirect('medico/index');
-        }
-    }
-
-    
-
-
-    public function formMedico() {
-        $this->load->model("especialidadesModel");
-        //Pega informaçoes das especialidades
-        $especialidades = $this->especialidadesModel->getInfoEspecialidade();
-        
-        $this->load->model("estadosModel");
-        //Pega informaçoes dos estados
-        $estados = $this->estadosModel->getInfoEstados();
-        
-        $dadosView = array('especialidades' => $especialidades,'estados' => $estados);
-        $this->load->view('insere_medicos', $dadosView);
-    }
-
-    public function listarMedicos() {
-        $this->load->model("MedicoModel");
-        $listaDeMedicos = $this->MedicoModel->listarNomeTodosMedicos();
-        $dadosView = array('listaDeMedicos' => $listaDeMedicos);
-        
-        
-        $this->load->view('lista_medicos', $dadosView);
-        
-    }
+   
     
     public function visualizaEditaMedicoMedicos() {
         
@@ -258,7 +180,7 @@ class Medico extends CI_Controller {
 
         $dataPost = $_POST;
         $arrayEditarMedico = array(
-            "nome" => $dataPost['nomeMedico'],
+            "nome_medico" => $dataPost['nomeMedico'],
             "especialidade_id" => $dataPost['especialidadeMedico'],
             "crm" => $dataPost['numeroCRM'],
             "crm_uf" => $dataPost['crmUF'],
@@ -271,15 +193,7 @@ class Medico extends CI_Controller {
         
     }
 
-    public function excluirMedico($idMedico,$idUsuario) {
-         $id = $this->session->userdata('medico');    
-         
-        $this->load->model("MedicoModel");
-        $this->load->model("UsuarioModel");
-        $this->MedicoModel->excluirMedico($id['id_medico']);
-        $this->UsuarioModel->excluirUsuario($id['id_usuario']);
-        redirect('medico/listarMedicos');
-    }
+
 
 }
 

@@ -27,8 +27,10 @@ class Clinica extends CI_Controller {
     //lista todos as clinicas do medico
     public function listaClinicas() {
 
+         $id = $this->session->userdata('medico');  
+
         $this->load->model('clinicaModel', 'cm');
-        $data["query"] = $this->cm->listaClinicas();
+        $data["query"] = $this->cm->listaClinicas($id['id_medico']);
         $this->load->view('clinicas', $data);
     }
 

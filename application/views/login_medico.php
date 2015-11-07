@@ -1,6 +1,6 @@
 <html>
 	
-	<form id="login_medico"  method="post" action="<?php echo base_url();?>acesso/logarMedico">	
+	<form id="login_medico"  method="post" action="<?php echo base_url();?>acesso/logarAdm">	
 
 		<label> Login </label>
 		<input type="text" name="email" id="email"/>

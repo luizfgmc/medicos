@@ -2,7 +2,7 @@
     <head></head>
     <body>
         <section class="formCadastroInstituicoes">
-            <form method="post" action="<?php echo base_url() ?>instituicao/editarSalvarInstituicao/<?=$query[0]->id?>">
+            <form method="post" action="<?php echo base_url() ?>adm/editarSalvarInstituicao/<?=$query[0]->id?>">
                 <div class="itemFormCadastroClinicas">
                     <label>Nome</label>
                     <div class="campoCadastroInstituicao">

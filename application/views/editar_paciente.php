@@ -16,7 +16,7 @@
                             <div class="container_item_form">
                                 <label>Nome</label>
                                 <div class="campoCadastroPaciente">
-                                    <input type="text" name="nomePaciente" value="<?= $query[0]->nome ?>" />
+                                    <input type="text" name="nomePaciente" value="<?= $query[0]->nome_paciente ?>" />
                                 </div>
                             </div>
                             <div class="container_item_form">

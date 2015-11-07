@@ -36,9 +36,9 @@
 
 
 		//funcao que lista todas as clinicas do medico
-		public function listaClinicas(){
+		public function listaClinicas($id){
 
-			$query = $this->db->get('clinicas');
+			 $query = $this->db->get_where('clinicas', array('medico_id'=>$id));
 			return  $query->result();
 				
 

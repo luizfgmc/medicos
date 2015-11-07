@@ -22,6 +22,7 @@ class Paciente extends CI_Controller {
         $this->load->view('layout/footer');
     }
 
+
     public function listaPacientes() {
 
         $this->load->model('pacienteModel', 'pm');
@@ -34,7 +35,7 @@ class Paciente extends CI_Controller {
     public function inserePaciente() {
 
         $arrayPaciente = array(
-            "nome" => $this->input->post('nomePaciente'),
+            "nome_paciente" => $this->input->post('nomePaciente'),
             "cpf" => $this->input->post('cpfPaciente'),
             "endereco" => $this->input->post('enderecoPaciente'),
             "end_numero" => $this->input->post('numeroPaciente'),
@@ -71,7 +72,7 @@ class Paciente extends CI_Controller {
     public function editarSalvarPaciente($idPaciente) {
 
         $arrayPaciente = array(
-            "nome" => $this->input->post('nomePaciente'),
+            "nome_paciente" => $this->input->post('nomePaciente'),
             "cpf" => $this->input->post('cpfPaciente'),
             "endereco" => $this->input->post('enderecoPaciente'),
             "end_numero" => $this->input->post('numeroPaciente'),
@@ -83,8 +84,8 @@ class Paciente extends CI_Controller {
             "telefone" => $this->input->post('telefonePaciente'),
             "created_at" => date("Y-m-d H:i:s"),
             "updated_at" => date("Y-m-d H:i:s"),
+            "atividade"=>"A"
         );
-
 
         $this->load->model('pacienteModel', 'pm');
         $this->pm->editarSalvarPaciente($idPaciente, $arrayPaciente);

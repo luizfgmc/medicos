@@ -38,6 +38,17 @@
 			
 		}
 		
+		public function verSolicitcoesInstituicao($id){
+			$this->logininstituicao->valida_sessao_instituicao();
+			$this->db->select('*, s.id, p.nome_paciente');
+			$this->db->from('solicitacoes as s'); 
+			$this->db->join('pacientes as p','s.paciente_id = p.id');
+			$this->db->where('s.instituicao_id', $id);
+			$query = $this->db->get();
+			return $query->result();
+
+		}
+
 		public function compareceu($idSolicitacao) {
 			
 			// Alterar status da solicitacao para CO (Compareceu)
@@ -49,7 +60,7 @@
 
 		public function verSolicitcoes($medicoId){
 
-			 $this->loginmedico->valida_sessao_medico();
+			$this->loginmedico->valida_sessao_medico();
 			$this->db->select('*, s.id, p.nome_paciente');
 			$this->db->from('solicitacoes as s'); 
 			$this->db->join('agendas as a','s.agenda_id = a.id');
