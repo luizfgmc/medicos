@@ -13,29 +13,7 @@ class Medico extends CI_Controller {
 
     }
 	
-	public function enviarCartaoAgradecimento($idMedico) {
-		
-		$this->load->library('email');
-		
-		// Resetar informações armazenadas na classe
-		$this->email->clear(TRUE);
-		
-		$this->load->model("MedicoModel");
-		$medico = $this->MedicoModel->getTodasInfoMedicos($idMedico);
-		
-		$nomeMedico = $medico->nome_medico;
-		$email = $medico->email;
-		
-		$this->email->from('noreply.medicoamigo@gmail.com', 'Medico Amigo');
-		$this->email->to($email);
-		$this->email->subject($nomeMedico . ', seja bem vindo!');
-		$this->email->message('Oi ' . $nomeMedico . ', <br/> Seja bem vindo a equipe Medico Amigo!');
-		//$this->email->cc($email); Mantive comentado caso precise algum dia. Email com copia.
-		//$this->email->attach('/path/to/file1.png');  Mantive comentado caso precise algum dia. Anexar.
-		//$this->email->attach('/path/to/file2.pdf');  Mantive comentado caso precise algum dia. Pode anexar varios docs.
-		$this->email->send();
-		
-	}
+	
 	
 	public function obterIdMedico($usuario, $senha) {
 		

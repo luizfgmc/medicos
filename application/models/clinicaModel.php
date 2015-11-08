@@ -19,8 +19,9 @@
 		
 		//busca uma determinada clinica pelo id
 		public function buscarClinicaPorId($idClinica){
+			$id = $this->session->userdata('medico');	
 
-			$query = $this->db->get_where('clinicas', array('id'=>$idClinica));
+			$query = $this->db->get_where('clinicas', array('id'=>$idClinica,'medico_id'=>$id['id_medico']));
 			return $query->result();
 		}
 
@@ -47,7 +48,8 @@
 		//funcao para editar clinica pelo id
 		public function editarCLinica($idClinica, $data){
 
-			$this->db->update('clinicas', $data, array('id' => $idClinica));
+			$id = $this->session->userdata('medico');	
+			$this->db->update('clinicas', $data, array('id' => $idClinica,'medico_id'=>$id['id_medico']));
 
 		}
 

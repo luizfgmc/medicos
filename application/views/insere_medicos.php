@@ -4,7 +4,7 @@
 <section class="mainContent">
     <section class="cadastro_medico">
         <div class="containerCenter fullSiteSize">
-        <form method="post" action="<?php echo base_url() ?>medico/insereMedico/" id="formMedico">
+        <form method="post" action="<?php echo base_url() ?>cadastroMedico/insereMedico" id="formMedico">
             <div class="halfSize">
                 <div class="container_form_medico">
                     <h2>Cadastro Médico</h2>

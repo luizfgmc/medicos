@@ -42,7 +42,7 @@
                                 <input type="password" name="senha" id="senha"/>
                             </div>
                             <div class="itemForm itemCadastrar">
-                                <a href="<?php echo base_url(); ?>medico/index">
+                                <a href="<?php echo base_url(); ?>cadastroMedico">
                                     Cadastrar
                                 </a>    
 
@@ -65,9 +65,9 @@
                                 <input type="password" name="senha" id="senha"/>
                             </div>
                             <div class="itemForm itemCadastrar">
-                                <a href="<?php echo base_url(); ?>medico/index">
+                                <!--<a href="<?php echo base_url(); ?>medico/">
                                     Cadastrar
-                                </a>    
+                                </a>    -->
 
                             </div>
                             <div class="itemForm">

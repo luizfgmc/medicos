@@ -64,7 +64,7 @@ class Instituicao extends CI_Controller {
           $this->load->model('solicitacaoModel','sm');
           $this->sm->solicitarConsultaSalvar($arraySolicitcao);
 
-          echo "sucesso";
+          redirect('instituicao');
 
     }
     
