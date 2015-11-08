@@ -14,15 +14,17 @@
                     <a href="">
                         <img src="<?php echo base_url() ?>assets/images/menu_topo.png" />
                     </a>	
-                    <div class="menuTop">
-                        <ul>
-                            <li><a href="<?php echo base_url() ?>medico">Página Principal</a><li>
-                            <li><a href="<?php echo base_url() ?>medico/solicitacoes/">Solicitações</a><li>
-                            <li><a href="<?php echo base_url() ?>agenda"> Cadastrar Agenda</a><li>
-                            <li><a href="<?php echo base_url() ?>agenda/listarAgendasMedico"> Minhas Agendas</a><li>
-                            <li><a href="<?php echo base_url() ?>clinica">Clínicas</a><li>
-                        </ul>    
-                    </div>
+                    <?php
+                    $arrayLoginMedoc=$this->session->userdata('medico');
+                    if($arrayLoginMedoc['tipo']=='M')
+                    {
+                        $this->load->view('layout/menu_medico');
+                    }
+                    else if($arrayLoginMedoc['tipo']=='x')
+                    {
+                        $this->load->view('layout/menu_instituicao');
+                    }
+                    ?>
                 </div>
                 <div class="alertTop">
                     <a href="">

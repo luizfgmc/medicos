@@ -118,9 +118,9 @@
     width:30%;
 }
 
-.containerQuantidadeHorario
-{
-    width:70%;
+.containerQuantidadeHorario {
+    width: 100%;
+    display: flex;
 }
 
 .containerItemsDias .itemFormHorario
@@ -172,3 +172,21 @@
     height: 100%;
     width: 100%;
 }
+
+
+.campoCadastroAgenda
+{
+    display:flex;
+    width:100%;
+}
+
+.campoCadastroAgenda .container_tiny_item
+{
+    width:33%;
+}
+
+.campoCadastroAgenda .selectClinicas
+{
+  margin-top: 10px;
+}
+
