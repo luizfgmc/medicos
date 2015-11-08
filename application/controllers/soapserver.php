@@ -79,13 +79,13 @@ ini_set('display_errors', 1);
 			function getChaveConsulta($usuario, $senha) {
 				
 				$controllers =& get_instance();
-				$controllers->load->model('../controllers/Medico');
+				$controllers->load->model('../controllers/MedicoSoap');
 				
-				$idMedico = $controllers->Medico->obterIdMedico($usuario, $senha);
+				$idMedico = $controllers->MedicoSoap->obterIdMedico($usuario, $senha);
 				
 				if ($idMedico > 0) {
 					
-					$chave = $controllers->Medico->gerarHash($idMedico, 'json');
+					$chave = $controllers->MedicoSoap->gerarHash($idMedico, 'json');
 					
 				}
 				

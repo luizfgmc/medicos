@@ -26,7 +26,7 @@ ini_set('display_errors', 1);
 				
 				} else {
 					 
-						/* teste do webservice
+						/* teste do webservice*/
 					 $chave = $this->nusoap_client->call(
 							  'getChaveConsulta',
 							   array('thales_ferraz2@hotmail.com', 'teste')
@@ -57,7 +57,7 @@ ini_set('display_errors', 1);
 					var_dump($agenda);
 					
 					
-					*/
+					
 					
 					/* Teste metodos compareceu e nao compareceu
 					$controllers =& get_instance();
