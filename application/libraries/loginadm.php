@@ -14,7 +14,7 @@ class loginAdm {
     public function valida_sessao_adm() {
         
         if (empty($this->CI->session->userdata('adm'))) {
-            redirect('acesso');
+            redirect('home');
             exit();
         }
     }

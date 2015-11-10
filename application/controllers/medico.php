@@ -8,7 +8,7 @@ class Medico extends CI_Controller {
         parent::__construct();
         $this->load->helper('url');
         
-     // comentei isso porque faz o meu webservice parar de funcionar
+        
 	 $this->loginmedico->valida_sessao_medico();
 
     }

@@ -14,7 +14,7 @@ class loginInstituicao {
     public function valida_sessao_instituicao() {
         
         if (empty($this->CI->session->userdata('instituicao'))) {
-            redirect('acesso');
+            redirect('home');
             exit();
         }
     }

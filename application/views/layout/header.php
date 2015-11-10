@@ -72,6 +72,7 @@
                 <div class="medicoLoged">
 
                     <span> <a href="<?php echo base_url() ?>medico/visualizaEditaMedicoMedicos/" >Dr. Fabio Capelo </a> </span>
+                    <a style="position:relative; left:70px;" href="<?php echo base_url() ?>acesso/logoff" > Sair </a>
                 </div>
                 <!-- <div class="configTop">
                      <a href="">

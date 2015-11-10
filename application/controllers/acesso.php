@@ -130,6 +130,7 @@ class Acesso extends CI_Controller {
     public function logoff() {
 
         $this->session->sess_destroy();
+        redirect('home');
     }
 
 }
