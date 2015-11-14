@@ -15,7 +15,7 @@
                     <div class="containerCenter fullSiteSize">
                         <div class="logoMedicoAmigoTop">
                             <a href="">
-                                <img src="http://localhost/medicos/assets/images/logo_topo.png">
+                                <img src="assets/images/logo_topo.png">
                             </a>	
                             <span> | amigo médico</span>
 
