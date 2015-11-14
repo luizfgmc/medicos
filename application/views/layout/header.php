@@ -15,15 +15,18 @@
                         <img src="<?php echo base_url() ?>assets/images/menu_topo.png" />
                     </a>	
                     <?php
-                    $arrayLoginMedoc=$this->session->userdata('instituicao');
-                    if($arrayLoginMedoc['tipo']=='M')
-                    {
-                        $this->load->view('layout/menu_medico');
-                    }
+                           
 
-                    else if($arrayLoginMedoc['tipo']=='I')
-                    {
+                    $arrayLoginMedoc=$this->session->userdata('instituicao');
+
+                    if(empty($arrayLoginMedoc)){
+
+                        $this->load->view('layout/menu_medico');
+
+                    }else{
+
                         $this->load->view('layout/menu_instituicao');
+                        
                     }
                     ?>
                 </div>

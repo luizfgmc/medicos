@@ -15,6 +15,7 @@ class Acesso extends CI_Controller {
     public function logarMedico() {
 
         $email = $this->input->post('email');
+
         $senha = sha1($this->input->post('senha'));
 
         $this->load->model('medicoModel', 'mm');

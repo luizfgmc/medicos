@@ -7,9 +7,7 @@
                 <div class="containerListaSolicitacoes">
                     <h2>Solicitações pedentes </h2>
                     <div class="infoMedicoLogado">
-                        <p>Dr. Fábio CAPELO - PEDIATRIA</p>
-                        <p> Clinica / Consultorio Particular</p>
-                        <p>Endereço: Rua Juíz  de fora, 683 - Barro Preto</p>
+                       
                     </div>
                     <div class="cabecalhoListaSolicitacoes">
                         <span class="nomePaciente">Paciente</span>

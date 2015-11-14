@@ -19,7 +19,9 @@
             $estados = $this->estadosModel->getInfoEstados();
             
             $dadosView = array('especialidades' => $especialidades,'estados' => $estados);
+            $this->load->view('layout/header_home');
             $this->load->view('insere_medicos', $dadosView);
+            $this->load->view('layout/footer_home');
         }
 
 
