@@ -55,7 +55,7 @@
                     </div>  
                     <div class="container_submit">
                         <input type="submit" class="input_submit" />
-                        <button type="button" class="input_cancel">Cancelar</button>
+                           <a href="<?php echo base_url() ?>medico/solicitacoes/" class="input_cancel">Cancelar</a>
                     </div>  
                 </div>
             </form>

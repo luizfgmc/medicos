@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/forms.css" />
         <script src="<?php echo base_url() ?>assets/js/jquery1.9.js"></script>
         <script src="<?php echo base_url() ?>assets/js/main.js"></script>
+             <script src="<?php echo base_url() ?>assets/js/validate.js"></script>
     </head>
     <body>
         <header>

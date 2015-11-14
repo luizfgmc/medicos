@@ -1,4 +1,5 @@
 <?php
+
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
@@ -7,136 +8,116 @@ class Medico extends CI_Controller {
     function __construct() {
         parent::__construct();
         $this->load->helper('url');
-        
-        
-	 $this->loginmedico->valida_sessao_medico();
 
+
+        $this->loginmedico->valida_sessao_medico();
     }
-	
-	
-	
-	public function obterIdMedico($usuario, $senha) {
-		
-		$this->load->model("MedicoModel");
-		$idMedico = $this->MedicoModel->obterIdMedico($usuario, $senha);
-		
-		if ($idMedico > 0) {
-			
-			return $idMedico;
-		
-		} else {
-			
-			return 0;
-			
-		}
-		
-	}
-	
-	public function gerarHash($idMedico, $tipo="json", $email="") {
-		
-		// Obter chave Hash gerada pelo metodo GerarHash da classe MedicoModel
-		$this->load->model("MedicoModel");
-		$chave = $this->MedicoModel->gerarHash($idMedico, $email);
-		
-		// Factory: Verificar tipo solicitado pelo usuario
-		//por default array
-		//Usar encode para retornar a chave no formato solicitado
-		if ($tipo == 'json') {
-			
-			$chave = json_encode($chave);
-			
-		} elseif ($tipo == 'string') {
-			
-			// já retorna como string entao é só manter.
-		
-		} elseif ($tipo == 'array') {
-			
-			$chave = array ('chave' => $chave);
-		
-		} else {
-			// Caso usuario informe um tipo que não seja Json, array ou string então retorna isso.
-			$chave = array('chave' => 'Tipo não informado!');
-			
-		}
-		
-		// Retornar a chave. 
-		return $chave;
-	
-	}
 
+    public function obterIdMedico($usuario, $senha) {
 
-    public function solicitacoes(){
+        $this->load->model("MedicoModel");
+        $idMedico = $this->MedicoModel->obterIdMedico($usuario, $senha);
 
-        $id = $this->session->userdata('medico');    
-        $this->load->model('solicitacaoModel','sm');
+        if ($idMedico > 0) {
+
+            return $idMedico;
+        } else {
+
+            return 0;
+        }
+    }
+
+    public function gerarHash($idMedico, $tipo = "json", $email = "") {
+
+        // Obter chave Hash gerada pelo metodo GerarHash da classe MedicoModel
+        $this->load->model("MedicoModel");
+        $chave = $this->MedicoModel->gerarHash($idMedico, $email);
+
+        // Factory: Verificar tipo solicitado pelo usuario
+        //por default array
+        //Usar encode para retornar a chave no formato solicitado
+        if ($tipo == 'json') {
+
+            $chave = json_encode($chave);
+        } elseif ($tipo == 'string') {
+
+            // já retorna como string entao é só manter.
+        } elseif ($tipo == 'array') {
+
+            $chave = array('chave' => $chave);
+        } else {
+            // Caso usuario informe um tipo que não seja Json, array ou string então retorna isso.
+            $chave = array('chave' => 'Tipo não informado!');
+        }
+
+        // Retornar a chave. 
+        return $chave;
+    }
+
+    public function solicitacoes() {
+
+        $id = $this->session->userdata('medico');
+        $this->load->model('solicitacaoModel', 'sm');
         $data['query'] = $this->sm->verSolicitcoes($id['id_medico']);
         $this->load->view('layout/header');
-        $this->load->view('solicitacoes',$data);
+        $this->load->view('solicitacoes', $data);
         $this->load->view('layout/footer');
-
     }
 
-    public function aprovarSolicitacao($idSolicitacao){
+    public function aprovarSolicitacao($idSolicitacao) {
 
-         $this->load->model('solicitacaoModel','sm');
-         $data['query'] = $this->sm->aprovarSolicitcao($idSolicitacao);
-
-         $this->load->view('aprovar_solicitacao', $data);
-
+        $this->load->model('solicitacaoModel', 'sm');
+        $data['query'] = $this->sm->aprovarSolicitcao($idSolicitacao);
+        $this->load->view('layout/header');
+        $this->load->view('aprovar_solicitacao', $data);
+        $this->load->view('layout/footer');
     }
 
+    public function reprovarSolicitacao($idSolicitacao) {
 
-    public function reprovarSolicitacao($idSolicitacao){
-
-         $this->load->model('solicitacaoModel','sm');
-         $data = $this->sm->reprovarSolicitacao($idSolicitacao);
-         echo $data;
-
+        $this->load->model('solicitacaoModel', 'sm');
+        $data = $this->sm->reprovarSolicitacao($idSolicitacao);
+        echo $data;
     }
 
-    public function aprovarSolicitacaoSalvar(){
+    public function aprovarSolicitacaoSalvar() {
 
         $idSolicitacao = $this->input->post('id');
         $arrayDados = array(
-             
-            "data_agendamento"=>$this->input->post('data_agendamento'),
-            "hora_agendamento"=>$this->input->post('hora_agendamento'),
-            "status"=>"AP",
-            "updated_at"=>date('Y-m-d H:i:s'),
-           
+            "data_agendamento" => $this->input->post('data_agendamento'),
+            "hora_agendamento" => $this->input->post('hora_agendamento'),
+            "status" => "AP",
+            "updated_at" => date('Y-m-d H:i:s'),
         );
 
 
-        $this->load->model('solicitacaoModel','sm');
-       $this->sm->aprovarSolicitcaoSalvar($arrayDados, $idSolicitacao);
-        
-        echo "sucesso";        
+        $this->load->model('solicitacaoModel', 'sm');
+        $this->sm->aprovarSolicitcaoSalvar($arrayDados, $idSolicitacao);
 
+        echo "sucesso";
     }
 
     public function index() {
-               
-                $this->load->model("especialidadesModel");
+
+        $this->load->model("especialidadesModel");
         //Pega informaçoes das especialidades
         $especialidades = $this->especialidadesModel->getInfoEspecialidade();
-        
+
         $this->load->model("estadosModel");
         //Pega informaçoes dos estados
         $estados = $this->estadosModel->getInfoEstados();
-        
-        $dadosView = array('especialidades' => $especialidades,'estados' => $estados);
-        
+
+        $dadosView = array('especialidades' => $especialidades, 'estados' => $estados);
+
         $this->load->view('layout/header_home');
         $this->load->view('insere_medicos', $dadosView);
         $this->load->view('layout/footer_home');
     }
 
-   
-    
     public function visualizaEditaMedicoMedicos() {
-        
-         $id = $this->session->userdata('medico'); 
-           
+
+        $id = $this->session->userdata('medico');
+
 
         $this->load->model("especialidadesModel");
         //Pega informaçoes das especialidades
@@ -146,15 +127,15 @@ class Medico extends CI_Controller {
         $estados = $this->estadosModel->getInfoEstados();
         $this->load->model("MedicoModel");
         $infoMedico = $this->MedicoModel->getTodasInfoMedicos($id['id_medico']);
-        $dadosView = array('especialidades' => $especialidades,'estados' => $estados,'infoMedico' => $infoMedico);
+        $dadosView = array('especialidades' => $especialidades, 'estados' => $estados, 'infoMedico' => $infoMedico);
         $this->load->view('layout/header');
-        $this->load->view('editar_medicos', $dadosView);       
+        $this->load->view('editar_medicos', $dadosView);
         $this->load->view('layout/footer');
     }
-    
+
     public function salvaEditaMedica() {
-                
-         $id = $this->session->userdata('medico'); 
+
+        $id = $this->session->userdata('medico');
 
         $dataPost = $_POST;
         $arrayEditarMedico = array(
@@ -166,12 +147,9 @@ class Medico extends CI_Controller {
             "updated_at" => date("Y-m-d H:i:s"),
         );
         $this->load->model("MedicoModel");
-        $this->MedicoModel->editarMedico($arrayEditarMedico,$id['id_medico']);  
+        $this->MedicoModel->editarMedico($arrayEditarMedico, $id['id_medico']);
         redirect('medico/listarMedicos');
-        
     }
-
-
 
 }
 
