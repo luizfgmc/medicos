@@ -59,7 +59,7 @@ class Agenda extends CI_Controller {
             "medico_id" => $id['id_medico'],
             "data_emissao" => date('Y-m-d'),
             "quantidade" => $this->input->post('quantidadeAgenda'),
-            "saldo" => $this->input->post('saldoAgenda'),
+            "saldo" => $this->input->post('quantidadeAgenda'),
             "created_at" => date("Y-m-d H:i:s"),
             "updated_at" => date("Y-m-d H:i:s"),
             "clinica_id" => $this->input->post('clinicas'),

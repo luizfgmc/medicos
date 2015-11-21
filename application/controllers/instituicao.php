@@ -51,7 +51,7 @@ class Instituicao extends CI_Controller {
              'instituicao_id'=>$idInstituicao['id_instituicao'],
              'paciente_id'=>$this->input->post('paciente'),
              'solicitante'=>$this->input->post('solicitante'),
-             'data_emissao'=>$this->input->post('data'),
+             'data_emissao'=> date('Y-m-d'),
              'status'=>'PE',
              'descricao'=> $this->input->post('descricao'),
              'created_at'=>date("Y-m-d H:i:s"),

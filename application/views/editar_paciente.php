@@ -4,7 +4,7 @@
     <section class="formCadastroPacientes">
 
 
-        <form method="post" action="<?php echo base_url() ?>paciente/inserePaciente/">
+        <form method="post" action="<?php echo base_url() ?>paciente/editarSalvarPaciente/<?=$query[0]->id?>">
             <section class="cadastro_paciente">
                 <div class="containerCenter fullSiteSize">
                     <div class="halfSize">

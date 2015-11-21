@@ -5,9 +5,6 @@
 
 		<label> solicitante: </label>
 		<input type="text" id="solicitante" name="solicitante"/>
-		
-		<label> data: </label>
-		<input type="text"  id="data" name="data"/>
 
 		<label> descricao: </label>
 		<input type="text"  id="descricao" name="descricao"/>

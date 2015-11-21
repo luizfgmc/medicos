@@ -53,8 +53,15 @@
 
     	 public function insereMedico() {
             $dataPost = $_POST;
+            $this->load->model('medicoModel', 'mm');
+            $data = $this->mm->autenticar($dataPost['emailMedico']);
 
-        
+            if(!empty($data)){
+                echo "Email já cadastrado!";
+                exit();
+            }
+
+
             $this->load->library('Form_validation');
             $this->form_validation->set_rules('cpfMedico', 'CPF', 'trim|required|valida_cpf');
             $this->form_validation->set_rules('nomeMedico', 'Nome', 'trim|required');
