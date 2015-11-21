@@ -38,7 +38,7 @@ class MedicoModel extends CI_Model {
 
      public function buscarIdMedico($id){
 
-        $this->db->select('id');
+        $this->db->select('id,nome_medico');
         $this->db->from('medicos');
         $this->db->where('usuario_id',$id);
         $query = $this->db->get();

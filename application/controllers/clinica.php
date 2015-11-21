@@ -59,7 +59,7 @@ class Clinica extends CI_Controller {
             $arrayInsereClinica = array(
                 "medico_id" => $id['id_medico'],
                 "nome" => $data['nomeClinica'],
-                "telefone" => $data['telefoneClinica'],
+                "telefone" => str_replace("-","",$data['telefoneClinica']),
                 "endereco" => $data['enderecoClinica'],
                 "end_numero" => $data['numeroClinica'],
                 "end_complemento" => $data['complementoClinica'],
@@ -103,7 +103,7 @@ class Clinica extends CI_Controller {
         $arrayEditarClinica = array(
             "medico_id" => $id['id_medico'],
             "nome" => $data['nomeClinica'],
-            "telefone" => $data['telefoneClinica'],
+            "telefone" => str_replace("-","",$data['telefoneClinica']),
             "endereco" => $data['enderecoClinica'],
             "end_numero" => $data['numeroClinica'],
             "end_complemento" => $data['complementoClinica'],

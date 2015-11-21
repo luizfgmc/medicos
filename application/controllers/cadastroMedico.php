@@ -92,16 +92,18 @@
 
                 $arrayInserirMedico = array(
                     "nome_medico" => $dataPost['nomeMedico'],
-                    "cpf" => $dataPost['cpfMedico'],
+                    "cpf" => str_replace(".","",$dataPost['cpfMedico']),
                     "especialidade_id" => $dataPost['especialidadeMedico'],
                     "crm" => $dataPost['numeroCRM'],
                     "crm_uf" => $dataPost['crmUF'],
-                    "telefone" => $dataPost['telefoneMedico'],
+                    "telefone" => str_replace("-","",$dataPost['telefoneMedico']),
                     "usuario_id" => $idUsuarioInserido,
                     "created_at" => date("Y-m-d H:i:s"),
                     "updated_at" => date("Y-m-d H:i:s"),
                     
                 );
+                
+
 
                 $data = $this->MedicoModel->autenticar($email);  
                   

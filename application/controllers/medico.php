@@ -140,10 +140,10 @@ class Medico extends CI_Controller {
         $dataPost = $_POST;
         $arrayEditarMedico = array(
             "nome_medico" => $dataPost['nomeMedico'],
-            "especialidade_id" => $dataPost['especialidadeMedico'],
+            "especialidade_id" => $dataPost['especialidadeMedico'], 
             "crm" => $dataPost['numeroCRM'],
             "crm_uf" => $dataPost['crmUF'],
-            "telefone" => $dataPost['telefoneMedico'],
+            "telefone" => str_replace("-","",$dataPost['telefoneMedico']),
             "updated_at" => date("Y-m-d H:i:s"),
         );
         $this->load->model("MedicoModel");

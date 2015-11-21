@@ -56,6 +56,7 @@ class Acesso extends CI_Controller {
 
 
                     $arrayMedico = array(
+                        'nome' => $idMedico[0]->nome_medico,
                         'tipo' => $data[0]->tipo,
                         'email' => $data[0]->email,
                         'id_usuario' => $data[0]->id,
@@ -102,6 +103,7 @@ class Acesso extends CI_Controller {
                 $idInstituicao = $this->im->buscarIdInstituicao($data[0]->id);
 
                 $arrayInstituicao = array(
+                    'nome'=>$idInstituicao[0]->nome,
                     'tipo' => $data[0]->tipo,
                     'email' => $data[0]->email,
                     'id_usuario' => $data[0]->id,

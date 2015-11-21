@@ -15,18 +15,14 @@
                         <img src="<?php echo base_url() ?>assets/images/menu_topo.png" />
                     </a>	
                     <?php
-                           
+                    $arrayLoginMedoc = $this->session->userdata('instituicao');
 
-                    $arrayLoginMedoc=$this->session->userdata('instituicao');
-
-                    if(empty($arrayLoginMedoc)){
+                    if (empty($arrayLoginMedoc)) {
 
                         $this->load->view('layout/menu_medico');
-
-                    }else{
+                    } else {
 
                         $this->load->view('layout/menu_instituicao');
-                        
                     }
                     ?>
                 </div>
@@ -74,8 +70,18 @@
 
                 </div>
                 <div class="medicoLoged">
-
-                    <span> <a href="<?php echo base_url() ?>medico/visualizaEditaMedicoMedicos/" >Dr. Fabio Capelo </a> </span>
+                    <?php
+                    if (!empty($arrayLoginMedoc)) {
+                        ?>
+                        <span> <a href="<?php echo base_url() ?>medico/visualizaEditaMedicoMedicos/" ><?php echo $arrayLoginMedoc['nome']?>  </a> </span>
+                    <?php
+                    }else{
+                        $arrayLoginMedoc = $this->session->userdata('medico');
+                    ?>
+                 <span> <a href="<?php echo base_url() ?>medico/visualizaEditaMedicoMedicos/" ><?php echo $arrayLoginMedoc['nome']?> </a> </span>
+                        <?php
+                        }
+                        ?>
                     <a style="position:relative; left:70px;" href="<?php echo base_url() ?>acesso/logoff" > Sair </a>
                 </div>
                 <!-- <div class="configTop">
