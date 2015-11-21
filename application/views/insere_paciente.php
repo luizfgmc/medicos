@@ -21,19 +21,19 @@
                                 <div class="container_item_form">
                                     <label>Telefone</label>
                                     <div class="campoCadastroPaciente">
-                                        <input type="text" name="telefonePaciente"  class="default_text_input" />
+                                        <input type="text" name="telefonePaciente"  class="default_text_input" OnKeyPress="formatar('##.#####.####', this)" />
                                     </div>
                                 </div>
                                 <div class="container_item_form">
                                     <label>Cpf</label>
                                     <div class="campoCadastroPaciente">
-                                        <input type="text" name="cpfPaciente"  class="default_text_input"  />
+                                        <input type="text" name="cpfPaciente"  class="default_text_input"  OnKeyPress="formatar('###.###.###.##', this)" />
                                     </div>
                                 </div>
                                 <div class="container_item_form">
                                     <label>Cep:</label>
                                     <div class="campoCadastroPaciente">
-                                        <input type="text" name="cepPaciente" class="default_text_input" id="cep" />
+                                        <input type="text" name="cepPaciente" class="default_text_input" id="cep" OnKeyPress="formatar('#####.###', this)"/>
                                     </div>
                                 </div>
 
@@ -86,7 +86,7 @@
 
                                 <div class="container_submit">
                                     <input type="submit" class="input_submit" />
-                                    <button type="button" class="input_cancel">Cancelar</button>
+                            <a href="<?php echo base_url() ?>" class="input_cancel">Cancelar</a>
                                 </div>
 
                             </div>

@@ -101,7 +101,7 @@
                     </div>
                     <div class="container_submit">
                         <input type="submit" class="input_submit" tabIndex ="14" />
-                        <button type="button" class="input_cancel" tabIndex ="15">Cancelar </button>
+                           <a href="<?php echo base_url() ?>" class="input_cancel">Cancelar</a>
                     </div>	
 
                 </div>

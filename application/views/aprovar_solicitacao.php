@@ -1,21 +1,44 @@
-<html>
-	<?php
-		
-		var_dump($query);
-		$id = $query[0]->id;
+<link rel="stylesheet" href="<?php echo base_url() ?>assets/css/forms.css" />
+<link rel="stylesheet" href="<?php echo base_url() ?>assets/css/medico/medico.css" />
+<?php echo validation_errors(); ?>
+<section class="mainContent">
+    <section class="cadastro_medico">
+        <div class="containerCenter fullSiteSize">
+            <form action="<?php echo base_url() ?>medico/aprovarSolicitacaoSalvar" method="post">
+                <div class="halfSize">
+                    <div class="container_form_medico">
+                        <h2>Aprovar Solicitação</h2>
+                        <div class="form_cadastro_medico">
+                            <?php
+                            var_dump($query);
+                            $id = $query[0]->id;
+                            ?>
 
-	?>
 
-	<form action="<?php echo base_url()?>medico/aprovarSolicitacaoSalvar" method="post">
+                            <div class="form_cadastro_medico">
+                                <div class="container_item_form">
+                                    <label> data da consulta: </label>
+                                    <input type="text" id="data_agendamento" name="data_agendamento"/>
+                                </div>
+                                <div class="container_item_form">
+                                    <label> hora da consulta: </label>
+                                    <input type="text"  id="hora_agendamento" name="hora_agendamento"/>
+                                </div>
+                                <input type="hidden" name ="id" value="<?= $id; ?>"/>
 
-		<label> data da consulta: </label>
-		<input type="text" id="data_agendamento" name="data_agendamento"/>
-		<label> hora da consulta: </label>
-		<input type="text"  id="hora_agendamento" name="hora_agendamento"/>
+                            </div>
+                            <div class="container_submit">
+                                <input type="submit" class="input_submit" tabIndex ="14" value="Aprovar" />
+                                <a href="<?php echo base_url() ?>medico/" class="input_cancel">Cancelar</a>
+                            </div>
 
-		<input type="hidden" name ="id" value="<?=$id; ?>"/>
 
-		<input type="submit" value="aprovar"/>
-	</form>
 
-</html>
+
+                        </div>
+
+                    </div>
+                </div>
+            </form>
+    </section>
+</section>

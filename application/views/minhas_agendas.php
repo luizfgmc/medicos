@@ -30,7 +30,7 @@
                                 //echo($k->descricao . "<br/>");
                                 echo '<span class="horarioSugerido">'.($k->data_emissao)."</span>";
                                   echo '<span class="saldo">' .($k->saldo . "<br/>");
-                                echo($k->quantidade).' <a href="'.base_url() . "instituicao/solicitarConsulta/" . $k->id.'"> Solicitar Consulta </a> </span>';
+                                echo($k->quantidade).' </span>';
                                 //echo($k->crm . "<br/>");
                                 
                                 //echo($k->telefone . "<br/>");
