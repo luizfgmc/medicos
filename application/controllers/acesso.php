@@ -33,7 +33,7 @@ class Acesso extends CI_Controller {
    
             $vals = array(
                 
-            'word'=>'',   
+            'word'=>'teste',   
             'img_path' => './captcha/',
             'img_url' => base_url()."captcha/",
             'font_path' => './path/to/fonts/texb.ttf',
@@ -175,7 +175,7 @@ class Acesso extends CI_Controller {
 
          $vals = array(
                 
-            'word'=>'',   
+            'word'=>'teste',   
             'img_path' => './captcha/',
             'img_url' => base_url()."captcha/",
             'font_path' => './path/to/fonts/texb.ttf',

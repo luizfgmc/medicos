@@ -25,6 +25,8 @@ function trigger_https()
 	$ssl_url_list[] = '/(.*)soliciticao(.*)$/'; 
 	$ssl_url_list[] = '/(.*)adm(.*)$/'; 
 	$ssl_url_list[] = '/(.*)instituicao(.*)$/'; 
+	$ssl_url_list[] = '/(.*)webservice(.*)$/'; 
+	$ssl_url_list[] = '/(.*)soap(.*)$/'; 
 
 
 

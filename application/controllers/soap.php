@@ -2,7 +2,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-class MedicoSoap extends CI_Controller {
+class Soap extends CI_Controller {
 
     function __construct() {
         parent::__construct();
@@ -12,10 +12,12 @@ class MedicoSoap extends CI_Controller {
 	
 	
 	
-	public function obterIdMedico($usuario, $senha) {
+	public function obterIdMedico() {
 		
+         $usuario = $this->session->userdata('medico');
+    
 		$this->load->model("MedicoModel");
-		$idMedico = $this->MedicoModel->obterIdMedico($usuario, $senha);
+		$idMedico = $this->MedicoModel->obterIdMedico($usuario['email']);
 		
 		if ($idMedico > 0) {
 			

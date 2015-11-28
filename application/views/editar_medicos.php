@@ -3,11 +3,22 @@
 <section class="mainContent">
     <section class="cadastro_medico">
         <div class="containerCenter fullSiteSize">
+           
+            <h2>Editar Médico</h2>
+
+           <div>    
+
+                <label> Obter codigo para disponiblizar agendas </label><br/>
+                <input type="text" name="hash" id="hash" value="<?= $infoMedico->chave_consulta; ?>" />
+                <input type="button" name="gerar_hash" id="gerar_hash" onclick="gerar_hash();" value="Obter Codigo"></button>
+
+           </div>
+
+
             <form method="post" action="<?php echo base_url() ?>medico/salvaEditaMedica/">
                 <div class="halfSize">
                     <div class="container_form_medico">
-                        <h2>Editar Médico</h2>
-                        <div class="form_cadastro_medico">
+                      <div class="form_cadastro_medico">
                             <input type="hidden" name="idMedico" value="<?= $infoMedico->id; ?>" />
                             <div class="container_item_form">
                                 <label>Nome</label>

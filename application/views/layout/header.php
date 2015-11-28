@@ -6,6 +6,7 @@
         <script src="<?php echo base_url() ?>assets/js/jquery1.9.js"></script>
         <script src="<?php echo base_url() ?>assets/js/validate.js"></script>
         <script src="<?php echo base_url() ?>assets/js/main.js"></script>
+        <script src="<?php echo base_url() ?>assets/js/medico.js"></script>
     </head>
     <header class="mainHeader">
         <div class="containerCenter fullSiteSize">

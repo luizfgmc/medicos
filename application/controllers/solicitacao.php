@@ -50,9 +50,9 @@ class Solicitacao extends CI_Controller{
 		$this->load->model("SolicitacaoModel");
 		$query = $this->SolicitacaoModel->getTodosHorariosMedico($chave);
 		
-		$arr = array();
+		exit(json_encode($query));
 		
-		foreach ($query->result_array() as $row) {
+		/*foreach ($query->result_array() as $row) {
 			
 			$arrTemp = array('status' => $row['status'], 
 								'descricao' => $row['descricao'],
@@ -64,7 +64,7 @@ class Solicitacao extends CI_Controller{
 			
 			array_push($arr, $arrTemp);
 		
-		}
+		} */
 		
 		if ($tipo == 'json') {
 			
@@ -88,27 +88,27 @@ class Solicitacao extends CI_Controller{
 		return '1';
 	}
 	
-	public function getHorariosMedicoDia($chave, $dia, $tipo='array') {
+	public function getHorariosMedicoDia($chave, $dia, $tipo) {
 		
 		$this->load->model("SolicitacaoModel");
 		
 		$query = $this->SolicitacaoModel->getHorariosMedicoDia($chave, $dia);
 		
-		$arr = array();
+		exit(json_encode($query));	
 		
-		foreach ($query->result_array() as $row) {
+		/*foreach ($query->result_array() as $row) {
 			
 			$arrTemp = array('status' => $row['status'], 
 								'descricao' => $row['descricao'],
 								'data_agendamento' => $row['data_agendamento'],
 								'hora_agendamento' => $row['hora_agendamento'],
-								'nome' => $row['nome'],
+								'nome_paciente' => $row['nome'],
 								'telefone' => $row['telefone']
 							);
 			
 			array_push($arr, $arrTemp);
 		
-		}
+		} */
 		
 		if ($tipo == 'json') {
 			

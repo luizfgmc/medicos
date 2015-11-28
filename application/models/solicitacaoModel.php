@@ -113,7 +113,7 @@
 		// Retornar todos os horários da agenda
 		$this->db->select('solicitacoes.status, solicitacoes.descricao');
 		$this->db->select('solicitacoes.data_agendamento, solicitacoes.hora_agendamento');
-		$this->db->select('pacientes.nome, pacientes.telefone');
+		$this->db->select('pacientes.nome_paciente, pacientes.telefone');
 		$this->db->from('solicitacoes');
 		$this->db->join('agendas', 'agendas.id = solicitacoes.agenda_id');
 		$this->db->join('medicos', 'medicos.id = agendas.medico_id');
@@ -142,7 +142,7 @@
 		
 		$query = $this->db->get();
 		
-		return $query;
+		return $query->result();
     
 	}
 
@@ -154,10 +154,9 @@
 				'solicitacoes.data_agendamento' => $data)
 				);
 		
-		return $this->db->get();
+		$query =  $this->db->get();
+		return $query->result();
 		
-		
-		return 'a';
 		
 	}
 	

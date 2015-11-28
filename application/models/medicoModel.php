@@ -113,12 +113,11 @@ class MedicoModel extends CI_Model {
 		
 	}
 	
-	public function obterIdMedico($usuario, $senha, $apelido='med') {
+	public function obterIdMedico($usuario, $apelido='med') {
 		
-		$this->getMedicos($apelido)
-			->db->select("{$apelido}.id")
-			->where("usuarios.email",$usuario)
-			->where("usuarios.password_salt", sha1($senha));
+		$this->getMedicos($apelido);
+		$this->db->select("{$apelido}.id");
+		$this->db->where("usuarios.email",$usuario);
 			
         $query = $this->db->get();
         return $query->row()->id;
