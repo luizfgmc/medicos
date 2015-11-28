@@ -438,3 +438,36 @@ a
     color: red;
     margin-left: 14px;  
 }
+
+.containerImagem
+{
+    display:flex;
+    justify-content:center;
+    width:100%;
+}
+
+.containerFormLogin .itemForm.captcha
+{
+    height:92px;
+}
+
+.containerCaptcha
+{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.containerCampoCaptcha
+{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.containerFormLogin .input_submit, .input_cancel
+{
+    margin-top:0;
+}

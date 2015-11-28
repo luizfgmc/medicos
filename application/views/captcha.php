@@ -1,25 +1,12 @@
-<!DOCTYPE HTML>
-	
-	<html>	
-
-		<head> 
-
-		</head>
-
-		<body>
-
-			<form action="<?php echo base_url();?>acesso/validarCaptcha" method="post">
-                <?php echo($image) ."<br/>" ?>	
-                <label> Digite as letras acima</label><br/>
-                <input type="text" name='captcha' id='captcha'/>
-                <input type='submit' value='enviar'/><br/>
-           </form>
-
-		</body>
+<div class="containerCaptcha">  
+    <div class="containerImagem">
+        <?php echo($image); ?>
+    </div> 
+    <div class="containerCampoCaptcha">
+        <label> Digite as letras acima</label>
+        <input type="text" name='captcha' id='captcha'/>
+    </div>
+</div>
 
 
 
-	</html>			
-
-
-			
