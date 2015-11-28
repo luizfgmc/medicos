@@ -4,7 +4,7 @@
     <section class="formCadastroPacientes">
 
 
-        <form method="post" action="<?php echo base_url() ?>paciente/inserePaciente/">
+        <form method="post" id="formPaciente" action="<?php echo base_url() ?>paciente/inserePaciente/">
             <section class="cadastro_paciente">
                 <div class="containerCenter fullSiteSize">
                     <div class="halfSize">
@@ -15,32 +15,32 @@
                                 <div class="container_item_form">
                                     <label>Nome</label>
                                     <div class="campoCadastroPaciente">
-                                        <input type="text" name="nomePaciente"  class="default_text_input" />
+                                        <input type="text" name="nomePaciente"  class="default_text_input required" />
                                     </div>
                                 </div>
                                 <div class="container_item_form">
                                     <label>Telefone</label>
                                     <div class="campoCadastroPaciente">
-                                        <input type="text" name="telefonePaciente"  class="default_text_input" OnKeyPress="formatar('##.#####.####', this)" />
+                                        <input type="text" name="telefonePaciente"  class="default_text_input required" OnKeyPress="formatar('##.#####.####', this)" />
                                     </div>
                                 </div>
                                 <div class="container_item_form">
                                     <label>Cpf</label>
                                     <div class="campoCadastroPaciente">
-                                        <input type="text" name="cpfPaciente"  class="default_text_input"  OnKeyPress="formatar('###.###.###.##', this)" />
+                                        <input type="text" name="cpfPaciente"  class="default_text_input required"  OnKeyPress="formatar('###.###.###.##', this)" />
                                     </div>
                                 </div>
                                 <div class="container_item_form">
                                     <label>Cep:</label>
                                     <div class="campoCadastroPaciente">
-                                        <input type="text" name="cepPaciente" class="default_text_input" id="cep" OnKeyPress="formatar('#####.###', this)"/>
+                                        <input type="text" name="cepPaciente" class="default_text_input required" id="cep" OnKeyPress="formatar('#####.###', this)"/>
                                     </div>
                                 </div>
 
                                 <div class="container_item_form">
                                     <label>Endereço</label>
                                     <div class="campoCadastroPaciente">
-                                        <input type="text" name="enderecoPaciente" class="default_text_input" id="logradouro" />
+                                        <input type="text" name="enderecoPaciente" class="default_text_input required" id="logradouro" />
                                     </div>
                                 </div>
                                 <div class="container_item_form">
@@ -61,7 +61,7 @@
                                 <div class="container_item_form">
                                     <label>Numero</label>
                                     <div class="campoCadastroPaciente">
-                                        <input type="text" name="numeroPaciente" class="default_text_input" />
+                                        <input type="text" name="numeroPaciente" class="default_text_input required" />
                                     </div>
                                 </div>					
 
@@ -74,13 +74,13 @@
                                 <div class="container_item_form">
                                     <label>Bairro</label>
                                     <div class="campoCadastroPaciente">
-                                        <input type="text" name="bairroPaciente" class="default_text_input" id="bairro" />
+                                        <input type="text" name="bairroPaciente" class="default_text_input required" id="bairro" />
                                     </div>
                                 </div>
                                 <div class="container_item_form">
                                     <label>Cidade</label>
                                     <div class="campoCadastroPaciente">
-                                        <input type="text" name="cidadePaciente" class="default_text_input" id="cidade"  />
+                                        <input type="text" name="cidadePaciente" class="default_text_input required" id="cidade"  />
                                     </div>
                                 </div>
 
@@ -100,3 +100,9 @@
     </section>
 
 </section>
+
+<script>
+    $(document).on('submit', '#formPaciente', function(e) {
+        verifica_campos('#formPaciente', e);
+    });
+</script>

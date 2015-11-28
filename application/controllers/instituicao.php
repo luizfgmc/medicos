@@ -38,8 +38,9 @@ class Instituicao extends CI_Controller {
                       'pacientes'=>$pacientes
         );    
 
-    
+        $this->load->view('layout/header');
         $this->load->view('solicitacao', $data);
+        $this->load->view('layout/footer');
 
     }
 
