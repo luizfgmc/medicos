@@ -6,17 +6,11 @@
             <div class="halfSize">
                 <div class="containerListaSolicitacoes">
                     <h2>Minhas Agendas </h2>
-                    <div class="infoMedicoLogado">
-                        <p>Dr. Fábio CAPELO - PEDIATRIA</p>
-                        <p> Clinica / Consultorio Particular</p>
-                        <p>Endereço: Rua Juíz  de fora, 683 - Barro Preto</p>
-                    </div>
                     <div class="cabecalhoListaSolicitacoes">
                         <span class="nomePaciente">Clinica</span>
                         <span class="horarioSugerido">Data Emissão</span>
                         <span class="saldo">Saldo</span>
                     </div>
-                    <a href="<?php echo base_url() ?>agenda/"> Inserir Agenda </a>
                     <div class="containerItensSolicitacao">
                         
                             <?php

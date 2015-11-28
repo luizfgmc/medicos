@@ -41,6 +41,15 @@
                                 <label> Senha </label>
                                 <input type="password" name="senha" id="senha"/>
                             </div>
+                            <?php if ($this->session->userdata('cont_captcha') == 3) { ?>
+                                <div class="itemForm captcha">
+                                    <?php
+                                    $this->load->view('captcha');
+                                    ?>
+                                </div>
+                                <?php
+                            }
+                            ?>
                             <div class="itemForm itemCadastrar">
                                 <a href="<?php echo base_url(); ?>cadastroMedico">
                                     Cadastrar

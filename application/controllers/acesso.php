@@ -27,27 +27,6 @@ class Acesso extends CI_Controller {
         $data = $this->mm->autenticar($email);
         
         $cont = 0;
-
-        if($this->session->userdata('cont_captcha') == 3){
-
-   
-            $vals = array(
-                
-            'word'=>'teste',   
-            'img_path' => './captcha/',
-            'img_url' => base_url()."captcha/",
-            'font_path' => './path/to/fonts/texb.ttf',
-            'img_width' => '300',
-            'img_height' => 80,
-            'expiration' => 7200
-           
-           );
-
-            $cap = create_captcha($vals);
-            echo $cap['image'];
-
-        }
-
         if ($data != null) {
 
                 if ($data[0]->tipo == 'M' && $data[0]->password_hash == $senha) {
@@ -67,21 +46,38 @@ class Acesso extends CI_Controller {
 
                     redirect(base_url('medico/solicitacoes'));
                 } else {
-
+                    if(!empty($this->session->userdata('cont_captcha')))
+                    {
+                        $contador=$this->session->userdata('cont_captcha');
+                        $contador++;
+                        $this->session->set_userdata('cont_captcha',$contador);
+                    }else{
+                        
                    
-                    $this->criarCaptcha();
+                   $this->session->set_userdata('cont_captcha','1');
+                    }
+                   //$this->criarCaptcha();
               
                  }
     
         } else {
 
 
-                
+                                   if(!empty($this->session->userdata('cont_captcha')))
+                    {
+                        $contador=$this->session->userdata('cont_captcha');
+                        $contador++;
+                        $this->session->set_userdata('cont_captcha',$contador);
+                    }else{
+                        
+                   
+                   $this->session->set_userdata('cont_captcha','1');
+                    } 
                 
 
-               $this->criarCaptcha(); 
+              // $this->criarCaptcha(); 
             //$this->session->set_userdata('erroLogin', '1');
-            //redirect(base_url('home'));
+            redirect(base_url('home'));
         }
     }
 
