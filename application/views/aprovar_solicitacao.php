@@ -10,8 +10,7 @@
                         <h2>Aprovar Solicitação</h2>
                         <div class="form_cadastro_medico">
                             <?php
-                            var_dump($query);
-                            $id = $query[0]->id;
+                                $id = $query[0]->id;
                             ?>
 
 
