@@ -86,7 +86,7 @@
 
                             <div class="container_submit">
                                 <input type="submit"  value="confirmar" class="input_submit" />
-                            <a href="<?php echo base_url() ?>" class="input_cancel">Cancelar</a>
+                            <a href="<?php echo base_url() ?>paciente/listaPacientes/" class="input_cancel">Cancelar</a>
                             </div>
 
                             </div>
