@@ -15,32 +15,32 @@
                                 <div class="container_item_form">
                                     <label>Nome</label>
                                     <div class="campoCadastroPaciente">
-                                        <input type="text" name="nomePaciente"  class="default_text_input required" />
+                                        <input type="text" name="nomePaciente"  class="default_text_input required" size=45 maxlength=45 />
                                     </div>
                                 </div>
                                 <div class="container_item_form">
                                     <label>Telefone</label>
                                     <div class="campoCadastroPaciente">
-                                        <input type="text" name="telefonePaciente"  class="default_text_input required" OnKeyPress="formatar('##.#####.####', this)" />
+                                        <input type="text" name="telefonePaciente"  class="default_text_input required" size=12 maxlength=12 OnKeyPress="formatar('##.#####.####', this)" />
                                     </div>
                                 </div>
                                 <div class="container_item_form">
                                     <label>Cpf</label>
                                     <div class="campoCadastroPaciente">
-                                        <input type="text" name="cpfPaciente"  class="default_text_input required"  OnKeyPress="formatar('###.###.###.##', this)" />
+                                        <input type="text" name="cpfPaciente"  class="default_text_input required"  size=14 maxlength=14 OnKeyPress="formatar('###.###.###.##', this)" />
                                     </div>
                                 </div>
                                 <div class="container_item_form">
                                     <label>Cep:</label>
                                     <div class="campoCadastroPaciente">
-                                        <input type="text" name="cepPaciente" class="default_text_input required" id="cep" OnKeyPress="formatar('#####.###', this)"/>
+                                        <input type="text" name="cepPaciente" class="default_text_input required" id="cep" size=09 maxlength=09 OnKeyPress="formatar('#####.###', this)"/>
                                     </div>
                                 </div>
 
                                 <div class="container_item_form">
                                     <label>Endereço</label>
                                     <div class="campoCadastroPaciente">
-                                        <input type="text" name="enderecoPaciente" class="default_text_input required" id="logradouro" />
+                                        <input type="text" name="enderecoPaciente" class="default_text_input required" id="logradouro" size=60 maxlength=60 />
                                     </div>
                                 </div>
                                 <div class="container_item_form">
