@@ -8,7 +8,7 @@
                     <h2>Lista de Agendas </h2>
                     <div class="containerItensSolicitacao">
 
-                        <a href="<?php echo base_url() ?>agenda/"> Inserir Agenda </a><br/> <br />
+                        <!--<a href="<?php echo base_url() ?>agenda/"> Inserir Agenda </a><br/> <br /> -->
 
                         <div class="cabecalhoListaSolicitacoes">
                             <span class="nomePaciente">Medico</span>

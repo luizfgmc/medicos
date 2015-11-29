@@ -30,6 +30,7 @@ class Acesso extends CI_Controller {
 
     public function logarMedico() {
 
+
        
         $email = $this->input->post('email');
 

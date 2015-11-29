@@ -114,7 +114,7 @@ class Medico extends CI_Controller {
 
         $this->load->model('solicitacaoModel', 'sm');
         $data = $this->sm->reprovarSolicitacao($idSolicitacao);
-        echo $data;
+        redirect('medico/solicitacoes');
     }
 
     public function aprovarSolicitacaoSalvar() {
@@ -131,7 +131,6 @@ class Medico extends CI_Controller {
         $this->load->model('solicitacaoModel', 'sm');
         $this->sm->aprovarSolicitcaoSalvar($arrayDados, $idSolicitacao);
 
-        echo "sucesso";
     }
 
     public function index() {
