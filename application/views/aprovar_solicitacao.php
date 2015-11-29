@@ -28,7 +28,7 @@
                             </div>
                             <div class="container_submit">
                                 <input type="submit" class="input_submit" tabIndex ="14" value="Aprovar" />
-                                <a href="<?php echo base_url() ?>medico/" class="input_cancel">Cancelar</a>
+                                <a href="<?php echo base_url() ?>medico/solicitacoes/" class="input_cancel">Cancelar</a>
                             </div>
 
 
