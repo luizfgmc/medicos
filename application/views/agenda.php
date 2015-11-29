@@ -28,7 +28,7 @@
                                     //echo($k->saldo . "<br/>");
                                     //echo($k->quantidade . "<br/>");
                                     //echo($k->crm . "<br/>");
-                                    echo'<span class="horarioSugerido">' . ($k->data_emissao . "<br/>") . '</span>';
+                                    echo'<span class="horarioSugerido">' . date('d/m/Y', strtotime($k->data_emissao)) . "<br/>" . '</span>';
                                     echo '<span class="saldo">' . ($k->telefone . "<br/>");
                                     //echo("id clinica" . $k->clinica_id . "<br/>");
                                     //echo("nome clinica:" . " " . $k->nome . "<br/>");
