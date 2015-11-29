@@ -4,7 +4,7 @@
 <section class="mainContent">
     <section class="cadastro_medico">
         <div class="containerCenter fullSiteSize">
-            <form action="<?php echo base_url() ?>medico/aprovarSolicitacaoSalvar" method="post">
+            <form action="<?php echo base_url() ?>medico/aprovarSolicitacaoSalvar" method="post" id="formAprovaSolicitacao">
                 <div class="halfSize">
                     <div class="container_form_medico">
                         <h2>Aprovar Solicitação</h2>
@@ -17,11 +17,11 @@
                             <div class="form_cadastro_medico">
                                 <div class="container_item_form">
                                     <label> data da consulta: </label>
-                                    <input type="text" id="data_agendamento" name="data_agendamento"/>
+                                    <input type="text" class="default_text_input required" id="data_agendamento" name="data_agendamento" />
                                 </div>
                                 <div class="container_item_form">
                                     <label> hora da consulta: </label>
-                                    <input type="text"  id="hora_agendamento" name="hora_agendamento"/>
+                                    <input type="text"  class="default_text_input required" id="hora_agendamento" name="hora_agendamento" />
                                 </div>
                                 <input type="hidden" name ="id" value="<?= $id; ?>"/>
 
@@ -41,3 +41,8 @@
             </form>
     </section>
 </section>
+<script>
+$(document).on('submit', '#formAprovaSolicitacao', function(e) {
+    verifica_campos('#formAprovaSolicitacao', e);
+});
+</script>

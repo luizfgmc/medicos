@@ -5,16 +5,16 @@
     <section class="cadastro_medico">
         <div class="containerCenter fullSiteSize">
 
-            <form action="<?php echo base_url() ?>instituicao/solicitarConsultaSalvar" method="post">
+            <form action="<?php echo base_url() ?>instituicao/solicitarConsultaSalvar" method="post" id="formSolicitaConsulta">
                 <div class="halfSize">
                     <h2>Solicitação</h2>
                     <div class="container_item_form">
                         <label> Solicitante: </label>
-                        <input type="text" id="solicitante" name="solicitante"/>
+                        <input type="text" class="default_text_input required" id="solicitante" name="solicitante" size=45 maxlength=45/>
                     </div>
                     <div class="container_item_form">
                         <label> Descricao: </label>
-                        <input type="text"  id="descricao" name="descricao"/>
+                        <input type="text"  class="default_text_input required" id="descricao" name="descricao" size=45 maxlength=45/>
                     </div>
                     <div class="container_item_form">
                         <select name="paciente" id="paciente">
@@ -34,7 +34,7 @@
                     <input type="hidden" name ="id_agenda" value="<?= $query['idAgenda'] ?>"/>
                     <div class="container_submit">
                         <input type="submit" class="input_submit" value="Solicitar"/>
-                        <button type="button" class="input_cancel">Cancelar</button>
+                         <a href="<?php echo base_url() ?>instituicao/" class="input_cancel">Cancelar</a>
                     </div>
                 </div>
             </form>
@@ -42,3 +42,8 @@
     </section>
 </section>
 
+<script>
+$(document).on('submit', '#formSolicitaConsulta', function(e) {
+    verifica_campos('#formSolicitaConsulta', e);
+});
+</script>

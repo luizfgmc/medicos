@@ -22,7 +22,7 @@
                                 <?php
                                 //echo($k->solicitante . "<br/>");
                                 echo '<span class="nomePaciente">' . ($k->nome_paciente) . '</span>';
-                                echo '<span class="horarioSugerido">' . ($k->data_emissao);
+                                echo '<span class="horarioSugerido">' . date('d/m/Y', strtotime($k->data_emissao));
                                 echo($k->data_agendamento) . '</span>';
                                 //echo($k->hora_agendamento)';
                                 //echo($k->status . "<br/>");

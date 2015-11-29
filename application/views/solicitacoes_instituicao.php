@@ -22,8 +22,8 @@
                                 <?php
                                 //echo($k->solicitante . "<br/>");
                                 echo '<span class="nomePaciente">' . ($k->nome_paciente) . '</span>';
-                                echo '<span class="horarioSugerido">' . date('d/m/Y', strtotime($k->data_emissao));
-                                echo($k->data_agendamento);
+                                echo '<span class="horarioSugerido">' . date('d/m/Y', strtotime($k->data_emissao)) . '</br>';
+                                echo date('d/m/Y', strtotime($k->data_agendamento)) . '</br>';
                                 echo($k->hora_agendamento). '</span>';
                                 //echo($k->status . "<br/>");
                                 //echo($k->data_emissao . "<br/>");
