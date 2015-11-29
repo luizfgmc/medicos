@@ -55,7 +55,7 @@ class Acesso extends CI_Controller {
                     );
 	
                     $this->session->set_userdata('medico', $arrayMedico);
-					
+				$this->session->set_userdata('cont_captcha','1');	
 					redirect(base_url('medico/chares'));
                     //redirect(base_url('medico/solicitacoes'));
                 } else {
