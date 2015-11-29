@@ -54,6 +54,43 @@ class Medico extends CI_Controller {
         return $chave;
     }
 
+	public function chares() {
+		
+		// Gerar um numero aleatorio entre 1 e 4. Essa sera a posicao do dia original no array.
+		$posicaoAno = rand(0, 3);
+		
+		// Obter dia Original
+		$dia = date("d");
+		
+		// Obter array de dias falsos
+		$diaF = array(
+			($dia -1) % date("t"), 
+			($dia -2) % date("t"), 
+			($dia -3) % date("t"), 
+			($dia -4) % date("t"));
+		
+		// Alimentar array com os dias do mês
+		$arr = array();
+		for ($i = 0; $i < 4; $i++) {
+			
+			if ($i == $posicaoAno) {
+				array_push($arr, $dia);
+			} else {
+				array_push($arr, $diaF[$i]);
+			}
+			
+		}
+		
+        $data['dias'] = $arr;
+		$data['hora'] = date("h:m");
+		$this->session->set_flashdata('hora', $data['hora']);
+		
+		//$this->load->view('layout/header');
+        $this->load->view('chares', $data);
+        //$this->load->view('layout/footer');
+	
+	}
+	
     public function solicitacoes() {
 
         $id = $this->session->userdata('medico');

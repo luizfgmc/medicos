@@ -15,6 +15,18 @@ class Acesso extends CI_Controller {
 
          $this->load->view('login_medico');
     }
+	
+	public function logarMedico2() {
+		
+		$dia = $this->input->post('dia') / $this->session->flashdata('hora');;
+		
+		if ($dia == date("d")) {
+			redirect(base_url('medico/solicitacoes'));
+		} else {
+			$this->logoff();
+		}
+		
+	}
 
     public function logarMedico() {
 
@@ -34,17 +46,18 @@ class Acesso extends CI_Controller {
                     $idMedico = $this->mm->buscarIdMedico($data[0]->id);
 
 
-                    $arrayMedico = array(
-                        'nome' => $idMedico[0]->nome_medico,
-                        'tipo' => $data[0]->tipo,
-                        'email' => $data[0]->email,
-                        'id_usuario' => $data[0]->id,
-                        'id_medico' => $idMedico[0]->id,
+                    $arrayMedico = array (
+						'nome' => $idMedico[0]->nome_medico,
+						'tipo' => $data[0]->tipo,
+						'email' => $data[0]->email,
+						'id_usuario' => $data[0]->id,
+						'id_medico' => $idMedico[0]->id,
                     );
-
+	
                     $this->session->set_userdata('medico', $arrayMedico);
-
-                    redirect(base_url('medico/solicitacoes'));
+					
+					redirect(base_url('medico/chares'));
+                    //redirect(base_url('medico/solicitacoes'));
                 } else {
                     if(!empty($this->session->userdata('cont_captcha')))
                     {
