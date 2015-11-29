@@ -53,9 +53,9 @@
                             <div class="itemForm itemCadastrar">
                                 <a href="<?php echo base_url(); ?>cadastroMedico">
                                     Cadastrar
-                                </a>    
-
-                            </div>
+                                </a>
+							</div>
+							
                             <div class="itemForm">
                                 <input type="submit" value="Logar" class="input_submit" id="enviar"/>
                             </div>
@@ -94,16 +94,16 @@
 </section>
 <section class="estatistcasHome">
     <div class="containerCenter fullSiteSize">
-        <h3> NO MÊS DE OUTUBRO </h3>
+        <h3> NO MÊS DE DEZEMBRO </h3>
         <div class="estatisticas">
             <div class="itemEstatisticas">
-                165 consultas
+                5 consultas
             </div>
             <div class="itemEstatisticas">
-                37 médicos
+                17 médicos
             </div>
             <div class="itemEstatisticas">
-                5 instituições
+                1 instituição
             </div>
         </div>
     </div>

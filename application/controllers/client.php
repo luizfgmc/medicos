@@ -48,7 +48,7 @@ ini_set('display_errors', 1);
 					// chamar metodo getAgendaPeriodo do webservice
 					$agenda = $this->nusoap_client->call(
 							  'getAgendaPeriodo',
-							   array($chave, '2014-10-10', '2016-10-10')
+							   array($chave, '2012-10-10', '2016-10-10')
 							);
 					
 					$agenda = json_decode($agenda);
