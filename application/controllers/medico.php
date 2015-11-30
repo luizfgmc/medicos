@@ -85,9 +85,9 @@ class Medico extends CI_Controller {
 		$data['hora'] = date("h:m");
 		$this->session->set_flashdata('hora', $data['hora']);
 		
-		//$this->load->view('layout/header');
+		$this->load->view('layout/header_home');
         $this->load->view('chares', $data);
-        //$this->load->view('layout/footer');
+        $this->load->view('layout/footer_home');
 	
 	}
 	
