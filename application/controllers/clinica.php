@@ -66,7 +66,7 @@ class Clinica extends CI_Controller {
                 "bairro" => $data['bairroClinica'],
                 "cidade" => $data['cidadeClinica'],
                 "uf" => $data['ufClinica'],
-                "cep" => $data['cepClinica'],
+                "cep" => str_replace(".","" ,$data['cepClinica']),
                 "created_at" => date("Y-m-d H:i:s"),
                 "updated_at" => date("Y-m-d H:i:s"),
             );
@@ -110,7 +110,7 @@ class Clinica extends CI_Controller {
             "bairro" => $data['bairroClinica'],
             "cidade" => $data['cidadeClinica'],
             "uf" => $data['ufClinica'],
-            "cep" => $data['cepClinica'],
+            "cep" => str_replace(".","", $data['cepClinica']),
             "created_at" => date("Y-m-d H:i:s"),
             "updated_at" => date("Y-m-d H:i:s"),
         );

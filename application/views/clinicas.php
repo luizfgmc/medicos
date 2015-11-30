@@ -21,13 +21,14 @@
                                 //echo($k->telefone . "<br/>");
 
 
-                                echo '<span class="horarioSugerido">' . ($k->bairro).'<br />';
-                                echo($k->cidade).'<br />';
-                                 echo($k->endereco).'<br />';
-                                echo($k->end_numero).' ';
-                                echo($k->end_complemento) . '</span>';
+                                echo'<span class="horarioSugerido">' .($k->endereco). ', ';   
+                                echo($k->end_numero). '<br />';
+                                echo($k->end_complemento) .'<br />' ;
+                                echo ($k->bairro).'<br />';
+                                echo($k->cidade) .'<br />';
+                                echo($k->cep . '</span>');
                                 //echo($k->uf . "<br/>");
-                                //echo($k->cep . "<br/>");
+                                
                                 ?>
                                 <span class="saldo">
                                     <a href="<?php echo base_url() . "clinica/editarClinica/" . $k->id ?>"> editar </a>
