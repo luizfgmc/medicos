@@ -20,6 +20,8 @@
                             ?>		
                             <div class="itemSolicitacao">
                                 <?php
+
+                                if($k->status == 'PE'){
                                 //echo($k->solicitante . "<br/>");
                                 echo '<span class="nomePaciente">' . ($k->nome_paciente) . '</span>';
                                 echo '<span class="horarioSugerido">' . date('d/m/Y', strtotime($k->data_emissao));
@@ -40,6 +42,7 @@
                                 </span>
                             </div>
                             <?php
+                            }
                         }
                         ?>
 

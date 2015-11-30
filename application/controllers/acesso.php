@@ -39,6 +39,7 @@ class Acesso extends CI_Controller {
         $this->load->model('medicoModel', 'mm');
         $data = $this->mm->autenticar($email);
         
+
         $cont = 0;
         if ($data != null) {
 
@@ -54,11 +55,14 @@ class Acesso extends CI_Controller {
 						'id_usuario' => $data[0]->id,
 						'id_medico' => $idMedico[0]->id,
                     );
-	
+
+
                     $this->session->set_userdata('medico', $arrayMedico);
-				$this->session->set_userdata('cont_captcha','1');	
-					redirect(base_url('medico/chares'));
-                    //redirect(base_url('medico/solicitacoes'));
+				    $this->session->set_userdata('cont_captcha','1');	
+
+                    //redirect(base_url('home'));
+                    //redirect(base_url('medico/chares'));
+                    redirect(base_url('medico/solicitacoes'));
                 } else {
                     if(!empty($this->session->userdata('cont_captcha')))
                     {

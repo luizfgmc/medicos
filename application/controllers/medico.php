@@ -130,6 +130,7 @@ class Medico extends CI_Controller {
 
         $this->load->model('solicitacaoModel', 'sm');
         $this->sm->aprovarSolicitcaoSalvar($arrayDados, $idSolicitacao);
+        redirect(base_url().'medico/solicitacoes');
 
     }
 
