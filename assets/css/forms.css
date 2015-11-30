@@ -54,21 +54,33 @@
 
 .container_submit
 {
+    display:-webkit-box;
+    display:-webkit-flex;
+    display:-ms-flexbox;
     display:flex;
     width:50%;
 }
 
 .input_submit, .input_cancel
 {
-    align-items:center;
+    -webkit-box-align:center;
+    -webkit-align-items:center;
+        -ms-flex-align:center;
+            align-items:center;
     border:none;
     border-radius:6px;
     color:#FFFFFF;
     cursor:pointer;
+    display:-webkit-box;
+    display:-webkit-flex;
+    display:-ms-flexbox;
     display:flex;
     font-size:12px;
     height:33px;
-    justify-content:center;
+    -webkit-box-pack:center;
+    -webkit-justify-content:center;
+        -ms-flex-pack:center;
+            justify-content:center;
     margin:50px 10px 0 0;
     width:100px;
 }
