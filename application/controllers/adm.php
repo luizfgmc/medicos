@@ -63,7 +63,7 @@
 
             $arrayInstiuicao = array(
                 "nome" => $data['nomeInstituicao'],
-                "cnpj" => $data['cnpjInstituicao'],
+                "cnpj" => str_replace(".","",$data['cnpjInstituicao']),
                 "responsavel" => $data['responsavelInstituicao'],
                 "endereco" => $data['enderecoInstituicao'],
                 "end_numero" => $data['end_numeroInstituicao'],
@@ -71,8 +71,8 @@
                 "bairro" => $data['bairroInstituicao'],
                 "cidade" => $data['cidadeInstituicao'],
                 "uf" => $data['ufInstituicao'],
-                "cep" => $data['cepInstituicao'],
-                "telefone" => $data['telefoneInstituicao'],
+                "cep" => str_replace(".","",$data['cepInstituicao']),
+                "telefone" => str_replace(".","",$data['telefoneInstituicao']),
                 "status" => $data['statusInstituicao'],
                 "usuario_id" => 59,
                 "created_at" => date("Y-m-d H:i:s"),
@@ -103,7 +103,7 @@
 
         $arrayInstiuicao = array(
             "nome" => $data['nomeInstituicao'],
-            "cnpj" => $data['cnpjInstituicao'],
+            "cnpj" => str_replace(".","",$data['cnpjInstituicao']),
             "responsavel" => $data['responsavelInstituicao'],
             "endereco" => $data['enderecoInstituicao'],
             "end_numero" => $data['end_numeroInstituicao'],
@@ -111,8 +111,8 @@
             "bairro" => $data['bairroInstituicao'],
             "cidade" => $data['cidadeInstituicao'],
             "uf" => $data['ufInstituicao'],
-            "cep" => $data['cepInstituicao'],
-            "telefone" => $data['telefoneInstituicao'],
+            "cep" => str_replace(".","",$data['cepInstituicao']),
+            "telefone" => str_replace(".","",$data['telefoneInstituicao']),
             "status" => $data['statusInstituicao'],
             "usuario_id" => 59,
             "created_at" => date("Y-m-d H:i:s"),

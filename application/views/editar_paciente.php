@@ -16,31 +16,31 @@
                             <div class="container_item_form">
                                 <label>Nome</label>
                                 <div class="campoCadastroPaciente">
-                                    <input type="text" name="nomePaciente" value="<?= $query[0]->nome_paciente ?>" />
+                                    <input type="text" name="nomePaciente" value="<?= $query[0]->nome_paciente ?>" size=45 maxlength=45 />
                                 </div>
                             </div>
                             <div class="container_item_form">
                                 <label>Telefone</label>
                                 <div class="campoCadastroPaciente">
-                                    <input type="text" name="telefonePaciente" value="<?= $query[0]->telefone ?>" />
+                                    <input type="text" name="telefonePaciente" value="<?= $query[0]->telefone ?>" size=12 maxlength=12 OnKeyPress="formatar('##.####.####', this)" />
                                 </div>
                             </div>
                             <div class="container_item_form">
                                 <label>Cpf</label>
                                 <div class="campoCadastroPaciente">
-                                    <input type="text" name="cpfPaciente" value="<?= $query[0]->cpf ?>" />
+                                    <input type="text" name="cpfPaciente" value="<?= $query[0]->cpf ?>"  size=14 maxlength=14 OnKeyPress="formatar('###.###.###.##', this)" />
                                 </div>
                             </div>
                             <div class="container_item_form">
                                 <label>Cep:</label>
                                 <div class="campoCadastroPaciente">
-                                    <input type="text" name="cepPaciente" value="<?= $query[0]->cep ?>" id="cep" />
+                                    <input type="text" name="cepPaciente" value="<?= $query[0]->cep ?>" id="cep" size=09 maxlength=09 OnKeyPress="formatar('#####.###', this)" />
                                 </div>
                             </div>
                             <div class="container_item_form">
                                 <label>Endereço</label>
                                 <div class="campoCadastroPaciente">
-                                    <input type="text" name="enderecoPaciente" value="<?= $query[0]->endereco ?>" id="logradouro" />
+                                    <input type="text" name="enderecoPaciente" value="<?= $query[0]->endereco ?>" id="logradouro" size=60 maxlength=60 />
                                 </div>
                             </div>
                             <div class="container_item_form">

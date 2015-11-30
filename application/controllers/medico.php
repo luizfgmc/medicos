@@ -184,7 +184,7 @@ class Medico extends CI_Controller {
         );
         $this->load->model("MedicoModel");
         $this->MedicoModel->editarMedico($arrayEditarMedico, $id['id_medico']);
-        redirect('medico/listarMedicos');
+        redirect('medico/solicitacoes');
     }
 
 }

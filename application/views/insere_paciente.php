@@ -21,7 +21,7 @@
                                 <div class="container_item_form">
                                     <label>Telefone</label>
                                     <div class="campoCadastroPaciente">
-                                        <input type="text" name="telefonePaciente"  class="default_text_input required" size=12 maxlength=12 OnKeyPress="formatar('##.#####.####', this)" />
+                                        <input type="text" name="telefonePaciente"  class="default_text_input required" size=12 maxlength=12 OnKeyPress="formatar('##.####.####', this)" />
                                     </div>
                                 </div>
                                 <div class="container_item_form">

@@ -36,15 +36,15 @@ class Paciente extends CI_Controller {
 
         $arrayPaciente = array(
             "nome_paciente" => $this->input->post('nomePaciente'),
-            "cpf" => $this->input->post('cpfPaciente'),
+            "cpf" => str_replace(".","", $this->input->post('cpfPaciente')),
             "endereco" => $this->input->post('enderecoPaciente'),
             "end_numero" => $this->input->post('numeroPaciente'),
             "complemento" => $this->input->post('complementoPaciente'),
             "bairro" => $this->input->post('bairroPaciente'),
             "uf" => $this->input->post('ufPaciente'),
             "cidade" => $this->input->post('cidadePaciente'),
-            "cep" => $this->input->post('cepPaciente'),
-            "telefone" => $this->input->post('telefonePaciente'),
+            "cep" => str_replace (".","",$this->input->post('cepPaciente')),
+            "telefone" => str_replace(".","", $this->input->post('telefonePaciente')),
 			"atividade" => 'A',
             "created_at" => date("Y-m-d H:i:s"),
             "updated_at" => date("Y-m-d H:i:s"),
@@ -73,15 +73,15 @@ class Paciente extends CI_Controller {
 
         $arrayPaciente = array(
             "nome_paciente" => $this->input->post('nomePaciente'),
-            "cpf" => $this->input->post('cpfPaciente'),
+            "cpf" => str_replace(".","", $this->input->post('cpfPaciente')),
             "endereco" => $this->input->post('enderecoPaciente'),
             "end_numero" => $this->input->post('numeroPaciente'),
             "complemento" => $this->input->post('complementoPaciente'),
             "bairro" => $this->input->post('bairroPaciente'),
             "uf" => $this->input->post('ufPaciente'),
             "cidade" => $this->input->post('cidadePaciente'),
-            "cep" => $this->input->post('cepPaciente'),
-            "telefone" => $this->input->post('telefonePaciente'),
+            "cep" => str_replace(".","", $this->input->post('cepPaciente')),
+            "telefone" => str_replace(".","", $this->input->post('telefonePaciente')),
             "created_at" => date("Y-m-d H:i:s"),
             "updated_at" => date("Y-m-d H:i:s"),
             "atividade"=>"A"
