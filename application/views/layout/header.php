@@ -74,12 +74,12 @@
                     <?php
                     if (!empty($arrayLoginMedoc)) {
                         ?>
-                        <span> <a href="<?php echo base_url() ?>medico/visualizaEditaMedicoMedicos/" ><?php echo $arrayLoginMedoc['nome']?>  </a> </span>
+                        <span> <a href="<?php echo base_url() ?>instituicao/" ><?php echo $arrayLoginMedoc['nome']?>  </a> </span>
                     <?php
                     }else{
                         $arrayLoginMedoc = $this->session->userdata('medico');
                     ?>
-                 <span> <a href="<?php echo base_url() ?>medico/visualizaEditaMedicoMedicos/" ><?php echo $arrayLoginMedoc['nome']?> </a> </span>
+                 <span> <a href="<?php echo base_url() ?>medico/visualizaEditaMedicoMedicos" ><?php echo $arrayLoginMedoc['nome']?> </a> </span>
                         <?php
                         }
                         ?>
