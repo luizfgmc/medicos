@@ -41,7 +41,7 @@
                                 <label> Senha </label>
                                 <input type="password" name="senha" id="senha"/>
                             </div>
-                            <?php if ($this->session->userdata('cont_captcha') == 3) { ?>
+                            <?php if ($this->session->userdata('cont_captcha') >= 3) { ?>
                                 <div class="itemForm captcha">
                                     <?php
                                     $this->load->view('captcha');

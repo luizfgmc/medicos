@@ -12,7 +12,7 @@
                     <div class="cabecalhoListaSolicitacoes">
                         <span class="nomePaciente">Paciente</span>
                         <span class="horarioSugerido">Horário Sugerido</span>
-                        <span class="saldo">Saldo</span>
+                        <span class="saldo">Status</span>
                     </div>
                     <div class="containerItensSolicitacao">
                         <?php
@@ -25,7 +25,7 @@
                                 echo '<span class="horarioSugerido">' . date('d/m/Y', strtotime($k->data_emissao)) . '</br>';
                                 echo date('d/m/Y', strtotime($k->data_agendamento)) . '</br>';
                                 echo($k->hora_agendamento). '</span>';
-                                //echo($k->status . "<br/>");
+                                
                                 //echo($k->data_emissao . "<br/>");
                                 //echo($k->descricao . "<br/>");
                                 //echo($k->status . "<br/>");
@@ -33,9 +33,18 @@
                                 ?>
                                 <span class="saldo">
                                     
-                                     <a href="<?php echo base_url() . "medico/aprovarSolicitacao/" . $k->id ?>"> Ocultar </a>
-                                     
-        
+                               <?php if($k->status=='AP')
+                                {
+                                    echo 'Aprovado';
+                                }
+                                elseif($k->status=='RJ')
+                                {
+
+                                    echo 'Rejeitado';
+
+                                }
+
+                                ?>
                                      
                                 </span>
                             </div>

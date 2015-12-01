@@ -12,7 +12,7 @@
                     <div class="cabecalhoListaSolicitacoes">
                         <span class="nomePaciente">Paciente</span>
                         <span class="horarioSugerido">Horário Sugerido</span>
-                        <span class="saldo">Saldo</span>
+                        <span class="saldo">Ações</span>
                     </div>
                     <div class="containerItensSolicitacao">
                         <?php
@@ -21,7 +21,7 @@
                             <div class="itemSolicitacao">
                                 <?php
 
-                                if($k->status == 'PE'){
+                                //if($k->status == 'PE'){
                                 //echo($k->solicitante . "<br/>");
                                 echo '<span class="nomePaciente">' . ($k->nome_paciente) . '</span>';
                                 echo '<span class="horarioSugerido">' . date('d/m/Y', strtotime($k->data_emissao));
@@ -34,15 +34,33 @@
                                 //echo($k->id);
                                 ?>
                                 <span class="saldo">
-                                    6 
+                                    
+
+                               <?php if($k->status=='AP')
+                                {
+                                    echo 'Aprovado';
+                                }
+                                elseif($k->status=='RJ')
+                                {
+
+                                    echo 'Rejeitado';
+
+                                }
+                                    if(($k->status!='AP')&&($k->status!='RJ'))
+                                {
+                                ?>
+
+                                  
                                      <a href="<?php echo base_url() . "medico/aprovarSolicitacao/" . $k->id ?>"> aprovar </a>
                                      
                                      <a href="<?php echo base_url() . "medico/reprovarSolicitacao/" . $k->id ?>"> reprovar </a>
-                                     
+                                     <?php
+                                        }
+                                     ?>
                                 </span>
                             </div>
                             <?php
-                            }
+                            //}
                         }
                         ?>
 

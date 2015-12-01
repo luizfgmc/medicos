@@ -69,11 +69,13 @@
 
 .cabecalhoListaSolicitacoes .nomePaciente, .cabecalhoListaSolicitacoes .saldo
 {
+    text-align:center;
     width:40%;
 }
 
 .cabecalhoListaSolicitacoes .horarioSugerido
 {
+    text-align:center;
     width:20%;
 }
 

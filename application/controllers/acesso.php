@@ -6,6 +6,7 @@ class Acesso extends CI_Controller {
 
         parent:: __construct();
         $this->load->helper('captcha');
+
         
     }
 
@@ -56,39 +57,43 @@ class Acesso extends CI_Controller {
 						'id_medico' => $idMedico[0]->id,
                     );
 
-
                     $this->session->set_userdata('medico', $arrayMedico);
 				    $this->session->set_userdata('cont_captcha','1');	
 
                     //redirect(base_url('home'));
-                    //redirect(base_url('medico/chares'));
-                    redirect(base_url('medico/solicitacoes'));
+                    redirect(base_url('medico/chares'));
+                    //redirect(base_url('medico/solicitacoes'));
                 } else {
                     if(!empty($this->session->userdata('cont_captcha')))
                     {
                         $contador=$this->session->userdata('cont_captcha');
                         $contador++;
                         $this->session->set_userdata('cont_captcha',$contador);
+                        redirect(base_url('home'));
+
+                     
                     }else{
-                        
+                    
                    
                    $this->session->set_userdata('cont_captcha','1');
+                     redirect(base_url('home'));
                     }
                    //$this->criarCaptcha();
               
                  }
     
         } else {
-
+  
 
                                    if(!empty($this->session->userdata('cont_captcha')))
                     {
+        
                         $contador=$this->session->userdata('cont_captcha');
                         $contador++;
                         $this->session->set_userdata('cont_captcha',$contador);
                     }else{
                         
-                   
+                 
                    $this->session->set_userdata('cont_captcha','1');
                     } 
                 

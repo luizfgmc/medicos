@@ -15,7 +15,7 @@ class Home extends CI_Controller {
         $dados = array();
 
 
-        if ($this->session->userdata('cont_captcha') == 3) {
+        if ($this->session->userdata('cont_captcha') >= 3) {
             $vals = array(
                 'word' => 'teste',
                 'img_path' => './captcha/',
