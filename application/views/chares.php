@@ -1,4 +1,4 @@
-<div class="containerCenter fullSiteSize">	
+<div class="containerCenter fullSiteSize paddingChares">	
     <form id="login_medico"  method="post" action="<?php echo base_url(); ?>acesso/logarMedico2">
         <div class="containerChallenge">
             <h2>Posso fazer mais uma pergunta?</h2>
