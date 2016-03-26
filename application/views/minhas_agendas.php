@@ -8,8 +8,8 @@
                     <h2>Minhas Agendas </h2>
                     <div class="cabecalhoListaSolicitacoes">
                         <span class="nomePaciente">Clinica</span>
-                        <span class="horarioSugerido">Data Emissão</span>
-                        <span class="saldo">Saldo</span>
+						<span class="horarioSugerido">Data Emissão</br>Dia Atendimento</span>
+                        <span class="saldo">Saldo / Quantidade</span>
                     </div>
                     <div class="containerItensSolicitacao">
                         
@@ -19,14 +19,11 @@
                         
 <div class="itemSolicitacao">
     <?php
-                                echo'<span class="nomePaciente">' . ($k->nome).'</span>';
+                                echo'<span class="nomePaciente">' . ($k->nome) .'</span>';
                                 //echo($k->nome_medico . "<br/>");
-                                //echo($k->descricao . "<br/>");
-                                echo '<span class="horarioSugerido">'. date('d/m/Y', strtotime($k->data_emissao)) ."</span>";
-                                  echo '<span class="saldo">' .($k->saldo . "<br/>");
-                                echo($k->quantidade).' </span>';
+                                echo '<span class="horarioSugerido">'. date('d/m/Y', strtotime($k->data_emissao)) . "</br>" . $k->dia_semana . "</span>";
+								echo '<span class="saldo">' . $k->saldo . "/" . $k->quantidade . ' </span>';
                                 //echo($k->crm . "<br/>");
-                                
                                 //echo($k->telefone . "<br/>");
                                 //echo("id clinica" . $k->clinica_id . "<br/>");
                                 //echo("nome clinica:" . " " . $k->nome . "<br/>");

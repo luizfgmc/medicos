@@ -12,8 +12,8 @@
 
                         <div class="cabecalhoListaSolicitacoes">
                             <span class="nomePaciente">Medico</span>
-                            <span class="horarioSugerido">Data Emissão</span>
-                            <span class="saldo">Telefone</span>
+                            <span class="horarioSugerido">Dia Atendimento</span>
+                            <span class="saldo">Telefone Clinica</span>
                         </div>
 
                         <div class="containerItensSolicitacao">
@@ -28,7 +28,7 @@
                                     //echo($k->saldo . "<br/>");
                                     //echo($k->quantidade . "<br/>");
                                     //echo($k->crm . "<br/>");
-                                    echo'<span class="horarioSugerido">' . date('d/m/Y', strtotime($k->data_emissao)) . "<br/>" . '</span>';
+                                    echo'<span class="horarioSugerido">' . $k->dia_semana . "<br/>" . '</span>';
                                     echo '<span class="saldo">' . ($k->telefone . "<br/>");
                                     //echo("id clinica" . $k->clinica_id . "<br/>");
                                     //echo("nome clinica:" . " " . $k->nome . "<br/>");
