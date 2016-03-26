@@ -15,8 +15,8 @@
 |
 */
 $config['base_url']	= '';
-$config['base_url_absolute'] = "http://localhost/medicos";  // used only to redirect to HTTP
-$config['base_url_absolute_ssl'] = "https://localhost/medicos";  // used only to redirect to HTTPS
+//$config['base_url_absolute'] = "http://localhost/medicos";  // used only to redirect to HTTP
+//$config['base_url_absolute_ssl'] = "https://localhost/medicos";  // used only to redirect to HTTPS
 
 /*
 |--------------------------------------------------------------------------
