@@ -17,14 +17,15 @@
                             foreach ($query as $k) {
                                 ?>
                         
-<div class="itemSolicitacao">
-    <?php
+                <div class="itemSolicitacao">
+                    <?php
+                                
                                 echo'<span class="nomePaciente">' . ($k->nome).'</span>';
                                 //echo($k->nome_medico . "<br/>");
                                 //echo($k->descricao . "<br/>");
                                 echo '<span class="horarioSugerido">'. date('d/m/Y', strtotime($k->data_emissao)) ."</span>";
                                   echo '<span class="saldo">' .($k->saldo . "<br/>");
-                                echo($k->quantidade).' </span>';
+                                //echo($k->quantidade).' </span>';
                                 //echo($k->crm . "<br/>");
                                 
                                 //echo($k->telefone . "<br/>");

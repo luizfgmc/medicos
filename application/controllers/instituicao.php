@@ -38,6 +38,7 @@ class Instituicao extends CI_Controller {
                       'pacientes'=>$pacientes
         );    
 
+
         $this->load->view('layout/header');
         $this->load->view('solicitacao', $data);
         $this->load->view('layout/footer');
@@ -45,6 +46,11 @@ class Instituicao extends CI_Controller {
     }
 
     public function solicitarConsultaSalvar(){
+
+
+        if(empty($this->input->post('paciente')) || $this->input->post('paciente') == 'Selecione')
+            exit("Não é possível solicitar consulta sem selcionar um paciente!");
+
 
          $idInstituicao = $this->session->userdata('instituicao');
 

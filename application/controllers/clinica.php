@@ -129,6 +129,8 @@ class Clinica extends CI_Controller {
         redirect('clinica/listaClinicas');
     }
 
+
+
 }
 
 ?>

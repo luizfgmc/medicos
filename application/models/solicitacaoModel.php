@@ -174,6 +174,26 @@
 
 	}
 
+	public function alterarSaldo($idMedico, $diaSemana){
+
+		$this->db->select('saldo');
+		$this->db->from('agendas');
+		$this->db->where(['medico_id'=>$idMedico,'dia_semana'=>$diaSemana]);
+		$query = $this->db->get();
+
+		$data = $query->result();
+		$saldo =(double)$data[0]->saldo;
+		
+		$saldo = $saldo - 1;
+
+		$this->db->where(['medico_id'=>$idMedico]);
+		$this->db->update('agendas', ['saldo'=>$saldo]);
+		
+
+	}
+
+
+
 	}
 
 

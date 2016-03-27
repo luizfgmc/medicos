@@ -25,12 +25,17 @@
 			return $query->result();
 		}
 
-		//pega somente nome e id das clinicas para usar na agenda
+		//pega somente nome e id das clinicas que relacionam com o medico logado para usar na agenda
 		public function getNomeIdClinica(){
 
+			$id = $this->session->userdata('medico');
+		
 			$this->db->select('id, nome');
 			$this->db->from('clinicas');
+			$this->db->where(array('medico_id'=>$id['id_medico']));
+
 			$query = $this->db->get();
+
 			return $query->result();
 
 		}
@@ -57,12 +62,40 @@
 		//funcao para excluir clinica pelo id
 		public function excluirClinica($idClinica){
 
-			$this->db->delete('clinicas' , array('id' => $idClinica));
-			echo("clinica deletada");
+			$status = $this->verificaClinicaPorAgenda($idClinica);
+
+			if(!$status){
+
+				$this->db->delete('clinicas' , array('id' => $idClinica));
+				exit("Clínica deletada");
+
+			}else{
+				exit("Essa clínica não pode ser deletada, pois, está vinculada a uma agenda");
+			}
+
+
+			
 
 		}
 
+		//verifica se a clinica está vinculada a alguma agenda
+		public function verificaClinicaPorAgenda($idClinica){
 
+			$query = $this->db->get_where('agendas', ['clinica_id'=>$idClinica]);
+
+			if (!empty($query->result())) {
+
+				return true;
+				
+			}else{
+
+				return false;
+
+			}
+			
+			return false;
+
+		}	
 	}
 
 

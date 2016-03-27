@@ -42,6 +42,9 @@
 
                                     echo 'Rejeitado';
 
+                                }else{
+
+                                    echo 'Pendente';
                                 }
 
                                 ?>
