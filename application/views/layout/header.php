@@ -79,7 +79,7 @@
                     }else{
                         $arrayLoginMedoc = $this->session->userdata('medico');
                     ?>
-                 <span> <a href="<?php echo base_url() ?>medico/visualizaEditaMedicoMedicos" ><?php echo $arrayLoginMedoc['nome']?> </a> </span>
+                 <span> <a href="<?php echo base_url() ?>profissional/visualizaEditaMedicoProfissional" ><?php echo $arrayLoginMedoc['nome']?> </a> </span>
                         <?php
                         }
                         ?>

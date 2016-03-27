@@ -31,7 +31,7 @@
                     </div>
                 </div>
                 <div class="loginMedico">
-                    <form id="login_medico"  method="post" action="<?php echo base_url(); ?>acesso/logarMedico">
+                    <form id="login_medico"  method="post" action="<?php echo base_url(); ?>acesso/logarProfissional">
                         <div class="containerFormLogin">
                             <div class="itemForm">
                                 <label> Login </label>
@@ -54,8 +54,8 @@
                                 <a href="<?php echo base_url(); ?>cadastro">
                                     Cadastrar
                                 </a>
-							</div>
-							
+                            </div>
+                            
                             <div class="itemForm">
                                 <input type="submit" value="Logar" class="input_submit" id="enviar"/>
                             </div>

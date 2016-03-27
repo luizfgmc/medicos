@@ -25,6 +25,31 @@ class ProfissionalModel extends CI_Model {
 
     }
 
+   public function getProfissional($apelido='prof') {
+        // Retornar todas as informações de todos os profissional.
+        // Como profissional também é usuario então retorna informações de usuario inner join profissional
+        $this->db->select("{$apelido}.id_profissional")
+            ->from("profissionais {$apelido}")
+            ->join("usuarios", "{$apelido}.usuario_id = usuarios.id");
+        
+        return $this;
+    }
+
+
+    public function getTodasInfoProfissional($idProfissional,$apelido='prof'){
+        $this->getProfissional($apelido)
+            ->db->select("{$apelido}.*")
+            ->where("{$apelido}.id_profissional",$idProfissional);
+        $query = $this->db->get();
+        return $query->row();            
+    }
+
+
+    public function editarProfissional($dadosProfissional,$idProfissional) {
+        $this->db->where('id_profissional', $idProfissional);
+        $this->db->update('profissionais', $dadosProfissional);
+    }
+
     
 
 }

@@ -21,6 +21,8 @@ class ProfissaoModel extends CI_Model {
         return $query->result();
     }
 
+
+
 }
 
 ?>

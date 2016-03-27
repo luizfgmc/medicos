@@ -125,9 +125,11 @@ class Acesso extends CI_Controller {
                         'id_profissional' => $idProfissional[0]->id_profissional,
                     );
 
-                    $this->session->set_userdata('medico', $arrayProfissional);
+                    $this->session->set_userdata('profissional', $arrayProfissional);
                     $this->session->set_userdata('cont_captcha','1');   
+
                     redirect(base_url('medico/chares'));
+
                 } else {
                     if(!empty($this->session->userdata('cont_captcha')))
                     {

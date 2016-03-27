@@ -2,7 +2,7 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
-class loginMedico {
+class loginprofissional {
    
     private $CI;
     public function __construct() {
@@ -11,9 +11,9 @@ class loginMedico {
     }
 
     // metodo que verifica se o usuário está logado
-    public function valida_sessao_medico() {
+    public function valida_sessao_profissional() {
         
-        if (empty($this->CI->session->userdata('medico'))) {
+        if (empty($this->CI->session->userdata('profissional'))) {
             redirect('home');
             exit();
         }
