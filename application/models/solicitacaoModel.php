@@ -75,7 +75,7 @@
 
 		public function aprovarSolicitcao($id){
 
-			$this->loginmedico->valida_sessao_medico();
+			 $this->loginmedico->valida_sessao_medico();
 			$query = $this->db->get_where('solicitacoes', array('id'=>$id));
 			return $query->result();
 

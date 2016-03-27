@@ -35,34 +35,18 @@
                                 ?>
                                 <span class="saldo">
                                     
+
                                <?php if($k->status=='AP')
                                 {
                                     echo 'Aprovado';
-									
-								?>
-                                     <a href="<?php echo base_url() . "medico/pacienteCompareceu/" . $k->id ?>"> Compareceu </a>
-                                     <a href="<?php echo base_url() . "medico/pacienteNaoCompareceu/" . $k->id ?>"> Não Compareceu </a>
-								 <?php
-								}
+                                }
                                 elseif($k->status=='RJ')
                                 {
 
                                     echo 'Rejeitado';
 
                                 }
-								elseif($k->status=='CO')
-                                {
-
-                                    echo 'Atendido';
-
-                                }
-								elseif($k->status=='NC')
-                                {
-
-                                    echo 'Não Compareceu';
-
-                                }
-                                elseif($k->status=='PE')
+                                    if(($k->status!='AP')&&($k->status!='RJ'))
                                 {
                                 ?>
 

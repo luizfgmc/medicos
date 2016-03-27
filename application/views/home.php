@@ -23,7 +23,7 @@
                 <div class="containerEscolha">
                     <div class="containerMedico">
                         <a href="#"><div class="trianguloEsquerda"></div></a>
-                        <a href="#" id="mostraLoginMedico"> Médico </a>
+                        <a href="#" id="mostraLoginMedico"> Profissional </a>
                     </div>
                     <div class="containerInstituicao">
                         <a href="#" id="mostraLoginInstituicao">  Instituicao</a>
@@ -51,7 +51,7 @@
                             }
                             ?>
                             <div class="itemForm itemCadastrar">
-                                <a href="<?php echo base_url(); ?>cadastroMedico">
+                                <a href="<?php echo base_url(); ?>cadastro">
                                     Cadastrar
                                 </a>
 							</div>

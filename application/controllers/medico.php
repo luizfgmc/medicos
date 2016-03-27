@@ -116,20 +116,6 @@ class Medico extends CI_Controller {
         $data = $this->sm->reprovarSolicitacao($idSolicitacao);
         redirect('medico/solicitacoes');
     }
-	
-	public function pacienteNaoCompareceu($idSolicitacao) {
-		
-		$this->load->model('solicitacaoModel', 'sm');
-        $data = $this->sm->naoCompareceu($idSolicitacao);
-        redirect('medico/solicitacoes');
-	}
-	
-	public function pacienteCompareceu($idSolicitacao) {
-		
-		$this->load->model('solicitacaoModel', 'sm');
-        $data = $this->sm->compareceu($idSolicitacao);
-        redirect('medico/solicitacoes');
-	}
 
     public function aprovarSolicitacaoSalvar() {
 

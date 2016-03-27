@@ -36,9 +36,9 @@ class Acesso extends CI_Controller {
         $email = $this->input->post('email');
 
         $senha = sha1($this->input->post('senha'));
-
+        $this->load->model('UsuarioModel');
         $this->load->model('medicoModel', 'mm');
-        $data = $this->mm->autenticar($email);
+        $data = $this->UsuarioModel->autenticar($email);
         
 
         $cont = 0;
@@ -102,6 +102,61 @@ class Acesso extends CI_Controller {
             //$this->session->set_userdata('erroLogin', '1');
             redirect(base_url('home'));
         }
+    }
+
+    public function logarProfissional() {
+        $email = $this->input->post('email');
+        $senha = sha1($this->input->post('senha'));
+        $this->load->model('UsuarioModel');
+        $this->load->model('ProfissionalModel', 'pm');
+        $data = $this->UsuarioModel->autenticar($email);
+        $cont = 0;
+        if ($data != null) {
+
+                if ($data[0]->tipo == 'P' && $data[0]->password_hash == $senha) {
+
+                    $idProfissional = $this->pm->buscarIdProfissional($data[0]->id);
+
+                    $arrayProfissional = array (
+                        'nome' => $idProfissional[0]->nome_profissional,
+                        'tipo' => $data[0]->tipo,
+                        'email' => $data[0]->email,
+                        'id_usuario' => $data[0]->id,
+                        'id_profissional' => $idProfissional[0]->id_profissional,
+                    );
+
+                    $this->session->set_userdata('medico', $arrayProfissional);
+                    $this->session->set_userdata('cont_captcha','1');   
+                    redirect(base_url('medico/chares'));
+                } else {
+                    if(!empty($this->session->userdata('cont_captcha')))
+                    {
+                        $contador=$this->session->userdata('cont_captcha');
+                        $contador++;
+                        $this->session->set_userdata('cont_captcha',$contador);
+                        redirect(base_url('home'));
+
+                    }else{
+                    
+                   $this->session->set_userdata('cont_captcha','1');
+                     redirect(base_url('home'));
+                    }
+              
+                 }
+    
+        } else {
+                 if(!empty($this->session->userdata('cont_captcha')))
+                        {
+            
+                            $contador=$this->session->userdata('cont_captcha');
+                            $contador++;
+                            $this->session->set_userdata('cont_captcha',$contador);
+                        }else{
+                       $this->session->set_userdata('cont_captcha','1');
+                        } 
+                redirect(base_url('home'));
+        }
+
     }
 
     public function logarInstituicao() {
