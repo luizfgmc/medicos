@@ -19,9 +19,9 @@
 
  		
  	FB.ui({
-	 	 method: 'feed',
-	  	link: 'http://www.mauro-facebook.com.br',
-	  	caption: 'An example caption',
+	 	// 'method: 'feed',
+	  	//link: 'http://www.mauro-facebook.com.br',
+	  	//caption: 'An example caption',
 	}, function(response){});
 
 		FB.getLoginStatus(function(response) {

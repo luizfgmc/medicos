@@ -51,9 +51,9 @@
                                 ?>
 
                                   
-                                     <a href="<?php echo base_url() . "medico/aprovarSolicitacao/" . $k->id ?>"> aprovar </a>
+                                     <a href="<?php echo base_url() . "medico/aprovarSolicitacao/" . $k->id . "/" . $k->agenda_id ?>"> aprovar </a>
                                      
-                                     <a href="<?php echo base_url() . "medico/reprovarSolicitacao/" . $k->id ?>"> reprovar </a>
+                                     <a href="<?php echo base_url() . "medico/reprovarSolicitacao/" . $k->id ."/".$k->agenda_id ?>"> reprovar </a>
                                      <?php
                                         }
                                      ?>

@@ -1,4 +1,4 @@
-<?php
+d<?php
 
 	class SolicitacaoModel extends CI_Model{
 			
@@ -174,22 +174,45 @@
 
 	}
 
-	public function alterarSaldo($idMedico, $diaSemana){
+	//metodo genêrico para remover saldo, basta  informar o campoChave, o valor e a coluna desejados
+	public function removerSaldo($campoChave, $valor, $coluna){
 
-		$this->db->select('saldo');
+		$this->db->select($coluna);
 		$this->db->from('agendas');
-		$this->db->where(['medico_id'=>$idMedico,'dia_semana'=>$diaSemana]);
+		$this->db->where([$campoChave=>$valor]);
 		$query = $this->db->get();
 
+		//exit($this->db->last_query());
+
 		$data = $query->result();
-		$saldo =(double)$data[0]->saldo;
+		$saldo =(double)$data[0]->$coluna;
 		
 		$saldo = $saldo - 1;
 
-		$this->db->where(['medico_id'=>$idMedico]);
-		$this->db->update('agendas', ['saldo'=>$saldo]);
-		
+		$this->db->where([$campoChave=>$valor]);
+		$this->db->update('agendas', [$coluna=>$saldo]);
 
+	}
+
+	//metodo genêrico para adicionar saldo, basta  informar o campoChave, o valor e a coluna desejados
+	public function addSaldo($campoChave, $valor, $coluna){
+
+		$this->db->select($coluna);
+		$this->db->from('agendas');
+		$this->db->where([$campoChave=>$valor]);
+		$query = $this->db->get();
+
+		//exit($this->db->last_query());
+
+		$data = $query->result();
+		$saldo =(double)$data[0]->$coluna;
+		
+		$saldo = $saldo + 1;
+
+		$this->db->where([$campoChave=>$valor]);
+		$this->db->update('agendas', [$coluna=>$saldo]);
+
+		
 	}
 
 
