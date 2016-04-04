@@ -4,7 +4,6 @@
 <section class="mainContent">
     <section class="cadastro_medico">
         <div class="containerCenter fullSiteSize">
-
             <form action="<?php echo base_url() ?>instituicao/solicitarConsultaSalvar" method="post" id="formSolicitaConsulta">
                 <div class="halfSize">
                     <h2>Solicitação</h2>

@@ -7,7 +7,6 @@
                 <div class="containerListaSolicitacoes">
                     <h2>Solicitações pedentes </h2>
                     <div class="infoMedicoLogado">
-                       
                     </div>
                     <div class="cabecalhoListaSolicitacoes">
                         <span class="nomePaciente">Paciente</span>
@@ -70,4 +69,3 @@
         </div>
     </section>
 </section>
-

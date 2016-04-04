@@ -1,6 +1,4 @@
-
 <script>
-
   window.fbAsyncInit = function() {
     FB.init({
       appId      : '1719839291584651',
@@ -56,10 +54,6 @@
 }
 
 </script>
-
-
-
-
 <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/forms.css" />
 <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/medico/medico.css" />
 <?php echo validation_errors(); ?>
