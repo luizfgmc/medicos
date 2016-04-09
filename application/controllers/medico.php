@@ -119,17 +119,26 @@ class Medico extends CI_Controller {
 
     public function aprovarSolicitacaoSalvar() {
 
+
         $idSolicitacao = $this->input->post('id');
+        $dataNaoFormatada = explode('/',$this->input->post('data_agendamento'));
+        $dataFormatada=$dataNaoFormatada['2'].'/'.$dataNaoFormatada['1'].'/'.$dataNaoFormatada['0'];
+        $this->load->model("MedicoModel");
+        $this->load->model('solicitacaoModel', 'sm');
         $arrayDados = array(
-            "data_agendamento" => $this->input->post('data_agendamento'),
+            "data_agendamento" => $dataFormatada,
             "hora_agendamento" => $this->input->post('hora_agendamento'),
             "status" => "AP",
             "updated_at" => date('Y-m-d H:i:s'),
         );
-
-
-        $this->load->model('solicitacaoModel', 'sm');
-        $this->sm->aprovarSolicitcaoSalvar($arrayDados, $idSolicitacao);
+        if($this->MedicoModel->getDisponibilidadeMedico($dataFormatada, date('H:i:s', strtotime($this->input->post('hora_agendamento'))))<1)
+        {
+            $this->sm->aprovarSolicitcaoSalvar($arrayDados, $idSolicitacao);
+        }
+        else
+        {
+            $this->session->set_userdata('mensagemSolicitacao',true);
+        }
         redirect(base_url().'medico/solicitacoes');
 
     }

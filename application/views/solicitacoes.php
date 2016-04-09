@@ -7,7 +7,12 @@
                 <div class="containerListaSolicitacoes">
                     <h2>Solicitações pedentes </h2>
                     <div class="infoMedicoLogado">
-                       
+                       <?php
+                       if ($this->session->userdata('mensagemSolicitacao')) {
+                           echo '<div class="erroSolicitacao">Horário já foi reservado</div>';
+                           $this->session->unset_userdata('mensagemSolicitacao');
+                       }
+                       ?>
                     </div>
                     <div class="cabecalhoListaSolicitacoes">
                         <span class="nomePaciente">Paciente</span>
@@ -20,18 +25,9 @@
                             ?>		
                             <div class="itemSolicitacao">
                                 <?php
-
-                                //if($k->status == 'PE'){
-                                //echo($k->solicitante . "<br/>");
                                 echo '<span class="nomePaciente">' . ($k->nome_paciente) . '</span>';
-                                echo '<span class="horarioSugerido">' . date('d/m/Y', strtotime($k->data_emissao));
-                                echo($k->data_agendamento) . '</span>';
-                                //echo($k->hora_agendamento)';
-                                //echo($k->status . "<br/>");
-                                //echo($k->data_emissao . "<br/>");
-                                //echo($k->descricao . "<br/>");
-                                //echo($k->status . "<br/>");
-                                //echo($k->id);
+                                echo '<span class="horarioSugerido">' . date('d/m/Y', strtotime($k->data_agendamento));
+                                echo ' '.($k->hora_agendamento) . '</span>';
                                 ?>
                                 <span class="saldo">
                                     

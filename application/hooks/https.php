@@ -15,18 +15,18 @@ function trigger_https()
 	//switch to HTTPS for these urls
 	$ssl_url_list = array();
 	
-	$ssl_url_list[] = '/(.*)home(.*)$/';
-	$ssl_url_list[] = '/(.*)acesso(.*)$/';
-	$ssl_url_list[] = '/(.*)clinica(.*)$/';
-	$ssl_url_list[] = '/(.*)medico(.*)$/';
-	$ssl_url_list[] = '/(.*)agenda(.*)$/';
-	$ssl_url_list[] = '/(.*)cadastroMedico(.*)$/'; 
-	$ssl_url_list[] = '/(.*)paciente(.*)$/'; 
-	$ssl_url_list[] = '/(.*)soliciticao(.*)$/'; 
-	$ssl_url_list[] = '/(.*)adm(.*)$/'; 
-	$ssl_url_list[] = '/(.*)instituicao(.*)$/'; 
-	$ssl_url_list[] = '/(.*)webservice(.*)$/'; 
-	$ssl_url_list[] = '/(.*)soap(.*)$/'; 
+//	$ssl_url_list[] = '/(.*)home(.*)$/';
+//	$ssl_url_list[] = '/(.*)acesso(.*)$/';
+//	$ssl_url_list[] = '/(.*)clinica(.*)$/';
+//	$ssl_url_list[] = '/(.*)medico(.*)$/';
+//	$ssl_url_list[] = '/(.*)agenda(.*)$/';
+//	$ssl_url_list[] = '/(.*)cadastroMedico(.*)$/';
+//	$ssl_url_list[] = '/(.*)paciente(.*)$/';
+//	$ssl_url_list[] = '/(.*)soliciticao(.*)$/';
+//	$ssl_url_list[] = '/(.*)adm(.*)$/';
+//	$ssl_url_list[] = '/(.*)instituicao(.*)$/';
+//	$ssl_url_list[] = '/(.*)webservice(.*)$/';
+//	$ssl_url_list[] = '/(.*)soap(.*)$/';
 
 
 
