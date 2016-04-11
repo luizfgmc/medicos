@@ -16,9 +16,11 @@
                     </div>
                     <div class="containerItensSolicitacao">
                         <?php
+                        $cont = 0;
                         foreach ($query as $k) {
                             ?>		
                             <div class="itemSolicitacao">
+
                                 <?php
 
                                 //if($k->status == 'PE'){
@@ -46,21 +48,33 @@
                                     echo 'Rejeitado';
 
                                 }
+
                                     if(($k->status!='AP')&&($k->status!='RJ'))
                                 {
                                 ?>
 
-                                  
                                      <a href="<?php echo base_url() . "medico/aprovarSolicitacao/" . $k->id . "/" . $k->agenda_id ?>"> aprovar </a>
                                      
                                      <a href="<?php echo base_url() . "medico/reprovarSolicitacao/" . $k->id ."/".$k->agenda_id ?>"> reprovar </a>
                                      <?php
                                         }
+                                    if (empty($k->observacao) and $k->status == 'AP') {
+                                         ?>  
+                                        <a href="#" id="enviarObservacao" valor="<?=$k->id?>" value="<?=$k->id?>"> comentário da consulta </a>
+
+                                        <input type="hidden"  id="idSolicitacao"<?=$cont?> value="<?=$k->id?>">
+
+                                        <?php
+                                        } else{
+                                            echo "<br/> Consulta Fechada";
+                                        }  
+
                                      ?>
                                 </span>
                             </div>
                             <?php
                             //}
+                            $cont++;
                         }
                         ?>
 
@@ -70,4 +84,6 @@
         </div>
     </section>
 </section>
+
+<script src="<?php echo base_url() ?>assets/js/observacaoConsulta.js" type="text/javascript" charset="utf-8" async defer></script>
 

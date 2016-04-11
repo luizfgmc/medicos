@@ -24,18 +24,8 @@
                                     <?php
                                     //echo' <span class="nomePaciente">'.($k->nome).'</span>';
                                     echo' <span class="nomePaciente">' . $k->nome_medico . '</span>';
-                                    //echo($k->descricao . "<br/>");
-                                    //echo($k->saldo . "<br/>");
-                                    //echo($k->quantidade . "<br/>");
-                                    //echo($k->crm . "<br/>");
                                     echo'<span class="horarioSugerido">' . date('d/m/Y', strtotime($k->data_emissao)) . "<br/>" . '</span>';
                                     echo '<span class="saldo">' . ($k->telefone . "<br/>");
-                                    //echo("id clinica" . $k->clinica_id . "<br/>");
-                                    //echo("nome clinica:" . " " . $k->nome . "<br/>");
-                                    //echo("telefone clinica:" . " " . $k->telefone . "<br/>");
-                                    //echo("endereco clinica:" . " " . $k->endereco . "<br/>");
-                                    //echo($k->end_numero . "<br/>");
-                                    //echo("solicitar" . $k->medico_id . "<br/>");
                                     ?>			
                                     <a href="<?php echo base_url() . "instituicao/solicitarConsulta/" . $k->id ?>"> Solicitar Consulta </a>
                                     </span>

@@ -24,18 +24,6 @@ class MedicoModel extends CI_Model {
         return $this->db->get()->result_array();
 	}
 
-    
-    public function autenticar($email){
-        		
-
-       $query = $this->db->get_where('Usuarios', array('email'=>$email));
-  
-       return $query->result();
-
-
-
-    }
-
      public function buscarIdMedico($id){
 
         $this->db->select('id,nome_medico');

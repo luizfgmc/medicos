@@ -72,6 +72,14 @@ d<?php
 
 		}
 
+		public function salvarComentarioConsulta($solicitacaoId, $obs){
+
+			$this->db->where(['id'=>$solicitacaoId]);
+			$this->db->update('solicitacoes',['observacao'=>$obs]);
+			echo $this->db->last_query();
+			
+
+		}
 
 		public function aprovarSolicitcao($id){
 
