@@ -7,6 +7,7 @@
                 <div class="containerListaSolicitacoes">
                     <h2>Solicitações pedentes </h2>
                     <div class="infoMedicoLogado">
+                       
                     </div>
                     <div class="cabecalhoListaSolicitacoes">
                         <span class="nomePaciente">Paciente</span>
@@ -15,11 +16,9 @@
                     </div>
                     <div class="containerItensSolicitacao">
                         <?php
-                        $cont = 0;
                         foreach ($query as $k) {
                             ?>		
                             <div class="itemSolicitacao">
-
                                 <?php
 
                                 //if($k->status == 'PE'){
@@ -47,33 +46,21 @@
                                     echo 'Rejeitado';
 
                                 }
-
                                     if(($k->status!='AP')&&($k->status!='RJ'))
                                 {
                                 ?>
 
-                                     <a href="<?php echo base_url() . "medico/aprovarSolicitacao/" . $k->id . "/" . $k->agenda_id ?>"> aprovar </a>
+                                  
+                                     <a href="<?php echo base_url() . "medico/aprovarSolicitacao/" . $k->id ?>"> aprovar </a>
                                      
-                                     <a href="<?php echo base_url() . "medico/reprovarSolicitacao/" . $k->id ."/".$k->agenda_id ?>"> reprovar </a>
+                                     <a href="<?php echo base_url() . "medico/reprovarSolicitacao/" . $k->id ?>"> reprovar </a>
                                      <?php
                                         }
-                                    if (empty($k->observacao) and $k->status == 'AP') {
-                                         ?>  
-                                        <a href="#" id="enviarObservacao" valor="<?=$k->id?>" value="<?=$k->id?>"> comentário da consulta </a>
-
-                                        <input type="hidden"  id="idSolicitacao"<?=$cont?> value="<?=$k->id?>">
-
-                                        <?php
-                                        } else{
-                                            echo "<br/> Consulta Fechada";
-                                        }  
-
                                      ?>
                                 </span>
                             </div>
                             <?php
                             //}
-                            $cont++;
                         }
                         ?>
 
@@ -82,11 +69,5 @@
             </div>
         </div>
     </section>
-<<<<<<< HEAD
 </section>
 
-<script src="<?php echo base_url() ?>assets/js/observacaoConsulta.js" type="text/javascript" charset="utf-8" async defer></script>
-
-=======
-</section>
->>>>>>> 4daed0413fd17fa02120b77ef65f355238f47d1c

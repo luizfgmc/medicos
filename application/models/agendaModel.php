@@ -77,16 +77,6 @@
 
 		}
 
-		public function verificaSaldoAgenda($idAgenda){
-
-			$this->db->select('saldo');
-			$this->db->from('agendas');
-			$this->db->where(['id'=>$idAgenda]);
-			$query = $this->db->get();
-			return $query->result();
-
-		}
-
 	}
 
 

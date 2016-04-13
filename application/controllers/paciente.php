@@ -34,47 +34,30 @@ class Paciente extends CI_Controller {
 
     public function inserePaciente() {
 
-       
+        $arrayPaciente = array(
+            "nome_paciente" => $this->input->post('nomePaciente'),
+            "cpf" => str_replace(".","", $this->input->post('cpfPaciente')),
+            "endereco" => $this->input->post('enderecoPaciente'),
+            "end_numero" => $this->input->post('numeroPaciente'),
+            "complemento" => $this->input->post('complementoPaciente'),
+            "bairro" => $this->input->post('bairroPaciente'),
+            "uf" => $this->input->post('ufPaciente'),
+            "cidade" => $this->input->post('cidadePaciente'),
+            "cep" => str_replace (".","",$this->input->post('cepPaciente')),
+            "telefone" => str_replace(".","", $this->input->post('telefonePaciente')),
+			"atividade" => 'A',
+            "created_at" => date("Y-m-d H:i:s"),
+            "updated_at" => date("Y-m-d H:i:s"),
+        );
 
         $this->load->model('pacienteModel', 'pm');
-
-       $status = $this->pm->verificaCpf(str_replace(".","", $this->input->post('cpfPaciente')));
-
-        if($status){
-
-             $this->session->set_flashdata('erroCpf','Cpf já cadastrado');
-             exit($this->session->flashdata('erroCpf'));
-
-        }else{
-
-
-            $arrayPaciente = array(
-                "nome_paciente" => $this->input->post('nomePaciente'),
-                "cpf" => str_replace(".","", $this->input->post('cpfPaciente')),
-                "endereco" => $this->input->post('enderecoPaciente'),
-                "end_numero" => $this->input->post('numeroPaciente'),
-                "complemento" => $this->input->post('complementoPaciente'),
-                "bairro" => $this->input->post('bairroPaciente'),
-                "uf" => $this->input->post('ufPaciente'),
-                "cidade" => $this->input->post('cidadePaciente'),
-                "cep" => str_replace (".","",$this->input->post('cepPaciente')),
-                "telefone" => str_replace(".","", $this->input->post('telefonePaciente')),
-    			"atividade" => 'A',
-                "created_at" => date("Y-m-d H:i:s"),
-                "updated_at" => date("Y-m-d H:i:s"),
-            );
-
-            
-            $this->pm->inserePaciente($arrayPaciente);
-            redirect('paciente/listaPacientes');
-        }
+        $this->pm->inserePaciente($arrayPaciente);
+        redirect('paciente/listaPacientes');
     }
 
     public function editarPaciente($idPaciente) {
 
         $this->load->model('pacienteModel', 'pm');
-
-
         $this->load->model('estadosModel');
         $estado = $this->estadosModel->getInfoEstados();
 
@@ -112,19 +95,8 @@ class Paciente extends CI_Controller {
     public function deletarPaciente($idPaciente) {
 
         $this->load->model('pacienteModel', 'pm');
-
-        $status = $this->pm->verificaPacientePorSolicitacao($idPaciente);
-
-        if($status){
-              $this->session->set_flashdata('erroPossuiVinculo','Não é possível deletar este paciente, pois, ele está vinculado a uma solicitação');
-             exit($this->session->flashdata('erroPossuiVinculo'));
-        
-        }else{
-    
-            $this->pm->deletarPaciente($idPaciente);
-            redirect('paciente/listaPacientes');
-
-        }
+        $this->pm->deletarPaciente($idPaciente);
+        redirect('paciente/listaPacientes');
     }
 
 }

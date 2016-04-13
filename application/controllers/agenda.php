@@ -51,11 +51,6 @@ class Agenda extends CI_Controller {
 
     public function insereAgenda() {
 
-        if(empty($this->input->post('clinicas')) || $this->input->post('clinicas')  == 'Selecione' )
-
-            exit("É necessário selecionar uma clínica");
-
-
         $this->loginmedico->valida_sessao_medico();
         $id = $this->session->userdata('medico');
 
@@ -118,8 +113,6 @@ class Agenda extends CI_Controller {
         $this->pm->deletarAgenda($idAgenda);
         redirect('Agenda/listarAgendasMedico');
     }
-
-
 
 }
 

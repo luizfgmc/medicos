@@ -110,21 +110,16 @@ class Medico extends CI_Controller {
         $this->load->view('layout/footer');
     }
 
-    public function reprovarSolicitacao($idSolicitacao, $idAgenda) {
+    public function reprovarSolicitacao($idSolicitacao) {
 
         $this->load->model('solicitacaoModel', 'sm');
         $data = $this->sm->reprovarSolicitacao($idSolicitacao);
-        $this->sm->removerSaldo('id',$idAgenda,'saldo_empenhado');
-        $this->sm->addSaldo('id',$idAgenda, 'saldo');
-
         redirect('medico/solicitacoes');
     }
 
     public function aprovarSolicitacaoSalvar() {
-            
-        $idSolicitacao = $this->input->post('id');
-        $idAgenda = $this->input->post('idAgenda');
 
+        $idSolicitacao = $this->input->post('id');
         $arrayDados = array(
             "data_agendamento" => $this->input->post('data_agendamento'),
             "hora_agendamento" => $this->input->post('hora_agendamento'),
@@ -132,15 +127,9 @@ class Medico extends CI_Controller {
             "updated_at" => date('Y-m-d H:i:s'),
         );
 
-         //$diaSemana = 'Segunda-Feira';
-         $id = $this->session->userdata('medico');
 
         $this->load->model('solicitacaoModel', 'sm');
-    
         $this->sm->aprovarSolicitcaoSalvar($arrayDados, $idSolicitacao);
-        $this->sm->removerSaldo('id',$idAgenda,'saldo_empenhado');
-
-
         redirect(base_url().'medico/solicitacoes');
 
     }

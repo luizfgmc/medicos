@@ -5,7 +5,7 @@
         <div class="containerCenter fullSiteSize">
             <div class="halfSize">
                 <div class="containerListaSolicitacoes">
-                    <h2>Solicitações pedentes </h2>s
+                    <h2>Solicitações pedentes </h2>
                     <div class="infoMedicoLogado">
                         
                     </div>
@@ -13,8 +13,6 @@
                         <span class="nomePaciente">Paciente</span>
                         <span class="horarioSugerido">Horário Sugerido</span>
                         <span class="saldo">Status</span>
-                        <span class="obs">Observação</span>
-
                     </div>
                     <div class="containerItensSolicitacao">
                         <?php
@@ -44,24 +42,11 @@
 
                                     echo 'Rejeitado';
 
-                                }else{
-
-                                    echo 'Pendente';
                                 }
 
                                 ?>
-                               <span class="obs">
-                                <?php
-                                     if(!empty($k->observacao))
-                                        echo $k->observacao;
-                                     else
-                                        echo "-";
-
-                                ?>
+                                     
                                 </span>
-
-
-                               </span>
                             </div>
                             <?php
                         }

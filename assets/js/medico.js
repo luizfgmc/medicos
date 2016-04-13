@@ -1,5 +1,5 @@
 
-var url = "http://localhost/medicos/";
+var url = "https://localhost/medicos/";
 	
 	function gerar_hash(){	
 
@@ -14,6 +14,8 @@ var url = "http://localhost/medicos/";
 
 			$('#hash').val('');
 			$('#hash').val(data);
+
+			console.log(data);
 
 		});
 

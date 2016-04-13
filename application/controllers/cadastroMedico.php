@@ -74,11 +74,6 @@
                 $this->index();
             }
             else{
-                
-                $status = $this->mm->verificaCpf(str_replace(".","",$dataPost['cpfMedico']));
-
-                if(!$status){
-
                 $arrayInserirUsuario = array(
                     "email" => $dataPost['emailMedico'],
                     "password_hash" => sha1($dataPost['senhaMedico']),
@@ -131,17 +126,11 @@
 
                 redirect(base_url('medico/solicitacoes'));
     			
-            }else{
-
-                $this->session->set_flashdata('erroCpf','Cpf já cadastrado');
-
             }
-        
-
         }
 
         
-    }
+
 
       
 
