@@ -34,10 +34,9 @@ class Instituicao extends CI_Controller {
         $idInstituicao = $this->session->userdata('instituicao');
 
         $data['query'] = array('idAgenda'=>$idAgenda,
-              'idInstituicao'=>$idInstituicao['id_instituicao'],
-              'pacientes'=>$pacientes
+                      'idInstituicao'=>$idInstituicao['id_instituicao'],
+                      'pacientes'=>$pacientes
         );    
-
 
         $this->load->view('layout/header');
         $this->load->view('solicitacao', $data);
@@ -45,16 +44,7 @@ class Instituicao extends CI_Controller {
 
     }
 
-
-
-
     public function solicitarConsultaSalvar(){
-
-        $paciente = $this->input->post('paciente');
-            
-        $this->verificaPaciente($paciente);
-
-        $this->veriicaSaldoAgenda($this->input->post('id_agenda'));
 
          $idInstituicao = $this->session->userdata('instituicao');
 
@@ -74,42 +64,13 @@ class Instituicao extends CI_Controller {
 
           $this->load->model('solicitacaoModel','sm');
           $this->sm->solicitarConsultaSalvar($arraySolicitcao);
-          $this->sm->addSaldo('id',$this->input->post('id_agenda'), 'saldo_empenhado');
-          $this->sm->removerSaldo('id',$this->input->post('id_agenda'), 'saldo');
 
           redirect('instituicao');
 
     }
-        
+    
+    
 
-      //verifica o campo paciente do formulário
-      public function verificaPaciente($paciente){
-
-        if(empty($paciente) || $paciente == 'Selecione')
-            exit("Não é possível solicitar consulta sem selcionar um paciente!");
-
-    } 
-
-    //verifica se o saldo da agenda é maior que zero
-    public function veriicaSaldoAgenda($idAgenda){
-         
-         $this->load->model('agendaModel','am');
-         $data = $this->am->verificaSaldoAgenda($idAgenda);
-
-         if(empty($data)){
-              exit("saldo insuficiente");
-          }else{
-
-            $saldo = (double) $data[0]->saldo;
-         
-            if ($saldo <= 0 ) {
-                
-                exit("saldo insuficiente");       
-
-            }  
-        } 
-
-    }
     
 
 }

@@ -44,38 +44,6 @@
 
 		}
 
-		//verifica se já exsite o cpf do paciente no banco
-		public function verificaCpf($cpf){
-
-			$query = $this->db->get_where('pacientes', ['cpf'=>$cpf]);
-			$existeCpf = false;
-
-			if(!empty($query->result())) {
-
-				$existeCpf = true;
-			}
-
-			return $existeCpf;
-		}
-
-		//verifica se o paciente está vinculado a uma solicitação
-
-		public function verificaPacientePorSolicitacao($idPaciente){
-
-			$query = $this->db->get_where('solicitacoes', ['paciente_id'=>$idPaciente]);
-
-			if(!empty($query->result()))
-				return true;
-			else
-				return false;
-
-			
-			return false;
-
-
-		}
-
-
 	}
 
 

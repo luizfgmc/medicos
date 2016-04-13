@@ -112,19 +112,6 @@ class MedicoModel extends CI_Model {
 		
 	}
 
-	public function verificaCpf($cpf){
-
-		$query = $this->db->get_where('medicos', ['cpf'=>$cpf]);
-		$existeCpf = false;
-
-		if(!empty($query->result())) {
-
-			$existeCpf = true;
-		}
-
-		return $existeCpf;
-	}
-
 }
 
 
