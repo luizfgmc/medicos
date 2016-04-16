@@ -1,35 +1,12 @@
 <script>
+
   window.fbAsyncInit = function() {
     FB.init({
       appId      : '1719839291584651',
       xfbml      : true,
-      version    : 'v2.5'
+      version    : 'v2.6'
     });
-
-    FB.login(function(){
-  // Note: The call will only work if you accept the permission request
-  FB.api('/me/feed', 'post', {message: 'Hello, world!'});
-}, {scope: 'publish_actions'});
-
-        
-    FB.ui({
-        // 'method: 'feed',
-        //link: 'http://www.mauro-facebook.com.br',
-        //caption: 'An example caption',
-    }, function(response){});
-
-        FB.getLoginStatus(function(response) {
-      if (response.status === 'connected') {
-        console.log('Logged in.');
-      }
-      else {
-        FB.login();
-      }
-});
-
-
   };
-
 
   (function(d, s, id){
      var js, fjs = d.getElementsByTagName(s)[0];
@@ -39,21 +16,8 @@
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
 
-  function checkLoginState()
-{
-    FB.getLoginStatus(function(response) {
-        if (response.status === 'connected') {
-            // usuario logado no facebook e com o app aceito
- 
-        } else if (response.status === 'not_authorized') {
-            // Usuario logado no facebook, mas nao aceitou o App
-        } else {
-            // Usuario nao logado no facebook
-        }
-    });
-}
-
 </script>
+
 <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/forms.css" />
 <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/medico/medico.css" />
 <?php echo validation_errors(); ?>

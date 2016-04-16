@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-d<?php
+<?php
 
 	class SolicitacaoModel extends CI_Model{
 			
@@ -77,8 +76,7 @@ d<?php
 
 			$this->db->where(['id'=>$solicitacaoId]);
 			$this->db->update('solicitacoes',['observacao'=>$obs]);
-			echo $this->db->last_query();
-			
+			exit('Consulta Fechada');
 
 		}
 
@@ -116,123 +114,11 @@ d<?php
 
 
 		}
+	
 		
-		private function getTodosHorarios() {
-		
-=======
-<?php
-
-class SolicitacaoModel extends CI_Model{
-
-	function __construct(){
-
-		parent::__construct();
-
-	}
-
-	public function naoCompareceu($idSolicitacao) {
-
-		// Alterar status da solicitacao para NC (Nao Compareceu)
-		$dados = array('status' => 'NC');
-		$this->db->where('id', $idSolicitacao);
-		$this->db->update('solicitacoes', $dados);
-
-		// Obter ID do paciente que nao compareceu
-		$this->db->select('paciente_id');
-		$this->db->from('solicitacoes');
-		$this->db->where('id', $idSolicitacao);
-
-		// Armazenar informacoes
-		$idPaciente = $this->db->get()->result_array()[0]['paciente_id'];
-		$dados = array('atividade' => 'I');
-
-		// Alterar status do paciente para I (Inativo)
-		$this->db->where('id', $idPaciente);
-		$this->db->update('pacientes', $dados);
-
-	}
-
-	public function remarcar($idSolicitacao, $novoData, $novoHorario) {
-
-		$dados = array('data_agendamento' => $novoData, 'hora_agendamento' => $novoHorario);
-		$this->db->where('id', $idSolicitacao);
-		$this->db->update('solicitacoes', $dados);
-
-	}
-
-	public function verSolicitcoesInstituicao($id){
-		$this->logininstituicao->valida_sessao_instituicao();
-		$this->db->select('*, s.id, p.nome_paciente');
-		$this->db->from('solicitacoes as s');
-		$this->db->join('pacientes as p','s.paciente_id = p.id');
-		$this->db->where('s.instituicao_id', $id);
-		$query = $this->db->get();
-		return $query->result();
-
-	}
-
-	public function compareceu($idSolicitacao) {
-
-		// Alterar status da solicitacao para CO (Compareceu)
-		$dados = array('status' => 'CO');
-		$this->db->where('id', $idSolicitacao);
-		$this->db->update('solicitacoes', $dados);
-
-	}
-
-	public function verSolicitcoes($medicoId){
-
-		$this->loginmedico->valida_sessao_medico();
-		$this->db->select('*, s.id, p.nome_paciente');
-		$this->db->from('solicitacoes as s');
-		$this->db->join('agendas as a','s.agenda_id = a.id');
-		$this->db->join('medicos as m','a.medico_id = m.id');
-		$this->db->join('pacientes as p','s.paciente_id = p.id');
-		$this->db->where('m.id', $medicoId);
-		$query = $this->db->get();
-		return $query->result();
-
-	}
-
-
-	public function aprovarSolicitcao($id){
-
-		$this->loginmedico->valida_sessao_medico();
-		$query = $this->db->get_where('solicitacoes', array('id'=>$id));
-		return $query->result();
-
-	}
-
-	public function reprovarSolicitacao($id){
-
-		$this->loginmedico->valida_sessao_medico();
-		$arrSolicitcao = array('status'=>'RJ');
-
-		$this->db->update('solicitacoes', $arrSolicitcao, array('id'=>$id));
-
-		if($this->db->affected_rows() == 1)
-			return "A solicitcao foi rejeitada";
-		else
-			return "ocorreu um erro.";
-
-	}
-
-	public function aprovarSolicitcaoSalvar($arrayDados, $idSolicitacao){
-
-		$this->db->update('solicitacoes',$arrayDados, array('id'=>$idSolicitacao));
-
-	}
-
-	public function solicitarConsultaSalvar($arrayDados){
-
-		$this->db->insert('solicitacoes',$arrayDados);
-
-
-	}
 
 	private function getTodosHorarios() {
 
->>>>>>> 4daed0413fd17fa02120b77ef65f355238f47d1c
 		// Retornar todos os horários da agenda
 		$this->db->select('solicitacoes.status, solicitacoes.descricao');
 		$this->db->select('solicitacoes.data_agendamento, solicitacoes.hora_agendamento');

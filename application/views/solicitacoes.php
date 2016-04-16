@@ -57,7 +57,7 @@
                                      <a href="<?php echo base_url() . "medico/reprovarSolicitacao/" . $k->id ."/".$k->agenda_id ?>"> reprovar </a>
                                      <?php
                                         }
-                                    if (empty($k->observacao) and $k->status == 'AP') {
+                                    if (empty($k->observacao) and $k->status == 'AP' or $k->status == 'RJ') {
                                          ?>  
                                         <a href="#" id="enviarObservacao" valor="<?=$k->id?>" value="<?=$k->id?>"> comentário da consulta </a>
 
