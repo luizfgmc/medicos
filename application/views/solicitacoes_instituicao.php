@@ -20,16 +20,9 @@
                             ?>		
                             <div class="itemSolicitacao">
                                 <?php
-                                //echo($k->solicitante . "<br/>");
                                 echo '<span class="nomePaciente">' . ($k->nome_paciente) . '</span>';
-                                echo '<span class="horarioSugerido">' . date('d/m/Y', strtotime($k->data_emissao)) . '</br>';
-                                echo date('d/m/Y', strtotime($k->data_agendamento)) . '</br>';
+                                echo '<span class="horarioSugerido">' . date('d/m/Y', strtotime($k->data_agendamento)) . '</br>';
                                 echo($k->hora_agendamento). '</span>';
-                                
-                                //echo($k->data_emissao . "<br/>");
-                                //echo($k->descricao . "<br/>");
-                                //echo($k->status . "<br/>");
-                                //echo($k->id);
                                 ?>
                                 <span class="saldo">
                                     
