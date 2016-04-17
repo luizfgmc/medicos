@@ -173,7 +173,8 @@ class Medico extends CI_Controller {
         $estados = $this->estadosModel->getInfoEstados();
         $this->load->model("MedicoModel");
         $infoMedico = $this->MedicoModel->getTodasInfoMedicos($id['id_medico']);
-        $dadosView = array('especialidades' => $especialidades, 'estados' => $estados, 'infoMedico' => $infoMedico);
+        $rankingMedico=$this->MedicoModel->getRankMedico($id['id_medico']);
+        $dadosView = array('especialidades' => $especialidades, 'estados' => $estados, 'infoMedico' => $infoMedico,'rankingMedico'=>$rankingMedico);
         $this->load->view('layout/header');
         $this->load->view('editar_medicos', $dadosView);
         $this->load->view('layout/footer');
