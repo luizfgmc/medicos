@@ -25,6 +25,15 @@
 
 		}
 
+		public function getAgendaMedico($idMedico)
+		{
+			$this->db->select('id');
+			$this->db->from('agendas');
+			$this->db->where('medico_id',$idMedico);
+			$query = $this->db->get();
+			return $query->row();
+		}
+
 		public function listaAgendasMedico(){
 
 			$id = $this->session->userdata('medico');	

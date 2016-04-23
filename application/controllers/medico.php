@@ -198,6 +198,26 @@ class Medico extends CI_Controller {
         redirect('medico/solicitacoes');
     }
 
+    public function solicitarConsulta(){
+
+
+        $this->load->model('pacienteModel','pm');
+        $this->load->model('agendaModel','am');
+        $pacientes['paciente'] = $this->pm->listaPacientes();
+        $medico = $this->session->userdata('medico');
+        $idInstituicao = $this->session->userdata('instituicao');
+        $idAgenda= $this->am->getAgendaMedico($medico['id_medico']);
+        $data['query'] = array('idAgenda'=>$idAgenda,
+            'idInstituicao'=>$idInstituicao['id_instituicao'],
+            'pacientes'=>$pacientes
+        );
+
+        $this->load->view('layout/header');
+        $this->load->view('solicitacao', $data);
+        $this->load->view('layout/footer');
+
+    }
+
 }
 
 ?>
