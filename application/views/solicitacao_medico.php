@@ -17,6 +17,14 @@
                         <input type="text"  class="default_text_input required" id="descricao" name="descricao" size=45 maxlength=45/>
                     </div>
                     <div class="container_item_form">
+                            <label> data da consulta: </label>
+                            <input type="text" class="default_text_input required" id="data_agendamento" name="data_agendamento">
+                    </div>
+                    <div class="container_item_form">
+                        <label> hora da consulta: </label>
+                        <input type="text" class="default_text_input required" id="hora_agendamento" name="hora_agendamento">
+                    </div>
+                    <div class="container_item_form">
                         <select name="paciente" id="paciente">
                             <?php
                             foreach ($query['pacientes'] as $k) {
@@ -31,8 +39,7 @@
 
                         </select>
                     </div>
-
-                    <input type="hidden" name ="id_agenda" value="<?= $query['idAgenda']->id ?>"/>
+                    <input type="hidden" name ="id_agenda" value="<?= $query['idAgenda']->id ?>" />
                     <div class="container_submit">
                         <input type="submit" class="input_submit" value="Solicitar"/>
                         <a href="<?php echo base_url() ?>instituicao/" class="input_cancel">Cancelar</a>

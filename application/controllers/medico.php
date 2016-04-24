@@ -163,8 +163,6 @@ class Medico extends CI_Controller {
     public function visualizaEditaMedicoMedicos() {
 
         $id = $this->session->userdata('medico');
-
-
         $this->load->model("especialidadesModel");
         //Pega informaçoes das especialidades
         $especialidades = $this->especialidadesModel->getInfoEspecialidade();
@@ -213,8 +211,44 @@ class Medico extends CI_Controller {
         );
 
         $this->load->view('layout/header');
-        $this->load->view('solicitacao', $data);
+        $this->load->view('solicitacao_medico', $data);
         $this->load->view('layout/footer');
+
+    }
+
+    public function solicitarConsultaSalvar()
+    {
+
+        $medico = $this->session->userdata('medico');
+        $dataNaoFormatada = explode('/',$this->input->post('data_agendamento'));
+        $dataFormatada=$dataNaoFormatada['2'].'/'.$dataNaoFormatada['1'].'/'.$dataNaoFormatada['0'];
+        $arraySolicitcao = array(
+            'instituicao_id'=>$medico['id_medico'],
+            'paciente_id'=>$this->input->post('paciente'),
+            'solicitante'=>$this->input->post('solicitante'),
+            'data_emissao'=> date('Y-m-d'),
+            "data_agendamento" => $dataFormatada,
+            "hora_agendamento" => $this->input->post('hora_agendamento'),
+            'status'=>'AP',
+            'descricao'=> $this->input->post('descricao'),
+            'created_at'=>date("Y-m-d H:i:s"),
+            'updated_at'=>date("Y-m-d H:i:s"),
+            'agenda_id'=> $this->input->post('id_agenda'),
+        );
+        
+        $this->load->model("MedicoModel");
+        $this->load->model('solicitacaoModel','sm');
+
+        if($this->MedicoModel->getDisponibilidadeMedico($dataFormatada, date('H:i:s', strtotime($this->input->post('hora_agendamento'))))<1)
+        {
+            $this->sm->solicitarConsultaSalvar($arraySolicitcao);
+        }
+        else
+        {
+            $this->session->set_userdata('mensagemSolicitacao',true);
+        }
+
+        redirect('medico/solicitacoes');
 
     }
 

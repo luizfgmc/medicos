@@ -118,8 +118,6 @@
 		public function solicitarConsultaSalvar($arrayDados){
 
 			$this->db->insert('solicitacoes',$arrayDados);
-
-
 		}
 		
 		private function getTodosHorarios() {
@@ -184,8 +182,6 @@
 				
 		return $this->db->get();
 		
-	
-
 	}
 
 
