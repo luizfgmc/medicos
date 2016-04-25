@@ -29,6 +29,9 @@
                                <?php if($k->status=='AP')
                                 {
                                     echo 'Aprovado';
+                                    ?>
+                                    <a href="<?php echo base_url() . "instituicao/reprovarSolicitacao/" . $k->id ?>"> Reprovar </a>
+                                    <?php
                                 }
                                 elseif($k->status=='RJ')
                                 {

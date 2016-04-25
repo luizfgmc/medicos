@@ -95,6 +95,20 @@
 
 		}
 
+		public function reprovarSolicitacaoInstituicao($id){
+
+			$this->logininstituicao->valida_sessao_instituicao();
+			$arrSolicitcao = array('status'=>'RJ');
+
+			$this->db->update('solicitacoes', $arrSolicitcao, array('id'=>$id));
+
+			if($this->db->affected_rows() == 1)
+				return "A solicitcao foi rejeitada";
+			else
+				return "ocorreu um erro.";
+
+		}
+
 		public function aprovarSolicitcaoSalvar($arrayDados, $idSolicitacao){
 
 			$this->db->update('solicitacoes',$arrayDados, array('id'=>$idSolicitacao));
@@ -104,8 +118,6 @@
 		public function solicitarConsultaSalvar($arrayDados){
 
 			$this->db->insert('solicitacoes',$arrayDados);
-
-
 		}
 		
 		private function getTodosHorarios() {
@@ -170,8 +182,6 @@
 				
 		return $this->db->get();
 		
-	
-
 	}
 
 
