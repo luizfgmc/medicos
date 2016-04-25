@@ -82,11 +82,10 @@
             </div>
         </div>
     </section>
-<<<<<<< HEAD
+
 </section>
 
 <script src="<?php echo base_url() ?>assets/js/observacaoConsulta.js" type="text/javascript" charset="utf-8" async defer></script>
 
-=======
 </section>
->>>>>>> 4daed0413fd17fa02120b77ef65f355238f47d1c
+

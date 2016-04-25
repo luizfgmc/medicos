@@ -4,7 +4,7 @@
     FB.init({
       appId      : '1719839291584651',
       xfbml      : true,
-      version    : 'v2.6'
+      version    : 'v2.5'
     });
   };
 
@@ -17,7 +17,7 @@
    }(document, 'script', 'facebook-jssdk'));
 
 </script>
-
+  
 <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/forms.css" />
 <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/medico/medico.css" />
 <?php echo validation_errors(); ?>
@@ -49,15 +49,14 @@
                             </div>
 
                             <br/>
-                            <div class="fb-like"
-                              data-share="true"
-                              data-width="450"
-                              data-show-faces="true">
-                            </div>
+                          
+                            
 
-                            <fb:login-button
-                                 scope="email,publish_actions" onlogin="checkLoginState();">
-                            </fb:login-button>
+                            <!-- Your share button code -->
+                            <div class="fb-share-button" 
+                              data-href="https://www.google.com.br" 
+                              data-layout="button_count">
+                            </div>
 
                         </div>
 
