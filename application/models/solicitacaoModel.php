@@ -102,6 +102,20 @@
 
 		}
 
+		public function reprovarSolicitacaoInstituicao($id){
+
+			$this->logininstituicao->valida_sessao_instituicao();
+			$arrSolicitcao = array('status'=>'RJ');
+
+			$this->db->update('solicitacoes', $arrSolicitcao, array('id'=>$id));
+
+			if($this->db->affected_rows() == 1)
+				return "A solicitcao foi rejeitada";
+			else
+				return "ocorreu um erro.";
+
+		}
+
 		public function aprovarSolicitcaoSalvar($arrayDados, $idSolicitacao){
 
 			$this->db->update('solicitacoes',$arrayDados, array('id'=>$idSolicitacao));
@@ -111,14 +125,13 @@
 		public function solicitarConsultaSalvar($arrayDados){
 
 			$this->db->insert('solicitacoes',$arrayDados);
-
-
 		}
 	
+	
+
+
+		private function getTodosHorarios() {
 		
-
-	private function getTodosHorarios() {
-
 		// Retornar todos os horários da agenda
 		$this->db->select('solicitacoes.status, solicitacoes.descricao');
 		$this->db->select('solicitacoes.data_agendamento, solicitacoes.hora_agendamento');
@@ -129,97 +142,61 @@
 		$this->db->join('pacientes', 'pacientes.id = solicitacoes.paciente_id');
 		$this->db->order_by('solicitacoes.data_agendamento', 'asc');
 		$this->db->order_by('solicitacoes.hora_agendamento', 'asc');
-
+		
 		return $this;
 	}
-
+	
 	public function getSolicitacao($idSolicitacao) {
-
+		
 		$this->getTodosHorarios()
 			->db->where('solicitacoes.id', $idSolicitacao);
-
+		
 		$query = $this->db->get();
-
+		
 		return $query;
-
+		
 	}
 
-	public function getTodosHorariosMedico($chave) {
-
+    public function getTodosHorariosMedico($chave) {
+		
 		$this->getTodosHorarios()
 			->db->where('medicos.chave_consulta', $chave);
-
+		
 		$query = $this->db->get();
-
+		
 		return $query->result();
-
+    
 	}
 
 	public function getHorariosMedicoDia($chave, $data) {
-
+		
 		$this->getTodosHorarios()
 			->db->where( array(
-					'medicos.chave_consulta' => $chave,
-					'solicitacoes.data_agendamento' => $data)
-			);
-
+				'medicos.chave_consulta' => $chave,
+				'solicitacoes.data_agendamento' => $data)
+				);
+		
 		$query =  $this->db->get();
 		return $query->result();
-
-
+		
+		
 	}
-
+	
 	public function getHorariosMedicoPeriodo($chave, $dataIn, $dataFi) {
-
+		
 		$this->getTodosHorarios()
 			->db
-			->where('medicos.chave_consulta', $chave)
-			->where('solicitacoes.data_agendamento >=', $dataIn)
-			->where('solicitacoes.data_agendamento <=', $dataFi);
-
+				->where('medicos.chave_consulta', $chave)
+				->where('solicitacoes.data_agendamento >=', $dataIn)
+				->where('solicitacoes.data_agendamento <=', $dataFi);
+				
 		return $this->db->get();
-
+		
+	}
 
 
 	}
 
-	//metodo genêrico para remover saldo, basta  informar o campoChave, o valor e a coluna desejados
-	public function removerSaldo($campoChave, $valor, $coluna){
 
-		$this->db->select($coluna);
-		$this->db->from('agendas');
-		$this->db->where([$campoChave=>$valor]);
-		$query = $this->db->get();
 
-		//exit($this->db->last_query());
-
-		$data = $query->result();
-		$saldo =(double)$data[0]->$coluna;
-
-		$saldo = $saldo - 1;
-
-		$this->db->where([$campoChave=>$valor]);
-		$this->db->update('agendas', [$coluna=>$saldo]);
-
-	}
-
-	//metodo genêrico para adicionar saldo, basta  informar o campoChave, o valor e a coluna desejados
-	public function addSaldo($campoChave, $valor, $coluna){
-
-		$this->db->select($coluna);
-		$this->db->from('agendas');
-		$this->db->where([$campoChave=>$valor]);
-		$query = $this->db->get();
-
-		//exit($this->db->last_query());
-
-		$data = $query->result();
-		$saldo =(double)$data[0]->$coluna;
-
-		$saldo = $saldo + 1;
-
-		$this->db->where([$campoChave=>$valor]);
-		$this->db->update('agendas', [$coluna=>$saldo]);
-	}
-}
 ?>

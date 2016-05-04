@@ -29,15 +29,16 @@
                                     ?>			
                                     <a href="<?php echo base_url() . "instituicao/solicitarConsulta/" . $k->id ?>"> Solicitar Consulta </a>
                                     </span>
-                                        <!--<a href="<?php echo base_url() . "agenda/editarAgenda/" . $k->id ?>"> editar </a>-->
-                                        <!--<a href="<?php echo base_url() . "agenda/deletarAgenda/" . $k->id ?>"> excluir </a>-->
                                 </div>
                                 <?php
                             }
                             ?>
+
+
                         </div>
                     </div>
                 </div>
             </div>
     </section>
 </section>
+

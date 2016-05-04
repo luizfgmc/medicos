@@ -31,8 +31,8 @@ ini_set('display_errors', 1);
 				
 			} 
 			
-			public function getChaveConsulta() {
-		
+			function getChaveConsulta() {
+				
 
 				$controllers =& get_instance();
 				$controllers->load->model('../controllers/Soap');

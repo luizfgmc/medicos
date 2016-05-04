@@ -17,7 +17,7 @@ class Solicitacao extends CI_Controller{
 		
 		// Verificar se a data que está no banco é superior a data atual
 		// se superior automaticamente é 24 maior
-		$dataAgora = date('Y-m-d');	
+		$dataAgora = date('Y-m-d');
 		if ($dataAgora < $dataAtual) {
 			
 			// Verificar se nova data é maior que a data de agora
@@ -168,19 +168,14 @@ class Solicitacao extends CI_Controller{
 		
 	}
 
-
-	//salva o comentario do medico sob a consulta
+		//salva o comentario do medico sob a consulta
 	public function salvarComentarioConsulta(){
-
 			$this->load->model("SolicitacaoModel","sm");
-
 			$obs = $this->input->post('observacao');
 			$solicitacaoId = $this->input->post('solicitacao_id');
 			
 			$this->sm->salvarComentarioConsulta($solicitacaoId, $obs); 
-
 			exit('Consulta Encerrada');
-
 	}
 	 
 }

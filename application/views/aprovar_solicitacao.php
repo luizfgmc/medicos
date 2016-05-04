@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <script>
 
   window.fbAsyncInit = function() {
@@ -18,6 +19,8 @@
 
 </script>
   
+=======
+>>>>>>> master
 <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/forms.css" />
 <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/medico/medico.css" />
 <?php echo validation_errors(); ?>
@@ -29,6 +32,10 @@
                     <div class="container_form_medico">
                         <h2>Aprovar Solicitação</h2>
                         <div class="form_cadastro_medico">
+                            <?php
+                                $id = $query[0]->id;
+                            ?>
+
 
                             <div class="form_cadastro_medico">
                                 <div class="container_item_form">
@@ -39,8 +46,7 @@
                                     <label> hora da consulta: </label>
                                     <input type="text"  class="default_text_input required" id="hora_agendamento" name="hora_agendamento" />
                                 </div>
-                                <input type="hidden" name ="id" value="<?= $query[0]->id ?>"/>
-                                <input type="hidden" name ="idAgenda" value="<?= $query[0]->agenda_id ?>"/>
+                                <input type="hidden" name ="id" value="<?= $id; ?>"/>
 
                             </div>
                             <div class="container_submit">
@@ -48,6 +54,7 @@
                                 <a href="<?php echo base_url() ?>medico/solicitacoes/" class="input_cancel">Cancelar</a>
                             </div>
 
+<<<<<<< HEAD
                             <br/>
                           
                             
@@ -57,6 +64,10 @@
                               data-href="https://www.google.com.br" 
                               data-layout="button_count">
                             </div>
+=======
+
+
+>>>>>>> master
 
                         </div>
 

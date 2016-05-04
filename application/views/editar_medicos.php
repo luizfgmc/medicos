@@ -9,14 +9,15 @@
                 <label> Obter codigo para disponiblizar agendas </label><br/>
                 <input type="text" name="hash" id="hash" value="<?= $infoMedico->chave_consulta; ?>" />
                 <input type="button" name="gerar_hash" id="gerar_hash" onclick="gerar_hash();" value="Obter Codigo"></button>
-                
-                <p> use http://localhost/medicos/webservice/getTodosHorariosMedico/hashGerado</p>
-                
            </div>
             <form method="post" action="<?php echo base_url() ?>medico/salvaEditaMedica/" id="formEditaMedico">
                 <div class="halfSize">
                     <div class="container_form_medico">
                       <div class="form_cadastro_medico">
+                          <div class="container_item_form ">
+                              <label> Ranking: <?php echo number_format($rankingMedico->ranking, 2, ',', ' ') ; ?> </label>
+                          </div>
+
                             <input type="hidden" name="idMedico" value="<?= $infoMedico->id; ?>" />
                             <div class="container_item_form">
                                 <label>Nome</label>

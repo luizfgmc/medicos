@@ -21,7 +21,7 @@
 </section>
 
 <script>
-    $(document).ready(function() {
+
         $('#calendar').fullCalendar({
             header: {
                 left: 'prev,next today',
@@ -32,6 +32,7 @@
             editable: true,
             eventLimit: true, // allow "more" link when too many events
             events: [
+
          <?php
            foreach ($query as $k) {
             echo "{ title:'".$k->nome."' , start:'".date('Y/m/d', strtotime($k->data_emissao))."' },";
@@ -41,5 +42,19 @@
             ],
             });
         
-    });
+
 </script>
+
+
+            ],
+
+
+
+            });
+        
+    });
+
+
+</script>
+
+>>>>>>> master

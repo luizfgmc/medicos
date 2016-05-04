@@ -110,37 +110,35 @@ class Medico extends CI_Controller {
         $this->load->view('layout/footer');
     }
 
-    public function reprovarSolicitacao($idSolicitacao, $idAgenda) {
+    public function reprovarSolicitacao($idSolicitacao) {
 
         $this->load->model('solicitacaoModel', 'sm');
         $data = $this->sm->reprovarSolicitacao($idSolicitacao);
-        $this->sm->removerSaldo('id',$idAgenda,'saldo_empenhado');
-        $this->sm->addSaldo('id',$idAgenda, 'saldo');
-
         redirect('medico/solicitacoes');
     }
 
     public function aprovarSolicitacaoSalvar() {
-            
-        $idSolicitacao = $this->input->post('id');
-        $idAgenda = $this->input->post('idAgenda');
 
+
+        $idSolicitacao = $this->input->post('id');
+        $dataNaoFormatada = explode('/',$this->input->post('data_agendamento'));
+        $dataFormatada=$dataNaoFormatada['2'].'/'.$dataNaoFormatada['1'].'/'.$dataNaoFormatada['0'];
+        $this->load->model("MedicoModel");
+        $this->load->model('solicitacaoModel', 'sm');
         $arrayDados = array(
-            "data_agendamento" => $this->input->post('data_agendamento'),
+            "data_agendamento" => $dataFormatada,
             "hora_agendamento" => $this->input->post('hora_agendamento'),
             "status" => "AP",
             "updated_at" => date('Y-m-d H:i:s'),
         );
-
-         //$diaSemana = 'Segunda-Feira';
-         $id = $this->session->userdata('medico');
-
-        $this->load->model('solicitacaoModel', 'sm');
-    
-        $this->sm->aprovarSolicitcaoSalvar($arrayDados, $idSolicitacao);
-        $this->sm->removerSaldo('id',$idAgenda,'saldo_empenhado');
-
-
+        if($this->MedicoModel->getDisponibilidadeMedico($dataFormatada, date('H:i:s', strtotime($this->input->post('hora_agendamento'))))<1)
+        {
+            $this->sm->aprovarSolicitcaoSalvar($arrayDados, $idSolicitacao);
+        }
+        else
+        {
+            $this->session->set_userdata('mensagemSolicitacao',true);
+        }
         redirect(base_url().'medico/solicitacoes');
 
     }
@@ -165,8 +163,6 @@ class Medico extends CI_Controller {
     public function visualizaEditaMedicoMedicos() {
 
         $id = $this->session->userdata('medico');
-
-
         $this->load->model("especialidadesModel");
         //Pega informaçoes das especialidades
         $especialidades = $this->especialidadesModel->getInfoEspecialidade();
@@ -175,7 +171,8 @@ class Medico extends CI_Controller {
         $estados = $this->estadosModel->getInfoEstados();
         $this->load->model("MedicoModel");
         $infoMedico = $this->MedicoModel->getTodasInfoMedicos($id['id_medico']);
-        $dadosView = array('especialidades' => $especialidades, 'estados' => $estados, 'infoMedico' => $infoMedico);
+        $rankingMedico=$this->MedicoModel->getRankMedico($id['id_medico']);
+        $dadosView = array('especialidades' => $especialidades, 'estados' => $estados, 'infoMedico' => $infoMedico,'rankingMedico'=>$rankingMedico);
         $this->load->view('layout/header');
         $this->load->view('editar_medicos', $dadosView);
         $this->load->view('layout/footer');
@@ -197,6 +194,62 @@ class Medico extends CI_Controller {
         $this->load->model("MedicoModel");
         $this->MedicoModel->editarMedico($arrayEditarMedico, $id['id_medico']);
         redirect('medico/solicitacoes');
+    }
+
+    public function solicitarConsulta(){
+
+
+        $this->load->model('pacienteModel','pm');
+        $this->load->model('agendaModel','am');
+        $pacientes['paciente'] = $this->pm->listaPacientes();
+        $medico = $this->session->userdata('medico');
+        $idInstituicao = $this->session->userdata('instituicao');
+        $idAgenda= $this->am->getAgendaMedico($medico['id_medico']);
+        $data['query'] = array('idAgenda'=>$idAgenda,
+            'idInstituicao'=>$idInstituicao['id_instituicao'],
+            'pacientes'=>$pacientes
+        );
+
+        $this->load->view('layout/header');
+        $this->load->view('solicitacao_medico', $data);
+        $this->load->view('layout/footer');
+
+    }
+
+    public function solicitarConsultaSalvar()
+    {
+
+        $medico = $this->session->userdata('medico');
+        $dataNaoFormatada = explode('/',$this->input->post('data_agendamento'));
+        $dataFormatada=$dataNaoFormatada['2'].'/'.$dataNaoFormatada['1'].'/'.$dataNaoFormatada['0'];
+        $arraySolicitcao = array(
+            'instituicao_id'=>$medico['id_medico'],
+            'paciente_id'=>$this->input->post('paciente'),
+            'solicitante'=>$this->input->post('solicitante'),
+            'data_emissao'=> date('Y-m-d'),
+            "data_agendamento" => $dataFormatada,
+            "hora_agendamento" => $this->input->post('hora_agendamento'),
+            'status'=>'AP',
+            'descricao'=> $this->input->post('descricao'),
+            'created_at'=>date("Y-m-d H:i:s"),
+            'updated_at'=>date("Y-m-d H:i:s"),
+            'agenda_id'=> $this->input->post('id_agenda'),
+        );
+        
+        $this->load->model("MedicoModel");
+        $this->load->model('solicitacaoModel','sm');
+
+        if($this->MedicoModel->getDisponibilidadeMedico($dataFormatada, date('H:i:s', strtotime($this->input->post('hora_agendamento'))))<1)
+        {
+            $this->sm->solicitarConsultaSalvar($arraySolicitcao);
+        }
+        else
+        {
+            $this->session->set_userdata('mensagemSolicitacao',true);
+        }
+
+        redirect('medico/solicitacoes');
+
     }
 
 }

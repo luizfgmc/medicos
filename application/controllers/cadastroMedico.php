@@ -53,7 +53,7 @@
 
     	 public function insereMedico() {
             $dataPost = $_POST;
-            $this->load->model('medicoModel', 'mm');
+            $this->load->model('usuarioModel', 'mm');
             $data = $this->mm->autenticar($dataPost['emailMedico']);
 
             if(!empty($data)){
@@ -74,11 +74,6 @@
                 $this->index();
             }
             else{
-                
-                $status = $this->mm->verificaCpf(str_replace(".","",$dataPost['cpfMedico']));
-
-                if(!$status){
-
                 $arrayInserirUsuario = array(
                     "email" => $dataPost['emailMedico'],
                     "password_hash" => sha1($dataPost['senhaMedico']),
@@ -108,9 +103,7 @@
                     
                 );
                 
-
-
-                $data = $this->MedicoModel->autenticar($email);  
+             //   $data = $this->usuarioModel->autenticar($email);  
                   
     			// Insere um medico na tabela
                 $idMedicoInserido = $this->MedicoModel->insereMedico($arrayInserirMedico);
@@ -124,28 +117,9 @@
                     'id_usuario' => $data[0]->id,
                     'id_medico' =>$idMedicoInserido,
                 );
-
-
                 $this->session->set_userdata('medico', $arrayMedico);
-
-
                 redirect(base_url('medico/solicitacoes'));
-    			
-            }else{
-
-                $this->session->set_flashdata('erroCpf','Cpf já cadastrado');
-
+   			
             }
-        
-
         }
-
-        
-    }
-
-      
-
-
-
-
 }
