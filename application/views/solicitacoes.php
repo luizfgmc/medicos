@@ -22,7 +22,7 @@
                     <div class="containerItensSolicitacao">
                         <?php
                         foreach ($query as $k) {
-                            ?>		
+                            ?>      
                             <div class="itemSolicitacao">
                                 <?php
                                 echo '<span class="nomePaciente">' . ($k->nome_paciente) . '</span>';
@@ -52,6 +52,19 @@
                                      <a href="<?php echo base_url() . "medico/reprovarSolicitacao/" . $k->id ?>"> reprovar </a>
                                      <?php
                                         }
+
+                                    if (empty($k->observacao) and $k->status == 'AP' or $k->status == 'RJ') {
+                                         ?>  
+                                        <a href="#" id="enviarObservacao" valor="<?=$k->id?>" value="<?=$k->id?>"> comentário da consulta </a>
+
+                                        <input type="hidden"  id="idSolicitacao" value="<?=$k->id?>">
+
+                                        <?php
+                                        } else{
+                                            echo "<br/> Consulta Fechada";
+                                        }  
+
+
                                      ?>
                                 </span>
                             </div>
@@ -65,5 +78,11 @@
             </div>
         </div>
     </section>
+
+
+</section>
+
+<script src="<?php echo base_url() ?>assets/js/observacaoConsulta.js" type="text/javascript" charset="utf-8" async defer></script>
+
 </section>
 
