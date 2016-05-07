@@ -186,10 +186,28 @@ class Acesso extends CI_Controller {
 
                 $this->session->set_userdata('instituicao', $arrayInstituicao);
 
+                redirect(base_url('instituicao'));
+            
+			} elseif ($data[0]->tipo == 'A' && $data[0]->password_hash == $senha) {
+				
+				$this->load->model('apoiadorModel', 'am');
+				$apoiador = $this->am->autenticar($data[0]->email);
+				
+                $arrayInstituicao = array(
+                    'nome'=>$apoiador[0]->nome,
+                    'tipo' => $apoiador[0]->tipo,
+                    'email' => $apoiador[0]->email,
+                    'id_usuario' => $apoiador[0]->usuario_id,
+                    'id_instituicao' => $apoiador[0]->instituicao_id,
+                );
+
+                $this->session->set_userdata('instituicao', $arrayInstituicao);
 
                 redirect(base_url('instituicao'));
-            } else {
-                $this->session->set_userdata('erroLogin', '1');
+			
+			} else {
+				
+				$this->session->set_userdata('erroLogin', '1');
                 redirect(base_url('home'));
             }
         } else {

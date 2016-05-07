@@ -14,7 +14,7 @@ function trigger_https()
  
 	//switch to HTTPS for these urls
 	$ssl_url_list = array();
-	
+
 //	$ssl_url_list[] = '/(.*)home(.*)$/';
 //	$ssl_url_list[] = '/(.*)acesso(.*)$/';
 //	$ssl_url_list[] = '/(.*)clinica(.*)$/';
@@ -28,10 +28,7 @@ function trigger_https()
 //	$ssl_url_list[] = '/(.*)webservice(.*)$/';
 //	$ssl_url_list[] = '/(.*)soap(.*)$/';
 
-
-
- 
-	foreach ($ssl_url_list as $ssl_url) {
+ 	foreach ($ssl_url_list as $ssl_url) {
 		if(preg_match($ssl_url, uri_string()))
 		{
 			force_ssl();
