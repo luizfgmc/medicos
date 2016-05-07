@@ -15,7 +15,8 @@ class Agenda extends CI_Controller {
 
         $this->loginmedico->valida_sessao_medico();
         $this->load->model('clinicaModel', 'cm');
-        $data['clinica'] = $this->cm->getNomeIdClinica();
+		$idMedico = $this->session->userdata('medico')['id_medico'];
+        $data['clinica'] = $this->cm->listaClinicas($idMedico);
 
         $this->load->view('layout/header');
 

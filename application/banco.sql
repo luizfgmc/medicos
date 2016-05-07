@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 26-Mar-2016 às 21:02
+-- Generation Time: 23-Abr-2016 às 20:13
 -- Versão do servidor: 10.1.8-MariaDB
 -- PHP Version: 5.6.14
 
@@ -59,6 +59,29 @@ CREATE TABLE `agendas` (
 INSERT INTO `agendas` (`id`, `medico_id`, `data_emissao`, `dia_semana`, `quantidade`, `saldo`, `created_at`, `updated_at`, `clinica_id`) VALUES
 (19, 65, '2016-03-26', 'Terça-Feira', 10, 10, '2016-03-26 18:27:14', '2016-03-26 18:27:14', 27),
 (20, 65, '2016-03-26', 'Segunda-Feira', 5, 5, '2016-03-26 18:27:29', '2016-03-26 18:27:29', 28);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `apoiadores`
+--
+
+CREATE TABLE `apoiadores` (
+  `id_apoiador` int(11) NOT NULL,
+  `nome` varchar(60) NOT NULL,
+  `instituicao_id` int(11) NOT NULL,
+  `usuario_id` int(11) NOT NULL,
+  `created_at` date NOT NULL,
+  `updated_at` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `apoiadores`
+--
+
+INSERT INTO `apoiadores` (`id_apoiador`, `nome`, `instituicao_id`, `usuario_id`, `created_at`, `updated_at`) VALUES
+(4, 'Apoiador', 1, 210, '2016-04-16', '2016-04-17'),
+(5, 'Apoiador 2', 1, 211, '2016-04-16', '2016-04-16');
 
 -- --------------------------------------------------------
 
@@ -5970,16 +5993,18 @@ CREATE TABLE `solicitacoes` (
   `descricao` text COLLATE utf8_unicode_ci,
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
-  `agenda_id` int(11) DEFAULT NULL
+  `agenda_id` int(11) DEFAULT NULL,
+  `retorno` varchar(1) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Extraindo dados da tabela `solicitacoes`
 --
 
-INSERT INTO `solicitacoes` (`id`, `instituicao_id`, `paciente_id`, `solicitante`, `data_emissao`, `data_agendamento`, `hora_agendamento`, `status`, `descricao`, `created_at`, `updated_at`, `agenda_id`) VALUES
-(21, NULL, 7, 'Tamara Ferraz', '2016-03-26', '0000-00-00', '16:00:00', 'NC', 'dengue', '2016-03-26 18:31:08', '2016-03-26 20:59:35', 19),
-(22, NULL, 6, 'Campo solicitante: Não tem logica esse campo', '2016-03-26', '0000-00-00', '16:00:00', 'CO', 'Teste', '2016-03-26 18:39:39', '2016-03-26 19:08:55', 19);
+INSERT INTO `solicitacoes` (`id`, `instituicao_id`, `paciente_id`, `solicitante`, `data_emissao`, `data_agendamento`, `hora_agendamento`, `status`, `descricao`, `created_at`, `updated_at`, `agenda_id`, `retorno`) VALUES
+(22, 1, 6, 'Campo solicitante: Não tem logica esse campo', '2016-03-26', '0000-00-00', '16:00:00', 'RJ', 'Teste', '2016-03-26 18:39:39', '2016-03-26 19:08:55', 19, ''),
+(24, 1, 6, 'biro biro', '2016-04-02', '0000-00-00', '00:00:12', 'AP', 'ae', '2016-04-02 22:21:53', '2016-04-02 22:28:12', 19, ''),
+(26, 1, 6, 'maradona', '2016-04-17', '0000-00-00', '00:00:07', 'AP', 'aeaea', '2016-04-17 00:36:50', '2016-04-23 19:50:48', 19, 'R');
 
 -- --------------------------------------------------------
 
@@ -6004,7 +6029,10 @@ CREATE TABLE `usuarios` (
 INSERT INTO `usuarios` (`id`, `email`, `tipo`, `created_at`, `updated_at`, `password_hash`, `password_salt`) VALUES
 (100, 'inst@inst.com', 'I', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', '40bd001563085fc35165329ea1ff5c5ecbdbbeef'),
 (200, 'inst10@inst.com', 'I', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', '40bd001563085fc35165329ea1ff5c5ecbdbbeef'),
-(201, 'luiz@luiz.com', 'M', '2016-03-13 03:31:10', '2016-03-13 03:31:10', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', NULL);
+(201, 'luiz@luiz.com', 'M', '2016-03-13 03:31:10', '2016-03-13 03:31:10', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', NULL),
+(210, 'apoiador@apoiador.com', 'A', '2016-04-16 22:19:59', '2016-04-16 22:19:59', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', NULL),
+(211, 'apoiador@2.com', 'A', '2016-04-16 22:20:32', '2016-04-16 22:20:32', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', NULL),
+(213, 'b@b.com', 'A', '2016-04-17 01:23:31', '2016-04-17 01:23:56', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', NULL);
 
 --
 -- Indexes for dumped tables
@@ -6015,6 +6043,14 @@ INSERT INTO `usuarios` (`id`, `email`, `tipo`, `created_at`, `updated_at`, `pass
 --
 ALTER TABLE `agendas`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `apoiadores`
+--
+ALTER TABLE `apoiadores`
+  ADD PRIMARY KEY (`id_apoiador`),
+  ADD KEY `instituicao_id` (`instituicao_id`),
+  ADD KEY `usuario_id` (`usuario_id`);
 
 --
 -- Indexes for table `clinicas`
@@ -6097,6 +6133,11 @@ ALTER TABLE `usuarios`
 ALTER TABLE `agendas`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 --
+-- AUTO_INCREMENT for table `apoiadores`
+--
+ALTER TABLE `apoiadores`
+  MODIFY `id_apoiador` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+--
 -- AUTO_INCREMENT for table `clinicas`
 --
 ALTER TABLE `clinicas`
@@ -6125,7 +6166,7 @@ ALTER TABLE `instituicoes`
 -- AUTO_INCREMENT for table `medicos`
 --
 ALTER TABLE `medicos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
 --
 -- AUTO_INCREMENT for table `municipios`
 --
@@ -6140,12 +6181,12 @@ ALTER TABLE `pacientes`
 -- AUTO_INCREMENT for table `solicitacoes`
 --
 ALTER TABLE `solicitacoes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 --
 -- AUTO_INCREMENT for table `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=203;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=214;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

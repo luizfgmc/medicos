@@ -25,7 +25,8 @@
                                 //echo($k->solicitante . "<br/>");
                                 echo '<span class="nomePaciente">' . ($k->nome_paciente) . '</span>';
                                 echo '<span class="horarioSugerido">' . date('d/m/Y', strtotime($k->data_emissao));
-                                echo($k->data_agendamento) . '</span>';
+                                $x = ($k->retorno == 'R') ? '[Retorno]': '';
+								echo($k->data_agendamento . '</br>' . $x .  '</span>');
                                 //echo($k->hora_agendamento)';
                                 //echo($k->status . "<br/>");
                                 //echo($k->data_emissao . "<br/>");
@@ -49,14 +50,12 @@
                                     if(($k->status!='AP')&&($k->status!='RJ'))
                                 {
                                 ?>
-
-                                  
                                      <a href="<?php echo base_url() . "medico/aprovarSolicitacao/" . $k->id ?>"> aprovar </a>
                                      
                                      <a href="<?php echo base_url() . "medico/reprovarSolicitacao/" . $k->id ?>"> reprovar </a>
                                      <?php
                                         }
-                                     ?>
+								 ?>
                                 </span>
                             </div>
                             <?php
