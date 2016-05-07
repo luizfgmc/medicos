@@ -9,7 +9,7 @@
             foreach ($dias as $dia):
                 ?>
                 <div class="itemFormChallenge">
-                    <input type="radio" name="dia" value=<?php echo($dia * $hora) ?>> <?php echo($dia) ?>
+                    <input type="radio" name="dia" value=<?php echo($dia) ?>> <?php echo($dia) ?>
                 </div>
                 <?php
             endforeach;

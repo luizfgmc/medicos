@@ -15,7 +15,7 @@ class MY_Form_validation extends CI_Form_validation {
     * Alpha-numeric with periods, underscores, spaces and dashes.
     */
     public function alpha_extra($str) {
-        $this->CI->form_validation->set_message('alpha_extra', 'O %s deve conter somente caracteres alfanúmericos, espaços, pontos, underscores & dashes.');
+        $this->CI->form_validation->set_message('alpha_extra', "<div class='erroSolicitacao'>O %s deve conter somente caracteres alfanúmericos, espaços, pontos, underscores & dashes.");
         return ( ! preg_match("/^([\.\s-a-z0-9_-])+$/i", $str)) ? FALSE : TRUE;
     }
 
@@ -26,7 +26,7 @@ class MY_Form_validation extends CI_Form_validation {
 
     public function valida_cpf($cpf)
     {
-        $this->CI->form_validation->set_message('valida_cpf', 'O %s informado não é válido.');
+        $this->CI->form_validation->set_message('valida_cpf',"<div class='erroSolicitacao'>O %s informado não é válido.</div>");
         $cpf = preg_replace('/[^0-9]/','',$cpf);
         if(strlen($cpf) != 11 || preg_match('/^([0-9])\1+$/', $cpf))
         {
@@ -57,7 +57,7 @@ class MY_Form_validation extends CI_Form_validation {
     	$soma = 0;
     	$digito = 0;
     	$valido = false;
-    	$this->CI->form_validation->set_message('valida_cnpj', 'O %s informado não é válido.');
+    	$this->CI->form_validation->set_message('valida_cnpj', "<div class='erroSolicitacao'>O %s informado não é válido.</div>");
 
     	$cnpj = preg_replace('/[^0-9]/', '', $cnpj);
 

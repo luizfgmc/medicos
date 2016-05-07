@@ -64,10 +64,10 @@ class Medico extends CI_Controller {
 		
 		// Obter array de dias falsos
 		$diaF = array(
-			($dia -1) % date("t"), 
-			($dia -2) % date("t"), 
-			($dia -3) % date("t"), 
-			($dia -4) % date("t"));
+			($dia -1) ,
+			($dia -2),
+			($dia -3),
+			($dia -4));
 		
 		// Alimentar array com os dias do mês
 		$arr = array();
