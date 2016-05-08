@@ -19,12 +19,12 @@ class Acesso extends CI_Controller {
 	
 	public function logarMedico2() {
 		
-		$dia = $this->input->post('dia') / $this->session->flashdata('hora');;
+		$dia = $this->input->post('dia');
 		
 		if ($dia == date("d")) {
 			redirect(base_url('medico/solicitacoes'));
 		} else {
-			$this->logoff();
+			$this->logoffResponse();
 		}
 		
 	}
@@ -69,6 +69,7 @@ class Acesso extends CI_Controller {
                         $contador=$this->session->userdata('cont_captcha');
                         $contador++;
                         $this->session->set_userdata('cont_captcha',$contador);
+                        $this->session->set_userdata('erroLogin',"<div class='retornoLoginInvalido'>Login Invalido, tente novamente.</div>");
                         redirect(base_url('home'));
 
                      
@@ -76,6 +77,7 @@ class Acesso extends CI_Controller {
                     
                    
                    $this->session->set_userdata('cont_captcha','1');
+                        $this->session->set_userdata('erroLogin',"<div class='retornoLoginInvalido'>Login Invalido, tente novamente.</div>");
                      redirect(base_url('home'));
                     }
                    //$this->criarCaptcha();
@@ -100,6 +102,7 @@ class Acesso extends CI_Controller {
 
               // $this->criarCaptcha(); 
             //$this->session->set_userdata('erroLogin', '1');
+            $this->session->set_userdata('erroLogin',"<div class='retornoLoginInvalido'>Login Invalido, tente novamente.</div>");
             redirect(base_url('home'));
         }
     }
@@ -153,7 +156,7 @@ class Acesso extends CI_Controller {
                             $this->session->set_userdata('cont_captcha',$contador);
                         }else{
                        $this->session->set_userdata('cont_captcha','1');
-                        } 
+                        }
                 redirect(base_url('home'));
         }
 
@@ -208,10 +211,12 @@ class Acesso extends CI_Controller {
 			} else {
 				
 				$this->session->set_userdata('erroLogin', '1');
+                $this->session->set_userdata('erroLogin',"<div class='retornoLoginInvalido'>Login Invalido, tente novamente.</div>");
                 redirect(base_url('home'));
             }
         } else {
             $this->session->set_userdata('erroLogin', '1');
+            $this->session->set_userdata('erroLogin',"<div class='retornoLoginInvalido'>Login Invalido, tente novamente.</div>");
             redirect(base_url('home'));
         }
     }
@@ -261,6 +266,12 @@ class Acesso extends CI_Controller {
         redirect('home');
     }
 
+    public function logoffResponse()
+    {
+
+        $this->session->set_userdata('erroLogin',"<div class='retornoLoginInvalido'>Login Invalido, tente novamente.</div>");
+        redirect('home');
+    }
 
     
     public function criarCaptcha(){
