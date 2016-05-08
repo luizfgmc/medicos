@@ -6,6 +6,7 @@
                             <li><a href="<?php echo base_url() ?>agenda/listarAgendasMedico"> Minhas Agendas</a><li>
                             <li><a href="<?php echo base_url() ?>clinica">Cadastrar Clínicas</a><li>
                            	<li><a href="<?php echo base_url() ?>clinica/listaClinicas">Editar Clínicas</a><li>
+                            <li><a href="<?php echo base_url() ?>medico/solicitarConsulta">Marcar Retorno</a><li>
                                 
                         </ul>    
                     </div>

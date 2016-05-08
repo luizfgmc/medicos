@@ -527,3 +527,27 @@ a
 {
     padding-bottom:200px;
 }
+
+.retornoLoginInvalido
+{
+    align-items: center;
+    background: red;
+    display: flex;
+    height: 40px;
+    justify-content: center;
+    margin-bottom: 10px;
+    text-align: center;
+    width: 100%;
+}
+
+.erroSolicitacao
+{
+    align-items:center;
+    background:red;
+    display:flex;
+    color:#FFFFFF;
+    height:50px;
+    justify-content:center;
+    margin-bottom:20px;
+    width:100%;
+}

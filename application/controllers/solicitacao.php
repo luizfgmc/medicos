@@ -167,6 +167,16 @@ class Solicitacao extends CI_Controller{
 		return $arr;
 		
 	}
+
+	//salva o comentario do medico sob a consulta
+	public function salvarComentarioConsulta(){
+			$this->load->model("SolicitacaoModel","sm");
+			$obs = $this->input->post('observacao');
+			$solicitacaoId = $this->input->post('solicitacao_id');
+			
+			$this->sm->salvarComentarioConsulta($solicitacaoId, $obs); 
+			exit('Consulta Encerrada');
+	}
 	 
 }
 

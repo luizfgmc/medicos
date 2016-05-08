@@ -5,7 +5,7 @@
     <section class="cadastro_medico">
         <div class="containerCenter fullSiteSize">
 
-            <form action="<?php echo base_url() ?>instituicao/solicitarConsultaSalvar" method="post" id="formSolicitaConsulta">
+            <form action="<?php echo base_url() ?>medico/solicitarConsultaSalvar" method="post" id="formSolicitaConsulta">
                 <div class="halfSize">
                     <h2>Solicitação</h2>
                     <div class="container_item_form">
@@ -15,6 +15,14 @@
                     <div class="container_item_form">
                         <label> Descricao: </label>
                         <input type="text"  class="default_text_input required" id="descricao" name="descricao" size=45 maxlength=45/>
+                    </div>
+                    <div class="container_item_form">
+                            <label> data da consulta: </label>
+                            <input type="text" class="default_text_input required" id="data_agendamento" name="data_agendamento">
+                    </div>
+                    <div class="container_item_form">
+                        <label> hora da consulta: </label>
+                        <input type="text" class="default_text_input required" id="hora_agendamento" name="hora_agendamento">
                     </div>
                     <div class="container_item_form">
                         <select name="paciente" id="paciente">
@@ -31,11 +39,10 @@
 
                         </select>
                     </div>
-
-                    <input type="hidden" name ="id_agenda" value="<?= $query['idAgenda']->id ?>"/>
+                    <input type="hidden" name ="id_agenda" value="<?= $query['idAgenda']->id ?>" />
                     <div class="container_submit">
                         <input type="submit" class="input_submit" value="Solicitar"/>
-                         <a href="<?php echo base_url() ?>instituicao/" class="input_cancel">Cancelar</a>
+                        <a href="<?php echo base_url() ?>instituicao/" class="input_cancel">Cancelar</a>
                     </div>
                 </div>
             </form>
@@ -44,7 +51,7 @@
 </section>
 
 <script>
-$(document).on('submit', '#formSolicitaConsulta', function(e) {
-    verifica_campos('#formSolicitaConsulta', e);
-});
+    $(document).on('submit', '#formSolicitaConsulta', function(e) {
+        verifica_campos('#formSolicitaConsulta', e);
+    });
 </script>

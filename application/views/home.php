@@ -13,6 +13,14 @@
             </div>
             <div class="escolhaMedicoInsituicao">
                 <h3> Você é medico ou instituição ?</h3>
+
+                <?php
+                if ($this->session->userdata('erroLogin')) {
+                    echo $this->session->userdata('erroLogin');
+                    $this->session->sess_destroy();
+                }
+                ?>
+
                 <?php
                 if (!empty($this->session->userdata('erroLogin'))) {
                     echo '<p class="dadosInvalidos">Dados Inválidos</p>';
@@ -54,6 +62,9 @@
                                 <a href="<?php echo base_url(); ?>cadastroMedico">
                                     Cadastrar
                                 </a>
+                                <a href="#" class="ocultarLogin">
+                                    Cancelar
+                                </a>
 							</div>
 							
                             <div class="itemForm">
@@ -74,10 +85,9 @@
                                 <input type="password" name="senha" id="senha"/>
                             </div>
                             <div class="itemForm itemCadastrar">
-                                <!--<a href="<?php echo base_url(); ?>medico/">
-                                    Cadastrar
-                                </a>    -->
-
+                                <a href="#" class="ocultarLogin">
+                                    Cancelar
+                                </a>
                             </div>
                             <div class="itemForm">
                                 <input type="submit" value="Logar" class="input_submit" id="enviar"/>

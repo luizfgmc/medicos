@@ -7,59 +7,46 @@
                 <div class="containerListaSolicitacoes">
                     <h2>Solicitações pedentes </h2>
                     <div class="infoMedicoLogado">
-                       
+
                     </div>
                     <div class="cabecalhoListaSolicitacoes">
                         <span class="nomePaciente">Paciente</span>
                         <span class="horarioSugerido">Horário Sugerido</span>
-                        <span class="saldo">Ações</span>
+                        <span class="saldo">Status</span>
                     </div>
                     <div class="containerItensSolicitacao">
                         <?php
                         foreach ($query as $k) {
-                            ?>		
+                            ?>
                             <div class="itemSolicitacao">
                                 <?php
-
-                                //if($k->status == 'PE'){
                                 //echo($k->solicitante . "<br/>");
                                 echo '<span class="nomePaciente">' . ($k->nome_paciente) . '</span>';
-                                echo '<span class="horarioSugerido">' . date('d/m/Y', strtotime($k->data_emissao));
+                                echo '<span class="horarioSugerido">' . date('d/m/Y', strtotime($k->data_emissao)) . '</br>';
+                                echo date('d/m/Y', strtotime($k->data_agendamento)) . '</br>';
                                 $x = ($k->retorno == 'R') ? '[Retorno]': '';
-								echo($k->data_agendamento . '</br>' . $x .  '</span>');
-                                //echo($k->hora_agendamento)';
-                                //echo($k->status . "<br/>");
+                                echo($k->hora_agendamento) . '</br>' . $x . '</span>';
+
                                 //echo($k->data_emissao . "<br/>");
                                 //echo($k->descricao . "<br/>");
                                 //echo($k->status . "<br/>");
                                 //echo($k->id);
                                 ?>
                                 <span class="saldo">
-                                    
 
                                <?php if($k->status=='AP')
-                                {
-                                    echo 'Aprovado';
-                                }
-                                elseif($k->status=='RJ')
-                                {
+                               {
+                                   echo 'Aprovado';
+                               }
+                               elseif($k->status=='RJ')
+                               {
+                                   echo 'Rejeitado';
+                               }
+                               ?>
 
-                                    echo 'Rejeitado';
-
-                                }
-                                    if(($k->status!='AP')&&($k->status!='RJ'))
-                                {
-                                ?>
-                                     <a href="<?php echo base_url() . "medico/aprovarSolicitacao/" . $k->id ?>"> aprovar </a>
-                                     
-                                     <a href="<?php echo base_url() . "medico/reprovarSolicitacao/" . $k->id ?>"> reprovar </a>
-                                     <?php
-                                        }
-								 ?>
                                 </span>
                             </div>
                             <?php
-                            //}
                         }
                         ?>
 
@@ -69,4 +56,3 @@
         </div>
     </section>
 </section>
-

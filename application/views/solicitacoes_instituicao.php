@@ -20,8 +20,8 @@
                             ?>		
                             <div class="itemSolicitacao">
                                 <?php
-                                //echo($k->solicitante . "<br/>");
                                 echo '<span class="nomePaciente">' . ($k->nome_paciente) . '</span>';
+<<<<<<< HEAD
                                 echo '<span class="horarioSugerido">' . date('d/m/Y', strtotime($k->data_emissao)) . '</br>';
                                 echo date('d/m/Y', strtotime($k->data_agendamento)) . '</br>';
                                 $x = ($k->retorno == 'R') ? '[Retorno]': '';
@@ -31,12 +31,19 @@
                                 //echo($k->descricao . "<br/>");
                                 //echo($k->status . "<br/>");
                                 //echo($k->id);
+=======
+                                echo '<span class="horarioSugerido">' . date('d/m/Y', strtotime($k->data_agendamento)) . '</br>';
+                                echo($k->hora_agendamento). '</span>';
+>>>>>>> master
                                 ?>
                                 <span class="saldo">
                                     
                                <?php if($k->status=='AP')
                                 {
                                     echo 'Aprovado';
+                                    ?>
+                                    <a href="<?php echo base_url() . "instituicao/reprovarSolicitacao/" . $k->id ?>"> Reprovar </a>
+                                    <?php
                                 }
                                 elseif($k->status=='RJ')
                                 {
