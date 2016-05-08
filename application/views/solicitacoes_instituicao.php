@@ -21,8 +21,20 @@
                             <div class="itemSolicitacao">
                                 <?php
                                 echo '<span class="nomePaciente">' . ($k->nome_paciente) . '</span>';
+<<<<<<< HEAD
+                                echo '<span class="horarioSugerido">' . date('d/m/Y', strtotime($k->data_emissao)) . '</br>';
+                                echo date('d/m/Y', strtotime($k->data_agendamento)) . '</br>';
+                                $x = ($k->retorno == 'R') ? '[Retorno]': '';
+								echo($k->hora_agendamento) . '</br>' . $x . '</span>';
+                                
+                                //echo($k->data_emissao . "<br/>");
+                                //echo($k->descricao . "<br/>");
+                                //echo($k->status . "<br/>");
+                                //echo($k->id);
+=======
                                 echo '<span class="horarioSugerido">' . date('d/m/Y', strtotime($k->data_agendamento)) . '</br>';
                                 echo($k->hora_agendamento). '</span>';
+>>>>>>> master
                                 ?>
                                 <span class="saldo">
                                     
