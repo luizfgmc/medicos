@@ -130,12 +130,26 @@ body
 }
 .photoDoctor
 {
-    background:#FF0000;
-    height:80%;
+    display:flex;
+    justify-content:center;
     left:0;
+    overflow:hidden;
     position:absolute;
     top:0;
     width:50%;
+}
+
+.photoDoctorContainer
+{
+    border-radius:50%;
+    height:160px;
+    overflow: hidden;
+    width:160px;
+}
+
+.photoDoctor img
+{
+    width:100%;
 }
 
 .solicitacoes
@@ -152,4 +166,10 @@ body
 .itemSolicitacao
 {
     width:100%;
+}
+
+.pEspecialidade
+{
+    border-bottom: 1px solid #FFF;
+    padding-bottom: 5px;
 }
