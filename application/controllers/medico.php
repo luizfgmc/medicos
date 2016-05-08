@@ -130,6 +130,7 @@ class Medico extends CI_Controller {
             "hora_agendamento" => $this->input->post('hora_agendamento'),
             "status" => "AP",
             "updated_at" => date('Y-m-d H:i:s'),
+			"retorno" => $this->input->post('retorno'),
         );
         if($this->MedicoModel->getDisponibilidadeMedico($dataFormatada, date('H:i:s', strtotime($this->input->post('hora_agendamento'))))<1)
         {

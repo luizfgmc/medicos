@@ -61,6 +61,12 @@
                 redirect(base_url('cadastroMedico'));
                 exit();
             }
+			
+			$cpf = $this->mm->autenticarCpf(str_replace(".","",$dataPost['cpfMedico']));
+			if(!empty($cpf)){
+                echo "CPF já cadastrado!";
+                exit();
+            }
 
 
             $this->load->library('Form_validation');

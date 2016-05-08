@@ -24,7 +24,9 @@
                                     <input type="text"  class="default_text_input required" id="hora_agendamento" name="hora_agendamento" />
                                 </div>
                                 <input type="hidden" name ="id" value="<?= $id; ?>"/>
-
+								</br>
+								<input type="checkbox" name="retorno" value="S">Consulta Retorno?
+								
                             </div>
                             <div class="container_submit">
                                 <input type="submit" class="input_submit" tabIndex ="14" value="Aprovar" />
