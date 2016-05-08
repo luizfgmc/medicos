@@ -3,10 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="1bf6deed-580a-4849-9734-47e696b11f31" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/medico.php" afterPath="$PROJECT_DIR$/application/controllers/medico.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/solicitacaoModel.php" afterPath="$PROJECT_DIR$/application/models/solicitacaoModel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/solicitacao_medico.php" afterPath="$PROJECT_DIR$/application/views/solicitacao_medico.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/main.css" afterPath="$PROJECT_DIR$/assets/css/main.css" />
     </list>
     <ignored path="medicos.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -349,12 +345,12 @@
       <workItem from="1462132105840" duration="1155000" />
       <workItem from="1462646043690" duration="7721000" />
       <workItem from="1462723269800" duration="1923000" />
-      <workItem from="1462744551701" duration="1180000" />
+      <workItem from="1462744551701" duration="1492000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37881000" />
+    <option name="totallyTimeSpent" value="38193000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
