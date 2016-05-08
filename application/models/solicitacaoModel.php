@@ -44,6 +44,7 @@
 			$this->db->from('solicitacoes as s'); 
 			$this->db->join('pacientes as p','s.paciente_id = p.id');
 			$this->db->where('s.instituicao_id', $id);
+			$this->db->where('s.flg_retorno', '0');
 			$query = $this->db->get();
 			return $query->result();
 
@@ -67,6 +68,7 @@
 			$this->db->join('medicos as m','a.medico_id = m.id');
 			$this->db->join('pacientes as p','s.paciente_id = p.id');
 			$this->db->where('m.id', $medicoId);
+			//$this->db->where('s.flg_retorno', '0');
 			$query = $this->db->get();
 			return $query->result();
 
