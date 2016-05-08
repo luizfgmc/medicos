@@ -39,7 +39,7 @@
 
                         </select>
                     </div>
-                    <input type="hidden" name ="id_agenda" value="<?= $query['idAgenda']->id ?>" />
+                    <input type="hidden" name ="id_agenda" value="<?= $query['idAgenda']?>" />
                     <div class="container_submit">
                         <input type="submit" class="input_submit" value="Solicitar"/>
                         <a href="<?php echo base_url() ?>instituicao/" class="input_cancel">Cancelar</a>
