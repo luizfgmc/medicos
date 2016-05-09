@@ -8,7 +8,14 @@
             <div class="halfSize">
                 <div class="container_form_medico">
                     <h2>Cadastro Médico</h2>
+                    <?php
+                    if ($this->session->userdata('erroEmail')) {
+                        echo $this->session->userdata('erroEmail');
+                        $this->session->unset_userdata('erroEmail');
+                    }
+                    ?>
                     <div class="form_cadastro_medico">
+
                         <div class="container_item_form">
                             <label>Nome: </label>
                             <input type="text" class="default_text_input required" name="nomeMedico" size=45 maxlength=45 tabIndex ="1" />

@@ -112,6 +112,22 @@ class MedicoModel extends CI_Model {
         return $query->row()->id;
 		
 	}
+	
+	public function autenticar($email){
+       
+       $query = $this->db->get_where('Usuarios', array('email'=>$email));
+  
+       return $query->result();
+
+    }
+	
+	public function autenticarCpf($cpf){
+                
+       $query = $this->db->get_where('Medicos', array('cpf'=>$cpf));
+  
+       return $query->result();
+
+    }
 
 
     public function getDisponibilidadeMedico($dataAgendamento,$horaAgendamento,$apelido='med',$apelidoSolicitacao='sol',$apelidoAgenda='agenda')

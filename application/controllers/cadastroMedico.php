@@ -57,7 +57,14 @@
             $data = $this->mm->autenticar($dataPost['emailMedico']);
 
             if(!empty($data)){
-                echo "Email já cadastrado!";
+                $this->session->set_userdata('erroEmail', "<div class='erroSolicitacao'>Email já cadastrado</div>");
+                redirect(base_url('cadastroMedico'));
+                exit();
+            }
+			
+			$cpf = $this->mm->autenticarCpf(str_replace(".","",$dataPost['cpfMedico']));
+			if(!empty($cpf)){
+                echo "CPF já cadastrado!";
                 exit();
             }
 
@@ -113,6 +120,7 @@
 
                  $arrayMedico = array(
                     'tipo' => $data[0]->tipo,
+                    'nome' => $dataPost['nomeMedico'],
                     'email' => $data[0]->email,
                     'id_usuario' => $data[0]->id,
                     'id_medico' =>$idMedicoInserido,

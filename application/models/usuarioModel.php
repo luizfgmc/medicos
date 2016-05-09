@@ -31,6 +31,13 @@ class UsuarioModel extends CI_Model {
        return $query->result();
 
     }
+    public function autenticarCpf($cpf){
+
+        $query = $this->db->get_where('Medicos', array('cpf'=>$cpf));
+
+        return $query->result();
+
+    }
 }
 
 ?>
