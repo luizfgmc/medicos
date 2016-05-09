@@ -1,3 +1,21 @@
+<<script>
+    
+    window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1719839291584651',
+      xfbml      : true,
+      version    : 'v2.5'
+    });
+  };
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+
+</script>
 <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/forms.css" />
 <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/medico/medico.css" />
 <?php echo validation_errors(); ?>
@@ -32,7 +50,11 @@
                             </div>
 
 
-
+                              <!-- Your share button code -->
+                            <div class="fb-share-button" 
+                              data-href="https://www.google.com.br" 
+                              data-layout="button_count">
+                            </div>
 
                         </div>
 
