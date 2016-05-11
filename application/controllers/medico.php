@@ -235,6 +235,7 @@ class Medico extends CI_Controller {
             'created_at'=>date("Y-m-d H:i:s"),
             'updated_at'=>date("Y-m-d H:i:s"),
             'agenda_id'=> $this->input->post('id_agenda'),
+            'flg_retorno'=> 1,
         );
         
         $this->load->model("MedicoModel");
