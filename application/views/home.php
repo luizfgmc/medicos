@@ -8,7 +8,7 @@
 <section class="bannerHome">
     <div class="slider-wrapper theme-default">
         <div id="slider" class="nivoSlider">
-            <img src="<?php echo base_url() ?>assets/images/banner_home.jpg" data-thumb="<?php echo base_url() ?>assets/images/banner_home.jpg" alt="" />
+            <img src="<?php echo base_url() ?>assets/images/banner_home.png" data-thumb="<?php echo base_url() ?>assets/images/banner_home.jpg" alt="" />
         </div>
     </div>
 </section>

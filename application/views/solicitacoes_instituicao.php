@@ -31,6 +31,7 @@
                                     echo 'Aprovado';
                                     ?>
                                     <a href="<?php echo base_url() . "instituicao/reprovarSolicitacao/" . $k->id ?>"> Reprovar </a>
+                                    <a href="<?php echo base_url() . "feedback/inserir_feedback/" . $k->id ?>"> Feedback </a>
                                     <?php
                                 }
                                 elseif($k->status=='RJ')
