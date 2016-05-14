@@ -1,17 +1,24 @@
-
-<section class="bemVindo">
-    <div class="containerCenter fullSiteSize">
-        <h2>BEM VINDO AO AMIGO MÉDICO</h2>
+<!---->
+<!--<section class="bemVindo">-->
+<!--    <div class="containerCenter fullSiteSize">-->
+<!--        <h2>BEM VINDO AO AMIGO MÉDICO</h2>-->
+<!--    </div>-->
+<!---->
+<!--</section>-->
+<section class="bannerHome">
+    <div class="slider-wrapper theme-default">
+        <div id="slider" class="nivoSlider">
+            <img src="<?php echo base_url() ?>assets/images/banner_home.jpg" data-thumb="<?php echo base_url() ?>assets/images/banner_home.jpg" alt="" />
+        </div>
     </div>
 </section>
-
 <section class="medicoInstituicao">
     <div class="containerCenter fullSiteSize">
         <div class="conteudoMedicoInstituicao">
             <div class="imagemMedicoInstituicao">
                 <img src="<?php echo base_url() ?>assets/images/medicoHome.jpg" />
             </div>
-            <div class="escolhaMedicoInsituicao">
+            <div class="escolhaMedicoInsituicao" id="escolhaMedicoInsituicao">
                 <h3> Você é medico ou instituição ?</h3>
 
                 <?php
@@ -30,11 +37,11 @@
 
                 <div class="containerEscolha">
                     <div class="containerMedico">
-                        <a href="#"><div class="trianguloEsquerda"></div></a>
-                        <a href="#" id="mostraLoginMedico"> Médico </a>
+                        <a href="#escolhaMedicoInsituicao"><div class="trianguloEsquerda"></div></a>
+                        <a href="#escolhaMedicoInsituicao" id="mostraLoginMedico"> Médico </a>
                     </div>
                     <div class="containerInstituicao">
-                        <a href="#" id="mostraLoginInstituicao">  Instituicao</a>
+                        <a href="#escolhaMedicoInsituicao" id="mostraLoginInstituicao">  Instituicao</a>
                         <a href=""><div class="trianguloDireita"></div></a>
                     </div>
                 </div>
@@ -62,11 +69,11 @@
                                 <a href="<?php echo base_url(); ?>cadastroMedico">
                                     Cadastrar
                                 </a>
-                                <a href="#" class="ocultarLogin">
+                                <a href="#escolhaMedicoInsituicao" class="ocultarLogin">
                                     Cancelar
                                 </a>
 							</div>
-							
+
                             <div class="itemForm">
                                 <input type="submit" value="Logar" class="input_submit" id="enviar"/>
                             </div>
@@ -85,7 +92,7 @@
                                 <input type="password" name="senha" id="senha"/>
                             </div>
                             <div class="itemForm itemCadastrar">
-                                <a href="#" class="ocultarLogin">
+                                <a href="#escolhaMedicoInsituicao" class="ocultarLogin">
                                     Cancelar
                                 </a>
                             </div>
@@ -102,19 +109,196 @@
         </div>
     </div>
 </section>
-<section class="estatistcasHome">
-    <div class="containerCenter fullSiteSize">
-        <h3> NO MÊS DE DEZEMBRO </h3>
-        <div class="estatisticas">
-            <div class="itemEstatisticas">
-                5 consultas
-            </div>
-            <div class="itemEstatisticas">
-                17 médicos
-            </div>
-            <div class="itemEstatisticas">
-                1 instituição
+<div class="fullSiteSize containerCenter">
+    <section class="listaRankingMedicos ">
+        <h2>Veja quem são dos destaques de doação e apoio ao nosso trabalho:</h2>
+        <div class="topMensal">
+            <div class="conteudoRanking">
+                <h3>
+                    <img src="<?php echo base_url() ?>assets/images/ranking_medalha.jpg" >
+                    TOP MENSAL :
+                </h3>
+                <div class="listaRanking">
+                    <div class="itemsCamposRanking">
+                        <div class="numeroRanking">
+                                01
+                        </div>
+                        <div class="nomeRanking">
+                            Fábio Capelo
+                        </div>
+                        <div class="especialidadeRanking">
+                            Otorrinolaringologista
+                        </div>
+                        <div class="ranking">
+                            23.700
+                        </div>
+                    </div>
+                    <div class="itemsCamposRanking">
+                        <div class="numeroRanking">
+                            01
+                        </div>
+                        <div class="nomeRanking">
+                            Fábio Capelo
+                        </div>
+                        <div class="especialidadeRanking">
+                            Otorrinolaringologista
+                        </div>
+                        <div class="ranking">
+                            23.700
+                        </div>
+                    </div>
+                    <div class="itemsCamposRanking">
+                        <div class="numeroRanking">
+                            01
+                        </div>
+                        <div class="nomeRanking">
+                            Fábio Capelo
+                        </div>
+                        <div class="especialidadeRanking">
+                            Otorrinolaringologista
+                        </div>
+                        <div class="ranking">
+                            23.700
+                        </div>
+                    </div>
+                    <div class="itemsCamposRanking">
+                        <div class="numeroRanking">
+                            01
+                        </div>
+                        <div class="nomeRanking">
+                            Fábio Capelo
+                        </div>
+                        <div class="especialidadeRanking">
+                            Otorrinolaringologista
+                        </div>
+                        <div class="ranking">
+                            23.700
+                        </div>
+                    </div>
+                    <div class="itemsCamposRanking">
+                        <div class="numeroRanking">
+                            01
+                        </div>
+                        <div class="nomeRanking">
+                            Fábio Capelo
+                        </div>
+                        <div class="especialidadeRanking">
+                            Otorrinolaringologista
+                        </div>
+                        <div class="ranking">
+                            23.700
+                        </div>
+                    </div>
+                    <div class="itemsCamposRanking">
+                        <div class="numeroRanking">
+                            01
+                        </div>
+                        <div class="nomeRanking">
+                            Fábio Capelo
+                        </div>
+                        <div class="especialidadeRanking">
+                            Otorrinolaringologista
+                        </div>
+                        <div class="ranking">
+                            23.700
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+        <div class="topAno">
+            <div class="conteudoRanking">
+                <h3>
+                    <img src="<?php echo base_url() ?>assets/images/ranking_trofeu.jpg" >
+                    TOP 2016 :
+                </h3>
+                <div class="listaRanking">
+                    <div class="itemsCamposRanking">
+                        <div class="numeroRanking">
+                            01
+                        </div>
+                        <div class="nomeRanking">
+                            Fábio Capelo
+                        </div>
+                        <div class="especialidadeRanking">
+                            Otorrinolaringologista
+                        </div>
+                        <div class="ranking">
+                            23.700
+                        </div>
+                    </div>
+                    <div class="itemsCamposRanking">
+                        <div class="numeroRanking">
+                            01
+                        </div>
+                        <div class="nomeRanking">
+                            Fábio Capelo
+                        </div>
+                        <div class="especialidadeRanking">
+                            Otorrinolaringologista
+                        </div>
+                        <div class="ranking">
+                            23.700
+                        </div>
+                    </div>
+                    <div class="itemsCamposRanking">
+                        <div class="numeroRanking">
+                            01
+                        </div>
+                        <div class="nomeRanking">
+                            Fábio Capelo
+                        </div>
+                        <div class="especialidadeRanking">
+                            Otorrinolaringologista
+                        </div>
+                        <div class="ranking">
+                            23.700
+                        </div>
+                    </div>
+                    <div class="itemsCamposRanking">
+                        <div class="numeroRanking">
+                            01
+                        </div>
+                        <div class="nomeRanking">
+                            Fábio Capelo
+                        </div>
+                        <div class="especialidadeRanking">
+                            Otorrinolaringologista
+                        </div>
+                        <div class="ranking">
+                            23.700
+                        </div>
+                    </div>
+                    <div class="itemsCamposRanking">
+                        <div class="numeroRanking">
+                            01
+                        </div>
+                        <div class="nomeRanking">
+                            Fábio Capelo
+                        </div>
+                        <div class="especialidadeRanking">
+                            Otorrinolaringologista
+                        </div>
+                        <div class="ranking">
+                            23.700
+                        </div>
+                    </div>
+                    <div class="itemsCamposRanking">
+                        <div class="numeroRanking">
+                            01
+                        </div>
+                        <div class="nomeRanking">
+                            Fábio Capelo
+                        </div>
+                        <div class="especialidadeRanking">
+                            Otorrinolaringologista
+                        </div>
+                        <div class="ranking">
+                            23.700
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

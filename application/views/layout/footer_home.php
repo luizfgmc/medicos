@@ -1,3 +1,5 @@
+
+
 <footer class="mainFooter">
                         <div class="containerCenter fullSiteSize">
                                 <div class="containerItemsFooter">
@@ -36,5 +38,18 @@
                         </div>
                 </footer>
 
+
+<script src="<?php echo base_url() ?>assets/js/main.js"></script>
+<script src="<?php echo base_url() ?>assets/js/nivo/jquery.nivo.slider.js"></script>
+<script src="<?php echo base_url() ?>assets/js/validate.js"></script>
+
+        <script type="text/javascript">
+            $(window).load(function() {
+                    $('#slider').nivoSlider({
+                            controlNav: false,
+
+                    });
+            });
+</script>
 	</body>
 </html>
