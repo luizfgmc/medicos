@@ -1,3 +1,21 @@
+<<script>
+    
+    window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1719839291584651',
+      xfbml      : true,
+      version    : 'v2.5'
+    });
+  };
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+
+</script>
 <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/forms.css" />
 <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/medico/medico.css" />
 <?php echo validation_errors(); ?>
@@ -25,16 +43,19 @@
                                 </div>
                                 <input type="hidden" name ="id" value="<?= $id; ?>"/>
 								</br>
-								<input type="checkbox" name="retorno" value="S">Consulta Retorno?
-								
                             </div>
                             <div class="container_submit">
                                 <input type="submit" class="input_submit" tabIndex ="14" value="Aprovar" />
                                 <a href="<?php echo base_url() ?>medico/solicitacoes/" class="input_cancel">Cancelar</a>
                             </div>
 
-
-
+                                <div class="compartilharFacebook">
+                                  <!-- Your share button code -->
+                                <div class="fb-share-button"
+                                  data-href="https://www.google.com.br"
+                                  data-layout="button_count">
+                                </div>
+                            </div>
 
                         </div>
 

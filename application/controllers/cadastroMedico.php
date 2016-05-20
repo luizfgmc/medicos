@@ -53,11 +53,12 @@
 
     	 public function insereMedico() {
             $dataPost = $_POST;
-            $this->load->model('medicoModel', 'mm');
+            $this->load->model('usuarioModel', 'mm');
             $data = $this->mm->autenticar($dataPost['emailMedico']);
 
             if(!empty($data)){
-                echo "Email já cadastrado!";
+                $this->session->set_userdata('erroEmail', "<div class='erroSolicitacao'>Email já cadastrado</div>");
+                redirect(base_url('cadastroMedico'));
                 exit();
             }
 			
@@ -109,9 +110,7 @@
                     
                 );
                 
-
-
-                $data = $this->MedicoModel->autenticar($email);  
+             //   $data = $this->usuarioModel->autenticar($email);  
                   
     			// Insere um medico na tabela
                 $idMedicoInserido = $this->MedicoModel->insereMedico($arrayInserirMedico);
@@ -121,26 +120,14 @@
 
                  $arrayMedico = array(
                     'tipo' => $data[0]->tipo,
+                    'nome' => $dataPost['nomeMedico'],
                     'email' => $data[0]->email,
                     'id_usuario' => $data[0]->id,
                     'id_medico' =>$idMedicoInserido,
                 );
-
-
                 $this->session->set_userdata('medico', $arrayMedico);
-
-
                 redirect(base_url('medico/solicitacoes'));
-    			
+   			
             }
         }
-
-        
-
-
-      
-
-
-
-
 }

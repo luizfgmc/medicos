@@ -55,7 +55,8 @@ class MedicoModel extends CI_Model {
         
 		return $this;
     }
-    
+
+
     public function getTodasInfoMedicos($idMedico,$apelido='med'){
         $this->getMedicos($apelido)
 			->db->select("{$apelido}.*")
@@ -128,7 +129,37 @@ class MedicoModel extends CI_Model {
 
     }
 
+
+    public function getDisponibilidadeMedico($dataAgendamento,$horaAgendamento,$apelido='med',$apelidoSolicitacao='sol',$apelidoAgenda='agenda')
+    {
+        $arrayLoginMedoc = $this->session->userdata('medico');
+        $arrayLoginMedoc['id_medico'];
+        $this->db->select("{$apelido}.id")
+            ->from("medicos {$apelido}")
+            ->join("agendas {$apelidoAgenda}","{$apelidoAgenda}.medico_id = {$apelido}.id")
+            ->join("solicitacoes {$apelidoSolicitacao}","{$apelidoSolicitacao}.agenda_id = {$apelidoAgenda}.id")
+            ->where("{$apelido}.id",$arrayLoginMedoc['id_medico'])
+            ->where("{$apelidoSolicitacao}.data_agendamento",$dataAgendamento)
+            ->where("{$apelidoSolicitacao}.hora_agendamento",$horaAgendamento);
+        $query = $this->db->get();
+        return $query->num_rows();
+
+    }
+
+    public function getRankMedico($id_medico,$apelidoMedico="med",$apelidoSolicitacao="sol",$apelidoFeedback="feed",$apelidoAgenda="age")
+    {
+        $this->db->select("SUM({$apelidoFeedback}.ranking) as ranking")
+        ->from("medicos {$apelidoMedico}")
+        ->join("agendas {$apelidoAgenda}","{$apelidoAgenda}.medico_id = {$apelidoMedico}.id ")
+        ->join("solicitacoes {$apelidoSolicitacao}", "{$apelidoSolicitacao}.agenda_id = {$apelidoAgenda}.id")
+        ->join("feedback_solicitacao {$apelidoFeedback}","{$apelidoFeedback}.id_solicitacao = {$apelidoSolicitacao}.id")
+        ->where("{$apelidoMedico}.id",$id_medico);
+        $query = $this->db->get();
+        return $query->row();
+    }
+
 }
+
 
 
 

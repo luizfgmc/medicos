@@ -31,10 +31,7 @@ class Instituicao extends CI_Controller {
         $this->load->model('pacienteModel','pm');
         $pacientes['paciente'] = $this->pm->listaPacientes();
         
-        $idInstituicao = $this->session->userdata('instituicao');
-
         $data['query'] = array('idAgenda'=>$idAgenda,
-                      'idInstituicao'=>$idInstituicao['id_instituicao'],
                       'pacientes'=>$pacientes
         );    
 
@@ -68,6 +65,15 @@ class Instituicao extends CI_Controller {
           redirect('instituicao');
 
     }
+
+    public function reprovarSolicitacao($idSolicitacao)
+    {
+        $this->load->model('solicitacaoModel', 'sm');
+        $this->sm->reprovarSolicitacaoInstituicao($idSolicitacao);
+        redirect('instituicao');
+    }
+
+
     
     
 

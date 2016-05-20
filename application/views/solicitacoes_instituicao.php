@@ -17,34 +17,31 @@
                     <div class="containerItensSolicitacao">
                         <?php
                         foreach ($query as $k) {
-                            ?>		
+                            ?>      
                             <div class="itemSolicitacao">
                                 <?php
-                                //echo($k->solicitante . "<br/>");
                                 echo '<span class="nomePaciente">' . ($k->nome_paciente) . '</span>';
-                                echo '<span class="horarioSugerido">' . date('d/m/Y', strtotime($k->data_emissao)) . '</br>';
-                                echo date('d/m/Y', strtotime($k->data_agendamento)) . '</br>';
-                                $x = ($k->retorno == 'R') ? '[Retorno]': '';
-								echo($k->hora_agendamento) . '</br>' . $x . '</span>';
-                                
-                                //echo($k->data_emissao . "<br/>");
-                                //echo($k->descricao . "<br/>");
-                                //echo($k->status . "<br/>");
-                                //echo($k->id);
+                                echo '<span class="horarioSugerido">' . (empty($k->data_agendamento) ? "Pendente" : date('d/m/Y', strtotime($k->data_agendamento))) . '</br>';
+                                echo ($k->hora_agendamento). '</span>';
                                 ?>
                                 <span class="saldo">
                                     
                                <?php if($k->status=='AP')
                                 {
                                     echo 'Aprovado';
+                                    ?>
+                                    <a href="<?php echo base_url() . "instituicao/reprovarSolicitacao/" . $k->id ?>"> Reprovar </a>
+                                    <a href="<?php echo base_url() . "feedback/inserir_feedback/" . $k->id ?>"> Feedback </a>
+                                    <?php
                                 }
                                 elseif($k->status=='RJ')
                                 {
-
                                     echo 'Rejeitado';
-
                                 }
-
+                                elseif($k->status=='PE')
+                                {
+                                    echo 'Pendente';
+                                }
                                 ?>
                                      
                                 </span>
@@ -59,4 +56,3 @@
         </div>
     </section>
 </section>
-

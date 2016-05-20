@@ -61,6 +61,7 @@ a
 
 .fullSiteSize
 {
+    max-width:100%;
     width:1140px;
 }
 
@@ -429,8 +430,8 @@ a
 
 .mainFooter
 {
-    bottom:0;
-    position:absolute;
+    /* bottom:0;
+     position:absolute; */
 }
 
 .dadosInvalidos
@@ -526,4 +527,129 @@ a
 .paddingChares
 {
     padding-bottom:200px;
+}
+
+.retornoLoginInvalido
+{
+    align-items: center;
+    background: red;
+    display: flex;
+    height: 40px;
+    justify-content: center;
+    margin-bottom: 10px;
+    text-align: center;
+    width: 100%;
+}
+
+.erroSolicitacao
+{
+    align-items:center;
+    background:red;
+    display:flex;
+    color:#FFFFFF;
+    height:50px;
+    justify-content:center;
+    margin-bottom:20px;
+    width:100%;
+}
+
+.bannerHome
+{
+    max-height:400px;
+    overflow:hidden;
+    width:100%;
+}
+
+.listaRankingMedicos
+{
+    display:flex;
+    flex-wrap:wrap;
+    min-height:400px;
+    width:100%;
+}
+
+.listaRankingMedicos h2
+{
+    color:#25859b;
+    font-size:25px;
+    text-align:center;
+    width:100%;
+}
+
+.listaRankingMedicos h3
+{
+    align-items:center;
+    color:#25859b;
+    display:flex;
+    font-size:20px;
+}
+
+.listaRankingMedicos h3 img
+{
+    margin-right:15px;
+}
+
+.topMensal
+{
+    display:flex;
+    justify-content:flex-start;
+    width:50%;
+}
+
+.topAno
+{
+    display:flex;
+    justify-content:flex-end;
+    width:50%;
+}
+.conteudoRanking
+{
+    width:95%;
+}
+
+.itemsCamposRanking
+{
+    box-sizing:border-box;
+    display:flex;
+    padding:5px;
+}
+
+.itemsCamposRanking:nth-child(odd)
+{
+    background:#FFFFFF;
+    color:#25859b;
+}
+
+.itemsCamposRanking:nth-child(even)
+{
+    background:#d8d8d8;
+    color:#25859b;
+}
+
+
+.itemsCamposRanking:first-child
+{
+    background:#29a1bc;
+    color:#FFFFFF;
+}
+
+
+.itemsCamposRanking .numeroRanking
+{
+    width:10%;
+}
+
+.itemsCamposRanking .nomeRanking
+{
+    width:35%;
+}
+
+.itemsCamposRanking .especialidadeRanking
+{
+    width:35%;
+}
+
+.itemsCamposRanking .ranking
+{
+    width:20%;
 }

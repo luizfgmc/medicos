@@ -14,6 +14,10 @@
                 <div class="halfSize">
                     <div class="container_form_medico">
                       <div class="form_cadastro_medico">
+                          <div class="container_item_form ">
+                              <label> Ranking: <?php echo number_format($rankingMedico->ranking, 2, ',', ' ') ; ?> </label>
+                          </div>
+
                             <input type="hidden" name="idMedico" value="<?= $infoMedico->id; ?>" />
                             <div class="container_item_form">
                                 <label>Nome</label>

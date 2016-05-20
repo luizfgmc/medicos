@@ -80,6 +80,7 @@
             else{
                 $arrayInserirUsuario = array(
                     "email" => $dataPost['email'],
+                 
                     "password_hash" => sha1($dataPost['senha']),
                     "tipo" => 'P',
                     "created_at" => date("Y-m-d H:i:s"),

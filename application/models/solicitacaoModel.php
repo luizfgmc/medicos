@@ -44,6 +44,7 @@
 			$this->db->from('solicitacoes as s'); 
 			$this->db->join('pacientes as p','s.paciente_id = p.id');
 			$this->db->where('s.instituicao_id', $id);
+			$this->db->where('s.flg_retorno', '0');
 			$query = $this->db->get();
 			return $query->result();
 
@@ -67,11 +68,17 @@
 			$this->db->join('medicos as m','a.medico_id = m.id');
 			$this->db->join('pacientes as p','s.paciente_id = p.id');
 			$this->db->where('m.id', $medicoId);
+			//$this->db->where('s.flg_retorno', '0');
 			$query = $this->db->get();
 			return $query->result();
 
 		}
 
+		public function salvarComentarioConsulta($solicitacaoId, $obs){
+			$this->db->where(['id'=>$solicitacaoId]);
+			$this->db->update('solicitacoes',['observacao'=>$obs]);
+			exit('Consulta Fechada');
+		}
 
 		public function aprovarSolicitcao($id){
 
@@ -95,6 +102,20 @@
 
 		}
 
+		public function reprovarSolicitacaoInstituicao($id){
+
+			$this->logininstituicao->valida_sessao_instituicao();
+			$arrSolicitcao = array('status'=>'RJ');
+
+			$this->db->update('solicitacoes', $arrSolicitcao, array('id'=>$id));
+
+			if($this->db->affected_rows() == 1)
+				return "A solicitcao foi rejeitada";
+			else
+				return "ocorreu um erro.";
+
+		}
+
 		public function aprovarSolicitcaoSalvar($arrayDados, $idSolicitacao){
 
 			$this->db->update('solicitacoes',$arrayDados, array('id'=>$idSolicitacao));
@@ -104,8 +125,6 @@
 		public function solicitarConsultaSalvar($arrayDados){
 
 			$this->db->insert('solicitacoes',$arrayDados);
-
-
 		}
 		
 		private function getTodosHorarios() {
@@ -170,9 +189,8 @@
 				
 		return $this->db->get();
 		
-	
-
 	}
+
 
 	}
 
