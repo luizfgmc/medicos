@@ -24,12 +24,12 @@ class Instituicao extends CI_Controller {
         $this->load->view('layout/footer');
 
     }
-
+	
     public function solicitarConsulta($idAgenda){
 
 
         $this->load->model('pacienteModel','pm');
-        $pacientes['paciente'] = $this->pm->listaPacientes();
+        $pacientes['paciente'] = $this->pm->listaPacientesFiltrado($idAgenda);
         
         $data['query'] = array('idAgenda'=>$idAgenda,
                       'pacientes'=>$pacientes

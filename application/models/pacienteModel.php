@@ -25,6 +25,45 @@
 
 
 		}
+		
+		public function obterEspecialidadeAgenda($idAgenda){
+		
+			$this->db->limit(1);
+			$this->db->select("m.especialidade_id");
+			$this->db->from("agendas a");
+			$this->db->join("medicos m", "m.id = a.medico_id");
+			$this->db->where("a.id = {$idAgenda}");
+			
+			
+			$query = $this->db->get();
+			 
+			return $query->row()->especialidade_id;
+		
+		}
+		
+		public function listaPacientesFiltrado($idAgenda, $apelido='p'){
+			
+			// Deixei a verificacao de especialidade se um dia for usar
+			// nao concordo de o paciente nao poder consultar com a mesma especialidade
+			// nesse caso esta proibindo de solicitar 2 consultas na mesma agenda pro mesmo paciente
+			//$especialidade = $this->obterEspecialidadeAgenda($idAgenda);
+			
+			$this->db->distinct();
+			$this->db->select("{$apelido}.*");
+			$this->db->from("pacientes {$apelido}");
+			$this->db->join("solicitacoes s", "{$apelido}.id = s.paciente_id", "left");
+			$this->db->join("agendas a", "s.agenda_id = a.id", "left");
+			$this->db->join("medicos m", "a.medico_id = m.id", "left");
+			
+			$this->db->where("{$apelido}.atividade = 'A'");
+			$this->db->where("a.id <> {$idAgenda}");
+			//$this->db->where("m.especialidade_id <> {$especialidade}");
+			
+			$query = $this->db->get();
+			 
+			return $query->result();
+
+		}
 
 		public function inserePaciente($arrayPaciente){
 

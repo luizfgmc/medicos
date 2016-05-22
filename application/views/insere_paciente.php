@@ -85,7 +85,7 @@
                                 </div>
 
                                 <div class="container_submit">
-                                    <input type="submit" class="input_submit" />
+                                    <input type="submit" class="input_submit" value="Inserir"/>
                             <a href="<?php echo base_url() ?>" class="input_cancel">Cancelar</a>
                                 </div>
 
