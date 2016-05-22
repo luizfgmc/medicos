@@ -23,7 +23,13 @@ class Feedback extends CI_Controller {
     function salva_feedback()
     {
         $data_post= $_POST;
-        $dados_feedback = array(
+        
+		if ($data_post['ranking'] < 3 && strlen($data_post['observacao']) == 0) {
+			echo("Percebemos que houve um problema nesse atendimento. Para garantir sempre um sistema melhor para todos, precisamos que comente o que aconteceu para que possamos evitar em consultas futuras.");
+			exit();
+		}
+		
+		$dados_feedback = array(
             "ranking" => $data_post['ranking'],
             "id_solicitacao" => $data_post['id_solicitacao'],
             "observacao" => $data_post['observacao'],
