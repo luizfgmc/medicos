@@ -50,6 +50,15 @@
                 echo "CNPJ já cadastrado!";
                 exit();
             }
+			
+			//Validacao do formato do CEP
+			$this->load->model('cepModel', 'cepM');
+			$vCep = $this->cepM->validarFormatoCep(str_replace(".", "",$dataPost['cepInstituicao']));
+			
+			if ($vCep == false) {
+				echo ("CEP inválido!");
+				exit();
+			}
 
             if ($this->form_validation->run() == FALSE){
                 $this->index();

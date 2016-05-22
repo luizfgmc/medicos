@@ -53,14 +53,14 @@ class Clinica extends CI_Controller {
         $this->form_validation->set_rules('ufClinica', 'Uf', 'trim|required');
         $this->form_validation->set_rules('cepClinica', 'Cep', 'trim|required');
 		
-		/* -- Validacao do formato do CEP
+		//Validacao do formato do CEP
         $this->load->model('cepModel', 'cepM');
 		$vCep = $this->cepM->validarFormatoCep(str_replace(".", "",$data['cepClinica']));
 		
 		if ($vCep == false) {
 			echo ("CEP inválido!");
 			exit();
-		}*/
+		}
 		
         if ($this->form_validation->run() == FALSE) {
             $this->index();
