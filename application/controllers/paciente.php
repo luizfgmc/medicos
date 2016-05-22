@@ -35,13 +35,19 @@ class Paciente extends CI_Controller {
     public function inserePaciente() {
 		
 		$this->load->model('pacienteModel', 'pm');
-		
 		$cpf = $this->pm->autenticarCpf(str_replace(".","", $this->input->post('cpfPaciente')));
-			if(!empty($cpf)){
-                echo "CPF já cadastrado!";
-                exit();
-            }
-
+		if(!empty($cpf)){
+			echo "CPF j? cadastrado!";
+			exit();
+		}
+		
+		
+		$this->load->model('cpfModel', 'cpfM');
+		if($this->cpfM->validarCpf(str_replace(".","", $this->input->post('cpfPaciente'))) == false){
+			echo "CPF inv?lido!";
+			exit();
+		}
+		
         $arrayPaciente = array(
             "nome_paciente" => $this->input->post('nomePaciente'),
             "cpf" => str_replace(".","", $this->input->post('cpfPaciente')),
