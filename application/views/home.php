@@ -20,21 +20,13 @@
             </div>
             <div class="escolhaMedicoInsituicao" id="escolhaMedicoInsituicao">
                 <h3> Você é medico ou instituição ?</h3>
-
-                <?php
-                if ($this->session->userdata('erroLogin')) {
-                    echo $this->session->userdata('erroLogin');
-                    $this->session->sess_destroy();
-                }
-                ?>
-
                 <?php
                 if (!empty($this->session->userdata('erroLogin'))) {
-                    echo '<p class="dadosInvalidos">Dados Inválidos</p>';
+                    echo $this->session->userdata('erroLogin');
                     $this->session->unset_userdata('erroLogin');
+                    $this->session->unset_userdata('medico');
                 }
                 ?>
-
                 <div class="containerEscolha">
                     <div class="containerMedico">
                         <a href="#escolhaMedicoInsituicao"><div class="trianguloEsquerda"></div></a>
