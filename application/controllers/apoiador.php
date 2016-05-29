@@ -53,9 +53,6 @@ class Apoiador extends CI_Controller {
 			exit();
 		}
 		
-		redirect(base_url('apoiador'));
-			exit();
-		
 		$this->load->library('Form_validation');
 		$this->form_validation->set_rules('nomeApoiador', 'Nome', 'trim|required');
 		

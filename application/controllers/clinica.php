@@ -58,7 +58,14 @@ class Clinica extends CI_Controller {
 		$vCep = $this->cepM->validarFormatoCep(str_replace(".", "",$data['cepClinica']));
 		
 		if ($vCep == false) {
-			echo ("CEP inválido!");
+			$this->session->set_userdata('erroEmail', "<div class='erroSolicitacao'>CEP inválido!</div>");
+			redirect(base_url('clinica'));
+			exit();
+		}
+		
+		if ($data['ufClinica'] == 'Selecione') {
+			$this->session->set_userdata('erroEmail', "<div class='erroSolicitacao'>Gentileza escolher uma UF!</div>");
+			redirect(base_url('clinica'));
 			exit();
 		}
 		
