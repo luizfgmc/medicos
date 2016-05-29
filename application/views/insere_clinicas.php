@@ -53,7 +53,7 @@
                         </select>
                     </div>  
                     <div class="container_submit">
-                        <input type="submit" class="input_submit" />
+                        <input type="submit" class="input_submit" value="Inserir"/>
                         <button type="button" class="input_cancel">Cancelar</button>
                     </div>  
                 </div>

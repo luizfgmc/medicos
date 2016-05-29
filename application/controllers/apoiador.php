@@ -36,19 +36,25 @@ class Apoiador extends CI_Controller {
 		$data = $this->um->autenticar($dataPost['emailApoiador']);
 		
 		if(!empty($data)){
-			echo "Email já cadastrado!";
+			$this->session->set_userdata('erroEmail', "<div class='erroSolicitacao'>Email já cadastrado</div>");
+            redirect(base_url('apoiador'));
 			exit();
 		}
 		
 		if($dataPost['emailApoiador'] != $dataPost['emailConfirmeApoiador']){
-			echo "Emails não conferem!";
+			$this->session->set_userdata('erroEmail', "<div class='erroSolicitacao'>Emails não conferem!</div>");
+			redirect(base_url('apoiador'));
 			exit();
 		}
 		
 		if($dataPost['senhaApoiador'] != $dataPost['senhaConfirmeApoiador']){
-			echo "Senhas não conferem!";
+			$this->session->set_userdata('erroEmail', "<div class='erroSolicitacao'>Senhas não conferem!</div>");
+			redirect(base_url('apoiador'));
 			exit();
 		}
+		
+		redirect(base_url('apoiador'));
+			exit();
 		
 		$this->load->library('Form_validation');
 		$this->form_validation->set_rules('nomeApoiador', 'Nome', 'trim|required');

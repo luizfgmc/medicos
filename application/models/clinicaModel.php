@@ -17,6 +17,14 @@
 		}
 
 		
+		public function autenticarClinica($idClinica){
+					
+		   $query = $this->db->get_where('Clinicas', array('id'=>$idClinica));
+	  
+		   return $query->result();
+
+		}
+		
 		//busca uma determinada clinica pelo id
 		public function buscarClinicaPorId($idClinica){
 			$id = $this->session->userdata('medico');	
