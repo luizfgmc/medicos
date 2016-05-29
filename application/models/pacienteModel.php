@@ -8,6 +8,13 @@
 
 		}
 		
+		public function autenticar($idPaciente){
+					
+		   $query = $this->db->get_where('pacientes', array('id'=>$idPaciente));
+		   return $query->result();
+
+		}
+		
 		public function autenticarCpf($cpf){
 					
 		   $query = $this->db->get_where('pacientes', array('cpf'=>$cpf));

@@ -43,8 +43,17 @@ class Instituicao extends CI_Controller {
 
     public function solicitarConsultaSalvar(){
 
-         $idInstituicao = $this->session->userdata('instituicao');
-
+        $idInstituicao = $this->session->userdata('instituicao');
+		
+		$this->load->model('pacienteModel','pm');
+		$dataPaciente = $this->pm->autenticar($this->input->post('paciente'));
+		
+		if(empty($dataPaciente)){
+			$this->session->set_userdata('erroEmail', "<div class='erroSolicitacao'>Paciente não cadastrado!</div>");
+            redirect(base_url('instituicao/solicitarConsulta/' . $this->input->post('id_agenda')));
+			exit();
+		}
+		
         $arraySolicitcao = array(
              'instituicao_id'=>$idInstituicao['id_instituicao'],
              'paciente_id'=>$this->input->post('paciente'),

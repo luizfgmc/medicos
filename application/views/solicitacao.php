@@ -7,6 +7,12 @@
             <form action="<?php echo base_url() ?>instituicao/solicitarConsultaSalvar" method="post" id="formSolicitaConsulta">
                 <div class="halfSize">
                     <h2>Solicitação</h2>
+					<?php
+						if ($this->session->userdata('erroEmail')) {
+							echo $this->session->userdata('erroEmail');
+							$this->session->unset_userdata('erroEmail');
+						}
+						?>
                     <div class="container_item_form">
                         <label> Solicitante: </label>
                         <input type="text" class="default_text_input required" id="solicitante" name="solicitante" size=45 maxlength=45/>
