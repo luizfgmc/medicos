@@ -6,15 +6,13 @@
                 <div class="halfSize">
                     <div class="containerListaSolicitacoes">
                         <h2>Lista de Pacientes </h2>
-
-                         <!-- <a href="<?php echo base_url() ?>paciente/"> Inserir Paciente </a> -->
-                        
+                        <!-- <a href="<?php echo base_url() ?>paciente/"> Inserir Paciente </a> -->
                         <div class="containerItensSolicitacao">
-                        <div class="cabecalhoListaSolicitacoes">
-                            <span class="nomePacienteLista">Paciente</span>
-                            <span class="enderecoLista">Endereço</span>
-                            <span class="telefoneLista">Telefone</span>
-                        </div>
+                            <div class="cabecalhoListaSolicitacoes">
+                                <span class="nomePacienteLista">Paciente</span>
+                                <span class="enderecoLista">Endereço</span>
+                                <span class="telefoneLista">Telefone</span>
+                            </div>
                             <?php
                             foreach ($query as $k) {
                                 ?>
@@ -28,21 +26,20 @@
                                     echo ($k->bairro ).  "<br/>";
                                     echo ($k->cidade . " ");
                                     echo "- " . ($k->uf . "<br/>");
-                                    echo ($k->cep . "<br/>")  . '</span>';
-                                    echo '<span class="telefoneLista"> ' .($k->telefone . "<br/>");
+                                    echo (mascara_string("#####-###",$k->cep) . "<br/>")  . '</span>';
+                                    echo '<span class="telefoneLista"> ' .(mascara_string("##-####-####",$k->telefone) . "<br/>");
                                     ?>
-
                                     <a href="<?php echo base_url() . "paciente/editarPaciente/" . $k->id ?>"> editar </a>
                                     <a href="<?php echo base_url() . "paciente/deletarPaciente/" . $k->id ?>"> excluir </a>
                                 </span>
-                                </div>
-                                <?php
-                            }
-                            ?>
-                        </div>
+                            </div>
+                            <?php
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
-            </div>
-        </section>
-    </section>
+        </div>
+    </div>
+</section>
+</section>

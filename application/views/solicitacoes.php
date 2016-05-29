@@ -22,10 +22,9 @@
                                         //echo($k->solicitante . "<br/>");
                                         echo '<span class="nomePaciente">' . ($k->nome_paciente) . '</span>';
                                         echo '<span class="horarioSugerido">' . date('d/m/Y', strtotime($k->data_emissao)) . '</br>';
-                                        echo date('d/m/Y', strtotime($k->data_agendamento)) . '</br>';
+                                        echo (empty($k->data_agendamento) ? "Pendente" : date('d/m/Y', strtotime($k->data_agendamento))) . '</br>';
                                         $x = ($k->flg_retorno == '1') ? '[Retorno]': '';
                                         echo($k->hora_agendamento) . '</br>' . $x . '</span>';
-
                                         ?>
                                         <span class="saldo">
 
@@ -46,13 +45,15 @@
                                             <?php
                                         }
                                         if (empty($k->observacao) and $k->status == 'AP' or $k->status == 'RJ') {
-                                           ?>  
+                                           ?>
                                            <button href="#" id="enviarObservacao" valor="<?=$k->id?>" value="<?=$k->id?>"> comentário da consulta </button>
                                            <input type="hidden"  id="idSolicitacao" value="<?=$k->id?>">
                                            <?php
-                                       } else{
-                                        echo "<br/> Consulta Fechada";
-                                    }  
+                                       } elseif ($k->status == 'PE') {
+                                        echo "<br/> Consulta pendente";
+                                    } else {
+                                         echo "<br/> Consulta Fechada";
+                                    }
                                    ?>
                                 </span>
                             </div>

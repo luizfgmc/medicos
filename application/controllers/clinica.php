@@ -75,14 +75,11 @@ class Clinica extends CI_Controller {
                 "bairro" => $data['bairroClinica'],
                 "cidade" => $data['cidadeClinica'],
                 "uf" => $data['ufClinica'],
-                "cep" => str_replace(".","" ,$data['cepClinica']),
+                "cep" => preg_replace("/\D+/","" ,$data['cepClinica']),
                 "created_at" => date("Y-m-d H:i:s"),
                 "updated_at" => date("Y-m-d H:i:s"),
             );
-
-
             $this->cm->insereClinica($arrayInsereClinica);
-
             $this->load->view("insere_clinicas.php");
             redirect('clinica/listaClinicas');
             $this->load->view('layout/footer');
@@ -101,14 +98,12 @@ class Clinica extends CI_Controller {
         $this->load->view('editar_clinica', $data);
         $this->load->view('layout/footer');
     }
-
     //funcao para editar clinicas
     public function editarClinicaSalvar($idClinica) {
 
         $id = $this->session->userdata('medico');
         $data = $_POST;
         $this->load->model('clinicaModel', 'cm');
-
         $arrayEditarClinica = array(
             "medico_id" => $id['id_medico'],
             "nome" => $data['nomeClinica'],
@@ -119,17 +114,13 @@ class Clinica extends CI_Controller {
             "bairro" => $data['bairroClinica'],
             "cidade" => $data['cidadeClinica'],
             "uf" => $data['ufClinica'],
-            "cep" => str_replace(".","", $data['cepClinica']),
+            "cep" =>  preg_replace("/\D+/","" ,$data['cepClinica']),
             "created_at" => date("Y-m-d H:i:s"),
             "updated_at" => date("Y-m-d H:i:s"),
         );
-
-
-
         $this->cm->editarClinica($idClinica, $arrayEditarClinica);
         redirect('clinica/listaClinicas');
     }
-
     //funcao para excluir clinicas
     public function excluirClinica($idClinica) {
 
@@ -137,7 +128,5 @@ class Clinica extends CI_Controller {
         $this->cm->excluirClinica($idClinica);
         redirect('clinica/listaClinicas');
     }
-
 }
-
 ?>

@@ -5,7 +5,6 @@
         <section class="cadastro_paciente">
             <div class="containerCenter fullSiteSize">
                 <div class="halfSize">
-
                     <div class="container_form_paciente">
                         <h2>Feedback Consulta</h2>
                         <input type="hidden" value="<?php echo  $id_solicitacao; ?>" name="id_solicitacao" >
@@ -35,7 +34,5 @@
                 </div>
             </div>
         </section>
-
     </form>
-
 </section>

@@ -25,7 +25,7 @@
                                     //echo' <span class="nomePaciente">'.($k->nome).'</span>';
                                     echo' <span class="nomePaciente">' . $k->nome_medico . '</span>';
                                     echo'<span class="horarioSugerido">' . date('d/m/Y', strtotime($k->data_emissao)) . "<br/>" . '</span>';
-                                    echo '<span class="saldo">' . ($k->telefone . "<br/>");
+                                    echo '<span class="saldo">' . (mascara_string("##-####-####",$k->telefone) . "<br/>");
                                     ?>			
                                     <a href="<?php echo base_url() . "instituicao/solicitarConsulta/" . $k->id ?>"> Solicitar Consulta </a>
                                     </span>

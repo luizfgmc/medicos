@@ -99,11 +99,11 @@
 
                 $arrayInserirMedico = array(
                     "nome_medico" => $dataPost['nomeMedico'],
-                    "cpf" => str_replace(".","",$dataPost['cpfMedico']),
+                    "cpf" => preg_replace("/\D+/","" ,$dataPost['cpfMedico']),
                     "especialidade_id" => $dataPost['especialidadeMedico'],
-                    "crm" => $dataPost['numeroCRM'],
+                    "crm" => preg_replace("/\D+/","" ,$dataPost['numeroCRM']),
                     "crm_uf" => $dataPost['crmUF'],
-                    "telefone" => str_replace("-","",$dataPost['telefoneMedico']),
+                    "telefone" => preg_replace("/\D+/","" ,$dataPost['telefoneMedico']),
                     "usuario_id" => $idUsuarioInserido,
                     "created_at" => date("Y-m-d H:i:s"),
                     "updated_at" => date("Y-m-d H:i:s"),

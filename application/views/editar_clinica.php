@@ -13,11 +13,11 @@
                     </div>
                     <div class="container_item_form">
                         <label>Telefone</label>
-                        <input type="text" class="default_text_input required" name="telefoneClinica" value=" <?= $query[0]->telefone; ?>" size=12 maxlength=12 OnKeyPress="formatar('##-####-####', this)" />
+                        <input type="text" class="default_text_input required" name="telefoneClinica" value=" <?= mascara_string("##-####-####",$query[0]->telefone); ?>" size=12 maxlength=12 OnKeyPress="formatar('##-####-####', this)" />
                     </div>
                     <div class="container_item_form">
                         <label>Cep:</label>
-                        <input type="text" class="default_text_input required" name="cepClinica" value="<?= $query[0]->cep; ?>" size=10 maxlength=10 OnKeyPress="formatar('##.###.###', this)"/>
+                        <input type="text" class="default_text_input required" name="cepClinica" value="<?=mascara_string("##.###-###",$query[0]->cep); ?>" size=10 maxlength=10 OnKeyPress="formatar('##.###.###', this)"/>
                     </div>
                     <div class="container_item_form">
                         <label>Endereço</label>

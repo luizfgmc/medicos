@@ -20,21 +20,13 @@
             </div>
             <div class="escolhaMedicoInsituicao" id="escolhaMedicoInsituicao">
                 <h3> Você é medico ou instituição ?</h3>
-
-                <?php
-                if ($this->session->userdata('erroLogin')) {
-                    echo $this->session->userdata('erroLogin');
-                    $this->session->sess_destroy();
-                }
-                ?>
-
                 <?php
                 if (!empty($this->session->userdata('erroLogin'))) {
-                    echo '<p class="dadosInvalidos">Dados Inválidos</p>';
+                    echo $this->session->userdata('erroLogin');
                     $this->session->unset_userdata('erroLogin');
+                    $this->session->unset_userdata('medico');
                 }
                 ?>
-
                 <div class="containerEscolha">
                     <div class="containerMedico">
                         <a href="#escolhaMedicoInsituicao"><div class="trianguloEsquerda"></div></a>
@@ -72,8 +64,7 @@
                                 <a href="#escolhaMedicoInsituicao" class="ocultarLogin">
                                     Cancelar
                                 </a>
-							</div>
-
+                            </div>
                             <div class="itemForm">
                                 <input type="submit" value="Logar" class="input_submit" id="enviar"/>
                             </div>
@@ -121,7 +112,7 @@
                 <div class="listaRanking">
                     <div class="itemsCamposRanking">
                         <div class="numeroRanking">
-                                01
+                            01
                         </div>
                         <div class="nomeRanking">
                             Fábio Capelo

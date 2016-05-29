@@ -22,19 +22,19 @@
                             <div class="container_item_form">
                                 <label>Telefone</label>
                                 <div class="campoCadastroPaciente">
-                                    <input type="text" name="telefonePaciente" value="<?= $query[0]->telefone ?>" size=12 maxlength=12 OnKeyPress="formatar('##.####.####', this)" />
+                                    <input type="text" name="telefonePaciente" value="<?= mascara_string("##-####-####",$query[0]->telefone); ?>" size=12 maxlength=12 OnKeyPress="formatar('##.####.####', this)" />
                                 </div>
                             </div>
                             <div class="container_item_form">
                                 <label>Cpf</label>
                                 <div class="campoCadastroPaciente">
-                                    <input type="text" name="cpfPaciente" value="<?= $query[0]->cpf ?>"  size=14 maxlength=14 OnKeyPress="formatar('###.###.###.##', this)" />
+                                    <input type="text" name="cpfPaciente" value="<?= mascara_string("###.###.###-##",$query[0]->cpf); ?>"  size=14 maxlength=14 OnKeyPress="formatar('###.###.###-##', this)" />
                                 </div>
                             </div>
                             <div class="container_item_form">
                                 <label>Cep:</label>
                                 <div class="campoCadastroPaciente">
-                                    <input type="text" name="cepPaciente" value="<?= $query[0]->cep ?>" id="cep" size=09 maxlength=09 OnKeyPress="formatar('#####.###', this)" />
+                                    <input type="text" name="cepPaciente" value="<?= mascara_string("#####-###",$query[0]->cep );?>" id="cep" size=09 maxlength=09 OnKeyPress="formatar('#####.###', this)" />
                                 </div>
                             </div>
                             <div class="container_item_form">
@@ -94,9 +94,6 @@
                     </div>
                 </div>
             </section>
-
         </form>
-
     </section>
-
 </section>
