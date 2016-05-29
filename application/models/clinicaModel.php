@@ -15,6 +15,28 @@
 
 			$this->db->insert('clinicas',$data);
 		}
+		
+		public function obterQuantidadeConsultas($idClinica) {
+			
+			$this->db->select('*');
+			$this->db->from('clinicas c');
+			$this->db->join('agendas a', 'c.id = a.clinica_id');
+			$this->db->join('solicitacoes s', 'a.id = s.agenda_id');
+			$this->db->where("c.id = {$idClinica}");
+			
+			return $this->db->count_all_results();
+			
+		}
+		
+		public function obterQuantidadeClinicasMedico($idMedico) {
+			
+			$this->db->select('*');
+			$this->db->from('clinicas c');
+			$this->db->where("c.medico_id = {$idMedico}");
+			
+			return $this->db->count_all_results();
+			
+		}
 
 		
 		public function autenticarClinica($idClinica){

@@ -7,6 +7,12 @@
             <form method="post" action="<?php echo base_url() ?>clinica/editarClinicaSalvar/<?= $query[0]->id ?>" id="formClinica">
                 <div class="halfSize">
                     <h2>Editar Clinica</h2>
+					<?php
+                    if ($this->session->userdata('erroEmail')) {
+                        echo $this->session->userdata('erroEmail');
+                        $this->session->unset_userdata('erroEmail');
+                    }
+                    ?>
                     <div class="container_item_form">
                         <label>Nome</label>
                         <input type="text" class="default_text_input required" name="nomeClinica" value="<?= $query[0]->nome; ?>" size=45 maxlength=45 />

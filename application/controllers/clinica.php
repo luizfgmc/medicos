@@ -130,9 +130,26 @@ class Clinica extends CI_Controller {
     }
     //funcao para excluir clinicas
     public function excluirClinica($idClinica) {
-
+		
         $this->load->model('clinicaModel', 'cm');
-        $this->cm->excluirClinica($idClinica);
+        
+		$qtdClinicas = $this->cm->obterQuantidadeClinicasMedico($this->session->userdata('medico')['id_medico']);
+		if ($qtdClinicas <= 1) {
+			$this->session->set_userdata('erroEmail', "<div class='erroSolicitacao'>Não pode-se deixar excluir uma clínica caso haja apenas uma clínica para o médico!</div>");
+			redirect(base_url('clinica/listaClinicas'));
+			exit();
+		}
+		
+		$qtdCons = $this->cm->obterQuantidadeConsultas($idClinica);
+		if ($qtdCons > 0) {
+			$this->session->set_userdata('erroEmail', "<div class='erroSolicitacao'>Não pode-se deixar excluir uma clínica sendo que tenha consultas em aberto para ela!</div>");
+			redirect(base_url('clinica/listaClinicas'));
+			exit();
+		}
+		
+		
+		
+		$this->cm->excluirClinica($idClinica);
         redirect('clinica/listaClinicas');
     }
 }
