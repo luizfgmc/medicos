@@ -45,7 +45,7 @@
                                             <?php
                                         }
                                         if (empty($k->observacao) and $k->status == 'AP' or $k->status == 'RJ') {
-                                           ?>  
+                                           ?>
                                            <button href="#" id="enviarObservacao" valor="<?=$k->id?>" value="<?=$k->id?>"> comentário da consulta </button>
                                            <input type="hidden"  id="idSolicitacao" value="<?=$k->id?>">
                                            <?php

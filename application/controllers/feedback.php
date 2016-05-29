@@ -1,14 +1,10 @@
 <?php
-
 class Feedback extends CI_Controller {
-
     function __construct() {
         parent::__construct();
         $this->load->helper(array('url'));
         $this->logininstituicao->valida_sessao_instituicao();
     }
-
-
     // Função que mostra o formulário que a instituição preenche com o feedback do solicitação já efetuada pelo medico
     // @$id_solicitacao -> int id da solicitação que o cliente foi atendido
     function inserir_feedback($id_solicitacao)
@@ -17,9 +13,7 @@ class Feedback extends CI_Controller {
         $this->load->view('layout/header');
         $this->load->view('insere_feedback_ranking',$dados);
         $this->load->view('layout/footer');
-
     }
-
     function salva_feedback()
     {
         $data_post= $_POST;
@@ -27,8 +21,7 @@ class Feedback extends CI_Controller {
             "ranking" => $data_post['ranking'],
             "id_solicitacao" => $data_post['id_solicitacao'],
             "observacao" => $data_post['observacao'],
-
-        );
+            );
         $this->load->model('feedbacksolicitacaoModel','fsm');
         if($this->fsm->getFeedbackBySolicitacao($data_post['id_solicitacao'])<1) {
             $this->fsm->insereFeedback($dados_feedback);
