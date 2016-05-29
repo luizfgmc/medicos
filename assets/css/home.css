@@ -16,6 +16,12 @@ html,body
     font-size:12px;
 }
 
+body
+{
+    min-height:100%;
+    position:relative;
+}
+
 a
 {
     text-decoration:none;
@@ -55,6 +61,7 @@ a
 
 .fullSiteSize
 {
+    max-width:100%;
     width:1140px;
 }
 
@@ -104,7 +111,7 @@ a
     overflow:hidden;
     position:relative;
     -webkit-transition: height 0.5s ease;
-            transition: height 0.5s ease;
+    transition: height 0.5s ease;
     width:586px;
 }
 
@@ -131,8 +138,8 @@ a
     display:-ms-flexbox;
     display:flex;
     -webkit-flex-wrap:wrap;
-        -ms-flex-wrap:wrap;
-            flex-wrap:wrap;
+    -ms-flex-wrap:wrap;
+    flex-wrap:wrap;
     width:100%;
 }
 
@@ -140,16 +147,16 @@ a
 {
     -webkit-box-align:center;
     -webkit-align-items:center;
-        -ms-flex-align:center;
-            align-items:center;
+    -ms-flex-align:center;
+    align-items:center;
     box-sizing: border-box;
     display:-webkit-box;
     display:-webkit-flex;
     display:-ms-flexbox;
     display:flex;
     -webkit-justify-content:space-around;
-        -ms-flex-pack:distribute;
-            justify-content:space-around;
+    -ms-flex-pack:distribute;
+    justify-content:space-around;
     height:50px;
     padding:0 10px;
     width:100%;
@@ -180,8 +187,8 @@ a
 {
     -webkit-box-pack:end;
     -webkit-justify-content:flex-end;
-        -ms-flex-pack:end;
-            justify-content:flex-end;
+    -ms-flex-pack:end;
+    justify-content:flex-end;
 }
 
 .escolhaMedicoInsituicao h3
@@ -194,8 +201,8 @@ a
 {
     -webkit-box-align:center;
     -webkit-align-items:center;
-        -ms-flex-align:center;
-            align-items:center;
+    -ms-flex-align:center;
+    align-items:center;
     display:-webkit-box;
     display:-webkit-flex;
     display:-ms-flexbox;
@@ -205,8 +212,8 @@ a
     left:0;
     height:75px;
     -webkit-justify-content: space-around;
-        -ms-flex-pack: distribute;
-            justify-content: space-around;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
     position:absolute;
     width:400px;
 }
@@ -223,9 +230,9 @@ a
 
     -webkit-align-items:center;
 
-        -ms-flex-align:center;
+    -ms-flex-align:center;
 
-            align-items:center;
+    align-items:center;
     bottom:70px;
     display:-webkit-box;
     display:-webkit-flex;
@@ -235,8 +242,8 @@ a
     font-size:17px;
     height:75px;
     -webkit-justify-content: space-around;
-        -ms-flex-pack: distribute;
-            justify-content: space-around;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
     position:absolute;
     right:0;
     width:400px;
@@ -275,8 +282,8 @@ a
     display:-ms-flexbox;
     display:flex;
     -webkit-flex-wrap:wrap;
-        -ms-flex-wrap:wrap;
-            flex-wrap:wrap;
+    -ms-flex-wrap:wrap;
+    flex-wrap:wrap;
     height:210px;
     width:100%;
 }
@@ -328,8 +335,8 @@ a
     display:flex;
     -webkit-box-pack: center;
     -webkit-justify-content: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
 }
 
 .iconBottom
@@ -409,3 +416,240 @@ a
     width:100%;
 }
 
+
+.mainContent
+{
+    background: #ffffff;
+    padding-bottom:115px;
+    width: 100%;
+
+
+
+}
+
+
+.mainFooter
+{
+    /* bottom:0;
+     position:absolute; */
+}
+
+.dadosInvalidos
+{
+    color: red;
+    margin-left: 14px;  
+}
+
+.containerImagem
+{
+    display:-webkit-box;
+    display:-webkit-flex;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-box-pack:center;
+    -webkit-justify-content:center;
+        -ms-flex-pack:center;
+            justify-content:center;
+    width:100%;
+}
+
+.containerFormLogin .itemForm.captcha
+{
+    height:92px;
+}
+
+.containerCaptcha
+{
+    display:-webkit-box;
+    display:-webkit-flex;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-box-pack:center;
+    -webkit-justify-content:center;
+        -ms-flex-pack:center;
+            justify-content:center;
+    -webkit-flex-wrap:wrap;
+        -ms-flex-wrap:wrap;
+            flex-wrap:wrap;
+}
+
+.containerCampoCaptcha
+{
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.containerFormLogin .input_submit, .input_cancel
+{
+    margin-top:0;
+}
+
+.containerChallenge
+{
+    display:-webkit-box;
+    display:-webkit-flex;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-flex-wrap:wrap;
+        -ms-flex-wrap:wrap;
+            flex-wrap:wrap;
+}
+
+.containerChallenge h2
+{
+    width:100%;
+}
+
+.perguntaChallenge
+{
+    padding:15px 0;
+    width:100%;
+}
+
+.itemFormChallenge
+{
+    padding:15px 0;
+    width:100%;
+}
+
+.paddingChares
+{
+    padding-bottom:200px;
+}
+
+.retornoLoginInvalido
+{
+    align-items: center;
+    background: red;
+    display: flex;
+    height: 40px;
+    justify-content: center;
+    margin-bottom: 10px;
+    text-align: center;
+    width: 100%;
+}
+
+.erroSolicitacao
+{
+    align-items:center;
+    background:red;
+    display:flex;
+    color:#FFFFFF;
+    height:50px;
+    justify-content:center;
+    margin-bottom:20px;
+    width:100%;
+}
+
+.bannerHome
+{
+    max-height:400px;
+    overflow:hidden;
+    width:100%;
+}
+
+.listaRankingMedicos
+{
+    display:flex;
+    flex-wrap:wrap;
+    min-height:400px;
+    width:100%;
+}
+
+.listaRankingMedicos h2
+{
+    color:#25859b;
+    font-size:25px;
+    text-align:center;
+    width:100%;
+}
+
+.listaRankingMedicos h3
+{
+    align-items:center;
+    color:#25859b;
+    display:flex;
+    font-size:20px;
+}
+
+.listaRankingMedicos h3 img
+{
+    margin-right:15px;
+}
+
+.topMensal
+{
+    display:flex;
+    justify-content:flex-start;
+    width:50%;
+}
+
+.topAno
+{
+    display:flex;
+    justify-content:flex-end;
+    width:50%;
+}
+.conteudoRanking
+{
+    width:95%;
+}
+
+.itemsCamposRanking
+{
+    box-sizing:border-box;
+    display:flex;
+    padding:5px;
+}
+
+.itemsCamposRanking:nth-child(odd)
+{
+    background:#FFFFFF;
+    color:#25859b;
+}
+
+.itemsCamposRanking:nth-child(even)
+{
+    background:#d8d8d8;
+    color:#25859b;
+}
+
+
+.itemsCamposRanking:first-child
+{
+    background:#29a1bc;
+    color:#FFFFFF;
+}
+
+
+.itemsCamposRanking .numeroRanking
+{
+    width:10%;
+}
+
+.itemsCamposRanking .nomeRanking
+{
+    width:35%;
+}
+
+.itemsCamposRanking .especialidadeRanking
+{
+    width:35%;
+}
+
+.itemsCamposRanking .ranking
+{
+    width:20%;
+}

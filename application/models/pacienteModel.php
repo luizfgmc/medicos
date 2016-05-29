@@ -7,11 +7,20 @@
 			parent::__construct();
 
 		}
+		
+		public function autenticarCpf($cpf){
+					
+		   $query = $this->db->get_where('pacientes', array('cpf'=>$cpf));
+	  
+		   return $query->result();
+
+		}
 
 
 		public function listaPacientes(){
 
-			$query = $this->db->get('pacientes');
+			$query = $this->db->get_where('pacientes',array('atividade' => 'A'));
+	
 			return $query->result();
 
 

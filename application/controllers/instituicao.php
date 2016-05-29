@@ -14,6 +14,16 @@ class Instituicao extends CI_Controller {
          
 	}
 
+    public function index(){
+
+        $id = $this->session->userdata('instituicao');    
+        $this->load->model('solicitacaoModel','sm');
+        $data['query'] = $this->sm->verSolicitcoesInstituicao($id['id_instituicao']);
+        $this->load->view('layout/header');
+        $this->load->view('solicitacoes_instituicao',$data);
+        $this->load->view('layout/footer');
+
+    }
 
     public function solicitarConsulta($idAgenda){
 
@@ -21,15 +31,13 @@ class Instituicao extends CI_Controller {
         $this->load->model('pacienteModel','pm');
         $pacientes['paciente'] = $this->pm->listaPacientes();
         
-        $idInstituicao = $this->session->userdata('instituicao');
-
         $data['query'] = array('idAgenda'=>$idAgenda,
-                      'idInstituicao'=>$idInstituicao['id_instituicao'],
                       'pacientes'=>$pacientes
         );    
 
-    
+        $this->load->view('layout/header');
         $this->load->view('solicitacao', $data);
+        $this->load->view('layout/footer');
 
     }
 
@@ -41,7 +49,7 @@ class Instituicao extends CI_Controller {
              'instituicao_id'=>$idInstituicao['id_instituicao'],
              'paciente_id'=>$this->input->post('paciente'),
              'solicitante'=>$this->input->post('solicitante'),
-             'data_emissao'=>$this->input->post('data'),
+             'data_emissao'=> date('Y-m-d'),
              'status'=>'PE',
              'descricao'=> $this->input->post('descricao'),
              'created_at'=>date("Y-m-d H:i:s"),
@@ -54,118 +62,22 @@ class Instituicao extends CI_Controller {
           $this->load->model('solicitacaoModel','sm');
           $this->sm->solicitarConsultaSalvar($arraySolicitcao);
 
-          echo "sucesso";
+          redirect('instituicao');
 
     }
+
+    public function reprovarSolicitacao($idSolicitacao)
+    {
+        $this->load->model('solicitacaoModel', 'sm');
+        $this->sm->reprovarSolicitacaoInstituicao($idSolicitacao);
+        redirect('instituicao');
+    }
+
+
     
-    public function index() {
+    
 
-        $this->load->model('estadosModel');
-        $estado['estados'] = $this->estadosModel->getInfoEstados();
-        $this->load->view('layout/header');
-        $this->load->view('cadastrar_instituicao', $estado);
-        $this->load->view('layout/footer');
-    }
-
-    public function instituicoes() {
-
-        $this->load->model('instituicaoModel', 'im');
-        $data['query'] = $this->im->listaInstituicoes();
-
-
-        $this->load->view('instituicoes', $data);
-    }
-
-    public function insereInsituicao() {
-
-        $this->load->model('instituicaoModel', 'im');
-
-        $data = $_POST;
-
-        $this->load->library('Form_validation');
-        $this->form_validation->set_rules('nomeInstituicao', 'Nome', 'trim|required');
-        $this->form_validation->set_rules('cnpjInstituicao', 'CNPJ', 'trim|required|valida_cnpj');
-        $this->form_validation->set_rules('responsavelInstituicao', 'Responsavel', 'trim|required');
-        $this->form_validation->set_rules('enderecoInstituicao', 'Endereco', 'trim|required');
-        $this->form_validation->set_rules('end_numeroInstituicao', 'Numero', 'trim|required');
-        $this->form_validation->set_rules('bairroInstituicao', 'Bairro', 'trim|required');
-        $this->form_validation->set_rules('cidadeInstituicao', 'Cidade', 'trim|required');
-        $this->form_validation->set_rules('ufInstituicao', 'Estado', 'trim|required');
-        $this->form_validation->set_rules('cepInstituicao', 'CEP', 'trim|required');
-        $this->form_validation->set_rules('telefoneInstituicao', 'Telefone', 'trim|required');
-
-        if ($this->form_validation->run() == FALSE) {
-            $this->index();
-        } else {
-
-            $arrayInstiuicao = array(
-                "nome" => $data['nomeInstituicao'],
-                "cnpj" => $data['cnpjInstituicao'],
-                "responsavel" => $data['responsavelInstituicao'],
-                "endereco" => $data['enderecoInstituicao'],
-                "end_numero" => $data['end_numeroInstituicao'],
-                "complemento" => $data['complementoInstituicao'],
-                "bairro" => $data['bairroInstituicao'],
-                "cidade" => $data['cidadeInstituicao'],
-                "uf" => $data['ufInstituicao'],
-                "cep" => $data['cepInstituicao'],
-                "telefone" => $data['telefoneInstituicao'],
-                "status" => $data['statusInstituicao'],
-                "usuario_id" => 59,
-                "created_at" => date("Y-m-d H:i:s"),
-                "updated_at" => date("Y-m-d H:i:s"),
-            );
-
-            $this->im->insereInstituicao($arrayInstiuicao);
-            redirect("Instituicao/instituicoes");
-        }
-    }
-
-    public function editarInstituicao($id) {
-
-        $this->load->model('instituicaoModel', 'im');
-        $data['query'] = $this->im->editarInstituicao($id);
-        $this->load->model('estadosModel');
-        $estado = $this->estadosModel->getInfoEstados();
-        $data['estados'] = $estado;
-
-        $this->load->view('editar_instituicao', $data);
-    }
-
-    public function editarSalvarInstituicao($id) {
-
-        $this->load->model('instituicaoModel', 'im');
-
-        $data = $_POST;
-
-        $arrayInstiuicao = array(
-            "nome" => $data['nomeInstituicao'],
-            "cnpj" => $data['cnpjInstituicao'],
-            "responsavel" => $data['responsavelInstituicao'],
-            "endereco" => $data['enderecoInstituicao'],
-            "end_numero" => $data['end_numeroInstituicao'],
-            "complemento" => $data['complementoInstituicao'],
-            "bairro" => $data['bairroInstituicao'],
-            "cidade" => $data['cidadeInstituicao'],
-            "uf" => $data['ufInstituicao'],
-            "cep" => $data['cepInstituicao'],
-            "telefone" => $data['telefoneInstituicao'],
-            "status" => $data['statusInstituicao'],
-            "usuario_id" => 59,
-            "created_at" => date("Y-m-d H:i:s"),
-            "updated_at" => date("Y-m-d H:i:s"),
-        );
-
-        $this->im->editarSalvarInstituicao($arrayInstiuicao, $id);
-        redirect("Instituicao/instituicoes");
-    }
-
-    public function deletaInstituicao($id) {
-
-        $this->load->model('instituicaoModel', 'im');
-        $this->im->deletaInstituicao($id);
-        redirect("Instituicao/instituicoes");
-    }
+    
 
 }
 

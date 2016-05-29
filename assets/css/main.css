@@ -1,103 +1,114 @@
+
+
+html
+{
+    height:100%;
+}
+
 body
 {
-	margin:0;
-	padding:0;	
-	font-family: 'Actor', sans-serif;
-	font-size:12px;
+
+
+    font-family: 'Actor', sans-serif;
+    font-size:12px;
+    margin:0;
+    min-height:100%;
+    padding:0;
+    position:relative;
 }
 
 a
 {
-	text-decoration:none;
+    text-decoration:none;
 }
 
 .containerCenter
 {
-	margin:0 auto;
+    margin:0 auto;
 }
 
 .fullSiteSize
 {
-	width:1140px;
+    width:1140px;
 }
 
 .mainHeader
 {
-	background:#25859b;
-	height:62px;
-	width:100%;
+    background:#25859b;
+    height:62px;
+    width:100%;
 }
 
 .containerItemsHeader
 {
-	
-	display:-webkit-box;
-	
-	display:-webkit-flex;
-	
-	display:-ms-flexbox;
-	
-	display:flex;
-	height:100%;
-	-webkit-box-pack: justify;
-	-webkit-justify-content: space-between;
-	    -ms-flex-pack: justify;
-	        justify-content: space-between;
-        position:relative;
+
+    display:-webkit-box;
+
+    display:-webkit-flex;
+
+    display:-ms-flexbox;
+
+    display:flex;
+    height:100%;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    position:relative;
 }
 
 .iconMenuTop, .alertTop, .configTop
 {
-	-webkit-box-align:center;
-	-webkit-align-items:center;
-	    -ms-flex-align:center;
-	        align-items:center;
-	display:-webkit-box;
-	display:-webkit-flex;
-	display:-ms-flexbox;
-	display:flex;
-	height:100%;
-	-webkit-box-pack:center;
-	-webkit-justify-content:center;
-	    -ms-flex-pack:center;
-	        justify-content:center;
-	width:6%;
+    -webkit-box-align:center;
+    -webkit-align-items:center;
+    -ms-flex-align:center;
+    align-items:center;
+    display:-webkit-box;
+    display:-webkit-flex;
+    display:-ms-flexbox;
+    display:flex;
+    height:100%;
+    -webkit-box-pack:center;
+    -webkit-justify-content:center;
+    -ms-flex-pack:center;
+    justify-content:center;
+    width:6%;
 }
 
 .configTop
 {
-	 -webkit-box-align:center;
-	 -webkit-align-items:center;
-	     -ms-flex-align:center;
-	         align-items:center;
-	 display:-webkit-box;
-	 display:-webkit-flex;
-	 display:-ms-flexbox;
-	 display:flex;
-	 height:100%;
-	         -webkit-box-pack:center;
-	         -webkit-justify-content:center;
-	             -ms-flex-pack:center;
-	                 justify-content:center;
-	 width:6%;
+    -webkit-box-align:center;
+    -webkit-align-items:center;
+    -ms-flex-align:center;
+    align-items:center;
+    display:-webkit-box;
+    display:-webkit-flex;
+    display:-ms-flexbox;
+    display:flex;
+    height:100%;
+    -webkit-box-pack:center;
+    -webkit-justify-content:center;
+    -ms-flex-pack:center;
+    justify-content:center;
+    width:6%;
 }
 
 .logoMedicoAmigoTop, .medicoLoged
 {
-	-webkit-box-align:center;
-	-webkit-align-items:center;
-	    -ms-flex-align:center;
-	        align-items:center;
-	color:#FFFFFF;
-	display:-webkit-box;
-	display:-webkit-flex;
-	display:-ms-flexbox;
-	display:flex;
-	height:100%;
-	-webkit-box-pack:center;
-	-webkit-justify-content:center;
-	    -ms-flex-pack:center;
-	        justify-content:center;	
+    -webkit-box-align:center;
+    -webkit-align-items:center;
+    -ms-flex-align:center;
+    align-items:center;
+    color:#FFFFFF;
+    display:-webkit-box;
+    display:-webkit-flex;
+    display:-ms-flexbox;
+    display:flex;
+    height:100%;
+    -webkit-box-pack:center;
+    -webkit-justify-content:center;
+    -ms-flex-pack:center;
+    justify-content:center;	
 }
 
 .medicoLoged a
@@ -129,7 +140,8 @@ a
     position:absolute;
     top: 62px;
     width:216px;
-    
+    z-index:10;
+
 }
 
 .menuTop ul
@@ -167,138 +179,254 @@ a
 
 .alertTop:hover .reminderTop
 {
-    display:block;
+    display:-webkit-box;
+    display:-webkit-flex;
+    display:-ms-flexbox;
+    display:flex;
 }
 
 .reminderTop
 {
     background:#2292ac;
     display:none;
+    -webkit-flex-wrap:wrap;
+        -ms-flex-wrap:wrap;
+            flex-wrap:wrap;
+    -webkit-box-pack:center;
+    -webkit-justify-content:center;
+        -ms-flex-pack:center;
+            justify-content:center;
     left:0;
-    padding-bottom:30px;
+    padding:10px 0 30px 0;
     position:absolute;
     top: 62px;
     width:268px;
 }
 
+.numeroNotificacoes
+{
+    -webkit-box-align:center;
+    -webkit-align-items:center;
+        -ms-flex-align:center;
+            align-items:center;
+    background:#25859b;
+    border-radius:6px;
+    box-sizing: border-box;
+    color:#FFFFFF;
+    display:-webkit-box;
+    display:-webkit-flex;
+    display:-ms-flexbox;
+    display:flex;
+    height:60px;
+    -webkit-box-pack:center;
+    -webkit-justify-content:center;
+        -ms-flex-pack:center;
+            justify-content:center;
+    padding:0 10px;
+    width:80%;
+}
+
+.notificacaoTopo
+{
+    -webkit-box-align:center;
+    -webkit-align-items:center;
+        -ms-flex-align:center;
+            align-items:center;
+    background:#25859b;
+    border-radius:6px;
+    box-sizing: border-box;
+    color:#FFFFFF;
+    display:-webkit-box;
+    display:-webkit-flex;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-flex-wrap:wrap;
+        -ms-flex-wrap:wrap;
+            flex-wrap:wrap;
+    -webkit-box-pack:center;
+    -webkit-justify-content:center;
+        -ms-flex-pack:center;
+            justify-content:center;
+    margin-top:10px;
+    padding:10px 10px;
+    width:80%; 
+}
+
+.analisarNotificacaoTopo
+{  
+    background:#FFFFFF; 
+    border-radius:6px;
+    margin-top:10px;
+    padding:10px;
+    text-align:center;
+    width:30%;
+}
+
+.analisarNotificacaoTopo a
+{
+    color:#25859b; 
+}
+
+.notificacaoTopo p
+{
+    width:100%;
+}
+
 .medicoLoged
 {
-	width:15%;
+    width:15%;
 }
 
 .logoMedicoAmigoTop
 {
-	width:67%;
+    width:67%;
 }
 
 .mainContent
 {
     background: #ffffff;
+    padding-bottom:115px;
     width: 100%;
-    height: 100%;
+
+
 
 }
 
 .mainFooter
 {
-	background:#d2d2d2;
-	height:115px;
-	width:100%;
+    bottom:0;
+    background:#d2d2d2;
+    height:115px;
+    position:absolute;
+    width:100%;
 }
 
 .mainFooter ul
 {
-	margin:0;
+    margin:0;
 }
 
 .containerItemsFooter
 {
-	-webkit-box-align:center;
-	-webkit-align-items:center;
-	    -ms-flex-align:center;
-	        align-items:center;
-	display:-webkit-box;
-	display:-webkit-flex;
-	display:-ms-flexbox;
-	display:flex;
-	-webkit-box-pack: center;
-	-webkit-justify-content: center;
-	    -ms-flex-pack: center;
-	        justify-content: center;
+    -webkit-box-align:center;
+    -webkit-align-items:center;
+    -ms-flex-align:center;
+    align-items:center;
+    display:-webkit-box;
+    display:-webkit-flex;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
 }
 
 .iconBottom
 {
-	-webkit-box-align:center;
-	-webkit-align-items:center;
-	    -ms-flex-align:center;
-	        align-items:center;
-	display:-webkit-box;
-	display:-webkit-flex;
-	display:-ms-flexbox;
-	display:flex;
-	height:100%;
-	-webkit-box-pack:start;
-	-webkit-justify-content:flex-start;
-	    -ms-flex-pack:start;
-	        justify-content:flex-start;
-	width:6%;
+    -webkit-box-align:center;
+    -webkit-align-items:center;
+    -ms-flex-align:center;
+    align-items:center;
+    display:-webkit-box;
+    display:-webkit-flex;
+    display:-ms-flexbox;
+    display:flex;
+    height:100%;
+    -webkit-box-pack:start;
+    -webkit-justify-content:flex-start;
+    -ms-flex-pack:start;
+    justify-content:flex-start;
+    width:6%;
 }
 
 .menuBottom
 {
-	-webkit-box-align:center;
-	-webkit-align-items:center;
-	    -ms-flex-align:center;
-	        align-items:center;
-	display:-webkit-box;
-	display:-webkit-flex;
-	display:-ms-flexbox;
-	display:flex;
-	color:#25859b;
-	-webkit-box-pack:center;
-	-webkit-justify-content:center;
-	    -ms-flex-pack:center;
-	        justify-content:center;
-	width:18%;
+    -webkit-box-align:center;
+    -webkit-align-items:center;
+    -ms-flex-align:center;
+    align-items:center;
+    display:-webkit-box;
+    display:-webkit-flex;
+    display:-ms-flexbox;
+    display:flex;
+    color:#25859b;
+    -webkit-box-pack:center;
+    -webkit-justify-content:center;
+    -ms-flex-pack:center;
+    justify-content:center;
+    width:18%;
 }
 
 
 .menuBottom ul
 {
-	margin:0;
-	padding:0;
+    margin:0;
+    padding:0;
 }
 
 .menuBottom a
 {
-	color:#25859b;
+    color:#25859b;
 }
 
 .infoBottom
 {
-	-webkit-box-align:center;
-	-webkit-align-items:center;
-	    -ms-flex-align:center;
-	        align-items:center;
-	display:-webkit-box;
-	display:-webkit-flex;
-	display:-ms-flexbox;
-	display:flex;
-	color:#25859b;
-	-webkit-box-pack:center;
-	-webkit-justify-content:center;
-	    -ms-flex-pack:center;
-	        justify-content:center;
-	-webkit-flex-wrap:wrap;
-	    -ms-flex-wrap:wrap;
-	        flex-wrap:wrap;
-	width:23%;
+    -webkit-box-align:center;
+    -webkit-align-items:center;
+    -ms-flex-align:center;
+    align-items:center;
+    display:-webkit-box;
+    display:-webkit-flex;
+    display:-ms-flexbox;
+    display:flex;
+    color:#25859b;
+    -webkit-box-pack:center;
+    -webkit-justify-content:center;
+    -ms-flex-pack:center;
+    justify-content:center;
+    -webkit-flex-wrap:wrap;
+    -ms-flex-wrap:wrap;
+    flex-wrap:wrap;
+    width:23%;
 }
 
 .infoBottom p
 {
-	margin: 2px 0;
-	padding:0;
-	width:100%;
+    margin: 2px 0;
+    padding:0;
+    width:100%;
 }
+
+.erroSolicitacao
+{
+    align-items:center;
+    background:red;
+    display:flex;
+    color:#FFFFFF;
+    height:50px;
+    justify-content:center;
+    margin-bottom:20px;
+    width:100%;
+}
+
+
+.star{
+    width: 50px;
+    height: 50px;
+    border:1px solid #000;
+    background: #1e90ff;
+    -webkit-clip-path: polygon(50% 0%, 63% 38%, 100% 38%, 69% 59%, 82% 100%, 50% 75%, 18% 100%, 31% 59%, 0% 38%, 37% 38%);
+    clip-path: polygon(50% 0%, 63% 38%, 100% 38%, 69% 59%, 82% 100%, 50% 75%, 18% 100%, 31% 59%, 0% 38%, 37% 38%);
+}
+
+.marginSolicitacao
+{
+    margin-top:40px;
+}
+
+.compartilharFacebook
+{
+    margin-top:10px;
+}
+

@@ -4,11 +4,18 @@
 <section class="mainContent">
     <section class="cadastro_medico">
         <div class="containerCenter fullSiteSize">
-        <form method="post" action="<?php echo base_url() ?>medico/insereMedico/" id="formMedico">
+        <form method="post" action="<?php echo base_url() ?>cadastroMedico/insereMedico" id="formMedico">
             <div class="halfSize">
                 <div class="container_form_medico">
                     <h2>Cadastro Médico</h2>
+                    <?php
+                    if ($this->session->userdata('erroEmail')) {
+                        echo $this->session->userdata('erroEmail');
+                        $this->session->unset_userdata('erroEmail');
+                    }
+                    ?>
                     <div class="form_cadastro_medico">
+
                         <div class="container_item_form">
                             <label>Nome: </label>
                             <input type="text" class="default_text_input required" name="nomeMedico" size=45 maxlength=45 tabIndex ="1" />
@@ -101,7 +108,7 @@
                     </div>
                     <div class="container_submit">
                         <input type="submit" class="input_submit" tabIndex ="14" />
-                        <button type="button" class="input_cancel" tabIndex ="15">Cancelar </button>
+                           <a href="<?php echo base_url() ?>" class="input_cancel">Cancelar</a>
                     </div>	
 
                 </div>

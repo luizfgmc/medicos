@@ -16,6 +16,28 @@ class UsuarioModel extends CI_Model {
     public function excluirUsuario($idUsuario) {        
         $this->db->delete('usuarios', array('id' => $idUsuario));
     }
+	
+		
+	public function editarSalvarUsuario($idUsuario, $arrayUsuario){
+
+		$this->db->update('usuarios', $arrayUsuario, array('id'=>$idUsuario));
+		
+	}
+
+    public function autenticar($email){
+                
+       $query = $this->db->get_where('Usuarios', array('email'=>$email));
+  
+       return $query->result();
+
+    }
+    public function autenticarCpf($cpf){
+
+        $query = $this->db->get_where('Medicos', array('cpf'=>$cpf));
+
+        return $query->result();
+
+    }
 }
 
 ?>

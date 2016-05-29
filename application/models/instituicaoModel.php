@@ -21,7 +21,7 @@
 
     	public function buscarIdInstituicao($id){
 
-        $this->db->select('id');
+        $this->db->select('id,nome');
         $this->db->from('instituicoes');
         $this->db->where('usuario_id',$id);
         $query = $this->db->get();

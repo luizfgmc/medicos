@@ -19,7 +19,7 @@
 	-webkit-flex-wrap:wrap;
 	    -ms-flex-wrap:wrap;
 	        flex-wrap:wrap;
-	height:100%;
+
 	width:100%;
 }
 .container_form_paciente
@@ -51,4 +51,10 @@
 .form_cadastro_paciente .container_submit
 {
     width:100%;
+}
+
+.textareaFeedback
+{
+	width:86%;
+	height:200px;
 }
