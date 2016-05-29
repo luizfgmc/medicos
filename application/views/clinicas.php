@@ -19,16 +19,13 @@
                                 <?php
                                 echo'<span class="nomePaciente">' . ($k->nome) . '</span>';
                                 //echo($k->telefone . "<br/>");
-
-
-                                echo'<span class="horarioSugerido">' .($k->endereco). ', ';   
+                                echo'<span class="horarioSugerido">' .($k->endereco). ', ';
                                 echo($k->end_numero). '<br />';
                                 echo($k->end_complemento) .'<br />' ;
                                 echo ($k->bairro).'<br />';
                                 echo($k->cidade) .'<br />';
-                                echo($k->cep . '</span>');
+                                echo(mascara_string("##.###-###",$k->cep) . '</span>');
                                 //echo($k->uf . "<br/>");
-                                
                                 ?>
                                 <span class="saldo">
                                     <a href="<?php echo base_url() . "clinica/editarClinica/" . $k->id ?>"> editar </a>
@@ -40,12 +37,9 @@
                             <?php
                         }
                         ?>
-
                     </div>
                 </div>
             </div>
         </div>
     </section>
 </section>
-
-

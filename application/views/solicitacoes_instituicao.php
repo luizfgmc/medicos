@@ -7,7 +7,6 @@
                 <div class="containerListaSolicitacoes">
                     <h2>Solicitações pedentes </h2>
                     <div class="infoMedicoLogado">
-                        
                     </div>
                     <div class="cabecalhoListaSolicitacoes">
                         <span class="nomePaciente">Paciente</span>
@@ -17,7 +16,7 @@
                     <div class="containerItensSolicitacao">
                         <?php
                         foreach ($query as $k) {
-                            ?>      
+                            ?>
                             <div class="itemSolicitacao">
                                 <?php
                                 echo '<span class="nomePaciente">' . ($k->nome_paciente) . '</span>';
@@ -25,12 +24,12 @@
                                 echo ($k->hora_agendamento). '</span>';
                                 ?>
                                 <span class="saldo">
-                                    
                                <?php if($k->status=='AP')
                                 {
                                     echo 'Aprovado';
                                     ?>
                                     <a href="<?php echo base_url() . "instituicao/reprovarSolicitacao/" . $k->id ?>"> Reprovar </a>
+                                    <a href="<?php echo base_url() . "feedback/inserir_feedback/" . $k->id ?>"> Feedback </a>
                                     <?php
                                 }
                                 elseif($k->status=='RJ')
@@ -42,13 +41,11 @@
                                     echo 'Pendente';
                                 }
                                 ?>
-                                     
                                 </span>
                             </div>
                             <?php
                         }
                         ?>
-
                     </div>
                 </div>
             </div>

@@ -26,18 +26,17 @@ class Feedback extends CI_Controller {
         $dados_feedback = array(
             "ranking" => $data_post['ranking'],
             "id_solicitacao" => $data_post['id_solicitacao'],
+            "observacao" => $data_post['observacao'],
+
         );
         $this->load->model('feedbacksolicitacaoModel','fsm');
         if($this->fsm->getFeedbackBySolicitacao($data_post['id_solicitacao'])<1) {
             $this->fsm->insereFeedback($dados_feedback);
+            redirect('instituicao');
         }
         else{
             echo 'Já existe feedback para essa consulta';
         }
     }
-
-
 }
-
-
 ?>

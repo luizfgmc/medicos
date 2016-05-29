@@ -189,7 +189,7 @@ class Medico extends CI_Controller {
             "especialidade_id" => $dataPost['especialidadeMedico'], 
             "crm" => $dataPost['numeroCRM'],
             "crm_uf" => $dataPost['crmUF'],
-            "telefone" => str_replace("-","",$dataPost['telefoneMedico']),
+            "telefone" => preg_replace("/\D+/","" ,$dataPost['telefoneMedico']),
             "updated_at" => date("Y-m-d H:i:s"),
         );
         $this->load->model("MedicoModel");

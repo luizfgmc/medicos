@@ -52,9 +52,7 @@
                             </div>	
                             <div class="container_item_form">
                                 <label>Telefone</label>
-
-                                <input type="text" name="telefoneMedico" value="<?= $infoMedico->telefone; ?>"  class="default_text_input required" size=12 maxlength=12  OnKeyPress="formatar('##-####-####', this)" />
-
+                                <input type="text" name="telefoneMedico" value="<?= mascara_string("##-####-####",$infoMedico->telefone); ?>"  class="default_text_input required" size=12 maxlength=12  OnKeyPress="formatar('##-####-####', this)" />
                             </div>					
                             <div class="container_item_form">
                                 <label>Especialidade</label>

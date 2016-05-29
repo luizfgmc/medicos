@@ -74,6 +74,11 @@
 
 		}
 
+		public function salvarComentarioConsulta($solicitacaoId, $obs){
+			$this->db->where(['id'=>$solicitacaoId]);
+			$this->db->update('solicitacoes',['observacao'=>$obs]);
+			exit('Consulta Fechada');
+		}
 
 		public function aprovarSolicitcao($id){
 

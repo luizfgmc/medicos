@@ -43,14 +43,18 @@
                                 </div>
                                 <input type="hidden" name ="id" value="<?= $id; ?>"/>
 								</br>
+<<<<<<< HEAD
 								<input type="checkbox" name="retorno" value="S">Consulta Retorno?
 								
+=======
+>>>>>>> LuizFlavio
                             </div>
                             <div class="container_submit">
                                 <input type="submit" class="input_submit" tabIndex ="14" value="Aprovar" />
                                 <a href="<?php echo base_url() ?>medico/solicitacoes/" class="input_cancel">Cancelar</a>
                             </div>
 
+<<<<<<< HEAD
 
                               <!-- Your share button code -->
                             <div class="fb-share-button" 
@@ -60,6 +64,18 @@
 
                         </div>
 
+=======
+                                <div class="compartilharFacebook">
+                                  <!-- Your share button code -->
+                                <div class="fb-share-button"
+                                  data-href="https://www.google.com.br"
+                                  data-layout="button_count">
+                                </div>
+                            </div>
+
+                        </div>
+
+>>>>>>> LuizFlavio
                     </div>
                 </div>
             </form>
