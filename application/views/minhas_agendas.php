@@ -37,7 +37,7 @@
 
          <?php
            foreach ($query as $k) {
-            echo "{ title:'".$k->nome."' , start:'".date('Y/m/d', strtotime($k->data_emissao))."' },";
+            echo "{ title:'".$k->nome."' , start:'".date('Y/m/d', strtotime($k->data_agendamento))."' },";
               
           }
         ?>

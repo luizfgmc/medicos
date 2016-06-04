@@ -26,7 +26,7 @@
                     $this->session->unset_userdata('erroLogin');
                     $this->session->unset_userdata('medico');
                 }
-                ?>
+                ?>  
                 <div class="containerEscolha">
                     <div class="containerMedico">
                         <a href="#escolhaMedicoInsituicao"><div class="trianguloEsquerda"></div></a>

@@ -64,10 +64,10 @@ class Acesso extends CI_Controller {
                     'id_medico' => $idMedico[0]->id,
                 );
                 $this->session->set_userdata('medico', $arrayMedico);
-                contarCaptcha();
+               $this->contarCaptcha();
                 redirect(base_url('medico/chares'));
             } else {
-                    contarCaptcha();
+                $this->contarCaptcha();
                     setErrorLogin();
                     redirect(base_url('home'));
             }
