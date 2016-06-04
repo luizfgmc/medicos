@@ -210,3 +210,42 @@ body
     position: absolute;
     width: 98%;
 }
+
+.home
+{
+    background: #FFFFFF; /* Old browsers */
+    height:590px;
+    width:100%;
+}
+
+.itemHome
+{
+    align-items:flex-start;
+    box-sizing: border-box;
+    flex-wrap:wrap;
+    height:150px;
+    justify-content:center;
+    padding:20px;
+    width:100%;
+}
+
+
+.dadosItemHome
+{
+    align-items: center;
+    color:#1a93af;
+    flex-wrap:wrap;
+    height: 100%;
+    justify-content:center;
+    width:60%;
+}
+
+.dadosItemHome p
+{
+    width:70%;
+}
+
+.numeroNotificacoes
+{
+    color:red;
+}
