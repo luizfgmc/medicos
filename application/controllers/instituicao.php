@@ -9,8 +9,7 @@ class Instituicao extends CI_Controller {
 
 		parent::__construct();
 		$this->load->helper('url');
-		
-		 $this->logininstituicao->valida_sessao_instituicao();
+        $this->logininstituicao->valida_sessao_instituicao();
          
 	}
 
@@ -24,44 +23,6 @@ class Instituicao extends CI_Controller {
         $this->load->view('layout/footer');
 
     }
-
-    public function solicitarConsultaSalvar(){
-
-        $idInstituicao = $this->session->userdata('instituicao');
-
-        $arraySolicitcao = array(
-             'instituicao_id'=>$idInstituicao['id_instituicao'],
-             'paciente_id'=>$this->input->post('paciente'),
-             'solicitante'=>$this->input->post('solicitante'),
-             'data_emissao'=> date('Y-m-d'),
-             'status'=>'PE',
-             'descricao'=> $this->input->post('descricao'),
-             'created_at'=>date("Y-m-d H:i:s"),
-             'updated_at'=>date("Y-m-d H:i:s"),
-             'agenda_id'=> $this->input->post('id_agenda'),
-             
-        );
-
-
-          $this->load->model('solicitacaoModel','sm');
-          $this->sm->solicitarConsultaSalvar($arraySolicitcao);
-
-          redirect('instituicao');
-
-    }
-
-    public function reprovarSolicitacao($idSolicitacao)
-    {
-        $this->load->model('solicitacaoModel', 'sm');
-        $this->sm->reprovarSolicitacaoInstituicao($idSolicitacao);
-        redirect('instituicao');
-    }
-
-
-    
-    
-
-    
 
 }
 
