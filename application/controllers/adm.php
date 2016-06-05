@@ -5,7 +5,8 @@
 		function __construct(){
 
 			parent::__construct();
-			$this->loginadm->valida_sessao_adm();
+            
+            $this->login->valida_sessao('adm');
 
 		}
 
