@@ -39,7 +39,7 @@ class Agenda extends CI_Controller {
     //----lista todas as agendas ------
     public function listaAgendas() {
 
-        $this->logininstituicao->valida_sessao_instituicao();
+        $this->login->valida_sessao('instituicao');
         $this->load->model('AgendaModel', 'am');
 
         $data['query'] = $this->am->listaAgendas();

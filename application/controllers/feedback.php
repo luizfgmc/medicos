@@ -5,7 +5,7 @@ class Feedback extends CI_Controller {
     function __construct() {
         parent::__construct();
         $this->load->helper(array('url'));
-        $this->logininstituicao->valida_sessao_instituicao();
+        $this->login->valida_sessao('instituicao');
     }
 
 

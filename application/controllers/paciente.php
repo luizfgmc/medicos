@@ -9,7 +9,7 @@ class Paciente extends CI_Controller {
 
         parent::__construct();
         $this->load->helper('url');
-        $this->logininstituicao->valida_sessao_instituicao();
+        $this->login->valida_sessao('instituicao');
     }
 
     public function index() {

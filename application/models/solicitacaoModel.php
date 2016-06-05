@@ -39,7 +39,7 @@
 		}
 		
 		public function verSolicitcoesInstituicao($id){
-			$this->logininstituicao->valida_sessao_instituicao();
+			$this->login->valida_sessao('instituicao');
 			$this->db->select('*, s.id, p.nome_paciente');
 			$this->db->from('solicitacoes as s'); 
 			$this->db->join('pacientes as p','s.paciente_id = p.id');
@@ -104,7 +104,7 @@
 
 		public function reprovarSolicitacaoInstituicao($id){
 
-			$this->logininstituicao->valida_sessao_instituicao();
+			$this->login->valida_sessao('instituicao');
 			$arrSolicitcao = array('status'=>'RJ');
 
 			$this->db->update('solicitacoes', $arrSolicitcao, array('id'=>$id));
