@@ -13,7 +13,7 @@ class Agenda extends CI_Controller {
 
     public function index() {
 
-        $this->loginmedico->valida_sessao_medico();
+        $this->login->valida_sessao('medico');
         $this->load->model('clinicaModel', 'cm');
 		$idMedico = $this->session->userdata('medico')['id_medico'];
         $data['clinica'] = $this->cm->listaClinicas($idMedico);
@@ -28,7 +28,7 @@ class Agenda extends CI_Controller {
     //----lista as agendas do medico-----
     public function listarAgendasMedico() {
 
-        $this->loginmedico->valida_sessao_medico();
+        $this->login->valida_sessao('medico');
         $this->load->model('AgendaModel', 'am');
         $data['query'] = $this->am->listaAgendasMedico();
         $this->load->view('layout/header');
@@ -52,7 +52,7 @@ class Agenda extends CI_Controller {
 
     public function insereAgenda() {
 
-        $this->loginmedico->valida_sessao_medico();
+        $this->login->valida_sessao('medico');
         $id = $this->session->userdata('medico');
 
 
@@ -75,7 +75,7 @@ class Agenda extends CI_Controller {
 
     public function editarAgenda($idAgenda) {
 
-        $this->loginmedico->valida_sessao_medico();
+        $this->login->valida_sessao('medico');
         $this->load->model('AgendaModel', 'am');
         $this->load->model('ClinicaModel', 'cm');
 
@@ -88,8 +88,8 @@ class Agenda extends CI_Controller {
 
     public function editarSalvarAgenda($idAgenda) {
 
-        $this->loginmedico->valida_sessao_medico();
-         $id = $this->session->userdata('medico');
+        $this->login->valida_sessao('medico');
+        $id = $this->session->userdata('medico');
 
         $arrayAgenda = array(
             "medico_id" => $id['id_medico'],
@@ -109,7 +109,7 @@ class Agenda extends CI_Controller {
 
     public function deletarAgenda($idAgenda) {
 
-        $this->loginmedico->valida_sessao_medico();
+        $this->login->valida_sessao('medico');
         $this->load->model('AgendaModel', 'pm');
         $this->pm->deletarAgenda($idAgenda);
         redirect('Agenda/listarAgendasMedico');

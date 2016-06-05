@@ -10,7 +10,7 @@ class Medico extends CI_Controller {
         $this->load->helper('url');
 
 
-        $this->loginmedico->valida_sessao_medico();
+        $this->login->valida_sessao('medico');
     }
 
     public function obterIdMedico($usuario, $senha) {

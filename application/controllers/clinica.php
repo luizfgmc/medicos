@@ -10,7 +10,7 @@ class Clinica extends CI_Controller {
         parent::__construct();
         $this->load->helper('url');
 
-        $this->loginmedico->valida_sessao_medico();
+        $this->login->valida_sessao('medico');
     }
 
     public function index() {
