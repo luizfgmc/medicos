@@ -15,13 +15,19 @@ class Instituicao extends CI_Controller {
 
     public function index(){
 
-        $id = $this->session->userdata('instituicao');    
-        $this->load->model('solicitacaoModel','sm');
-        $data['query'] = $this->sm->verSolicitcoesInstituicao($id['id_instituicao']);
+        $data = $this->getSolicitacoesInstituicao();
         $this->load->view('layout/header');
         $this->load->view('solicitacoes_instituicao',$data);
         $this->load->view('layout/footer');
 
+    }
+
+    public function getSolicitacoesInstituicao()
+    {
+        $id = $this->session->userdata('instituicao');
+        $this->load->model('solicitacaoModel', 'sm');
+        $data['query'] = $this->sm->verSolicitcoesInstituicao($id['id_instituicao']);
+        return $data;
     }
 
 }
