@@ -25,25 +25,9 @@ class Instituicao extends CI_Controller {
 
     }
 
-    public function solicitarConsulta($idAgenda){
-
-
-        $this->load->model('pacienteModel','pm');
-        $pacientes['paciente'] = $this->pm->listaPacientes();
-        
-        $data['query'] = array('idAgenda'=>$idAgenda,
-                      'pacientes'=>$pacientes
-        );    
-
-        $this->load->view('layout/header');
-        $this->load->view('solicitacao', $data);
-        $this->load->view('layout/footer');
-
-    }
-
     public function solicitarConsultaSalvar(){
 
-         $idInstituicao = $this->session->userdata('instituicao');
+        $idInstituicao = $this->session->userdata('instituicao');
 
         $arraySolicitcao = array(
              'instituicao_id'=>$idInstituicao['id_instituicao'],

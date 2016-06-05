@@ -27,7 +27,7 @@
                                     echo'<span class="horarioSugerido">' . date('d/m/Y', strtotime($k->data_emissao)) . "<br/>" . '</span>';
                                     echo '<span class="saldo">' . ($k->telefone . "<br/>");
                                     ?>			
-                                    <a href="<?php echo base_url() . "instituicao/solicitarConsulta/" . $k->id ?>"> Solicitar Consulta </a>
+                                    <a href="<?php echo base_url() . "solicitacao/solicitarConsulta/" . $k->id ?>"> Solicitar Consulta </a>
                                     </span>
                                 </div>
                                 <?php

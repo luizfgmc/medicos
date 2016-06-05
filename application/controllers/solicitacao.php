@@ -9,6 +9,20 @@ class Solicitacao extends CI_Controller{
         parent::__construct();
         $this->load->helper('url');
     }
+
+	public function solicitarConsulta($idAgenda){
+
+
+		$this->load->model('pacienteModel','pm');
+		$pacientes['paciente'] = $this->pm->listaPacientes();
+
+		$data['query'] = array('idAgenda'=>$idAgenda,'pacientes'=>$pacientes);
+
+		$this->load->view('layout/header');
+		$this->load->view('solicitacao', $data);
+		$this->load->view('layout/footer');
+
+	}	
 	
 	public function remarcar($idSolicitacao, $novoData, $novoHorario) {
 		
