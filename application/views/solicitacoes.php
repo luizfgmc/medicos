@@ -1,84 +1,70 @@
-<link rel="stylesheet" href="<?php echo base_url() ?>assets/css/forms.css" />
-<link rel="stylesheet" href="<?php echo base_url() ?>assets/css/solicitacoes/solicitacoes.css" />
-<section class="mainContent">
-    <section class="containerSolicitacoes">
-        <div class="containerCenter fullSiteSize">
-            <div class="halfSize">
-                <div class="containerListaSolicitacoes">
-                    <h2>Solicitações pedentes </h2>
-                    <div class="infoMedicoLogado">
-                       <?php
-                       if ($this->session->userdata('mensagemSolicitacao')) {
-                           echo '<div class="erroSolicitacao">Horário já foi reservado</div>';
-                           $this->session->unset_userdata('mensagemSolicitacao');
-                       }
-                       ?>
-                    </div>
-                    <div class="cabecalhoListaSolicitacoes">
-                        <span class="nomePaciente">Paciente</span>
-                        <span class="horarioSugerido">Horário Sugerido</span>
-                        <span class="saldo">Ações</span>
-                    </div>
-                    <div class="containerItensSolicitacao">
-                        <?php
-                        foreach ($query as $k) {
-                            ?>		
-                            <div class="itemSolicitacao">
+        <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/forms.css" />
+        <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/solicitacoes/solicitacoes.css" />
+        <section class="mainContent">
+            <section class="containerSolicitacoes">
+                <div class="containerCenter fullSiteSize">
+                    <div class="halfSize">
+                        <div class="containerListaSolicitacoes">
+                            <h2>Solicitações pedentes </h2>
+                            <div class="infoMedicoLogado">
+                            </div>
+                            <div class="cabecalhoListaSolicitacoes">
+                                <span class="nomePaciente">Paciente</span>
+                                <span class="horarioSugerido">Horário Sugerido</span>
+                                <span class="saldo">Status</span>
+                            </div>
+                            <div class="containerItensSolicitacao">
                                 <?php
-                                echo '<span class="nomePaciente">' . ($k->nome_paciente) . '</span>';
-                                echo '<span class="horarioSugerido">' . date('d/m/Y', strtotime($k->data_agendamento));
-                                echo ' '.($k->hora_agendamento) . '</span>';
-                                ?>
-                                <span class="saldo">
-                                    
+                                foreach ($query as $k) {
+                                    ?>
+                                    <div class="itemSolicitacao">
+                                        <?php
+                                        //echo($k->solicitante . "<br/>");
+                                        echo '<span class="nomePaciente">' . ($k->nome_paciente) . '</span>';
+                                        echo '<span class="horarioSugerido">' . date('d/m/Y', strtotime($k->data_emissao)) . '</br>';
+                                        echo date('d/m/Y', strtotime($k->data_agendamento)) . '</br>';
+                                        $x = ($k->flg_retorno == '1') ? '[Retorno]': '';
+                                        echo($k->hora_agendamento) . '</br>' . $x . '</span>';
 
-                               <?php if($k->status=='AP')
-                                {
-                                    echo 'Aprovado';
-                                }
-                                elseif($k->status=='RJ')
-                                {
+                                        ?>
+                                        <span class="saldo">
 
-                                    echo 'Rejeitado';
+                                         <?php if($k->status=='AP')
+                                         {
+                                             echo 'Aprovado';
+                                         }
+                                         elseif($k->status=='RJ')
+                                         {
+                                             echo 'Rejeitado';
+                                         }
+                                         if(($k->status!='AP')&&($k->status!='RJ'))
+                                         {
+                                            ?>
+                                            <a href="<?php echo base_url() . "medico/aprovarSolicitacao/" . $k->id ?>"> aprovar </a>
 
-                                }
-                                    if(($k->status!='AP')&&($k->status!='RJ'))
-                                {
-                                ?>
-
-                                  
-                                     <a href="<?php echo base_url() . "medico/aprovarSolicitacao/" . $k->id ?>"> aprovar </a>
-                                     
-                                     <a href="<?php echo base_url() . "medico/reprovarSolicitacao/" . $k->id ?>"> reprovar </a>
-                                     <?php
+                                            <a href="<?php echo base_url() . "medico/reprovarSolicitacao/" . $k->id ?>"> reprovar </a>
+                                            <?php
                                         }
 
-                                    if (empty($k->observacao) and $k->status == 'AP' or $k->status == 'RJ') {
-                                         ?>  
-                                        <a href="#" id="enviarObservacao" valor="<?=$k->id?>" value="<?=$k->id?>"> comentário da consulta </a>
-
-                                        <input type="hidden"  id="idSolicitacao" value="<?=$k->id?>">
-
-                                        <?php
-                                        } else{
-                                            echo "<br/> Consulta Fechada";
-                                        }  
-
-
-                                     ?>
+                                        if (empty($k->observacao) and $k->status == 'PE' or $k->status == 'RJ') {
+                                           ?>  
+                                           <button href="#" id="enviarObservacao" valor="<?=$k->id?>" value="<?=$k->id?>"> comentário da consulta </button>
+                                           <input type="hidden"  id="idSolicitacao" value="<?=$k->id?>">
+                                           <?php
+                                       } else{
+                                        echo "<br/> Consulta Fechada";
+                                    }  
+                                   ?>
                                 </span>
                             </div>
                             <?php
-                            //}
                         }
                         ?>
-
                     </div>
                 </div>
             </div>
         </div>
     </section>
-<<<<<<< HEAD
 
 </section>
 
@@ -86,7 +72,3 @@
 
 </section>
 
-=======
-</section>
-
->>>>>>> master

@@ -112,6 +112,22 @@ class MedicoModel extends CI_Model {
         return $query->row()->id;
 		
 	}
+	
+	public function autenticar($email){
+       
+       $query = $this->db->get_where('Usuarios', array('email'=>$email));
+  
+       return $query->result();
+
+    }
+	
+	public function autenticarCpf($cpf){
+                
+       $query = $this->db->get_where('Medicos', array('cpf'=>$cpf));
+  
+       return $query->result();
+
+    }
 
 
     public function getDisponibilidadeMedico($dataAgendamento,$horaAgendamento,$apelido='med',$apelidoSolicitacao='sol',$apelidoAgenda='agenda')
@@ -132,7 +148,7 @@ class MedicoModel extends CI_Model {
 
     public function getRankMedico($id_medico,$apelidoMedico="med",$apelidoSolicitacao="sol",$apelidoFeedback="feed",$apelidoAgenda="age")
     {
-        $this->db->select("AVG({$apelidoFeedback}.ranking) as ranking")
+        $this->db->select("SUM({$apelidoFeedback}.ranking) as ranking")
         ->from("medicos {$apelidoMedico}")
         ->join("agendas {$apelidoAgenda}","{$apelidoAgenda}.medico_id = {$apelidoMedico}.id ")
         ->join("solicitacoes {$apelidoSolicitacao}", "{$apelidoSolicitacao}.agenda_id = {$apelidoAgenda}.id")

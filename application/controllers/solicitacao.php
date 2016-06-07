@@ -168,7 +168,8 @@ class Solicitacao extends CI_Controller{
 		
 	}
 
-		//salva o comentario do medico sob a consulta
+
+	//salva o comentario do medico sobre a consulta
 	public function salvarComentarioConsulta(){
 			$this->load->model("SolicitacaoModel","sm");
 			$obs = $this->input->post('observacao');

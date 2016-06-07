@@ -1,7 +1,8 @@
-<<<<<<< HEAD
+
 <script>
 
-  window.fbAsyncInit = function() {
+    
+    window.fbAsyncInit = function() {
     FB.init({
       appId      : '1719839291584651',
       xfbml      : true,
@@ -18,9 +19,7 @@
    }(document, 'script', 'facebook-jssdk'));
 
 </script>
-  
-=======
->>>>>>> master
+
 <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/forms.css" />
 <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/medico/medico.css" />
 <?php echo validation_errors(); ?>
@@ -47,27 +46,22 @@
                                     <input type="text"  class="default_text_input required" id="hora_agendamento" name="hora_agendamento" />
                                 </div>
                                 <input type="hidden" name ="id" value="<?= $id; ?>"/>
-
+								</br>
                             </div>
                             <div class="container_submit">
                                 <input type="submit" class="input_submit" tabIndex ="14" value="Aprovar" />
                                 <a href="<?php echo base_url() ?>medico/solicitacoes/" class="input_cancel">Cancelar</a>
                             </div>
 
-<<<<<<< HEAD
                             <br/>
                           
-                            
-
-                            <!-- Your share button code -->
-                            <div class="fb-share-button" 
-                              data-href="https://www.google.com.br" 
-                              data-layout="button_count">
+                                <div class="compartilharFacebook">
+                                  <!-- Your share button code -->
+                                <div class="fb-share-button"
+                                  data-href="https://www.google.com.br"
+                                  data-layout="button_count">
+                                </div>
                             </div>
-=======
-
-
->>>>>>> master
 
                         </div>
 

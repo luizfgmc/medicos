@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html ng-app="amigoMedico">
+<!--
+  * Please see the included README.md file for license terms and conditions.
+  -->
+<head>
+ 
+    <title>Amigo Médico </title>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    
+     <link rel="stylesheet" href="assets/css/home.css" />
+    
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap:https://ssl.gstatic.com http://localhost:8000 http://amigomedico.herokuapp.com/ http://l.yimg.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+    
+    <!-- see http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/quick-tip-dont-forget-the-viewport-meta-tag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <style>
+        /* following two viewport lines are equivalent to the meta viewport statement above, needed for Windows */
+        /* see http://www.quirksmode.org/blog/archives/2014/05/html5_dev_conf.html and http://dev.w3.org/csswg/css-device-adapt/ */
+        @-ms-viewport { width: 100vw ; zoom: 100% ; }  @viewport { width: 100vw ; zoom: 100% ; }
+        @-ms-viewport { user-zoom: fixed ; }           @viewport { user-zoom: fixed ; }
+    </style>
+
+  
+</head>
+
+<body>
+    
+    <section>
+    <section class="login">
+
+        <div class="formLogin" id="formLogin" ng-controller="AmController">
+            
+            <h1>Amigo Médico</h1>     
+            <input type="text" ng-model="email" placeholder="LOGIN">
+            <input type="password" ng-model="senha" placeholder="SENHA"><br>
+           
+            <input type="submit" ng-click="logar()" value="Entrar">
+        
+        </div>
+
+    
+    <script src="cordova.js"></script>          <!-- phantom library, needed for Cordova api calls, added during build -->
+    <script src="js/app.js"></script>           <!-- recommended location of your JavaScript code relative to other JS files -->
+    <script type="text/javascript" src="js/angular.min.js"></script>
+    <script type="text/javascript" src="js/angular-resource.min.js"></script>
+    <script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
+    <script src="js/am_app.js"></script>
+    <script src="xdk/init-dev.js"></script>     <!-- normalizes device and document ready events, see README for details -->
+        
+</body>
+</html>

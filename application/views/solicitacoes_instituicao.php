@@ -17,12 +17,12 @@
                     <div class="containerItensSolicitacao">
                         <?php
                         foreach ($query as $k) {
-                            ?>		
+                            ?>      
                             <div class="itemSolicitacao">
                                 <?php
                                 echo '<span class="nomePaciente">' . ($k->nome_paciente) . '</span>';
-                                echo '<span class="horarioSugerido">' . date('d/m/Y', strtotime($k->data_agendamento)) . '</br>';
-                                echo($k->hora_agendamento). '</span>';
+                                echo '<span class="horarioSugerido">' . (empty($k->data_agendamento) ? "Pendente" : date('d/m/Y', strtotime($k->data_agendamento))) . '</br>';
+                                echo ($k->hora_agendamento). '</span>';
                                 ?>
                                 <span class="saldo">
                                     
@@ -31,15 +31,17 @@
                                     echo 'Aprovado';
                                     ?>
                                     <a href="<?php echo base_url() . "instituicao/reprovarSolicitacao/" . $k->id ?>"> Reprovar </a>
+                                    <a href="<?php echo base_url() . "feedback/inserir_feedback/" . $k->id ?>"> Feedback </a>
                                     <?php
                                 }
                                 elseif($k->status=='RJ')
                                 {
-
                                     echo 'Rejeitado';
-
                                 }
-
+                                elseif($k->status=='PE')
+                                {
+                                    echo 'Pendente';
+                                }
                                 ?>
                                      
                                 </span>
@@ -54,4 +56,3 @@
         </div>
     </section>
 </section>
-

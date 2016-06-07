@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html ng-app="amigoMedico">
+    <head>
+    
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+       
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+         <link rel="stylesheet" href="assets/css/main_style.css" />
+        <title>Hello World</title>
+    </head>
+
+    <body>
+        
+         <div ng-controller="ConsultaController" ng-init="getQtdConsultas()">
+            <header class="mainHeader">
+                <section class="topLineHeader"></section>
+                <section class="infoHeader flex">
+                    <h2>PROFISSIONAL DO BEM (logo)</h2>
+                    <section class="userHeader flex">
+                        <div class="photoDoctor">
+                            <div class="photoDoctorContainer">
+                                <img src="assets/img/img-interna-esps-como-sera-medico-futuro.jpg" />
+                            </div>
+                        </div>
+
+                        <div class="nameUserHeader flex">
+                            <div class="contentNameUserHeader">
+                                <p>{{email}}</p>
+                            </div>
+                        </div>
+
+                        <div class="rankingHeader flex">
+                            <div class="contentRankingHeader flex">
+
+                            </div>
+                        </div>
+
+                    </section>
+                </section>
+            </header>
+        
+            <section>
+                <section class="home">
+                    <a href="consultas.html"><div class="itemHome flex">
+                        <div class="imagemSolicitacao flex">
+                            <img src="assets/img/icon01.svg" />
+                        </div>
+                        <div class="dadosItemHome flex">
+                            <p>
+                                <br />
+                                <strong class="numeroNotificacoes"><font color="red">{{QtdConsultas}} consultas</font></strong>
+                            </p>
+
+                        </div>
+                        </div></a>
+                    <a href="agendas.html"><div class="itemHome flex">
+                        <div class="imagemSolicitacao flex">
+                            <img src="assets/img/icon01.svg" />
+                        </div>
+                        <div class="dadosItemHome flex">
+                            <p>Agendaa
+                                <br />
+                                
+                            </p>
+                        </div>
+                    </div></a>
+                </section>
+        </section>
+        <footer></footer>
+    </div>
+        
+
+    <script src="cordova.js"></script>          <!-- phantom library, needed for Cordova api calls, added during build -->
+    <script src="js/app.js"></script>           <!-- recommended location of your JavaScript code relative to other JS files -->
+    <script type="text/javascript" src="js/angular.min.js"></script>
+    <script type="text/javascript" src="js/angular-resource.min.js"></script>
+    <script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
+    <script src="js/am_app.js"></script>
+    <script src="xdk/init-dev.js"></script>     <!-- normalizes device and document ready events, see README for details -->
+    </body>
+</html>

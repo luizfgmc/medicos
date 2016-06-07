@@ -64,10 +64,10 @@ class Medico extends CI_Controller {
 		
 		// Obter array de dias falsos
 		$diaF = array(
-			($dia -1) % date("t"), 
-			($dia -2) % date("t"), 
-			($dia -3) % date("t"), 
-			($dia -4) % date("t"));
+			($dia -1) ,
+			($dia -2),
+			($dia -3),
+			($dia -4));
 		
 		// Alimentar array com os dias do mês
 		$arr = array();
@@ -130,6 +130,7 @@ class Medico extends CI_Controller {
             "hora_agendamento" => $this->input->post('hora_agendamento'),
             "status" => "AP",
             "updated_at" => date('Y-m-d H:i:s'),
+			"retorno" => $this->input->post('retorno'),
         );
         if($this->MedicoModel->getDisponibilidadeMedico($dataFormatada, date('H:i:s', strtotime($this->input->post('hora_agendamento'))))<1)
         {
@@ -234,6 +235,7 @@ class Medico extends CI_Controller {
             'created_at'=>date("Y-m-d H:i:s"),
             'updated_at'=>date("Y-m-d H:i:s"),
             'agenda_id'=> $this->input->post('id_agenda'),
+            'flg_retorno'=> 1,
         );
         
         $this->load->model("MedicoModel");
