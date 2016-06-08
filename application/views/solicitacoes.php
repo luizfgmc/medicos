@@ -42,7 +42,7 @@
                                             ?>
                                             <a href="<?php echo base_url() . "medico/aprovarSolicitacao/" . $k->id ?>"> aprovar </a>
 
-                                            <a href="<?php echo base_url() . "medico/reprovarSolicitacao/" . $k->id ?>"> reprovar </a>
+                                            <a href="<?php echo base_url() . "solicitacao/reprovarSolicitacao/" . $k->id ?>"> reprovar </a>
                                             <?php
                                         }
                                         if (empty($k->observacao) and $k->status == 'AP' or $k->status == 'RJ') {

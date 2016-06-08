@@ -218,11 +218,18 @@ class Solicitacao extends CI_Controller{
 
     public function reprovarSolicitacao($idSolicitacao)
     {
-        $this->load->model('solicitacaoModel', 'sm');
-        $this->sm->reprovarSolicitacaoInstituicao($idSolicitacao);
-        redirect('instituicao');
+		$dadosSessao = $this->login->valida_sessao('');
+
+		$this->load->model('solicitacaoModel', 'sm');
+        $this->sm->reprovarSolicitacao($idSolicitacao);
+
+		if($dadosSessao['tipo'] === 'I' || $dadosSessao['tipo'] === 'A') {
+			redirect('instituicao');
+		}elseif ($dadosSessao['tipo'] === 'M'){
+			redirect('medico/solicitacoes');	
+		}
     }
-	 
+
 }
 
 ?>

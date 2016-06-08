@@ -68,12 +68,12 @@ class Acesso extends CI_Controller {
                 redirect(base_url('medico/chares'));
             } else {
                 $this->contarCaptcha();
-                    setErrorLogin();
+                    $this->setErrorLogin();
                     redirect(base_url('home'));
             }
         } else {
             $this->contarCaptcha();
-            setErrorLogin();
+            $this->setErrorLogin();
             redirect(base_url('home'));
         }
     }

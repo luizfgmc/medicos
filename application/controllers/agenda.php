@@ -12,7 +12,7 @@ class Agenda extends CI_Controller {
     }
 
     public function index() {
-
+        
         $this->login->valida_sessao('medico');
         $this->load->model('clinicaModel', 'cm');
 		$idMedico = $this->session->userdata('medico')['id_medico'];

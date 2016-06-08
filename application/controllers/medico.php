@@ -110,13 +110,6 @@ class Medico extends CI_Controller {
         $this->load->view('layout/footer');
     }
 
-    public function reprovarSolicitacao($idSolicitacao) {
-
-        $this->load->model('solicitacaoModel', 'sm');
-        $data = $this->sm->reprovarSolicitacao($idSolicitacao);
-        redirect('medico/solicitacoes');
-    }
-
     public function aprovarSolicitacaoSalvar() {
 
 

@@ -21,9 +21,22 @@ class login
     // Metodo para verificar se o usuário esta conectado
     public function valida_sessao($usuario) {
 
-        if (empty($this->CI->session->userdata($usuario))) {
+        if(empty($usuario)){
+            if (!empty($this->CI->session->userdata('medico'))){
+                $dadosSessao = $this->CI->session->userdata('medico');
+            }elseif (!empty($this->CI->session->userdata('instituicao'))){
+                $dadosSessao = $this->CI->session->userdata('instituicao');
+            }
+        }else{
+            $dadosSessao = $this->CI->session->userdata($usuario);
+        }
+
+        if (empty($dadosSessao)) {
             redirect('home');
             exit();
+        }else{
+            return $dadosSessao;
         }
     }
+
 }
