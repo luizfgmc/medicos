@@ -8,8 +8,23 @@ class Medico extends CI_Controller {
     function __construct() {
         parent::__construct();
 
-        $this->load->helper('url');
+        $this->load->helper(array('url','view'));
         $this->login->valida_sessao('medico');
+    }
+
+    public function index() {
+
+        $this->load->model("especialidadesModel");
+        //Pega informaçoes das especialidades
+        $especialidades = $this->especialidadesModel->getInfoEspecialidade();
+
+        $this->load->model("estadosModel");
+        //Pega informaçoes dos estados
+        $estados = $this->estadosModel->getInfoEstados();
+
+        $dadosView = array('especialidades' => $especialidades, 'estados' => $estados);
+
+        load_view_home('insere_medicos',$dadosView);
     }
 
     public function obterIdMedico($usuario, $senha) {
@@ -84,29 +99,23 @@ class Medico extends CI_Controller {
 		$data['hora'] = date("h:m");
 		$this->session->set_flashdata('hora', $data['hora']);
 		
-		$this->load->view('layout/header_home');
-        $this->load->view('chares', $data);
-        $this->load->view('layout/footer_home');
-	
-	}
+		load_view_home('chares',$data);
+ 	}
 	
     public function solicitacoes() {
 
         $id = $this->session->userdata('medico');
         $this->load->model('solicitacaoModel', 'sm');
         $data['query'] = $this->sm->verSolicitcoes($id['id_medico']);
-        $this->load->view('layout/header');
-        $this->load->view('solicitacoes', $data);
-        $this->load->view('layout/footer');
+
+        load_view('solicitacoes',$data);
     }
 
     public function aprovarSolicitacao($idSolicitacao) {
-
         $this->load->model('solicitacaoModel', 'sm');
         $data['query'] = $this->sm->aprovarSolicitcao($idSolicitacao);
-        $this->load->view('layout/header');
-        $this->load->view('aprovar_solicitacao', $data);
-        $this->load->view('layout/footer');
+
+        load_view('aprovar_solicitacao',$data);
     }
 
     public function aprovarSolicitacaoSalvar() {
@@ -136,23 +145,6 @@ class Medico extends CI_Controller {
 
     }
 
-    public function index() {
-
-        $this->load->model("especialidadesModel");
-        //Pega informaçoes das especialidades
-        $especialidades = $this->especialidadesModel->getInfoEspecialidade();
-
-        $this->load->model("estadosModel");
-        //Pega informaçoes dos estados
-        $estados = $this->estadosModel->getInfoEstados();
-
-        $dadosView = array('especialidades' => $especialidades, 'estados' => $estados);
-
-        $this->load->view('layout/header_home');
-        $this->load->view('insere_medicos', $dadosView);
-        $this->load->view('layout/footer_home');
-    }
-
     public function visualizaEditaMedicoMedicos() {
 
         $id = $this->session->userdata('medico');
@@ -166,9 +158,8 @@ class Medico extends CI_Controller {
         $infoMedico = $this->MedicoModel->getTodasInfoMedicos($id['id_medico']);
         $rankingMedico=$this->MedicoModel->getRankMedico($id['id_medico']);
         $dadosView = array('especialidades' => $especialidades, 'estados' => $estados, 'infoMedico' => $infoMedico,'rankingMedico'=>$rankingMedico);
-        $this->load->view('layout/header');
-        $this->load->view('editar_medicos', $dadosView);
-        $this->load->view('layout/footer');
+
+        load_view('editar_medicos', $dadosView);
     }
 
     public function salvaEditaMedica() {
@@ -203,9 +194,7 @@ class Medico extends CI_Controller {
             'pacientes'=>$pacientes
         );
 
-        $this->load->view('layout/header');
-        $this->load->view('solicitacao_medico', $data);
-        $this->load->view('layout/footer');
+        load_view('solicitacao_medico',$data);
 
     }
 
