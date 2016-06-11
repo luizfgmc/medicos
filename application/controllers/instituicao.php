@@ -11,7 +11,7 @@ class Instituicao extends CI_Controller {
     function __construct() {
 
 		parent::__construct();
-		$this->load->helper('url');
+		$this->load->helper(array('url','view'));
         $this->dadosSessao = $this->login->valida_sessao('instituicao');
 
 	}
@@ -29,10 +29,8 @@ class Instituicao extends CI_Controller {
 
         $id = $this->getIdInstituicao();
         $data = $this->getSolicitacoesInstituicao($id);
-        $this->load->view('layout/header');
-        $this->load->view('solicitacoes_instituicao',$data);
-        $this->load->view('layout/footer');
-
+        load_view('solicitacoes_instituicao',$data);
+        
     }
 
     //Consulta as solicitações efetuadas pelas instituições
