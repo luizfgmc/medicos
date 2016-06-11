@@ -37,11 +37,12 @@
 			$this->db->update('solicitacoes', $dados);
 			
 		}
-		
-		public function verSolicitcoesInstituicao($id){
-			$this->login->valida_sessao('instituicao');
+
+		//Consulta todas as solicitações da instituição informada
+		public function getSolicitacoesInstituicao($id){
+			
 			$this->db->select('*, s.id, p.nome_paciente');
-			$this->db->from('solicitacoes as s'); 
+			$this->db->from('solicitacoes as s');
 			$this->db->join('pacientes as p','s.paciente_id = p.id');
 			$this->db->where('s.instituicao_id', $id);
 			$this->db->where('s.flg_retorno', '0');
