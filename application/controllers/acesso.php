@@ -5,8 +5,6 @@ class Acesso extends CI_Controller {
     function __construct() {
 
         parent:: __construct();
-        $this->load->helper('captcha');
-
 
     }
     
@@ -27,21 +25,6 @@ class Acesso extends CI_Controller {
 
     }
 
-
-    function contarCaptcha()
-    {
-        $contador=0;
-        if(!empty($this->session->userdata('cont_captcha')))
-        {
-
-            $contador=$this->session->userdata('cont_captcha');
-            $contador++;
-            $this->session->set_userdata('cont_captcha',$contador);
-        }else{
-            $this->session->set_userdata('cont_captcha','1');
-        }
-
-    }
     function setErrorLogin()
     {
         $this->session->set_userdata('erroLogin',"<div class='retornoLoginInvalido'>Login Invalido, tente novamente.</div>");
@@ -64,15 +47,12 @@ class Acesso extends CI_Controller {
                     'id_medico' => $idMedico[0]->id,
                 );
                 $this->session->set_userdata('medico', $arrayMedico);
-               $this->contarCaptcha();
                 redirect(base_url('medico/chares'));
             } else {
-                $this->contarCaptcha();
-                    $this->setErrorLogin();
-                    redirect(base_url('home'));
+                $this->setErrorLogin();
+                redirect(base_url('home'));
             }
         } else {
-            $this->contarCaptcha();
             $this->setErrorLogin();
             redirect(base_url('home'));
         }
@@ -170,39 +150,6 @@ class Acesso extends CI_Controller {
 
         $this->session->set_userdata('erroLogin',"<div class='retornoLoginInvalido'>Login Invalido, tente novamente.</div>");
         redirect('home');
-    }
-
-
-    public function criarCaptcha(){
-
-        $vals = array(
-
-            'word'=>'teste',
-            'img_path' => './captcha/',
-            'img_url' => base_url()."captcha/",
-            'font_path' => './path/to/fonts/texb.ttf',
-            'img_width' => '300',
-            'img_height' => 80,
-            'expiration' => 7200
-
-        );
-
-        $cap = create_captcha($vals);
-        $this->session->set_userdata('captcha', $cap['word']);
-
-        $this->load->view('captcha', $cap);
-    }
-
-    public function validarCaptcha(){
-
-        if($this->input->post('captcha') == $this->session->userdata('captcha')){
-            //redirect(base_url('home'));
-            redirect(base_url('home'));
-        }else{
-
-            $this->criarCaptcha();
-
-        }
     }
 
 }
