@@ -62,7 +62,6 @@
 
 		public function verSolicitcoes($medicoId){
 
-			$this->login->valida_sessao('medico');
 			$this->db->select('*, s.id, p.nome_paciente');
 			$this->db->from('solicitacoes as s'); 
 			$this->db->join('agendas as a','s.agenda_id = a.id');
@@ -83,7 +82,6 @@
 
 		public function aprovarSolicitcao($id){
 
-			$this->login->valida_sessao('medico');
 			$query = $this->db->get_where('solicitacoes', array('id'=>$id));
 			return $query->result();
 
@@ -175,10 +173,6 @@
 		return $this->db->get();
 		
 	}
-
-
-	}
-
-
-
+    
+}
 ?>

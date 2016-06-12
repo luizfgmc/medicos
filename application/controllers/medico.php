@@ -5,11 +5,13 @@ ini_set('display_errors', 1);
 
 class Medico extends CI_Controller {
 
+    private $dadosSessao;
+
     function __construct() {
         parent::__construct();
 
         $this->load->helper(array('url','view'));
-        $this->login->valida_sessao('medico');
+        $this->dadosSessao = $this->login->valida_sessao('medico');
     }
 
     public function index() {
@@ -104,11 +106,12 @@ class Medico extends CI_Controller {
 	
     public function solicitacoes() {
 
-        $id = $this->session->userdata('medico');
+        $id = $this->dadosSessao['id_medico'];
         $this->load->model('solicitacaoModel', 'sm');
-        $data['query'] = $this->sm->verSolicitcoes($id['id_medico']);
+        $data['query'] = $this->sm->verSolicitcoes($id);
 
         load_view('solicitacoes',$data);
+
     }
 
     public function aprovarSolicitacao($idSolicitacao) {
@@ -120,7 +123,6 @@ class Medico extends CI_Controller {
 
     public function aprovarSolicitacaoSalvar() {
 
-
         $idSolicitacao = $this->input->post('id');
         $dataNaoFormatada = explode('/',$this->input->post('data_agendamento'));
         $dataFormatada=$dataNaoFormatada['2'].'/'.$dataNaoFormatada['1'].'/'.$dataNaoFormatada['0'];
@@ -131,7 +133,7 @@ class Medico extends CI_Controller {
             "hora_agendamento" => $this->input->post('hora_agendamento'),
             "status" => "AP",
             "updated_at" => date('Y-m-d H:i:s'),
-			"retorno" => $this->input->post('retorno'),
+			"flg_retorno" => $this->input->post('retorno'),
         );
         if($this->MedicoModel->getDisponibilidadeMedico($dataFormatada, date('H:i:s', strtotime($this->input->post('hora_agendamento'))))<1)
         {
@@ -147,7 +149,7 @@ class Medico extends CI_Controller {
 
     public function visualizaEditaMedicoMedicos() {
 
-        $id = $this->session->userdata('medico');
+        $idMedico = $this->dadosSessao['id_medico'];
         $this->load->model("especialidadesModel");
         //Pega informaçoes das especialidades
         $especialidades = $this->especialidadesModel->getInfoEspecialidade();
@@ -155,8 +157,8 @@ class Medico extends CI_Controller {
         //Pega informaçoes dos estados
         $estados = $this->estadosModel->getInfoEstados();
         $this->load->model("MedicoModel");
-        $infoMedico = $this->MedicoModel->getTodasInfoMedicos($id['id_medico']);
-        $rankingMedico=$this->MedicoModel->getRankMedico($id['id_medico']);
+        $infoMedico = $this->MedicoModel->getTodasInfoMedicos($idMedico);
+        $rankingMedico=$this->MedicoModel->getRankMedico($idMedico);
         $dadosView = array('especialidades' => $especialidades, 'estados' => $estados, 'infoMedico' => $infoMedico,'rankingMedico'=>$rankingMedico);
 
         load_view('editar_medicos', $dadosView);
@@ -164,7 +166,7 @@ class Medico extends CI_Controller {
 
     public function salvaEditaMedica() {
 
-        $id = $this->session->userdata('medico');
+        $idMedico = $this->dadosSessao['id_medico'];
 
         $dataPost = $_POST;
         $arrayEditarMedico = array(
@@ -176,7 +178,7 @@ class Medico extends CI_Controller {
             "updated_at" => date("Y-m-d H:i:s"),
         );
         $this->load->model("MedicoModel");
-        $this->MedicoModel->editarMedico($arrayEditarMedico, $id['id_medico']);
+        $this->MedicoModel->editarMedico($arrayEditarMedico, $idMedico);
         redirect('medico/solicitacoes');
     }
 
@@ -186,9 +188,9 @@ class Medico extends CI_Controller {
         $this->load->model('pacienteModel','pm');
         $this->load->model('agendaModel','am');
         $pacientes['paciente'] = $this->pm->listaPacientes();
-        $medico = $this->session->userdata('medico');
+        $idMedico = $this->dadosSessao['id_medico'];
         $idInstituicao = $this->session->userdata('instituicao');
-        $idAgenda= $this->am->getAgendaMedico($medico['id_medico']);
+        $idAgenda= $this->am->getAgendaMedico($idMedico);
         $data['query'] = array('idAgenda'=>$idAgenda,
             'idInstituicao'=>$idInstituicao['id_instituicao'],
             'pacientes'=>$pacientes
@@ -201,11 +203,11 @@ class Medico extends CI_Controller {
     public function solicitarConsultaSalvar()
     {
 
-        $medico = $this->session->userdata('medico');
+        $idMedico = $this->dadosSessao['id_medico'];
         $dataNaoFormatada = explode('/',$this->input->post('data_agendamento'));
         $dataFormatada=$dataNaoFormatada['2'].'/'.$dataNaoFormatada['1'].'/'.$dataNaoFormatada['0'];
         $arraySolicitcao = array(
-            'instituicao_id'=>$medico['id_medico'],
+            'instituicao_id'=>$idMedico,
             'paciente_id'=>$this->input->post('paciente'),
             'solicitante'=>$this->input->post('solicitante'),
             'data_emissao'=> date('Y-m-d'),
