@@ -34,17 +34,18 @@ class Acesso extends CI_Controller {
         $email = $this->input->post('email');
         $senha = sha1($this->input->post('senha'));
         $this->load->model('UsuarioModel');
-        $this->load->model('medicoModel', 'mm');
+        $this->load->model('MedicoModel', 'mm');
         $data = $this->UsuarioModel->autenticar($email);
         if ($data != null) {
             if ($data[0]->tipo == 'M' && $data[0]->password_hash == $senha) {
-                $idMedico = $this->mm->buscarIdMedico($data[0]->id);
+                $idMedico = $this->mm->obterIdMedico($email);
+                $dadosMedico = $this->mm->getTodasInfoMedicos($idMedico);
                 $arrayMedico = array (
-                    'nome' => $idMedico[0]->nome_medico,
+                    'nome' => $dadosMedico->nome_medico,
                     'tipo' => $data[0]->tipo,
                     'email' => $data[0]->email,
                     'id_usuario' => $data[0]->id,
-                    'id_medico' => $idMedico[0]->id,
+                    'id_medico' => $dadosMedico->id,
                 );
                 $this->session->set_userdata('medico', $arrayMedico);
                 redirect(base_url('medico/chares'));

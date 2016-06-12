@@ -8,34 +8,7 @@ class MedicoModel extends CI_Model {
         $this->load->database();
     }
 	
-	public function top10() {
-		
-		$dataHoje = date("Y-m-d");
-		$dataAntes = date('Y-m-d', strtotime('-7 days', strtotime($dataHoje)));
-					
-		$this->db->select('medicos.nome');
-		$this->db->select_sum('agendas.quantidade - agendas.saldo', 'total');
-		$this->db->from('agendas');
-		$this->db->join('medicos', 'medicos.id = agendas.medico_id');
-		$this->db->order_by('total desc');
-		$this->db->group_by('medicos.nome');
-		$this->db->limit(10);
-		$this->db->where('agendas.data_emissao >=', $dataAntes);
-        return $this->db->get()->result_array();
-	}
-
-     public function buscarIdMedico($id){
-
-        $this->db->select('id,nome_medico');
-        $this->db->from('medicos');
-        $this->db->where('usuario_id',$id);
-        $query = $this->db->get();
-        return $query->result();
-
-    }
-
-
-    public function insereMedico($dadosMedico) {
+	public function insereMedico($dadosMedico) {
         $this->db->insert('medicos', $dadosMedico);
 		$idInserido = $this->db->insert_id();
         return $idInserido;
@@ -56,13 +29,12 @@ class MedicoModel extends CI_Model {
 		return $this;
     }
 
-
     public function getTodasInfoMedicos($idMedico,$apelido='med'){
         $this->getMedicos($apelido)
 			->db->select("{$apelido}.*")
 			->where("{$apelido}.id",$idMedico);
         $query = $this->db->get();
-        return $query->row();            
+        return $query->row();
     }
 
     public function listarNomeTodosMedicos($apelido='med') {
@@ -103,7 +75,6 @@ class MedicoModel extends CI_Model {
        return $query->result();
 
     }
-
 
     public function getDisponibilidadeMedico($dataAgendamento,$horaAgendamento,$apelido='med',$apelidoSolicitacao='sol',$apelidoAgenda='agenda')
     {
