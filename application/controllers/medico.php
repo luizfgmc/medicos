@@ -10,7 +10,7 @@ class Medico extends CI_Controller {
     function __construct() {
         parent::__construct();
 
-        $this->load->helper(array('url','view'));
+        $this->load->helper(array('url','view','geraHash'));
         $this->dadosSessao = $this->login->valida_sessao('medico');
     }
 
@@ -43,34 +43,7 @@ class Medico extends CI_Controller {
         }
     }
 
-    public function gerarHash($idMedico, $tipo = "json", $email = "") {
-
-        // Obter chave Hash gerada pelo metodo GerarHash da classe MedicoModel
-        $this->load->model("MedicoModel");
-        $chave = $this->MedicoModel->gerarHash($idMedico, $email);
-
-        // Factory: Verificar tipo solicitado pelo usuario
-        //por default array
-        //Usar encode para retornar a chave no formato solicitado
-        if ($tipo == 'json') {
-
-            $chave = json_encode($chave);
-        } elseif ($tipo == 'string') {
-
-            // já retorna como string entao é só manter.
-        } elseif ($tipo == 'array') {
-
-            $chave = array('chave' => $chave);
-        } else {
-            // Caso usuario informe um tipo que não seja Json, array ou string então retorna isso.
-            $chave = array('chave' => 'Tipo não informado!');
-        }
-
-        // Retornar a chave. 
-        return $chave;
-    }
-
-	public function chares() {
+ 	public function chares() {
 		
 		// Gerar um numero aleatorio entre 1 e 4. Essa sera a posicao do dia original no array.
 		$posicaoAno = rand(0, 3);

@@ -6,11 +6,9 @@ class Soap extends CI_Controller {
 
     function __construct() {
         parent::__construct();
-        $this->load->helper('url');
+        $this->load->helper(array('url','geraHash'));
         
     }
-	
-	
 	
 	public function obterIdMedico() {
 		
@@ -32,37 +30,48 @@ class Soap extends CI_Controller {
 	}
 	
 	public function gerarHash($idMedico, $tipo="json", $email="") {
-		
-		// Obter chave Hash gerada pelo metodo GerarHash da classe MedicoModel
-		$this->load->model("MedicoModel");
-		$chave = $this->MedicoModel->gerarHash($idMedico, $email);
-		
-		// Factory: Verificar tipo solicitado pelo usuario
-		//por default array
-		//Usar encode para retornar a chave no formato solicitado
-		if ($tipo == 'json') {
-			
-			$chave = json_encode($chave);
-			
-		} elseif ($tipo == 'string') {
-			
-			// já retorna como string entao é só manter.
-		
-		} elseif ($tipo == 'array') {
-			
-			$chave = array ('chave' => $chave);
-		
-		} else {
-			// Caso usuario informe um tipo que não seja Json, array ou string então retorna isso.
-			$chave = array('chave' => 'Tipo não informado!');
-			
-		}
-		
+
+        $this->load->model("MedicoModel");
+
+        // Obter email do médico para gerar chave unica
+        if ($email == "") {
+            $dadosMedico = $this->MedicoModel->getTodasInfoMedicos($idMedico);
+            $email = $dadosMedico->email;
+        }
+
+        $chave = getHashMedico($email);
+
+        $dadosEditarMedico = array('chave_consulta' => $chave);
+
+        // Registrar chave no banco.
+        // Tem que acontecer nessa classe para garantir que não irá retornar uma chave diferente do banco
+        $chave = $this->MedicoModel->editarMedico($dadosEditarMedico, $idMedico);
+
+        $chave = $this->ajustarTipoChave($chave, $tipo);
+
 		// Retornar a chave. 
 		return $chave;
 	
 	}
 
+    function ajustarTipoChave($chave, $tipo){
+
+        // Factory: Verificar tipo solicitado pelo usuario
+        //por default array
+        //Usar encode para retornar a chave no formato solicitado
+        if ($tipo == 'json') {
+            $chave = json_encode($chave);
+        } elseif ($tipo == 'string') {
+            // já retorna como string entao é só manter.
+        } elseif ($tipo == 'array') {
+            $chave = array('chave' => $chave);
+        } else {
+            // Caso usuario informe um tipo que não seja Json, array ou string então retorna isso.
+            $chave = array('chave' => 'Tipo não informado!');
+        }
+
+        return $chave;
+    }
 
     public function solicitacoes(){
 
@@ -169,8 +178,6 @@ class Soap extends CI_Controller {
         redirect('medico/listarMedicos');
         
     }
-
-
 
 }
 

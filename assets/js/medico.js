@@ -1,9 +1,9 @@
 
-var url = "https://localhost/medicos/";
+var url = "http://localhost/medicos/";
 	
 	function gerar_hash(){	
 
-		$('#hash').val('Agurde...');	
+		$('#hash').val('Aguarde...');	
 
 		$.ajax({
 

@@ -77,31 +77,6 @@ class MedicoModel extends CI_Model {
         $this->db->delete('medicos', array('id' => $idMedico));
     }
 	
-	public function gerarHash ($idMedico, $email="") {
-		
-		// Obter data para gerar chave unica
-		$data = date("d/m/Y-H:i:s");			
-		
-		// Obter email do médico para gerar chave unica
-		if ($email == "") {
-			$email = $this->getTodasInfoMedicos($idMedico)->email;
-		}
-		
-		// Gerar chave Hash a partir da classe encrypt do framework CodeIgniter
-		$this->load->library('encrypt');
-		$chave = $this->encrypt->encode($email . $data);
-		$chave = sha1($chave);
-		
-		// Registrar chave no banco.
-		// Tem que acontecer nessa classe para garantir que não irá retornar uma chave diferente do banco
-		$dadosEditarMedico = array('chave_consulta' => $chave);
-		$this->editarMedico($dadosEditarMedico, $idMedico);
-		
-		// Retornar chave igual a do banco
-		return $chave;
-		
-	}
-	
 	public function obterIdMedico($usuario, $apelido='med') {
 		
 		$this->getMedicos($apelido);

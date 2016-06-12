@@ -19,7 +19,6 @@ class MY_Form_validation extends CI_Form_validation {
         return ( ! preg_match("/^([\.\s-a-z0-9_-])+$/i", $str)) ? FALSE : TRUE;
     }
 
-    
     /*
 	Metodo para validação de CPF
     */

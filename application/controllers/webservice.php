@@ -33,7 +33,6 @@ ini_set('display_errors', 1);
 			
 			function getChaveConsulta() {
 				
-
 				$controllers =& get_instance();
 				$controllers->load->model('../controllers/Soap');
 				
@@ -41,7 +40,7 @@ ini_set('display_errors', 1);
 				
 				if ($idMedico > 0) {
 					
-					$chave = $controllers->Soap->gerarHash($idMedico, 'string');
+					$chave = $controllers->Soap->gerarHash($idMedico);
 				
 					exit($chave);
 								
