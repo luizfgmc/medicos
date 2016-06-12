@@ -126,7 +126,6 @@ class Acesso extends CI_Controller {
 
                 $this->session->set_userdata('adm', $arrayAdm);
 
-
                 redirect(base_url('adm'));
 
             } else {
@@ -140,14 +139,12 @@ class Acesso extends CI_Controller {
     }
 
     public function logoff() {
-
         $this->session->sess_destroy();
         redirect('home');
     }
 
     public function logoffResponse()
     {
-
         $this->session->set_userdata('erroLogin',"<div class='retornoLoginInvalido'>Login Invalido, tente novamente.</div>");
         redirect('home');
     }

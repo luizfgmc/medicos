@@ -5,18 +5,19 @@ ini_set('display_errors', 1);
 
 class Home extends CI_Controller {
 
+    //Metodo construtor da classe e efetua a carga dos helpers utilizados
     function __construct() {
         parent::__construct();
-        $this->load->helper(array('url'));
+        $this->load->helper(array('url','view_helper'));
     }
 
+    //Carrega a pagina principal da aplicação
     public function index() {
 
         $dados = array();
 
-        $this->load->view('layout/header_home');
-        $this->load->view('home', $dados);
-        $this->load->view('layout/footer_home');
+        load_view_home('home',$dados);
+
     }
 
 }
