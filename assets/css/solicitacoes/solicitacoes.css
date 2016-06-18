@@ -38,6 +38,11 @@
     width: 786px
 }
 
+.containerListaSolicitacoes.solicitacaoMedico
+{
+    width:100%;
+}
+
 .itemSolicitacao
 {
     width:100%;
@@ -194,4 +199,14 @@
 .comentarioMedico textarea
 {
     margin-bottom:5px;
+}
+
+.solicitacaoMedico .itemSolicitacao .nomePaciente
+{
+    width:20%;
+}
+
+.solicitacaoMedico .cabecalhoListaSolicitacoes .nomePaciente
+{
+    width:20%;
 }
