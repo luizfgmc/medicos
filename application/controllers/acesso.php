@@ -9,7 +9,7 @@ class Acesso extends CI_Controller {
 
 
     }
-    
+
     public function index() {
 
         $this->load->view('login_medico');
@@ -64,12 +64,13 @@ class Acesso extends CI_Controller {
                     'id_medico' => $idMedico[0]->id,
                 );
                 $this->session->set_userdata('medico', $arrayMedico);
-                $this->contarCaptcha();
+
+               $this->contarCaptcha();
                 redirect(base_url('medico/chares'));
             } else {
-                    $this->contarCaptcha();
-                    $this->setErrorLogin();
-                    redirect(base_url('home'));
+                $this->contarCaptcha();
+                    setErrorLogin();
+                   redirect(base_url('home'));
             }
         } else {
             $this->contarCaptcha();

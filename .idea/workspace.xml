@@ -5,6 +5,7 @@
 <<<<<<< HEAD
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
       <change type="DELETED" beforePath="$PROJECT_DIR$/application/views/comentarioConsulta.php" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/banner_home.jpg" afterPath="" />
@@ -23,6 +24,11 @@
 =======
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aplicativo/assets/css/main_style.css" afterPath="$PROJECT_DIR$/aplicativo/assets/css/main_style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aplicativo/solicitacoes.html" afterPath="$PROJECT_DIR$/aplicativo/solicitacoes.html" />
+>>>>>>> pedro2
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/home.php" afterPath="$PROJECT_DIR$/application/controllers/home.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/medicoModel.php" afterPath="$PROJECT_DIR$/application/models/medicoModel.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/home.php" afterPath="$PROJECT_DIR$/application/views/home.php" />
 >>>>>>> pedro2
     </list>
     <ignored path="medicos.iws" />
@@ -47,6 +53,7 @@
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       <file leaf-file-name="medico.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/controllers/medico.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -66,11 +73,19 @@
             <state relative-caret-position="51">
               <caret line="3" column="20" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
 >>>>>>> pedro2
+=======
+      <file leaf-file-name="home.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/views/home.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="557">
+              <caret line="131" column="36" selection-start-line="131" selection-start-column="36" selection-end-line="131" selection-end-column="36" />
+>>>>>>> pedro2
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       <file leaf-file-name="solicitacao_medico.php" pinned="false" current-in-tab="false">
@@ -176,11 +191,19 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="629">
               <caret line="49" column="44" selection-start-line="49" selection-start-column="44" selection-end-line="49" selection-end-column="50" />
+=======
+      <file leaf-file-name="home.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/controllers/home.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="476">
+              <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+>>>>>>> pedro2
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="pacientes.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/pacientes.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -203,6 +226,23 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="688">
               <caret line="49" column="33" selection-start-line="49" selection-start-column="28" selection-end-line="49" selection-end-column="33" />
+>>>>>>> pedro2
+=======
+      <file leaf-file-name="medicoModel.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/models/medicoModel.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="631">
+              <caret line="163" column="88" selection-start-line="163" selection-start-column="88" selection-end-line="163" selection-end-column="88" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="medico.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/controllers/medico.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="219">
+              <caret line="172" column="0" selection-start-line="172" selection-start-column="0" selection-end-line="174" selection-end-column="75" />
 >>>>>>> pedro2
               <folding />
             </state>
@@ -248,8 +288,6 @@
         <option value="$PROJECT_DIR$/application/views/agenda.php" />
         <option value="$PROJECT_DIR$/application/controllers/instituicao.php" />
         <option value="$PROJECT_DIR$/application/views/layout/menu_medico.php" />
-        <option value="$PROJECT_DIR$/application/models/agendaModel.php" />
-        <option value="$PROJECT_DIR$/application/controllers/home.php" />
         <option value="$PROJECT_DIR$/assets/js/main.js" />
 <<<<<<< HEAD
         <option value="$PROJECT_DIR$/application/views/home.php" />
@@ -286,7 +324,6 @@
         <option value="$PROJECT_DIR$/application/views/layout/header_home.php" />
         <option value="$PROJECT_DIR$/application/views/layout/footer_home.php" />
         <option value="$PROJECT_DIR$/assets/css/home.css" />
-        <option value="$PROJECT_DIR$/application/models/medicoModel.php" />
         <option value="$PROJECT_DIR$/compartilhar/assets/css/main.css" />
         <option value="$PROJECT_DIR$/compartilhar/index.html" />
         <option value="$PROJECT_DIR$/application/views/comentarioConsulta.php" />
@@ -329,10 +366,18 @@
         <option value="$PROJECT_DIR$/aplicativo/assets/index.html" />
         <option value="$PROJECT_DIR$/aplicativo/index.html" />
         <option value="$PROJECT_DIR$/aplicativo/assets/css/home.css" />
-        <option value="$PROJECT_DIR$/application/views/home.php" />
-        <option value="$PROJECT_DIR$/application/controllers/acesso.php" />
         <option value="$PROJECT_DIR$/aplicativo/solicitacoes.html" />
+        <option value="$PROJECT_DIR$/application/controllers/acesso.php" />
+        <option value="$PROJECT_DIR$/application/models/agendaModel.php" />
+        <option value="$PROJECT_DIR$/application/views/minhas_agendas.php" />
         <option value="$PROJECT_DIR$/aplicativo/assets/css/main_style.css" />
+<<<<<<< HEAD
+>>>>>>> pedro2
+=======
+        <option value="$PROJECT_DIR$/aplicativo/home.html" />
+        <option value="$PROJECT_DIR$/application/controllers/home.php" />
+        <option value="$PROJECT_DIR$/application/models/medicoModel.php" />
+        <option value="$PROJECT_DIR$/application/views/home.php" />
 >>>>>>> pedro2
       </list>
     </option>
@@ -350,7 +395,8 @@
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
-    <option name="width" value="1924" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -544,6 +590,9 @@
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp\www\medicos\aplicativo" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\wamp\www\medicos\aplicativo" />
     </key>
@@ -619,12 +668,20 @@
       <workItem from="1463838111907" duration="4907000" />
       <workItem from="1464272138438" duration="4709000" />
       <workItem from="1464295212138" duration="4231000" />
+<<<<<<< HEAD
       <workItem from="1464430255975" duration="1464000" />
+>>>>>>> pedro2
+=======
+      <workItem from="1464430255975" duration="2064000" />
+      <workItem from="1465046302942" duration="845000" />
+      <workItem from="1465062578618" duration="2107000" />
+      <workItem from="1466261022193" duration="4207000" />
 >>>>>>> pedro2
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     <option name="totallyTimeSpent" value="38193000" />
@@ -634,11 +691,15 @@
 =======
     <option name="totallyTimeSpent" value="72097000" />
 >>>>>>> pedro2
+=======
+    <option name="totallyTimeSpent" value="79856000" />
+>>>>>>> pedro2
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="0" width="1924" height="1056" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21822916" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -674,11 +735,14 @@
 =======
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4365828" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
 >>>>>>> pedro2
+=======
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31458333" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+>>>>>>> pedro2
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Grunt " active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22832981" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16807611" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -713,6 +777,7 @@
   <component name="editorHistoryManager">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/application/models/solicitacaoModel.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3111">
@@ -737,6 +802,8 @@
         </state>
       </provider>
     </entry>
+=======
+>>>>>>> pedro2
     <entry file="file://$PROJECT_DIR$/application/views/agenda.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
@@ -863,6 +930,7 @@
     </entry>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/application/views/layout/menu_medico.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -886,6 +954,8 @@
         </state>
       </provider>
     </entry>
+=======
+>>>>>>> pedro2
     <entry file="file://$PROJECT_DIR$/application/libraries/MY_Form_validation.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1114">
@@ -956,13 +1026,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/medicoModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="501">
-          <caret line="150" column="30" selection-start-line="150" selection-start-column="30" selection-end-line="150" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/solicitacoes/solicitacoes.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="586">
@@ -996,13 +1059,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="578">
           <caret line="34" column="90" selection-start-line="34" selection-start-column="90" selection-end-line="34" selection-end-column="90" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/medico.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="108" column="39" selection-start-line="108" selection-start-column="39" selection-end-line="108" selection-end-column="39" />
         </state>
       </provider>
     </entry>
@@ -1319,6 +1375,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/application/controllers/agenda.php">
       <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
@@ -1332,6 +1389,8 @@
         </state>
       </provider>
     </entry>
+=======
+>>>>>>> pedro2
     <entry file="file://$PROJECT_DIR$/assets/css/home.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1513">
@@ -1452,19 +1511,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/home.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="18" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/aplicativo/lista.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="37" selection-end-column="13" />
+<<<<<<< HEAD
 >>>>>>> pedro2
           <folding />
+=======
+>>>>>>> pedro2
         </state>
       </provider>
     </entry>
@@ -1488,8 +1543,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/aplicativo/solicitacoes.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="688">
+          <caret line="49" column="33" selection-start-line="49" selection-start-column="28" selection-end-line="49" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/agendaModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="30" column="39" selection-start-line="30" selection-start-column="39" selection-end-line="30" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/acesso.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="187">
           <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
 >>>>>>> pedro2
@@ -1515,6 +1585,31 @@
         <state relative-caret-position="688">
           <caret line="49" column="33" selection-start-line="49" selection-start-column="28" selection-end-line="49" selection-end-column="33" />
 >>>>>>> pedro2
+=======
+        <state relative-caret-position="1173">
+          <caret line="69" column="23" selection-start-line="69" selection-start-column="23" selection-end-line="69" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/agenda.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="34" column="41" selection-start-line="34" selection-start-column="27" selection-end-line="34" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/minhas_agendas.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="39" column="106" selection-start-line="39" selection-start-column="106" selection-end-line="39" selection-end-column="106" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aplicativo/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1020">
+          <caret line="60" column="24" selection-start-line="60" selection-start-column="24" selection-end-line="60" selection-end-column="24" />
+>>>>>>> pedro2
           <folding />
         </state>
       </provider>
@@ -1534,8 +1629,45 @@
 =======
     <entry file="file://$PROJECT_DIR$/aplicativo/assets/css/main_style.css">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="51">
           <caret line="3" column="20" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
+>>>>>>> pedro2
+=======
+        <state relative-caret-position="427">
+          <caret line="244" column="11" selection-start-line="244" selection-start-column="11" selection-end-line="244" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/medico.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="172" column="0" selection-start-line="172" selection-start-column="0" selection-end-line="174" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/home.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/medicoModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="631">
+          <caret line="163" column="88" selection-start-line="163" selection-start-column="88" selection-end-line="163" selection-end-column="88" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/home.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="557">
+          <caret line="131" column="36" selection-start-line="131" selection-start-column="36" selection-end-line="131" selection-end-column="36" />
 >>>>>>> pedro2
           <folding />
         </state>
