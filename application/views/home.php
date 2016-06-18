@@ -110,185 +110,57 @@
                     <img src="<?php echo base_url() ?>assets/images/ranking_medalha.jpg" >
                     TOP MENSAL :
                 </h3>
-                <div class="listaRanking">
-                    <div class="itemsCamposRanking">
-                        <div class="numeroRanking">
-                                01
-                        </div>
-                        <div class="nomeRanking">
-                            Fábio Capelo
-                        </div>
-                        <div class="especialidadeRanking">
-                            Otorrinolaringologista
-                        </div>
-                        <div class="ranking">
-                            23.700
-                        </div>
-                    </div>
-                    <div class="itemsCamposRanking">
-                        <div class="numeroRanking">
-                            01
-                        </div>
-                        <div class="nomeRanking">
-                            Fábio Capelo
-                        </div>
-                        <div class="especialidadeRanking">
-                            Otorrinolaringologista
-                        </div>
-                        <div class="ranking">
-                            23.700
-                        </div>
-                    </div>
-                    <div class="itemsCamposRanking">
-                        <div class="numeroRanking">
-                            01
-                        </div>
-                        <div class="nomeRanking">
-                            Fábio Capelo
-                        </div>
-                        <div class="especialidadeRanking">
-                            Otorrinolaringologista
-                        </div>
-                        <div class="ranking">
-                            23.700
-                        </div>
-                    </div>
-                    <div class="itemsCamposRanking">
-                        <div class="numeroRanking">
-                            01
-                        </div>
-                        <div class="nomeRanking">
-                            Fábio Capelo
-                        </div>
-                        <div class="especialidadeRanking">
-                            Otorrinolaringologista
-                        </div>
-                        <div class="ranking">
-                            23.700
-                        </div>
-                    </div>
-                    <div class="itemsCamposRanking">
-                        <div class="numeroRanking">
-                            01
-                        </div>
-                        <div class="nomeRanking">
-                            Fábio Capelo
-                        </div>
-                        <div class="especialidadeRanking">
-                            Otorrinolaringologista
-                        </div>
-                        <div class="ranking">
-                            23.700
-                        </div>
-                    </div>
-                    <div class="itemsCamposRanking">
-                        <div class="numeroRanking">
-                            01
-                        </div>
-                        <div class="nomeRanking">
-                            Fábio Capelo
-                        </div>
-                        <div class="especialidadeRanking">
-                            Otorrinolaringologista
-                        </div>
-                        <div class="ranking">
-                            23.700
-                        </div>
-                    </div>
+                    <div class="listaRanking">
+                        <?php $contador=0; foreach($ranking as $rank){
+                            $contador++;
+                            ?>
+                            <div class="itemsCamposRanking">
+                                <div class="numeroRanking">
+                                    <?=$contador;?>
+                                </div>
+                                <div class="nomeRanking">
+                                    <?=$rank->nome_medico;?>
+                                </div>
+                                <div class="especialidadeRanking">
+                                    <?=$rank->descricao;?>
+                                </div>
+                                <div class="ranking">
+                                    <?=$rank->ranking;?>
+                                </div>
+
+                            </div>
+                        <?php } ?>  
                 </div>
             </div>
         </div>
         <div class="topAno">
             <div class="conteudoRanking">
+
                 <h3>
                     <img src="<?php echo base_url() ?>assets/images/ranking_trofeu.jpg" >
                     TOP 2016 :
                 </h3>
                 <div class="listaRanking">
+                    <?php $contador=0; foreach($ranking as $rank){
+                    $contador++;
+                    ?>
                     <div class="itemsCamposRanking">
                         <div class="numeroRanking">
-                            01
+                            <?=$contador;?>
                         </div>
                         <div class="nomeRanking">
-                            Fábio Capelo
+                            <?=$rank->nome_medico;?>
                         </div>
                         <div class="especialidadeRanking">
-                            Otorrinolaringologista
+                            <?=$rank->descricao;?>
                         </div>
                         <div class="ranking">
-                            23.700
+                            <?=$rank->ranking;?>
                         </div>
+
                     </div>
-                    <div class="itemsCamposRanking">
-                        <div class="numeroRanking">
-                            01
-                        </div>
-                        <div class="nomeRanking">
-                            Fábio Capelo
-                        </div>
-                        <div class="especialidadeRanking">
-                            Otorrinolaringologista
-                        </div>
-                        <div class="ranking">
-                            23.700
-                        </div>
-                    </div>
-                    <div class="itemsCamposRanking">
-                        <div class="numeroRanking">
-                            01
-                        </div>
-                        <div class="nomeRanking">
-                            Fábio Capelo
-                        </div>
-                        <div class="especialidadeRanking">
-                            Otorrinolaringologista
-                        </div>
-                        <div class="ranking">
-                            23.700
-                        </div>
-                    </div>
-                    <div class="itemsCamposRanking">
-                        <div class="numeroRanking">
-                            01
-                        </div>
-                        <div class="nomeRanking">
-                            Fábio Capelo
-                        </div>
-                        <div class="especialidadeRanking">
-                            Otorrinolaringologista
-                        </div>
-                        <div class="ranking">
-                            23.700
-                        </div>
-                    </div>
-                    <div class="itemsCamposRanking">
-                        <div class="numeroRanking">
-                            01
-                        </div>
-                        <div class="nomeRanking">
-                            Fábio Capelo
-                        </div>
-                        <div class="especialidadeRanking">
-                            Otorrinolaringologista
-                        </div>
-                        <div class="ranking">
-                            23.700
-                        </div>
-                    </div>
-                    <div class="itemsCamposRanking">
-                        <div class="numeroRanking">
-                            01
-                        </div>
-                        <div class="nomeRanking">
-                            Fábio Capelo
-                        </div>
-                        <div class="especialidadeRanking">
-                            Otorrinolaringologista
-                        </div>
-                        <div class="ranking">
-                            23.700
-                        </div>
-                    </div>
+                    <?php } ?>
+
                 </div>
             </div>
         </div>

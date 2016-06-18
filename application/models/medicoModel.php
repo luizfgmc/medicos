@@ -158,6 +158,19 @@ class MedicoModel extends CI_Model {
         return $query->row();
     }
 
+
+    public function getAllRank($apelidoMedico="med",$apelidoSolicitacao="sol",$apelidoFeedback="feed",$apelidoAgenda="age",$apelidoEspecialidade="espe")
+    {
+        $this->db->select("{$apelidoMedico}.nome_medico,$apelidoEspecialidade.descricao, SUM({$apelidoFeedback}.ranking) as ranking")
+            ->from("medicos {$apelidoMedico}")
+            ->join("agendas {$apelidoAgenda}","{$apelidoAgenda}.medico_id = {$apelidoMedico}.id ")
+            ->join("especialidades {$apelidoEspecialidade}", "{$apelidoEspecialidade}.id = {$apelidoMedico}.especialidade_id")
+            ->join("solicitacoes {$apelidoSolicitacao}", "{$apelidoSolicitacao}.agenda_id = {$apelidoAgenda}.id")
+            ->join("feedback_solicitacao {$apelidoFeedback}","{$apelidoFeedback}.id_solicitacao = {$apelidoSolicitacao}.id");
+        $this->db->group_by("{$apelidoMedico}.id");
+        $query = $this->db->get();
+        return $query->result();
+    }
 }
 
 

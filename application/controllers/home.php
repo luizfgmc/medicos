@@ -28,7 +28,12 @@ class Home extends CI_Controller {
 
             $cap = create_captcha($vals);
             $dados['image'] = $cap['image'];
+
         }
+        $this->load->model("MedicoModel");
+        $rankingMedicos=$this->MedicoModel->getAllRank();
+
+        $dados['ranking']=$rankingMedicos;
 
         $this->load->view('layout/header_home');
         $this->load->view('home', $dados);
