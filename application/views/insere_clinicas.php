@@ -7,6 +7,12 @@
             <form method="post" action="<?php echo base_url() ?>clinica/insereClinica/" id="formClinica">
                 <div class="halfSize">
                     <h2>Cadastrar Clinica</h2>
+					<?php
+					if ($this->session->userdata('erroEmail')) {
+						echo $this->session->userdata('erroEmail');
+						$this->session->unset_userdata('erroEmail');
+					}
+					?>
                     <div class="container_item_form">
                         <label>Nome</label>
                         <input type="text" class="default_text_input required" name="nomeClinica" size=45 maxlength=45/>            
@@ -53,7 +59,7 @@
                         </select>
                     </div>  
                     <div class="container_submit">
-                        <input type="submit" class="input_submit" />
+                        <input type="submit" class="input_submit" value="Inserir"/>
                         <button type="button" class="input_cancel">Cancelar</button>
                     </div>  
                 </div>

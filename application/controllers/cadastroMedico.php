@@ -54,8 +54,8 @@
     	 public function insereMedico() {
             $dataPost = $_POST;
             $this->load->model('usuarioModel', 'mm');
+			
             $data = $this->mm->autenticar($dataPost['emailMedico']);
-
             if(!empty($data)){
                 $this->session->set_userdata('erroEmail', "<div class='erroSolicitacao'>Email já cadastrado</div>");
                 redirect(base_url('cadastroMedico'));

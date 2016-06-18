@@ -11,6 +11,12 @@
 
                         <div class="container_form_paciente">
                             <h2>Cadastro de Paciente</h2>
+							<?php
+							if ($this->session->userdata('erroEmail')) {
+								echo $this->session->userdata('erroEmail');
+								$this->session->unset_userdata('erroEmail');
+							}
+							?>
                             <div class="form_cadastro_paciente">
                                 <div class="container_item_form">
                                     <label>Nome</label>
@@ -85,8 +91,8 @@
                                 </div>
 
                                 <div class="container_submit">
-                                    <input type="submit" class="input_submit" />
-                            <a href="<?php echo base_url() ?>" class="input_cancel">Cancelar</a>
+                                    <input type="submit" class="input_submit" value="Inserir"/>
+									<a href="<?php echo base_url() ?>instituicao/" class="input_cancel">Cancelar</a>
                                 </div>
 
                             </div>

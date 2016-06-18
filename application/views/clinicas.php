@@ -6,6 +6,12 @@
             <div class="halfSize">
                 <div class="containerListaSolicitacoes">
                     <h2>Clinicas</h2>
+					<?php
+                    if ($this->session->userdata('erroEmail')) {
+                        echo $this->session->userdata('erroEmail');
+                        $this->session->unset_userdata('erroEmail');
+                    }
+                    ?>
                     <div class="cabecalhoListaSolicitacoes">
                         <span class="nomePaciente">Nome</span>
                         <span class="horarioSugerido">Endereço</span>

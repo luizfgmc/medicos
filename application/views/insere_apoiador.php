@@ -9,6 +9,12 @@
 
                         <div class="container_form_paciente">
                             <h2>Cadastro de Apoiador</h2>
+							<?php
+							if ($this->session->userdata('erroEmail')) {
+								echo $this->session->userdata('erroEmail');
+								$this->session->unset_userdata('erroEmail');
+							}
+							?>
                             <div class="form_cadastro_paciente">
                                 <div class="container_item_form">
                                     <label>Nome</label>

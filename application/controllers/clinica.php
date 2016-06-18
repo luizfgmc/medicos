@@ -52,7 +52,23 @@ class Clinica extends CI_Controller {
         $this->form_validation->set_rules('cidadeClinica', 'Cidade', 'trim|required');
         $this->form_validation->set_rules('ufClinica', 'Uf', 'trim|required');
         $this->form_validation->set_rules('cepClinica', 'Cep', 'trim|required');
-
+		
+		//Validacao do formato do CEP
+        $this->load->model('cepModel', 'cepM');
+		$vCep = $this->cepM->validarFormatoCep(str_replace(".", "",$data['cepClinica']));
+		
+		if ($vCep == false) {
+			$this->session->set_userdata('erroEmail', "<div class='erroSolicitacao'>CEP inválido!</div>");
+			redirect(base_url('clinica'));
+			exit();
+		}
+		
+		if ($data['ufClinica'] == 'Selecione') {
+			$this->session->set_userdata('erroEmail', "<div class='erroSolicitacao'>Gentileza escolher uma UF!</div>");
+			redirect(base_url('clinica'));
+			exit();
+		}
+		
         if ($this->form_validation->run() == FALSE) {
             $this->index();
         } else {
@@ -114,9 +130,26 @@ class Clinica extends CI_Controller {
     }
     //funcao para excluir clinicas
     public function excluirClinica($idClinica) {
-
+		
         $this->load->model('clinicaModel', 'cm');
-        $this->cm->excluirClinica($idClinica);
+        
+		$qtdClinicas = $this->cm->obterQuantidadeClinicasMedico($this->session->userdata('medico')['id_medico']);
+		if ($qtdClinicas <= 1) {
+			$this->session->set_userdata('erroEmail', "<div class='erroSolicitacao'>Não pode-se deixar excluir uma clínica caso haja apenas uma clínica para o médico!</div>");
+			redirect(base_url('clinica/listaClinicas'));
+			exit();
+		}
+		
+		$qtdCons = $this->cm->obterQuantidadeConsultas($idClinica);
+		if ($qtdCons > 0) {
+			$this->session->set_userdata('erroEmail', "<div class='erroSolicitacao'>Não pode-se deixar excluir uma clínica sendo que tenha consultas em aberto para ela!</div>");
+			redirect(base_url('clinica/listaClinicas'));
+			exit();
+		}
+		
+		
+		
+		$this->cm->excluirClinica($idClinica);
         redirect('clinica/listaClinicas');
     }
 }

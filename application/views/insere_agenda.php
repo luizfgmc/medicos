@@ -31,6 +31,12 @@
 
             <div class="halfSize">
                 <h2>Disponibilidade / Agendas </h2>
+				<?php
+				if ($this->session->userdata('erroEmail')) {
+					echo $this->session->userdata('erroEmail');
+					$this->session->unset_userdata('erroEmail');
+				}
+				?>
                 <section class="headerClinica">
                 </section>
                 <section class="horariosOferecidos">
@@ -99,7 +105,7 @@
                     <div class="form_horarios">
                         <div class="itemFormHorario">
                             <div class="container_submit">
-                                <input type="submit" class="input_submit" />
+                                <input type="submit" class="input_submit" value="Inserir"/>
                                 <a href="<?php echo base_url() ?>medico/solicitacoes/" class="input_cancel">Cancelar</a>
                             </div>
 

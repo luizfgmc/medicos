@@ -18,6 +18,15 @@
 
     }
 
+		public function autenticarCnpj($cnpj){
+					
+		   $query = $this->db->get_where('Instituicoes', array('cnpj'=>$cnpj));
+	  
+		   return $query->result();
+
+		}
+
+
 
     	public function buscarIdInstituicao($id){
 

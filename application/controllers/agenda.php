@@ -42,7 +42,7 @@ class Agenda extends CI_Controller {
         $this->logininstituicao->valida_sessao_instituicao();
         $this->load->model('AgendaModel', 'am');
 
-        $data['query'] = $this->am->listaAgendas();
+        $data['query'] = $this->am->listaAgendasComSaldo();
 
 
         $this->load->view('layout/header');
@@ -54,8 +54,27 @@ class Agenda extends CI_Controller {
 
         $this->loginmedico->valida_sessao_medico();
         $id = $this->session->userdata('medico');
-
-
+		
+		$this->load->model('ClinicaModel', 'cm');
+		$data = $this->cm->autenticarClinica($this->input->post('clinicas'));
+		if(empty($data)){
+			$this->session->set_userdata('erroEmail', "<div class='erroSolicitacao'>Clinica não cadastrada!</div>");
+			redirect(base_url('agenda'));
+			exit();
+		}
+		
+		if($this->input->post('quantidadeAgenda') <= 0){
+			$this->session->set_userdata('erroEmail', "<div class='erroSolicitacao'>Gentileza informar a quantidade de consultas!</div>");
+			redirect(base_url('agenda'));
+			exit();
+		}
+		
+		if($this->input->post('dia_agenda') == NULL){
+			$this->session->set_userdata('erroEmail', "<div class='erroSolicitacao'>Gentileza selecionar o dia da semana!</div>");
+			redirect(base_url('agenda'));
+			exit();
+		}
+		
         $arrayAgenda = array(
             "medico_id" => $id['id_medico'],
             "data_emissao" => date('Y-m-d'),
