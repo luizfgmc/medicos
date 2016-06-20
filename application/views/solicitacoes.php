@@ -3,13 +3,14 @@
         <section class="mainContent">
             <section class="containerSolicitacoes">
                 <div class="containerCenter fullSiteSize">
-                    <div class="halfSize">
-                        <div class="containerListaSolicitacoes">
+                    <div class="">
+                        <div class="containerListaSolicitacoes solicitacaoMedico">
                             <h2>Solicitações pedentes </h2>
-                            <div class="infoMedicoLogado">
+                            <div class="infoMedicoLogado ">
                             </div>
                             <div class="cabecalhoListaSolicitacoes">
                                 <span class="nomePaciente">Paciente</span>
+                                <span class="nomePaciente">Descrição</span>
                                 <span class="horarioSugerido">Horário Sugerido</span>
                                 <span class="saldo">Status</span>
                             </div>
@@ -19,8 +20,8 @@
                                     ?>
                                     <div class="itemSolicitacao">
                                         <?php
-                                        //echo($k->solicitante . "<br/>");
                                         echo '<span class="nomePaciente">' . ($k->nome_paciente) . '</span>';
+                                        echo '<span class="nomePaciente">' . ($k->descricao) . '</span>';
                                         echo '<span class="horarioSugerido">' . date('d/m/Y', strtotime($k->data_emissao)) . '</br>';
                                         echo (empty($k->data_agendamento) ? "Pendente" : date('d/m/Y', strtotime($k->data_agendamento))) . '</br>';
                                         $x = ($k->flg_retorno == '1') ? '[Retorno]': '';

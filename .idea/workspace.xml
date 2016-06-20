@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1bf6deed-580a-4849-9734-47e696b11f31" name="Default" comment="">
 <<<<<<< HEAD
+<<<<<<< HEAD
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -30,6 +31,25 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/medicoModel.php" afterPath="$PROJECT_DIR$/application/models/medicoModel.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/home.php" afterPath="$PROJECT_DIR$/application/views/home.php" />
 >>>>>>> pedro2
+=======
+      <change type="DELETED" beforePath="$PROJECT_DIR$/captcha/1464278095.2837.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/captcha/1464278181.8289.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/captcha/1464278407.2639.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/captcha/1464278417.3553.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/captcha/1464278719.9929.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/captcha/1464278785.055.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/captcha/1464278803.0264.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/captcha/1464278807.4745.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/captcha/1464278855.9397.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/captcha/1464278860.9757.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/captcha/1464278869.6485.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/captcha/1464278874.5087.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/captcha/1464278901.5694.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/captcha/1464278907.8924.jpg" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/acesso.php" afterPath="$PROJECT_DIR$/application/controllers/acesso.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/solicitacoes.php" afterPath="$PROJECT_DIR$/application/views/solicitacoes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/solicitacoes/solicitacoes.css" afterPath="$PROJECT_DIR$/assets/css/solicitacoes/solicitacoes.css" />
+>>>>>>> pedro2
     </list>
     <ignored path="medicos.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -54,6 +74,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       <file leaf-file-name="medico.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/controllers/medico.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -75,6 +96,9 @@
 >>>>>>> pedro2
 =======
       <file leaf-file-name="home.php" pinned="false" current-in-tab="true">
+=======
+      <file leaf-file-name="home.php" pinned="false" current-in-tab="false">
+>>>>>>> pedro2
         <entry file="file://$PROJECT_DIR$/application/views/home.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="557">
@@ -176,22 +200,33 @@
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="insere_feedback_ranking.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/views/insere_feedback_ranking.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="204">
               <caret line="12" column="46" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
+=======
+      <file leaf-file-name="acesso.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/controllers/acesso.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="70" column="27" selection-start-line="70" selection-start-column="27" selection-end-line="70" selection-end-column="27" />
+>>>>>>> pedro2
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="solicitacoes.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/solicitacoes.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="629">
               <caret line="49" column="44" selection-start-line="49" selection-start-column="44" selection-end-line="49" selection-end-column="50" />
 =======
+=======
+>>>>>>> pedro2
       <file leaf-file-name="home.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/controllers/home.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -241,8 +276,33 @@
       <file leaf-file-name="medico.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/controllers/medico.php">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="219">
               <caret line="172" column="0" selection-start-line="172" selection-start-column="0" selection-end-line="174" selection-end-column="75" />
+>>>>>>> pedro2
+=======
+            <state relative-caret-position="338">
+              <caret line="99" column="39" selection-start-line="99" selection-start-column="27" selection-end-line="99" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="solicitacoes.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/solicitacoes.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="80" selection-start-line="6" selection-start-column="63" selection-end-line="6" selection-end-column="80" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="solicitacoes.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/assets/css/solicitacoes/solicitacoes.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="576">
+              <caret line="40" column="27" selection-start-line="40" selection-start-column="27" selection-end-line="40" selection-end-column="27" />
 >>>>>>> pedro2
               <folding />
             </state>
@@ -327,12 +387,10 @@
         <option value="$PROJECT_DIR$/compartilhar/assets/css/main.css" />
         <option value="$PROJECT_DIR$/compartilhar/index.html" />
         <option value="$PROJECT_DIR$/application/views/comentarioConsulta.php" />
-        <option value="$PROJECT_DIR$/assets/css/solicitacoes/solicitacoes.css" />
         <option value="$PROJECT_DIR$/assets/js/observacaoConsulta.js" />
         <option value="$PROJECT_DIR$/application/views/solicitacao.php" />
         <option value="$PROJECT_DIR$/application/views/aprovar_solicitacao.php" />
         <option value="$PROJECT_DIR$/application/models/solicitacaoModel.php" />
-        <option value="$PROJECT_DIR$/application/views/solicitacoes.php" />
         <option value="$PROJECT_DIR$/application/views/solicitacoes_instituicao.php" />
         <option value="$PROJECT_DIR$/application/controllers/feedback.php" />
         <option value="$PROJECT_DIR$/assets/css/main.css" />
@@ -367,7 +425,6 @@
         <option value="$PROJECT_DIR$/aplicativo/index.html" />
         <option value="$PROJECT_DIR$/aplicativo/assets/css/home.css" />
         <option value="$PROJECT_DIR$/aplicativo/solicitacoes.html" />
-        <option value="$PROJECT_DIR$/application/controllers/acesso.php" />
         <option value="$PROJECT_DIR$/application/models/agendaModel.php" />
         <option value="$PROJECT_DIR$/application/views/minhas_agendas.php" />
         <option value="$PROJECT_DIR$/aplicativo/assets/css/main_style.css" />
@@ -378,6 +435,12 @@
         <option value="$PROJECT_DIR$/application/controllers/home.php" />
         <option value="$PROJECT_DIR$/application/models/medicoModel.php" />
         <option value="$PROJECT_DIR$/application/views/home.php" />
+<<<<<<< HEAD
+>>>>>>> pedro2
+=======
+        <option value="$PROJECT_DIR$/application/controllers/acesso.php" />
+        <option value="$PROJECT_DIR$/application/views/solicitacoes.php" />
+        <option value="$PROJECT_DIR$/assets/css/solicitacoes/solicitacoes.css" />
 >>>>>>> pedro2
       </list>
     </option>
@@ -430,6 +493,9 @@
 >>>>>>> LuizFlavio
       <pane id="ProjectPane">
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> pedro2
         <subPane>
           <PATH>
             <PATH_ELEMENT>
@@ -489,6 +555,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+<<<<<<< HEAD
 <<<<<<< HEAD
               <option name="myItemId" value="application" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
@@ -550,6 +617,8 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="controllers" />
 =======
+=======
+>>>>>>> pedro2
               <option name="myItemId" value="assets" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
@@ -558,14 +627,21 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+<<<<<<< HEAD
               <option name="myItemId" value="paciente" />
 >>>>>>> LuizFlavio
+=======
+              <option name="myItemId" value="solicitacoes" />
+>>>>>>> pedro2
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
+<<<<<<< HEAD
 =======
         <subPane />
+>>>>>>> pedro2
+=======
 >>>>>>> pedro2
       </pane>
 <<<<<<< HEAD
@@ -675,12 +751,17 @@
       <workItem from="1464430255975" duration="2064000" />
       <workItem from="1465046302942" duration="845000" />
       <workItem from="1465062578618" duration="2107000" />
+<<<<<<< HEAD
       <workItem from="1466261022193" duration="4207000" />
+>>>>>>> pedro2
+=======
+      <workItem from="1466261022193" duration="7422000" />
 >>>>>>> pedro2
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -694,11 +775,15 @@
 =======
     <option name="totallyTimeSpent" value="79856000" />
 >>>>>>> pedro2
+=======
+    <option name="totallyTimeSpent" value="83071000" />
+>>>>>>> pedro2
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -737,6 +822,9 @@
 >>>>>>> pedro2
 =======
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31458333" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+>>>>>>> pedro2
+=======
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31458333" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
 >>>>>>> pedro2
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Grunt " active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
@@ -1023,13 +1111,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="661">
           <caret line="48" column="38" selection-start-line="48" selection-start-column="38" selection-end-line="48" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/css/solicitacoes/solicitacoes.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="586">
-          <caret line="184" column="18" selection-start-line="184" selection-start-column="18" selection-end-line="184" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -1333,13 +1414,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/solicitacoes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="833">
-          <caret line="49" column="44" selection-start-line="49" selection-start-column="44" selection-end-line="49" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/feedback.php">
       <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
@@ -1557,6 +1631,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/application/controllers/acesso.php">
       <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
@@ -1591,6 +1666,8 @@
         </state>
       </provider>
     </entry>
+=======
+>>>>>>> pedro2
     <entry file="file://$PROJECT_DIR$/application/controllers/agenda.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="578">
@@ -1640,14 +1717,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/medico.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="172" column="0" selection-start-line="172" selection-start-column="0" selection-end-line="174" selection-end-column="75" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/home.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
@@ -1664,11 +1733,43 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/medico.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="99" column="39" selection-start-line="99" selection-start-column="27" selection-end-line="99" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/home.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="557">
           <caret line="131" column="36" selection-start-line="131" selection-start-column="36" selection-end-line="131" selection-end-column="36" />
 >>>>>>> pedro2
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/acesso.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="70" column="27" selection-start-line="70" selection-start-column="27" selection-end-line="70" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/solicitacoes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="80" selection-start-line="6" selection-start-column="63" selection-end-line="6" selection-end-column="80" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/solicitacoes/solicitacoes.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="576">
+          <caret line="40" column="27" selection-start-line="40" selection-start-column="27" selection-end-line="40" selection-end-column="27" />
           <folding />
         </state>
       </provider>
