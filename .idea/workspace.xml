@@ -2,23 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1bf6deed-580a-4849-9734-47e696b11f31" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/captcha/1464278095.2837.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/captcha/1464278181.8289.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/captcha/1464278407.2639.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/captcha/1464278417.3553.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/captcha/1464278719.9929.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/captcha/1464278785.055.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/captcha/1464278803.0264.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/captcha/1464278807.4745.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/captcha/1464278855.9397.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/captcha/1464278860.9757.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/captcha/1464278869.6485.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/captcha/1464278874.5087.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/captcha/1464278901.5694.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/captcha/1464278907.8924.jpg" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/acesso.php" afterPath="$PROJECT_DIR$/application/controllers/acesso.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/solicitacoes.php" afterPath="$PROJECT_DIR$/application/views/solicitacoes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/solicitacoes/solicitacoes.css" afterPath="$PROJECT_DIR$/assets/css/solicitacoes/solicitacoes.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="medicos.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -375,16 +359,16 @@
       <workItem from="1464430255975" duration="2064000" />
       <workItem from="1465046302942" duration="845000" />
       <workItem from="1465062578618" duration="2107000" />
-      <workItem from="1466261022193" duration="7422000" />
+      <workItem from="1466261022193" duration="8158000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83071000" />
+    <option name="totallyTimeSpent" value="83807000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31458333" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
